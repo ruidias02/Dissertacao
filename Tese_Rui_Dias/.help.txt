@@ -1,0 +1,314 @@
+===== Ordem dos Ficheiros =====
+{
+        Letra   Nome                    Descrição
+        A.0     Dedicatory              Dedicatória
+        B.0     Acknowledgements        Agradecimentos
+        C.0     Quote                   Citação
+        D.x     Abstract                Resumo
+                .1      pt
+                .2      en
+                .3      de
+                .4      es
+                .5      fr
+                .6      gr
+                .7      it
+        E.x     Glossaries              Glossários
+                .1      glossary        Glossário
+                .2      acronyms        Siglas
+                .3      symbols         Símbolos
+                .4      chemical        Símbolos Químicos
+        F.x     Chapter                 Capítulos
+        G.x     Bibliography            Bibliografia
+        H.x     Apendix                 Apêndices
+        I.x     Annex                   Anexos
+}
+
+===== Glossário =====
+{
+        Para adiconar uma nova entrada de dicionário:
+
+        \newglossaryentry{comando}{
+                name={Nome do Item},
+                sort={Ordenar o Item},
+                description={Descrição do Item}
+        }
+
+        Para utilizar uma entrada de dicionário previamente adicionada basta usar:
+
+        \gls{<comando>}
+}
+
+===== Acrónimos/Siglas =====
+{
+        Para adicionar uma nova sigla, basta ir ao ficheiro ./Chapter/E2_acronyms.tex e adicionar uma nova entrada segundo as seguintes orientações:
+
+        Acrónimo/Sigla Complexo:
+        \newacronym[sort=nome]{comando}{SIGLA}{significado}
+
+        Acrónimo/Sigla Simples:
+        \newacronym{comando}{SIGLA}{significado}
+
+        Para utilizar uma sigla previamente adicionada basta usar:
+
+        \gls{<comando>}
+
+        ou desta forma caso se queira que a descrição da sigla comece com letra maiúscula
+        
+        \Gls{<comando>}
+}
+
+===== Símbolos =====
+{
+        Para adicionar um novo símbolo:
+
+        \glsxtrnewsymbol[sort=OrdenarSímbolo,description={Descrição do Símbolo}]{comando}{\ensuremath{Nome do Símbolo}}
+
+        Para utilizar um símbolo previamente adicionada basta usar:
+
+        \gls{<comando>}
+}
+
+===== Símbolos Químicos =====
+{
+        Para adicionar um novo símbolo químico:
+
+        \newglossaryentry{chem:comando}% label
+        {%
+                type=chemical,% glossary type
+                name={$Nome do Símbolo$},%
+                description={Descrição do Símbolo},%
+                sort={OrdenarSímbolo}%
+        }
+
+        Para utilizar um símbolo químico previamente adicionado basta usar:
+
+        \gls{<chem:comando>}
+}
+
+===== Citações =====
+{
+        Na pasta ./Bibliography incluir todos os ficheiros .bib com estruturas de citações semelhantes a esta:
+
+        @<tipo>{<comando>,
+                author = {<autor>},
+                title = {<título>},
+                year = {<ano>},
+                ...
+        }
+
+        Ao longo do texto, se for necessário uma citação de um único item devendo ser utilizado da seguinte forma:
+
+        Como dizem os autores em~\cite{<comando>}
+
+        ou de vários items de uma só vez:
+
+        Como dizem os autores em~\cite{<comando1>,<comando2>,...}
+}
+
+===== Notas de Rodapé =====
+{
+        Para inserir uma nota de rodapé ao longo do texto, basta fazer da seguinte forma:
+
+        Isto é um exemplo de nota de rodapé\footnote{Esta é a descrição da nota de rodapé.}
+}
+
+===== Tabelas =====
+{
+        Para criar tabelas deve ser utilizado o seguinte molde:
+
+        \bgroup
+        \rowcolors{1}{}{GhostWhite}
+        \begin{xltabular}{\textwidth}{Xcc}
+                \caption{Legenda da Tabela.}
+                \label{tab:comando}\\
+                \toprule
+                \rowcolor{Gainsboro}%
+                Coluna A        & Coluna B      & Coluna C \\
+                \midrule
+                Texto A1        & Texto B1      & Texto C1 \\
+                Texto A2        & Texto B2      & Texto C2 \\
+                Texto A3        & Texto B3      & Texto C3 \\
+                \midrule
+                \rowcolor{Gainsboro}%
+                Total A         & Total B       & Total C \\
+                \bottomrule
+        \end{xltabular}
+        \egroup
+}
+
+===== Figuras =====
+{
+        Para colocar uma ou mais imagens agrupadas dentro da mesma figura, pode ser feito da seguinte forma:
+
+        \begin{figure}[htbp]
+                \centering
+                \includegraphics[height=5cm]{nome_ficheiro_imagem} \\            % Altura fixa de 5 cm
+                \includegraphics[width=10cm]{nome_ficheiro_imagem} \\            % Largura fixa de 10 cm
+                \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}   \\ % 50% da largura da linha
+                \includegraphics[height=0.3\textheight]{nome_ficheiro_imagem} \\ % 30% da altura da linha
+                \caption{Legenda da Imagem.}
+                \label{fig:comando}
+        \end{figure}
+
+        Caso seja preciso criar subfiguras, pode ser feito da seguinte forma:
+
+        \begin{figure}[htbp]
+                \centering
+                \subbottom[Legenda da Imagem 1.]{%
+                        \label{fig:subcomando1}
+                        \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}
+                }
+                % espaçamento vertical ou horizontal, se necessário.
+                \subbottom[Legenda da Imagem 2.]{%
+                        \label{fig:subcomando2}
+                        \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}
+                }
+                \caption{Legenda da Imagem}
+                \label{fig:comandoCompleto}
+        \end{figure}
+}
+
+===== Espaçamento Horizontal e Vertical =====
+{
+        Horizontal:
+                \hspace{1cm}    % Espaçamento horizontal de 1cm
+                \hfill          % Preenche o espaço horizontal disponível
+        Vertical:
+                \vspace{1cm}    % Espaçamento vertical de 1cm
+                \vfill          % Preenche o espaço vertical disponível
+        Relativo:
+                \quad           % Aproximadamente 1 em.
+                \qquad          % Aproximadamente 2 em.
+}
+
+===== Equações =====
+{
+        Para equações inline:
+        
+        $ax^2 + bx + c = 0$
+
+        Para equações numa linha separada:
+
+        \[ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \]
+
+        Para equações numeradas:
+
+        \begin{equation}
+                e = mc^2
+                \label{eq:comando}
+        \end{equation}
+
+        que depois pode ser referenciado da seguinte forma:
+
+        \ref{eq:comando}
+}
+
+===== Listas =====
+{
+        Para fazer listas, pode ser feito da seguinte forma:
+
+        \begin{listing}[H]
+                \begin{minted}{C}
+                        if(a==b)
+                                puts("YESS!")
+                \end{minted}
+                \caption{Legenda da Lista.}
+                \label{lst:comando}
+        \end{listing}
+}
+
+===== Estrutura de um Capítulo =====
+{
+        Um capítulo pode conter alguns destes items:
+
+        \chapter{Nome do Capítulo}
+        \label{cha:comando}
+
+                \section{Nome da Seção}
+                \label{sec:comando}
+
+                        \subsection{Nome da Subseção}
+                        \label{sub:comando}
+                        
+                                \subsubsection{Nome da Subsubseção}
+                                \label{ssub:comando}
+}
+
+===== Estrutura de um Apêndice =====
+{
+        Um apêndice pode conter alguns destes items:
+
+        \chapter{Nome do Apêndice}
+        \label{app:comando}
+        
+                \section{Nome da Seção}
+                \label{sec:comando}
+
+                        \subsection{Nome da Subseção}
+                        \label{sub:comando}
+                        
+                                \subsubsection{Nome da Subsubseção}
+                                \label{ssub:comando}
+}
+
+===== Estrutura de um Anexo =====
+{
+        Um anexo pode conter alguns destes items:
+
+        \chapter{Nome do Anexo}
+        \label{ann:comando}
+
+                \section{Nome da Seção}
+                \label{sec:comando}
+
+                        \subsection{Nome da Subseção}
+                        \label{sub:comando}
+                        
+                                \subsubsection{Nome da Subsubseção}
+                                \label{ssub:comando}
+}
+
+===== Listas Enumeradas e com Marcas =====
+{
+        Para fazer listas enumeradas:
+
+        \begin{enumerate}
+                \item Texto 1.
+                \item Texto 2.
+                \item ...
+        \end{enumerate}
+
+        Para listas com marcas:
+
+        \begin{itemize}
+                \item Texto 1.
+                \item Texto 2.
+                \item ...
+        \end{itemize}
+}
+
+===== Texto Verbatim (Literal) =====
+{
+        Para adiconar texto literal inline:
+
+        \verb|texto|
+
+        onde o caracter delimitador não deve estar presente no texto.
+
+        Para adicionar texto literal em linhas isoladas:
+
+        \begin{verbatim}
+                Texto.
+        \end{verbatim}
+}
+
+===== Página Horizontal =====
+{
+        Para criar uma página horizontal deve ser feito da seguinte forma:
+
+        \begin{newpdflayout}{210mm}{297mm}%{420mm}
+
+                Texto da Página Horizontal
+
+        \end{newpdflayout}
+}

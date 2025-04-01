@@ -1,0 +1,99 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Config/4_files.tex
+%% NOVA thesis configuration file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE Config/4_files.tex}%
+
+%=============================================================================
+% THE FILES
+%=============================================================================
+
+%%------------------------------------------------------------
+%% Except for the bibliography, all the other FILE NAMES below
+%%     inside braces must correspond to a file with extension
+%%     ".tex" and located in the "Chapters" folder
+%%------------------------------------------------------------
+
+%%------------------------------------------------------------
+% BibTeX bibliography files and customization.
+%   May be used multiple times with a single file nae each time.
+%   syntax: \ntaddfile{bib}{filename.bib}
+\ntaddfile{bib}{G1_bibliography.bib}
+%\ntaddfile{bib}{anotherbibfile.bib}
+
+%%------------------------------------------------------------
+% File with the dedicatory text. Will only be considered for final documents,
+%   i.e., "bsc", "msc" and "phd", otherwise, it will be silently ignored
+%   syntax: \ntaddfile{dedicatory}{filename}
+\ntaddfile{dedicatory}{A0_dedicatory}
+
+%%------------------------------------------------------------
+% File with the acknowledgments text. Will only be considered for final documents,
+%   i.e., "bsc", "msc" and "phd", otherwise, it will be silently ignored
+%   syntax: \ntaddfile{acknowledgements}{filename}
+\ntaddfile{acknowledgements}{B0_acknowledgements}
+
+%%------------------------------------------------------------
+% File with the quote text. Will only be considered for final documents,
+%   i.e., "bsc", "msc" and "phd", otherwise, it will be silently ignored
+%   syntax: \ntaddfile{quote}{filename}
+\ntaddfile{quote}{C0_quote}
+
+%%------------------------------------------------------------
+% Abstract files in multiple languages
+%   syntax: \ntaddfile{abstract}[language]{filename}
+\ntaddfile{abstract}[pt]{D1_abstract-pt}  % Abstract in Portuguese
+%\ntaddfile{abstract}[en]{D2_abstract-en}  % Abstract in English
+% \ntaddfile{abstract}[de]{D3_abstract-de}  % Abstract in German
+% \ntaddfile{abstract}[es]{D4_abstract-es}  % Abstract in Spanish
+% \ntaddfile{abstract}[fr]{D5_abstract-fr}  % Abstract in French
+% \ntaddfile{abstract}[gr]{D6_abstract-gr}  % Abstract in Greek
+% \ntaddfile{abstract}[it]{D7_abstract-it}  % Abstract in Italian
+% \ntaddfile{abstract}[pt-ext]{abstract-pt-ext}  % Extended abstract in Portuguese (e.g., for ulisboa/fmv)
+
+%%------------------------------------------------------------
+% Lists of Glossary, Acronyms and Symbols
+%   syntax: \ntaddfile{glossaries}[list-type]{filename}
+\ntaddfile{glossaries}[glossary]{E1_glossary}
+\ntaddfile{glossaries}[acronym]{E2_acronyms}
+\ntaddfile{glossaries}[symbols]{E3_symbols}
+% \ntaddfile{glossaries}[symbols]E4_{chemical}
+
+%%------------------------------------------------------------
+% Main text - document chapters
+%   syntax: \ntaddfile{chapter}[doc-type-list]{filename}
+%         If “doc-type-list” is omitted, add chapter to all doc types
+%   examples:  \ntaddfile{chapter}{my-chapter} % for all documents
+%              \ntaddfile{chapter}[phdplan]{my-chapter} % just for phd documents
+%              \ntaddfile{chapter}[phd,phdplan]{my-chapter} % just both phd and phdplan documents
+\ntaddfile{chapter}{F1_introduction}
+\ntaddfile{chapter}{F2_stateoftheart}
+% \ntaddfile{chapter}{Fx_last}
+% \ntaddfile{chapter}{Fz_help}
+
+
+%%------------------------------------------------------------
+% Text appendices
+% syntax: \ntaddfile{appendix}{filename}
+
+% \ntaddfile{appendix}{Hx_last}
+
+
+%%------------------------------------------------------------
+% Text annexes
+% syntax: \ntaddfile{annex}{filename}
+
+% \ntaddfile{annex}{Ix_last}
+
+
+%%------------------------------------------------------------
+% User defined cover instead of standard one
+%   syntax: \ntaddfile{cover}[1,N,spine]{filename}
+% \ntaddfile{cover}[1]{cover-front}  % front cover
+% \ntaddfile{cover}[N]{cover-back}   % back cover
+% \ntaddfile{cover}[spine]{filename} % book spine
+%
+% To disable printing the second cover, use
+% \ntsetup{print/secondcover=false}%

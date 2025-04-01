@@ -1,0 +1,491 @@
+%!TEX root = ../template.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Fz_help.tex
+%% NOVA thesis document file
+%%
+%% Chapter with lots of dummy text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\typeout{NT FILE Fz_help.tex}%
+
+
+\chapter{Help}
+\label{cha:help}
+
+
+\section{===== Ordem dos Ficheiros =====}
+
+\begin{verbatim}
+    Letra   Nome                    Descrição
+    A.0     Dedicatory              Dedicatória
+    B.0     Acknowledgements        Agradecimentos
+    C.0     Quote                   Citação
+    D.x     Abstract                Resumo
+        .1      pt
+        .2      en
+        .3      de
+        .4      es
+        .5      fr
+        .6      gr
+        .7      it
+    E.x     Glossaries              Glossários
+        .1      glossary        Glossário
+        .2      acronyms        Siglas
+        .3      symbols         Símbolos
+        .4      chemical        Símbolos Químicos
+    F.x     Chapter                 Capítulos
+    G.x     Bibliography            Bibliografia
+    H.x     Apendix                 Apêndices
+    I.x     Annex                   Anexos
+\end{verbatim}
+
+
+\section{===== Glossário =====}
+
+Para adiconar uma nova entrada de dicionário:
+
+\begin{verbatim}
+    \newglossaryentry{<comando>}{
+        name={<Nome do Item>},
+        sort={<Ordenar o Item>},
+        description={<Descrição do Item>}
+    }
+\end{verbatim}
+
+
+Para utilizar uma entrada de dicionário previamente adicionada basta usar:
+
+\begin{verbatim}
+    \gls{<comando>}
+\end{verbatim}
+
+
+\section{===== Acrónimos/Siglas =====}
+
+Para adicionar uma nova sigla, basta ir ao ficheiro \verb|./Chapter/E2_acronyms|.tex e adicionar uma nova entrada segundo as seguintes orientações:
+
+Acrónimo/Sigla Complexo:
+\begin{verbatim}
+    \newacronym[sort=nome]{comando}{SIGLA}{significado}
+\end{verbatim}
+
+Acrónimo/Sigla Simples:
+\begin{verbatim}
+    \newacronym{comando}{SIGLA}{significado}
+\end{verbatim}
+
+Acrónimo/Sigla Complexo com Plural:
+\begin{verbatim}
+    \newacronym[plural={SIGLAs}, longplural={significado_plural}]{comando}{SIGLA}{significado}
+\end{verbatim}
+
+Para utilizar uma sigla previamente adicionada basta usar:
+
+\begin{verbatim}
+    \gls{<comando>}
+\end{verbatim}
+
+ou desta forma caso se queira que a descrição da sigla comece com letra maiúscula:
+
+\begin{verbatim}
+    \Gls{<comando>}
+\end{verbatim}
+
+ou desta forma caso se queira utilizar a sigla no plural:
+
+\begin{verbatim}
+    \glspl{<comando>}
+    \Glspl{<comando>}
+\end{verbatim}
+
+ou para utlizar a forma abrevida da sigla forçadamente:
+
+\begin{verbatim}
+    \acrshort{<comando>}
+    \acrshortpl{<comando>}
+\end{verbatim}
+
+ou para utilizar a forma expandida da sigla forçadamente:
+
+\begin{verbatim}
+    \acrfull{<comando>}
+\end{verbatim}
+
+
+\bgroup
+\rowcolors{1}{}{GhostWhite}
+\begin{xltabular}{\textwidth}{Xccc}
+    \caption{Resumo dos comandos do \texttt{glossaries} e \texttt{glossaries-extra}}
+    \label{tab:glossaries_commands}\\
+    \toprule
+    \textbf{Função} & \textbf{Comando Antigo (\texttt{glossaries})} & \textbf{Novo Comando (\texttt{glossaries-extra})} & \textbf{Versão Capitalizada (\texttt{glossaries-extra})} \\
+    \midrule
+    Forma curta (singular)  & \texttt{\textbackslash acrshort\{\}}    & \texttt{\textbackslash glsxtrshort\{\}}    & \texttt{\textbackslash Glsxtrshort\{\}} \\
+    Forma curta (plural)    & \texttt{\textbackslash acrshortpl\{\}}  & \texttt{\textbackslash glsxtrshortpl\{\}}  & \texttt{\textbackslash Glsxtrshortpl\{\}} \\
+    Forma longa (singular)  & \texttt{\textbackslash acrlong\{\}}     & \texttt{\textbackslash glsxtrlong\{\}}     & \texttt{\textbackslash Glsxtrlong\{\}} \\
+    Forma longa (plural)    & \texttt{\textbackslash acrlongpl\{\}}   & \texttt{\textbackslash glsxtrlongpl\{\}}   & \texttt{\textbackslash Glsxtrlongpl\{\}} \\
+    Forma completa (singular) & \texttt{\textbackslash gls\{\}}       & \texttt{\textbackslash glsxtrfull\{\}}     & \texttt{\textbackslash Glsxtrfull\{\}} \\
+    Forma completa (plural)   & \texttt{\textbackslash glspl\{\}}     & \texttt{\textbackslash glsxtrfullpl\{\}}   & \texttt{\textbackslash Glsxtrfullpl\{\}} \\
+    \bottomrule
+\end{xltabular}
+\egroup
+
+
+\section{===== Símbolos =====}
+
+Para adicionar um novo símbolo:
+
+\begin{verbatim}
+    \glsxtrnewsymbol[sort=OrdenarSímbolo,description={Descrição do Símbolo}]{comando}{\ensuremath{Nome do Símbolo}}
+\end{verbatim}
+
+Para utilizar um símbolo previamente adicionada basta usar:
+
+\begin{verbatim}
+    \gls{<comando>}
+\end{verbatim}
+
+
+\section{===== Símbolos Químicos =====}
+
+Para adicionar um novo símbolo químico:
+
+\begin{verbatim}
+    \newglossaryentry{chem:comando}% label
+    {%
+        type=chemical,% glossary type
+        name={$Nome do Símbolo$},%
+        description={Descrição do Símbolo},%
+        sort={OrdenarSímbolo}%
+    }
+\end{verbatim}
+
+Para utilizar um símbolo químico previamente adicionado basta usar:
+
+\begin{verbatim}
+    \gls{<chem:comando>}
+\end{verbatim}
+
+
+\section{===== Citações =====}
+
+Na pasta \verb|./Bibliography| incluir todos os ficheiros .bib com estruturas de citações semelhantes a esta:
+
+\begin{verbatim}
+    @<tipo>{<comando>,
+        author = {<autor>},
+        title = {<título>},
+        year = {<ano>},
+        ...
+    }
+\end{verbatim}
+
+Ao longo do texto, se for necessário uma citação de um único item devendo ser utilizado da seguinte forma:
+
+\begin{verbatim}
+    Como dizem os autores em~\cite{<comando>}
+\end{verbatim}
+
+ou de vários items de uma só vez:
+
+\begin{verbatim}
+    Como dizem os autores em~\cite{<comando1>,<comando2>,...}
+\end{verbatim}
+
+
+\section{===== Notas de Rodapé =====}
+
+Para inserir uma nota de rodapé ao longo do texto, basta fazer da seguinte forma:
+
+\begin{verbatim}
+    Isto é um exemplo de nota de rodapé\footnote{Esta é a descrição da nota de rodapé.}
+\end{verbatim}
+
+
+\section{===== Tabelas =====}
+
+Para criar tabelas deve ser utilizado o seguinte molde:
+
+\begin{verbatim}
+    \bgroup
+    \rowcolors{1}{}{GhostWhite}
+    \begin{xltabular}{\textwidth}{Xcc}
+        \caption{Legenda da Tabela.}
+        \label{tab:comando}\\
+        \toprule
+        \rowcolor{Gainsboro}%
+        Coluna A        & Coluna B      & Coluna C \\
+        \midrule
+        Texto A1        & Texto B1      & Texto C1 \\
+        Texto A2        & Texto B2      & Texto C2 \\
+        Texto A3        & Texto B3      & Texto C3 \\
+        \midrule
+        \rowcolor{Gainsboro}%
+        Total A         & Total B       & Total C \\
+        \bottomrule
+    \end{xltabular}
+    \egroup
+\end{verbatim}
+
+\subsection{Exemplo}
+
+\bgroup
+\rowcolors{1}{}{GhostWhite}
+\begin{xltabular}{\textwidth}{Xcc}
+    \caption{Legenda da Tabela.}
+    \label{tab:comando}\\
+    \toprule
+    \rowcolor{Gainsboro}%
+    Coluna A        & Coluna B      & Coluna C \\
+    \midrule
+    Texto A1        & Texto B1      & Texto C1 \\
+    Texto A2        & Texto B2      & Texto C2 \\
+    Texto A3        & Texto B3      & Texto C3 \\
+    \midrule
+    \rowcolor{Gainsboro}%
+    Total A         & Total B       & Total C \\
+    \bottomrule
+\end{xltabular}
+\egroup
+
+
+\section{===== Figuras =====}
+
+Para colocar uma ou mais imagens agrupadas dentro da mesma figura, pode ser feito da seguinte forma:
+
+\begin{verbatim}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[height=5cm]{nome_ficheiro_imagem} \\            % Altura fixa de 5 cm
+        \includegraphics[width=10cm]{nome_ficheiro_imagem} \\            % Largura fixa de 10 cm
+        \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}   \\ % 50% da largura da linha
+        \includegraphics[height=0.3\textheight]{nome_ficheiro_imagem} \\ % 30% da altura da linha
+        \caption{Legenda da Imagem.}
+        \label{fig:comando}
+    \end{figure}
+\end{verbatim}
+
+Caso seja preciso criar subfiguras, pode ser feito da seguinte forma:
+
+\begin{verbatim}
+    \begin{figure}[htbp]
+        \centering
+        \subbottom[Legenda da Imagem 1.]{%
+            \label{fig:subcomando1}
+            \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}
+        }
+        % espaçamento vertical ou horizontal, se necessário.
+        \subbottom[Legenda da Imagem 2.]{%
+            \label{fig:subcomando2}
+            \includegraphics[width=0.5\linewidth]{nome_ficheiro_imagem}
+        }
+        \caption{Legenda da Imagem}
+        \label{fig:comandoCompleto}
+    \end{figure}
+\end{verbatim}
+
+\subsection{Exemplo}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=2cm]{example-image-duck} \\            % Altura fixa de 5 cm
+    \includegraphics[width=5cm]{example-image-duck} \\            % Largura fixa de 10 cm
+    \includegraphics[width=0.5\linewidth]{example-image-duck}   \\ % 50% da largura da linha
+    \includegraphics[height=0.3\textheight]{example-image-duck} \\ % 30% da altura da linha
+    \caption{Legenda da Imagem.}
+    \label{fig:comando}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \subbottom[Legenda da Imagem 1.]{%
+        \label{fig:subcomando1}
+        \includegraphics[width=0.5\linewidth]{example-image-duck}
+    }
+    % espaçamento vertical ou horizontal, se necessário.
+    \subbottom[Legenda da Imagem 2.]{%
+        \label{fig:subcomando2}
+        \includegraphics[width=0.5\linewidth]{example-image-duck}
+    }
+    \caption{Legenda da Imagem}
+    \label{fig:comandoCompleto}
+\end{figure}
+
+
+\section{===== Espaçamento Horizontal e Vertical =====}
+
+Horizontal:
+\begin{verbatim}
+    \hspace{1cm}    % Espaçamento horizontal de 1cm
+    \hfill          % Preenche o espaço horizontal disponível
+\end{verbatim}
+
+Vertical:
+\begin{verbatim}
+    \vspace{1cm}    % Espaçamento vertical de 1cm
+    \vfill          % Preenche o espaço vertical disponível
+\end{verbatim}
+
+Relativo:
+\begin{verbatim}
+    \quad           % Aproximadamente 1 em.
+    \qquad          % Aproximadamente 2 em.
+\end{verbatim}
+
+
+\section{===== Equações =====}
+
+Para equações inline:
+
+\begin{verbatim}
+    $ax^2 + bx + c = 0$
+\end{verbatim}
+
+Para equações numa linha separada:
+
+\begin{verbatim}
+    \[ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} \]
+\end{verbatim}
+
+Para equações numeradas:
+
+\begin{verbatim}
+    \begin{equation}
+        e = mc^2
+        \label{eq:comando}
+    \end{equation}
+\end{verbatim}
+
+que depois pode ser referenciado da seguinte forma:
+
+\begin{verbatim}
+    \ref{eq:comando}
+\end{verbatim}
+
+
+\section{===== Listas =====}
+
+Para fazer listas, pode ser feito da seguinte forma:
+
+\begin{verbatim}
+    \begin{listing}[H]
+        \begin{minted}{C}
+            if(a==b)
+                puts("YESS!")
+        \end{minted}
+        \caption{Legenda da Lista.}
+        \label{lst:comando}
+    \end{listing}
+\end{verbatim}
+
+
+\section{===== Estrutura de um Capítulo =====}
+
+Um capítulo pode conter alguns destes items:
+
+\begin{verbatim}
+    \chapter{Nome do Capítulo}
+    \label{cha:comando}
+
+    \section{Nome da Seção}
+    \label{sec:comando}
+
+    \subsection{Nome da Subseção}
+    \label{sub:comando}
+
+    \subsubsection{Nome da Subsubseção}
+    \label{ssub:comando}
+\end{verbatim}
+
+
+\section{===== Estrutura de um Apêndice =====}
+
+Um apêndice pode conter alguns destes items:
+
+\begin{verbatim}
+    \chapter{Nome do Apêndice}
+    \label{app:comando}
+
+    \section{Nome da Seção}
+    \label{sec:comando}
+
+    \subsection{Nome da Subseção}
+    \label{sub:comando}
+
+    \subsubsection{Nome da Subsubseção}
+    \label{ssub:comando}
+\end{verbatim}
+
+
+\section{===== Estrutura de um Anexo =====}
+
+Um anexo pode conter alguns destes items:
+
+\begin{verbatim}
+    \chapter{Nome do Anexo}
+    \label{ann:comando}
+
+    \section{Nome da Seção}
+    \label{sec:comando}
+
+    \subsection{Nome da Subseção}
+    \label{sub:comando}
+
+    \subsubsection{Nome da Subsubseção}
+    \label{ssub:comando}
+\end{verbatim}
+
+
+\section{===== Listas Enumeradas e com Marcas =====}
+
+Para fazer listas enumeradas:
+
+\begin{verbatim}
+    \begin{enumerate}
+        \item Texto 1.
+        \item Texto 2.
+        \item ...
+    \end{enumerate}
+\end{verbatim}
+
+Para listas com marcas:
+
+\begin{verbatim}
+    \begin{itemize}
+        \item Texto 1.
+        \item Texto 2.
+        \item ...
+    \end{itemize}
+\end{verbatim}
+
+
+\section{===== Texto Verbatim (Literal) =====}
+
+Para adiconar texto literal inline:
+
+\begin{verbatim}
+    \verb|texto|
+\end{verbatim}
+
+onde o caracter delimitador não deve estar presente no texto.
+
+Para adicionar texto literal em linhas isoladas:
+
+\begin{verbatim}
+    \begin{verbatim}
+        Texto.
+    \ end{verbatim}
+\end{verbatim}
+
+
+\section{===== Página Horizontal =====}
+
+Para criar uma página horizontal deve ser feito da seguinte forma:
+
+\begin{verbatim}
+    \begin{newpdflayout}{210mm}{297mm}%{420mm}
+
+        Texto da Página Horizontal
+
+    \end{newpdflayout}
+\end{verbatim}
