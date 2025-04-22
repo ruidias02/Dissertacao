@@ -1,0 +1,347 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{alqahtani_efficient_2020}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6213aedca05258bd32b72ed459157588}{%
+           family={AlQahtani},
+           familyi={A\bibinitperiod},
+           given={Salman\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{6213aedca05258bd32b72ed459157588}
+      \strng{fullhash}{6213aedca05258bd32b72ed459157588}
+      \strng{fullhashraw}{6213aedca05258bd32b72ed459157588}
+      \strng{bibnamehash}{6213aedca05258bd32b72ed459157588}
+      \strng{authorbibnamehash}{6213aedca05258bd32b72ed459157588}
+      \strng{authornamehash}{6213aedca05258bd32b72ed459157588}
+      \strng{authorfullhash}{6213aedca05258bd32b72ed459157588}
+      \strng{authorfullhashraw}{6213aedca05258bd32b72ed459157588}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Fifth generation (5G) slicing is an emerging technology for software-defined networking/network function virtualization–enabled mobile networks. Improving the utilization and throughput to meet the quality of service (QoS) requirements of 5G slicing is very important for the operators of mobile networks. With growing data traffic from different applications of numerous smart mobile devices having several QoS requirements, we expect networks to face problems of congestion and overload that prevent the effective functioning of a radio access network (RAN). This paper proposes a more effective packet-based scheduling scheme for data traffic by 5G slicing with two operation modes for improving the resource utilization of 5G cloud RAN and providing an efficient isolation of the 5G slices. These two operation modes are referred to as static sharing resource (SSR) scheme and dynamic sharing resources (DSR) scheme. The SSR scheme is a modified version of an existing method. The goal of this approach is to reallocate the shared available resources of 5G network fairly and maximize the utilization of bandwidth while protecting a 5G slice from overwhelming other 5G slices. Throughput and delays of the system model are also discussed to show its performance limits. On the basis of the simulation outcomes, we observed that the proposed DSR scheme outperforms the SSR scheme in terms of provided delay and throughput. In addition, the token bucket parameters together with the assigned capacity weight for each slice can be selected and configured based on the required QoS. Finally, a good estimate for the maximum delay bounds of the slices is provided by the derived theoretical delay bound.}
+      \field{issn}{1099-1131}
+      \field{journaltitle}{International Journal of Communication Systems}
+      \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/dac.4250}
+      \field{number}{4}
+      \field{title}{An efficient resource allocation to improve {QoS} of {5G} slicing networks using general processor sharing-based scheduling algorithm}
+      \field{urlday}{6}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{volume}{33}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{e4250}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/dac.4250
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\9FLJGHS4\\AlQahtani - 2020 - An efficient resource allocation to improve QoS of 5G slicing networks using general processor shari.pdf:application/pdf;Snapshot:C\:\\Users\\Bruno\\Zotero\\storage\\DIB8X7ZQ\\dac.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.4250
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.4250
+      \endverb
+      \keyw{5G,network slicing,dynamic shared flow,LTE,multi-applications data traffic,static sharing flow}
+    \endentry
+    \entry{asif_vertical_2024}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=68a6ee8d45c38eb65d4d574d0e783b38}{%
+           family={Asif},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1863cad6aed059408457bfef3872cac5}{%
+           family={Chilela},
+           familyi={C\bibinitperiod},
+           given={Julio},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cbf15bbbfe81443015af284ce8928691}{%
+           family={Benhaddou},
+           familyi={B\bibinitperiod},
+           given={Driss},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0cbbd844cf964ec53dd1d8ab9d697e8d}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ji},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-US}%
+      }
+      \strng{namehash}{57f205b20067d7a818de9ec85e5b612c}
+      \strng{fullhash}{57073a92921e358e20186345a91deca4}
+      \strng{fullhashraw}{57073a92921e358e20186345a91deca4}
+      \strng{bibnamehash}{57f205b20067d7a818de9ec85e5b612c}
+      \strng{authorbibnamehash}{57f205b20067d7a818de9ec85e5b612c}
+      \strng{authornamehash}{57f205b20067d7a818de9ec85e5b612c}
+      \strng{authorfullhash}{57073a92921e358e20186345a91deca4}
+      \strng{authorfullhashraw}{57073a92921e358e20186345a91deca4}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{5G technology marks the beginning of a new era for wireless communication networks, with the capability to support a diverse range of applications and services with varying requirements. Vertical network slicing technology is at the center of this revolution, a vital innovation that promises to maximize the efficiency of network resource allocation. In this paper, we present a 5G testbed network implemented using Universal Software Radio Peripheral (USRP)-based Software Defined Radio (SDR). The technical challenges associated with implementing vertical network slices dedicated to specific use cases such as enhanced Mobile Broadband (eMBB), Ultra-Reliable Low-Latency Communications (URLLC), and massive Machine Type Communications (mMTC) are described. We demonstrate how vertical network slicing can be implemented in a USRP-based testbed. Our results show a functional testbed that can be used for vertical network slicing research in a controlled environment setting. Additionally, we investigate the possibility of vertical network slices being dynamically changed to match growing service requirements, which is an important aspect of the long-term expansion of 5G infrastructure.}
+      \field{booktitle}{2024 {International} {Wireless} {Communications} and {Mobile} {Computing} ({IWCMC})}
+      \field{month}{5}
+      \field{note}{ISSN: 2376-6506}
+      \field{title}{Vertical {Network} {Slicing} and its {Impact} on {5G} {Data} {Traffic} and {Performance}}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2024}
+      \field{urldateera}{ce}
+      \field{pages}{1094\bibrangedash 1099}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IWCMC61514.2024.10592312
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\74LY2VIM\\Asif et al. - 2024 - Vertical Network Slicing and its Impact on 5G Data Traffic and Performance.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10592312/?arnumber=10592312
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10592312/?arnumber=10592312
+      \endverb
+      \keyw{5G mobile communication,5G Infrastructure Expansion.,5G Vertical Network Slicing,IoT,Low-Latency Communication in 5G,Network slicing,New Radio,Resource management,Technological innovation,Throughput,Ultra reliable low latency communication,USRP-based 5G Testbed,Wireless communication}
+    \endentry
+    \entry{cekinmez_radio_2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=6811b47c106276a6c2bec190fd224fa4}{%
+           family={Çekinmez},
+           familyi={Ç\bibinitperiod},
+           given={Fethi},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{fullhash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{fullhashraw}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{bibnamehash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{authorbibnamehash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{authornamehash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{authorfullhash}{6811b47c106276a6c2bec190fd224fa4}
+      \strng{authorfullhashraw}{6811b47c106276a6c2bec190fd224fa4}
+      \field{sortinit}{Ç}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{As times goes by, more and more user devices (smartphones, tablets, or IoT devices) joining to the Radio Access Network (RAN). More…}
+      \field{journaltitle}{Medium}
+      \field{month}{8}
+      \field{title}{Radio {Access} {Network} ({RAN})}
+      \field{urlday}{5}
+      \field{urlmonth}{1}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://medium.com/@fthcknmz/radio-access-network-ran-1fb033b708f1
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@fthcknmz/radio-access-network-ran-1fb033b708f1
+      \endverb
+    \endentry
+    \entry{kombate_internet_2016}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=5e25e157fbe8c445b7f5bbea7e09adc5}{%
+           family={Kombate},
+           familyi={K\bibinitperiod},
+           given={Damigou},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9384fc4e57af2c58c0bac58844243df0}{%
+           family={{Wanglina}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en-US}%
+      }
+      \strng{namehash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{fullhash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{fullhashraw}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{bibnamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{authorbibnamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{authornamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{authorfullhash}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{authorfullhashraw}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The recent development in the large domain of theInternet of Things is driving conventional change in Vehicle AdhocNetworks, now known as Internet of Vehicles (IOV), Vehicleto-Vehicle (V2V), Vehicle-to-Infrastructure(V2I) and someIntelligent Transport System (ITS) applications will require verylow latency, much lower than is currently provided by existingcommunication networks. The connected vehicles market will beextremely large in terms of number of connected end-points anddata exchanged. Over time, any vehicles will be given thepotential to connect to anything at anytime, from people tophysical things, processes, contents, working knowledge, timelypertinent information and goods of all sorts in entirely flexible, reliable and secure ways. 5G communications will expand thepossibilities of what mobile networks can do, and extend uponwhat services they can deliver. 5G will provide the foundationalinfrastructure for building smart IOV Environment, which willpush vehicle network performance and capability requirementsto their extremes. This paper proposes the advantages of using5G communication model for future implementation of IOVenvironment in term of low latency, extremely high bandwidthand reliability.}
+      \field{booktitle}{2016 {IEEE} {International} {Conference} on {Internet} of {Things} ({iThings}) and {IEEE} {Green} {Computing} and {Communications} ({GreenCom}) and {IEEE} {Cyber}, {Physical} and {Social} {Computing} ({CPSCom}) and {IEEE} {Smart} {Data} ({SmartData})}
+      \field{month}{12}
+      \field{title}{The {Internet} of {Vehicles} {Based} on {5G} {Communications}}
+      \field{urlday}{12}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{445\bibrangedash 448}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/iThings-GreenCom-CPSCom-SmartData.2016.105
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\XL7DEX7A\\Kombate e Wanglina - 2016 - The Internet of Vehicles Based on 5G Communications.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/7917133/?arnumber=7917133
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/7917133/?arnumber=7917133
+      \endverb
+      \keyw{Internet,5G mobile communication,5G,Ad hoc networks,Cellular networks,Computer architecture,Intelligent Transportation Service,Intelligent vehicles,IOV,Multimedia Services}
+    \endentry
+    \entry{novathesis-manual}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=419e7851ce9e726652864635d63207af}{%
+           family={Lourenço},
+           familyi={L\bibinitperiod},
+           given={João\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NOVA University Lisbon}%
+      }
+      \strng{namehash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhashraw}{419e7851ce9e726652864635d63207af}
+      \strng{bibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorbibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authornamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhashraw}{419e7851ce9e726652864635d63207af}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{The NOVAthesis \LaTeX{} Template User's Manual}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \endverb
+      \verb{url}
+      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \endverb
+      \keyw{novathesis-manual}
+    \endentry
+    \entry{vatten_investigating_2023}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=387550cfac2c0422f3b6bf5149337017}{%
+           family={Vatten},
+           familyi={V\bibinitperiod},
+           given={Trond},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{fullhash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{fullhashraw}{387550cfac2c0422f3b6bf5149337017}
+      \strng{bibnamehash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{authorbibnamehash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{authornamehash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{authorfullhash}{387550cfac2c0422f3b6bf5149337017}
+      \strng{authorfullhashraw}{387550cfac2c0422f3b6bf5149337017}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The deployment of 5G networks has brought significant advancements in mobile communication, enabling novel applications and services with diverse requirements. Network slicing, a crucial technology for realizing 5G’s full potential, allows operators to create multiple, logically separate networks on a shared physical infrastructure. However, ensuring the resilience and survivability of network slices during network failures is a crucial challenge that needs to be addressed, particularly for critical infrastructure services. This paper presents an ongoing research project investigating the survivability of network-sliced 5G systems during network failures, focusing on the ClusPR framework for service chaining and resource allocation.The study aims to: 1) develop a framework for assessing the survivability of network-sliced 5G systems during and after failures; 2) explore factors influencing the resilience of various slicing approaches in challenging events; and 3) apply findings to design resilient 5G networks and develop strategies for handling undesired events. As the project advances, the expected results will provide valuable insights and heuristics into proactive and reactive strategies for maintaining the continuous operation of critical services in 5G networks during network outages.}
+      \field{booktitle}{2023 {IEEE} 9th {International} {Conference} on {Network} {Softwarization} ({NetSoft})}
+      \field{month}{6}
+      \field{note}{ISSN: 2693-9789}
+      \field{title}{Investigating {5G} {Network} {Slicing} {Resilience} through {Survivability} {Modeling}}
+      \field{urlday}{4}
+      \field{urlmonth}{12}
+      \field{urlyear}{2024}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{370\bibrangedash 373}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/NetSoft57336.2023.10175399
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\HBHG6PQQ\\Vatten - 2023 - Investigating 5G Network Slicing Resilience through Survivability Modeling.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10175399/?arnumber=10175399
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10175399/?arnumber=10175399
+      \endverb
+      \keyw{5G mobile communication,Reliability,5G,Network slicing,Resource management,Adaptation models,Critical infrastructure,dependability,Focusing,network slicing,survivability}
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{1}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{novathesis-manual}{manual}{}{}
+      \name{author}{1}{}{%
+        {{hash=419e7851ce9e726652864635d63207af}{%
+           family={Lourenço},
+           familyi={L\bibinitperiod},
+           given={João\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {NOVA University Lisbon}%
+      }
+      \strng{namehash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhash}{419e7851ce9e726652864635d63207af}
+      \strng{fullhashraw}{419e7851ce9e726652864635d63207af}
+      \strng{bibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorbibnamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authornamehash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhash}{419e7851ce9e726652864635d63207af}
+      \strng{authorfullhashraw}{419e7851ce9e726652864635d63207af}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{The NOVAthesis \LaTeX{} Template User's Manual}}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \endverb
+      \verb{url}
+      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \endverb
+      \keyw{novathesis-manual}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
