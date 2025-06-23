@@ -19,210 +19,181 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{alqahtani_efficient_2020}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=6213aedca05258bd32b72ed459157588}{%
-           family={AlQahtani},
-           familyi={A\bibinitperiod},
-           given={Salman\bibnamedelima A.},
-           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
+    \entry{noauthor_figure_nodate}{misc}{}{}
       \list{language}{1}{%
         {en}%
       }
-      \strng{namehash}{6213aedca05258bd32b72ed459157588}
-      \strng{fullhash}{6213aedca05258bd32b72ed459157588}
-      \strng{fullhashraw}{6213aedca05258bd32b72ed459157588}
-      \strng{bibnamehash}{6213aedca05258bd32b72ed459157588}
-      \strng{authorbibnamehash}{6213aedca05258bd32b72ed459157588}
-      \strng{authornamehash}{6213aedca05258bd32b72ed459157588}
-      \strng{authorfullhash}{6213aedca05258bd32b72ed459157588}
-      \strng{authorfullhashraw}{6213aedca05258bd32b72ed459157588}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labelnamesource}{author}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labeltitlesource}{title}
-      \field{abstract}{Fifth generation (5G) slicing is an emerging technology for software-defined networking/network function virtualization–enabled mobile networks. Improving the utilization and throughput to meet the quality of service (QoS) requirements of 5G slicing is very important for the operators of mobile networks. With growing data traffic from different applications of numerous smart mobile devices having several QoS requirements, we expect networks to face problems of congestion and overload that prevent the effective functioning of a radio access network (RAN). This paper proposes a more effective packet-based scheduling scheme for data traffic by 5G slicing with two operation modes for improving the resource utilization of 5G cloud RAN and providing an efficient isolation of the 5G slices. These two operation modes are referred to as static sharing resource (SSR) scheme and dynamic sharing resources (DSR) scheme. The SSR scheme is a modified version of an existing method. The goal of this approach is to reallocate the shared available resources of 5G network fairly and maximize the utilization of bandwidth while protecting a 5G slice from overwhelming other 5G slices. Throughput and delays of the system model are also discussed to show its performance limits. On the basis of the simulation outcomes, we observed that the proposed DSR scheme outperforms the SSR scheme in terms of provided delay and throughput. In addition, the token bucket parameters together with the assigned capacity weight for each slice can be selected and configured based on the required QoS. Finally, a good estimate for the maximum delay bounds of the slices is provided by the derived theoretical delay bound.}
-      \field{issn}{1099-1131}
-      \field{journaltitle}{International Journal of Communication Systems}
-      \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/dac.4250}
-      \field{number}{4}
-      \field{title}{An efficient resource allocation to improve {QoS} of {5G} slicing networks using general processor sharing-based scheduling algorithm}
-      \field{urlday}{6}
-      \field{urlmonth}{1}
+      \field{abstract}{Download scientific diagram {|} Four types of V2X application support in 3GPP (i.e., V2V, V2P, V2N and V2I).  from publication: An Overview of 3GPP Cellular Vehicle-to-Everything Standards {|} With the growth of mobile data and devices, cellular networks have great potential to support various vehicular communication services for safety and non-safety applications. This paper presents an overview of the 3GPP cellular vehicle-to-everything (V2X) standards. We... {|} Reference Standards {|} ResearchGate, the professional network for scientists.}
+      \field{journaltitle}{ResearchGate}
+      \field{title}{{FIGURE} 1. {Four} types of {V2X} application support in {3GPP} (i.e., {V2V},...}
+      \field{urlday}{22}
+      \field{urlmonth}{4}
       \field{urlyear}{2025}
-      \field{volume}{33}
-      \field{year}{2020}
       \field{urldateera}{ce}
-      \field{pages}{e4250}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1002/dac.4250
-      \endverb
       \verb{file}
-      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\9FLJGHS4\\AlQahtani - 2020 - An efficient resource allocation to improve QoS of 5G slicing networks using general processor shari.pdf:application/pdf;Snapshot:C\:\\Users\\Bruno\\Zotero\\storage\\DIB8X7ZQ\\dac.html:text/html
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\IRHM3FV6\\Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744.html:text/html
       \endverb
       \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.4250
+      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
       \endverb
       \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.4250
-      \endverb
-      \keyw{5G,network slicing,dynamic shared flow,LTE,multi-applications data traffic,static sharing flow}
-    \endentry
-    \entry{asif_vertical_2024}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=68a6ee8d45c38eb65d4d574d0e783b38}{%
-           family={Asif},
-           familyi={A\bibinitperiod},
-           given={Muhammad},
-           giveni={M\bibinitperiod}}}%
-        {{hash=1863cad6aed059408457bfef3872cac5}{%
-           family={Chilela},
-           familyi={C\bibinitperiod},
-           given={Julio},
-           giveni={J\bibinitperiod}}}%
-        {{hash=cbf15bbbfe81443015af284ce8928691}{%
-           family={Benhaddou},
-           familyi={B\bibinitperiod},
-           given={Driss},
-           giveni={D\bibinitperiod}}}%
-        {{hash=0cbbd844cf964ec53dd1d8ab9d697e8d}{%
-           family={Chen},
-           familyi={C\bibinitperiod},
-           given={Ji},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en-US}%
-      }
-      \strng{namehash}{57f205b20067d7a818de9ec85e5b612c}
-      \strng{fullhash}{57073a92921e358e20186345a91deca4}
-      \strng{fullhashraw}{57073a92921e358e20186345a91deca4}
-      \strng{bibnamehash}{57f205b20067d7a818de9ec85e5b612c}
-      \strng{authorbibnamehash}{57f205b20067d7a818de9ec85e5b612c}
-      \strng{authornamehash}{57f205b20067d7a818de9ec85e5b612c}
-      \strng{authorfullhash}{57073a92921e358e20186345a91deca4}
-      \strng{authorfullhashraw}{57073a92921e358e20186345a91deca4}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{5G technology marks the beginning of a new era for wireless communication networks, with the capability to support a diverse range of applications and services with varying requirements. Vertical network slicing technology is at the center of this revolution, a vital innovation that promises to maximize the efficiency of network resource allocation. In this paper, we present a 5G testbed network implemented using Universal Software Radio Peripheral (USRP)-based Software Defined Radio (SDR). The technical challenges associated with implementing vertical network slices dedicated to specific use cases such as enhanced Mobile Broadband (eMBB), Ultra-Reliable Low-Latency Communications (URLLC), and massive Machine Type Communications (mMTC) are described. We demonstrate how vertical network slicing can be implemented in a USRP-based testbed. Our results show a functional testbed that can be used for vertical network slicing research in a controlled environment setting. Additionally, we investigate the possibility of vertical network slices being dynamically changed to match growing service requirements, which is an important aspect of the long-term expansion of 5G infrastructure.}
-      \field{booktitle}{2024 {International} {Wireless} {Communications} and {Mobile} {Computing} ({IWCMC})}
-      \field{month}{5}
-      \field{note}{ISSN: 2376-6506}
-      \field{title}{Vertical {Network} {Slicing} and its {Impact} on {5G} {Data} {Traffic} and {Performance}}
-      \field{urlday}{4}
-      \field{urlmonth}{12}
-      \field{urlyear}{2024}
-      \field{year}{2024}
-      \field{urldateera}{ce}
-      \field{pages}{1094\bibrangedash 1099}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/IWCMC61514.2024.10592312
-      \endverb
-      \verb{file}
-      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\74LY2VIM\\Asif et al. - 2024 - Vertical Network Slicing and its Impact on 5G Data Traffic and Performance.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/10592312/?arnumber=10592312
-      \endverb
-      \verb{url}
-      \verb https://ieeexplore.ieee.org/document/10592312/?arnumber=10592312
-      \endverb
-      \keyw{5G mobile communication,5G Infrastructure Expansion.,5G Vertical Network Slicing,IoT,Low-Latency Communication in 5G,Network slicing,New Radio,Resource management,Technological innovation,Throughput,Ultra reliable low latency communication,USRP-based 5G Testbed,Wireless communication}
-    \endentry
-    \entry{cekinmez_radio_2023}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=6811b47c106276a6c2bec190fd224fa4}{%
-           family={Çekinmez},
-           familyi={Ç\bibinitperiod},
-           given={Fethi},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \strng{namehash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{fullhash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{fullhashraw}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{bibnamehash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{authorbibnamehash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{authornamehash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{authorfullhash}{6811b47c106276a6c2bec190fd224fa4}
-      \strng{authorfullhashraw}{6811b47c106276a6c2bec190fd224fa4}
-      \field{sortinit}{Ç}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{As times goes by, more and more user devices (smartphones, tablets, or IoT devices) joining to the Radio Access Network (RAN). More…}
-      \field{journaltitle}{Medium}
-      \field{month}{8}
-      \field{title}{Radio {Access} {Network} ({RAN})}
-      \field{urlday}{5}
-      \field{urlmonth}{1}
-      \field{urlyear}{2025}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://medium.com/@fthcknmz/radio-access-network-ran-1fb033b708f1
-      \endverb
-      \verb{url}
-      \verb https://medium.com/@fthcknmz/radio-access-network-ran-1fb033b708f1
+      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
       \endverb
     \endentry
-    \entry{kombate_internet_2016}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=5e25e157fbe8c445b7f5bbea7e09adc5}{%
-           family={Kombate},
+    \entry{khelifi_named_2020}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=ec994b7e84bee3291662adf44c64b7d6}{%
+           family={Khelifi},
            familyi={K\bibinitperiod},
-           given={Damigou},
-           giveni={D\bibinitperiod}}}%
-        {{hash=9384fc4e57af2c58c0bac58844243df0}{%
-           family={{Wanglina}},
-           familyi={W\bibinitperiod}}}%
+           given={Hakima},
+           giveni={H\bibinitperiod}}}%
+        {{hash=51993b1f34649924b62532d1fc9830e9}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Senlin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c0cc49f7a16af9988bc24d868d9e05d3}{%
+           family={Nour},
+           familyi={N\bibinitperiod},
+           given={Boubakr},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8e134e5a89659ac36ab3a184e6d0fa52}{%
+           family={Moungla},
+           familyi={M\bibinitperiod},
+           given={Hassine},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f18e422285b9e4700975411948b9e83c}{%
+           family={Faheem},
+           familyi={F\bibinitperiod},
+           given={Yasir},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7c433cb7869ddf208ffca5e68c29dc15}{%
+           family={Hussain},
+           familyi={H\bibinitperiod},
+           given={Rasheed},
+           giveni={R\bibinitperiod}}}%
+        {{hash=09a4314866bfc9e9a165ec1171cd71b6}{%
+           family={Ksentini},
+           familyi={K\bibinitperiod},
+           given={Adlen},
+           giveni={A\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {en-US}%
-      }
-      \strng{namehash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{fullhash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{fullhashraw}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{bibnamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{authorbibnamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{authornamehash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{authorfullhash}{edc49ce48c87b363b1f0dae12b9ff64f}
-      \strng{authorfullhashraw}{edc49ce48c87b363b1f0dae12b9ff64f}
+      \strng{namehash}{a99154a22e4897dbc3e00462e4ad0c44}
+      \strng{fullhash}{0555a51355de036559e85ea0ac3632d0}
+      \strng{fullhashraw}{0555a51355de036559e85ea0ac3632d0}
+      \strng{bibnamehash}{a99154a22e4897dbc3e00462e4ad0c44}
+      \strng{authorbibnamehash}{a99154a22e4897dbc3e00462e4ad0c44}
+      \strng{authornamehash}{a99154a22e4897dbc3e00462e4ad0c44}
+      \strng{authorfullhash}{0555a51355de036559e85ea0ac3632d0}
+      \strng{authorfullhashraw}{0555a51355de036559e85ea0ac3632d0}
       \field{sortinit}{K}
       \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The recent development in the large domain of theInternet of Things is driving conventional change in Vehicle AdhocNetworks, now known as Internet of Vehicles (IOV), Vehicleto-Vehicle (V2V), Vehicle-to-Infrastructure(V2I) and someIntelligent Transport System (ITS) applications will require verylow latency, much lower than is currently provided by existingcommunication networks. The connected vehicles market will beextremely large in terms of number of connected end-points anddata exchanged. Over time, any vehicles will be given thepotential to connect to anything at anytime, from people tophysical things, processes, contents, working knowledge, timelypertinent information and goods of all sorts in entirely flexible, reliable and secure ways. 5G communications will expand thepossibilities of what mobile networks can do, and extend uponwhat services they can deliver. 5G will provide the foundationalinfrastructure for building smart IOV Environment, which willpush vehicle network performance and capability requirementsto their extremes. This paper proposes the advantages of using5G communication model for future implementation of IOVenvironment in term of low latency, extremely high bandwidthand reliability.}
-      \field{booktitle}{2016 {IEEE} {International} {Conference} on {Internet} of {Things} ({iThings}) and {IEEE} {Green} {Computing} and {Communications} ({GreenCom}) and {IEEE} {Cyber}, {Physical} and {Social} {Computing} ({CPSCom}) and {IEEE} {Smart} {Data} ({SmartData})}
-      \field{month}{12}
-      \field{title}{The {Internet} of {Vehicles} {Based} on {5G} {Communications}}
-      \field{urlday}{12}
-      \field{urlmonth}{11}
-      \field{urlyear}{2024}
-      \field{year}{2016}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Information-centric networking (ICN) has been proposed as one of the future Internet architectures. It is poised to address the challenges faced by today's Internet that include, but not limited to, scalability, addressing, security, and privacy. Furthermore, it also aims at meeting the requirements for new emerging Internet applications. To realize ICN, named data networking (NDN) is one of the recent implementations of ICN that provides a suitable communication approach due to its clean slate design and simple communication model. There are a plethora of applications realized through ICN in different domains where data is the focal point of communication. One such domain is intelligent transportation system realized through vehicular ad hoc network (VANET) where vehicles exchange information and content with each other and with the infrastructure. Up to date, excellent research results have been yielded in the VANET domain aiming at safe, reliable, and infotainment-rich driving experience. However, due to the dynamic topologies, host-centric model, and ephemeral nature of vehicular communication, various challenges are faced by VANET that hinder the realization of successful vehicular networks and adversely affect the data dissemination, content delivery, and user experiences. To fill these gaps, NDN has been extensively used as underlying communication paradigm for VANET. Inspired by the extensive research results in NDN-based VANET, in this paper, we provide a detailed and systematic review of NDN-driven VANET. More precisely, we investigate the role of NDN in VANET and discuss the feasibility of NDN architecture in VANET environment. Subsequently, we cover in detail, NDN-based naming, routing and forwarding, caching, mobility, and security mechanism for VANET. Furthermore, we discuss the existing standards, solutions, and simulation tools used in NDN-based VANET. Finally, we also identify open challenges and issues faced by NDN-driven VANET and highlight future research directions that should be addressed by the research community.}
+      \field{issn}{1553-877X}
+      \field{journaltitle}{IEEE Communications Surveys \& Tutorials}
+      \field{number}{1}
+      \field{shorttitle}{Named {Data} {Networking} in {Vehicular} {Ad} {Hoc} {Networks}}
+      \field{title}{Named {Data} {Networking} in {Vehicular} {Ad} {Hoc} {Networks}: {State}-of-the-{Art} and {Challenges}}
+      \field{urlday}{22}
+      \field{urlmonth}{4}
+      \field{urlyear}{2025}
+      \field{volume}{22}
+      \field{year}{2020}
       \field{urldateera}{ce}
-      \field{pages}{445\bibrangedash 448}
-      \range{pages}{4}
+      \field{pages}{320\bibrangedash 351}
+      \range{pages}{32}
       \verb{doi}
-      \verb 10.1109/iThings-GreenCom-CPSCom-SmartData.2016.105
+      \verb 10.1109/COMST.2019.2894816
       \endverb
       \verb{file}
-      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\XL7DEX7A\\Kombate e Wanglina - 2016 - The Internet of Vehicles Based on 5G Communications.pdf:application/pdf
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\7IUIW82G\\Khelifi et al. - 2020 - Named Data Networking in Vehicular Ad Hoc Networks.pdf:application/pdf
       \endverb
       \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/7917133/?arnumber=7917133
+      \verb https://ieeexplore.ieee.org/abstract/document/8624354
       \endverb
       \verb{url}
-      \verb https://ieeexplore.ieee.org/document/7917133/?arnumber=7917133
+      \verb https://ieeexplore.ieee.org/abstract/document/8624354
       \endverb
-      \keyw{Internet,5G mobile communication,5G,Ad hoc networks,Cellular networks,Computer architecture,Intelligent Transportation Service,Intelligent vehicles,IOV,Multimedia Services}
+      \keyw{Computer architecture,Internet,Routing,Information-centric networking,named data networking,Quality of service,Security,survey,Tutorials,Vehicular ad hoc networks,vehicular ad-hoc networks}
+    \endentry
+    \entry{li_brief_2018}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=8e61ede5a2bffcf60b482374d6267ca8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianxiang},
+           giveni={T\bibinitperiod}}}%
+        {{hash=71ffd294ea0d4e40b9cd6e7bf5aa66c8}{%
+           family={Shang},
+           familyi={S\bibinitperiod},
+           given={Wentao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=1e670a5d6b39d22e7d2cce2c7f8c169c}{%
+           family={Afanasyev},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4c32e16577a4c04e689db3ccdde1d2ea}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Los Angeles, CA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{5574711e1cb86944706123835d2559d4}
+      \strng{fullhash}{d70bf256b19b88b3d21c5e7e824fad05}
+      \strng{fullhashraw}{d70bf256b19b88b3d21c5e7e824fad05}
+      \strng{bibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorbibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authornamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorfullhash}{d70bf256b19b88b3d21c5e7e824fad05}
+      \strng{authorfullhashraw}{d70bf256b19b88b3d21c5e7e824fad05}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Previous literatures articulated that the NDN architecture may possess unique advantages in supporting battleﬁeld communications [1], and that NDN can provide superior performance over TCP/IP under various scenarios, in particular in supporting multiparty distributed applications [2] by using a novel dataset synchronization protocol. In this paper we ﬁrst describe the designs of dataset synchronization protocols (Sync in short), in particular ChronoSync and PSync, that run over NDN to support multiparty applications, and summarize the lessons from their designs. We then perform a preliminary suitability assessment of the existing Sync protocols in ad hoc mobile environments with intermitted connectivity. Our assessment suggests that Sync protocols based on state vectors can operate most resiliently under highly dynamic conditions, and identiﬁes remaining issues for further investigation.}
+      \field{booktitle}{{MILCOM} 2018 - 2018 {IEEE} {Military} {Communications} {Conference} ({MILCOM})}
+      \field{isbn}{978-1-5386-7185-6}
+      \field{month}{10}
+      \field{title}{A {Brief} {Introduction} to {NDN} {Dataset} {Synchronization} ({NDN} {Sync})}
+      \field{urlday}{24}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{612\bibrangedash 618}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/MILCOM.2018.8599772
+      \endverb
+      \verb{file}
+      \verb Li et al. - 2018 - A Brief Introduction to NDN Dataset Synchronizatio.pdf:C\:\\Users\\Asus\\Zotero\\storage\\6NQ4963V\\Li et al. - 2018 - A Brief Introduction to NDN Dataset Synchronizatio.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8599772/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8599772/
+      \endverb
     \endentry
     \entry{novathesis-manual}{manual}{}{}
       \name{author}{1}{}{%
@@ -257,51 +228,211 @@
       \endverb
       \keyw{novathesis-manual}
     \endentry
-    \entry{vatten_investigating_2023}{inproceedings}{}{}
-      \name{author}{1}{}{%
-        {{hash=387550cfac2c0422f3b6bf5149337017}{%
-           family={Vatten},
-           familyi={V\bibinitperiod},
-           given={Trond},
-           giveni={T\bibinitperiod}}}%
+    \entry{moll_brief_nodate}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=1b3d037e42a95275c21b993fa8ee2684}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3df31a3b7be7c65f08a52fb6730ed252}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={Varun},
+           giveni={V\bibinitperiod}}}%
+        {{hash=339b75c26af61b7209f2198dbedb01b5}{%
+           family={Sabharwal},
+           familyi={S\bibinitperiod},
+           given={Nishant},
+           giveni={N\bibinitperiod}}}%
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
       }
-      \strng{namehash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{fullhash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{fullhashraw}{387550cfac2c0422f3b6bf5149337017}
-      \strng{bibnamehash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{authorbibnamehash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{authornamehash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{authorfullhash}{387550cfac2c0422f3b6bf5149337017}
-      \strng{authorfullhashraw}{387550cfac2c0422f3b6bf5149337017}
-      \field{sortinit}{V}
-      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{fullhash}{0ae422200592f860941ff841b287a6af}
+      \strng{fullhashraw}{0ae422200592f860941ff841b287a6af}
+      \strng{bibnamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authorbibnamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authornamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authorfullhash}{0ae422200592f860941ff841b287a6af}
+      \strng{authorfullhashraw}{0ae422200592f860941ff841b287a6af}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The deployment of 5G networks has brought significant advancements in mobile communication, enabling novel applications and services with diverse requirements. Network slicing, a crucial technology for realizing 5G’s full potential, allows operators to create multiple, logically separate networks on a shared physical infrastructure. However, ensuring the resilience and survivability of network slices during network failures is a crucial challenge that needs to be addressed, particularly for critical infrastructure services. This paper presents an ongoing research project investigating the survivability of network-sliced 5G systems during network failures, focusing on the ClusPR framework for service chaining and resource allocation.The study aims to: 1) develop a framework for assessing the survivability of network-sliced 5G systems during and after failures; 2) explore factors influencing the resilience of various slicing approaches in challenging events; and 3) apply findings to design resilient 5G networks and develop strategies for handling undesired events. As the project advances, the expected results will provide valuable insights and heuristics into proactive and reactive strategies for maintaining the continuous operation of critical services in 5G networks during network outages.}
-      \field{booktitle}{2023 {IEEE} 9th {International} {Conference} on {Network} {Softwarization} ({NetSoft})}
-      \field{month}{6}
-      \field{note}{ISSN: 2693-9789}
-      \field{title}{Investigating {5G} {Network} {Slicing} {Resilience} through {Survivability} {Modeling}}
-      \field{urlday}{4}
-      \field{urlmonth}{12}
-      \field{urlyear}{2024}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \field{pages}{370\bibrangedash 373}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.1109/NetSoft57336.2023.10175399
-      \endverb
+      \field{abstract}{This report provides a brief introduction to State Vector Sync (SVS), a sync protocol for Named Data Networking (NDN). To support distributed applications, sync protocols synchronize the data names of a shared dataset among a group of participants. In this report, we explain how the SVS design is influenced by the lessons that have been cumulated over previous sync protocol designs and describe the protocol and its functions to allow experimentation with the SVS library implementations.}
+      \field{title}{A {Brief} {Introduction} to {State} {Vector} {Sync}}
       \verb{file}
-      \verb Full Text PDF:C\:\\Users\\Bruno\\Zotero\\storage\\HBHG6PQQ\\Vatten - 2023 - Investigating 5G Network Slicing Resilience through Survivability Modeling.pdf:application/pdf
+      \verb Moll et al. - A Brief Introduction to State Vector Sync.pdf:C\:\\Users\\Asus\\Zotero\\storage\\GMM8D5SZ\\Moll et al. - A Brief Introduction to State Vector Sync.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{papadopoulos_-vehicle_2021}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
+           family={Papadopoulos},
+           familyi={P\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=29deaef6e88b6893276c1753a69ad43b}{%
+           family={Shannigrahi},
+           familyi={S\bibinitperiod},
+           given={Susmit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c506f91acf34578cb8a643b4eebe46ce}{%
+           family={Afanaseyv},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{fullhash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{fullhashraw}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{bibnamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorbibnamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authornamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorfullhash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorfullhashraw}{053f71ba1a4b8462bec493242c68c71a}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In-vehicle networks have been relying on primitive technologies that provide neither security nor high-throughput. As in-vehicle communication becomes more sophisticated, the automotive community is looking for better security and performance. In this work we argue for NDN as a solution for the future of the automotive community.}
+      \field{booktitle}{Proceedings of the 8th {ACM} {Conference} on {Information}-{Centric} {Networking}}
+      \field{isbn}{978-1-4503-8460-5}
+      \field{month}{9}
+      \field{series}{{ICN} '21}
+      \field{title}{In-vehicle networking with {NDN}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{127\bibrangedash 129}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1145/3460417.3483374
       \endverb
       \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/10175399/?arnumber=10175399
+      \verb https://doi.org/10.1145/3460417.3483374
       \endverb
       \verb{url}
-      \verb https://ieeexplore.ieee.org/document/10175399/?arnumber=10175399
+      \verb https://doi.org/10.1145/3460417.3483374
       \endverb
-      \keyw{5G mobile communication,Reliability,5G,Network slicing,Resource management,Adaptation models,Critical infrastructure,dependability,Focusing,network slicing,survivability}
+    \endentry
+    \entry{papadopoulos_lixia_2014}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
+           family={Papadopoulos},
+           familyi={P\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4c32e16577a4c04e689db3ccdde1d2ea}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Beichuan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{fullhash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{fullhashraw}{35063388783dc75233b8d0b72b5d369e}
+      \strng{bibnamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorbibnamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authornamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorfullhash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorfullhashraw}{35063388783dc75233b8d0b72b5d369e}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Named Data Networking (NDN) is one of ﬁve projects funded by the U.S. National Science Foundation under its Future Internet Architecture Program. NDN has its roots in an earlier project, Content-Centric Networking (CCN), which Van Jacobson ﬁrst publicly presented in 2006.1 The NDN project investigates Jacobson’s proposed evolution from today’s host-centric network architecture (IP) to a data-centric network architecture (NDN). This conceptually simple shift has far-reaching implications for how we design, develop, deploy, and use networks and applications. We describe the motivation and vision of this new architecture, and its basic components and operations. We also provide a snapshot of its current design, development status, and research challenges. More information about the project, including prototype implementations, publications, and annual reports, is available on named-data.net.}
+      \field{journaltitle}{ACM SIGCOMM Computer Communication Review}
+      \field{number}{3}
+      \field{title}{Lixia {Zhang} {Alexander} {Afanasyev} {Jeffrey} {Burke} {Van} {Jacobson}}
+      \field{volume}{44}
+      \field{year}{2014}
+      \verb{file}
+      \verb Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:C\:\\Users\\Asus\\Zotero\\storage\\VB25GYG4\\Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{rahman_data-centric_2021}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=4e0a4a2fff9e4c918ad4503ff42f4dcd}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Md\bibnamedelima Ashiqur},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Beichuan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Athens, Greece}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{fullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{fullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{bibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorbibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authornamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorfullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorfullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{IP networking deals with end-to-end communication where the network layer routing protocols maintain the reachability from one address to another. However, challenging environments, such as mobile ad-hoc networks or MANETs, lead to frequent path failures and changes between the sender and receiver, incurring higher packet loss. The obligatory route setup and maintenance of a device-to-device stable path in MANETs incur signiﬁcant data retrieval delay and transmission overhead. Such overhead exaggerates the packet loss manifold.}
+      \field{booktitle}{2021 {International} {Conference} on {Computer} {Communications} and {Networks} ({ICCCN})}
+      \field{isbn}{978-1-66541-278-0}
+      \field{month}{7}
+      \field{shorttitle}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}}
+      \field{title}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}: {Baseline} {Design} and {Simulation} {Analysis}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ICCCN52240.2021.9522163
+      \endverb
+      \verb{file}
+      \verb Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:C\:\\Users\\Asus\\Zotero\\storage\\569QY4FA\\Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9522163/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9522163/
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
