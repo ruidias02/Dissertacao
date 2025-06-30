@@ -70,7 +70,7 @@ Quando um router recebe interesses para o mesmo nome de múltiplos nós ele vai 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{Vehicular Named Data Network (\gls{V-NDN})}}
-\label{sub:Sinc__NDN}
+\label{sub:VNDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 No contexto dos veículos autónomos e redes ad-hoc veiculares (VANETs), os desafios inerentes à mobilidade e à intermitência de conectividade obstaculizam a manutenção de ligações ponto a ponto robustas \cite{rahman_data-centric_2021}. Surge, assim, o paradigma V-DND, uma extensão do modelo Named Data Networking (NDN), que, em vez de depender de endereços IP, troca pacotes com base em nomes de dados, promovendo um encaminhamento orientado a conteúdos.
 A proposta V-DND assenta em três pilares:
@@ -83,6 +83,16 @@ Já foi apresentado um protótipo V-NDN, seguido de testes experimentais que dem
 Sendo assim V-NDN apresenta grandes vantagens tais como a descoberta de conteúdo local, pois os veículos podem obter dados de outros nós próximos sem recorrer a infra-estrutura fixa. O encaminhamento adaptativo quando o sistema deteta falhas e redireciona automaticamente os pedidos por caminhos alternativos, sem necessidade de restabelecimento de sessão, é também uma vantagem a considerar e ainda a escalabilidade que tem haver com a utilização de cache distribuindo a carga de propagação de dados, melhorando a performance em ambientes densos \cite{yu_names_nodate}.
 Existem obivamente limitações tais como a volatilidade dos nós (veículos que entram e saem do alcance) pode reduzir o aproveitamento de cache, a falta investigação aprofundada sobre o impacto da autenticação de dados, controlo de congestionamento e segurança frente a ataques do tipo Interest Flooding e a uniformidade na densidade de veículos e em curvas de tráfego necessita de ser explorada em cenários urbanos reais.
 O V-DND constitui uma extensão promissora do paradigma NDN ao domínio veicular, oferecendo resiliência, descentralização, e eficiência em redes móveis. Os resultados iniciais, embora positivos, apontam para a necessidade de investigação futura em cenários reais, com foco na segurança, controlo de contenda, e integração com serviços de transportes inteligentes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\emph{Trabalhos em (\gls{V-NDN})}}
+\label{sub:VNDN_trabalhos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Num cenário de mobilidade elevada e redes intermitentes, os veículos conectados precisam de métodos robustos para troca de dados em tempo real. Como já foi dito o paradigma \gls{NDN} emerge como uma alternativa viável aos modelos tradicionais IP-centrados, permitindo que a comunicação se foque no conteúdo e não nos nós de origem/destino. Esta arquitetura torna-se particularmente interessante quando se elimina a dependência de infraestrutura fixa, como as RSUs (Roadside Units), propondo um modelo puramente peer-to-peer entre veículos (V2V).
+Existem algumas abordagens, sendo que aqui vamos apresentar uma com recorrendo a RSU e outra, recorrendo apenas aos veículos. Nesta primeiria abordagem, cada veículo age simultaneamente como produtor e consumidor de dados, permitindo a disseminação direta de conteúdos entre pares. A troca de dados baseia-se em nomes semânticos como por exemplo ndn/highway/accident/segment42 e em estratégias adaptativas, garantindo que a informação mais relevante seja propagada eficientemente mesmo em condições de mobilidade elevada.\cite{grassi_vehicular_2013} Este modelo elimina a necessidade de nós centrais, promovendo um sistema verdadeiramente distribuído, com caching local e interesses que fluem entre veículos adjacentes.
+Outra, abordagem, seria o uso do NDN em contextos de infraestrutura, onde os veículos interagem com semáforos inteligentes via pacotes Interest contendo dados sobre a sua posição, velocidade e destino\cite{al-qutwani_smart_2019}. Ainda que eficaz, esta solução pressupõe a existência de infraestruturas de apoio, o que limita a escalabilidade e aplicabilidade em zonas não urbanizadas.
+Ao comparar estas abordagens, torna-se evidente que os modelos V2V puros, como o V-NDN, oferecem maior resiliência, flexibilidade e independência de infraestrutura. São particularmente adequados para cenários onde a conectividade com RSUs não é garantida, como autoestradas, zonas rurais ou situações de emergência. Além disso, permitem a implementação de mecanismos como caching colaborativo e sincronização de dados em tempo real entre veículos, sem necessidade de coordenação externa.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{Sincronização no \gls{NDN}}}
