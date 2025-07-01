@@ -26,8 +26,8 @@ As redes ad-hoc veiculares (\gls{VANETs}) constituem uma variante especial das r
     \label{fig:V2X}
 \end{figure}
 
-
-As \gls{VANETs} apresentam características únicas, tais como uma topologia altamente dinâmica devido à elevada movimentação dos nós, conectividade intermitente e enlaces de curta duração, requisitos de comunicação muito sensíveis ao tempo principalmente nas aplicações de segurança sendo que apesar de tudo os veículos estão cada vez mais equipados com mais altas capacidades de processamento e armazenamento. Estas particularidades, aliadas ao elevado custo, e falta de infraestrutura, tornam o desenvolvimento e implementação de protocolos de comunicação para \gls{VANETs} um desafio muito grande. Levanta-se também outro tipo de problemas tais como, a segurança e privacidade, pois ataques a redes \gls{VANETs} podem ter consequências catastróficas. Para as \gls{VANETs} existem 3 grandes tipos de aplicações as aplicações de segurança, de tráfego e de conforto, como vemos na Figura \ref{fig:apps}
+As \gls{VANETs} possuem uma arquitetura composta por diferentes unidades, conhecidas como \gls{OBUs} que são responsáveis pelo processamento local e as \gls{RSUs} que fazem a conexão entre os veículos e a infraestrutura fixa. Esta infraestrutura distribuída permite que as redes VANETs suportem uma ampla gama de aplicações críticas, sobretudo em contextos urbanos, onde a densidade de veículos é elevada e a troca de informações precisa ser rápida e confiável.
+As \gls{VANETs} apresentam características únicas, tais como uma topologia altamente dinâmica devido à elevada movimentação dos nós, requisitos de comunicação muito sensíveis ao tempo principalmente nas aplicações de segurança sendo que apesar de tudo os veículos estão cada vez mais equipados com mais altas capacidades de processamento e armazenamento. Estas particularidades, aliadas ao elevado custo, e falta de infraestrutura, tornam o desenvolvimento e implementação de protocolos de comunicação para \gls{VANETs} um desafio muito grande. Para as \gls{VANETs} existem 3 grandes tipos de aplicações as aplicações de segurança, de tráfego e de conforto, como vemos na Figura \ref{fig:apps}
 
 \begin{figure}[h]
     \centering
@@ -35,6 +35,13 @@ As \gls{VANETs} apresentam características únicas, tais como uma topologia alt
     \caption{Aplicações das \gls{VANETs} \cite{khelifi_named_2020}}
     \label{fig:apps}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Desafios das redes veiculares}
+\label{sec:desafios}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Existem grandes desafios na implementação de \gls{VANETs}, o facto daa rede ser tão dinâmica visto que os nós estão sempre em movimento e por vezes a alta velocidade, leva a conexões curtas e por vezes falta de conectividade. A escalabilidade torna-se também uma preocupação, visto que a rede deve funcionar em cenários com variações extremas de nós, seja em regiões urbanas com grande tráfego ou regiões rurais que normalmente têm menos tráfego \cite{gerla_internet_2014}. Outro aspeto crítico trata-se da segurança, visto que a natureza das \gls{VANETs} torna-se bastante propensa a ataques, sendo que estes ataques podem ter consequências graves, não só em termos de informação mas como também na vida dos passageiros e pedestres\cite{lu_connected_2014}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Redes NDN}
