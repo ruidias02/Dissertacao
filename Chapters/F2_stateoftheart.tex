@@ -172,11 +172,84 @@ O funcionamento desse mecanismo é explicado na figura \ref{fig:SVsyync}.
     Para resolver estes problemas, em vez de solicitar respostas diretamente através de interesses de sincronização multicast, o \gls{SVSync} utiliza-os apenas para permitir que cada participante notifique os restantes sobre o seu próprio estado do conjunto de dados. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Estratégia a utilizar}
-\label{cha:estado_da_arte}
+\subsection{\emph{Desafios das Redes Veiculares}}
+\label{sub:rvd}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A ideia seria que sempre que dois ou mais veículos se encontram parados num cruzamento, inicia-se um processo de troca de mensagens baseado em interesses de sincronização. Cada veículo emite uma mensagem de interesse contendo o seu identificador único (ID) e a sua versão local da base de dados (por exemplo, através de um hash ou número de versão). Esta mensagem é enviada utilizando o esquema de nomes do NDN, o que permite uma disseminação eficiente e direccionada dos dados.
-Após a recepção das mensagens dos restantes veículos, é realizada uma comparação das versões das bases de dados. Se for identificado que algum veículo possui uma versão mais recente, procede-se ao envio de uma mensagem de dados, contendo a base de dados mais atualizada, de modo a garantir a coerência entre todos os nós participantes.
-Esta abordagem permite uma sincronização leve e eficaz, aproveitando os momentos de inatividade (como paragens em semáforos) para atualização colaborativa de informação local entre os veículos. A utilização do NDN-SVS neste contexto revela-se particularmente adequada, dado que, suporta comunicação assíncrona e tolerante a atrasos, permite um modelo de publicação-assinatura baseado em nomes e não em endereços e favorece a disseminação seletiva e eficiente de dados relevantes.
-Além disso, o modelo de vetor de estado do NDN-SVS permite detectar automaticamente discrepâncias entre as versões mantidas pelos diferentes nós, sem necessidade de consultas diretas ou ligações ponto-a-ponto persistentes. Esta característica torna o protocolo especialmente vantajoso para ambientes dinâmicos e com mobilidade elevada, como os veículos conectados em cruzamentos urbanos.
-Em suma, esta estratégia potencia a troca de informação local em tempo útil, com baixa latência e elevada resiliência, contribuindo para uma rede veicular mais informada, coesa e preparada para decisões cooperativas.
+A aplicação dos mecanismos de sincronização desenvolvidos para redes NDN em cenários veiculares enfrenta várias dificuldades intrínsecas. As VANETs caracterizam-se por uma topologia altamente dinâmica, em que os veículos se deslocam a velocidades elevadas e frequentemente entram e saem do alcance uns dos outros, o que resulta em ligações de curta duração e intermitência de conectividade. Essa volatilidade torna o processo de sincronização mais complexo do que em redes fixas ou mesmo em redes ad hoc com mobilidade reduzida. Além disso, a escalabilidade constitui um obstáculo relevante, pois em ambientes urbanos densos a quantidade de nós participantes cresce rapidamente, levando a um aumento considerável do número de mensagens de sincronização e ao risco de sobrecarga da rede. Outro aspeto crítico é a latência: muitas aplicações veiculares, sobretudo as associadas à segurança, requerem tempos de resposta de ordem de milissegundos, mas os protocolos de sincronização existentes nem sempre conseguem garantir convergência rápida em cenários de elevada mobilidade. A segurança e a resiliência também se revelam desafios, já que ataques como o flooding de interesses podem degradar significativamente o desempenho da rede e comprometer a fiabilidade da disseminação de dados. Estas limitações foram destacadas em diferentes estudos que analisam a adaptação do NDN às redes veiculares, confirmando a necessidade de soluções específicas que considerem as restrições geográficas e temporais, bem como os requisitos de baixa latência e alta escalabilidade
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Estratégia a utilizar}
+\label{cha:estrategia}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A escolha de uma arquitetura baseada em pivôs para a sincronização de dados em redes veiculares NDN justifica-se pela necessidade de reduzir o overhead de mensagens e melhorar a escalabilidade em cenários urbanos densos. Os mecanismos tradicionais de sincronização, como o SVSync, embora eficazes em redes ad hoc com número moderado de participantes, enfrentam dificuldades quando aplicados a situações em que dezenas de veículos necessitam de partilhar estados quase em simultâneo. Nestes casos, a disseminação em malha completa provoca um crescimento quase quadrático do número de interesses e estados na Pending Interest Table, levando a colisões, perdas e sobrecarga de processamento nos nós móveis. A introdução de pivôs permite alterar este padrão de comunicação, uma vez que os veículos sincronizam apenas com um representante da sua faixa e esse representante, por sua vez, troca vetores de estado apenas com outros pivôs. Desta forma, a complexidade do processo reduz-se significativamente, aproximando-se de uma relação linear com o número de nós e limitada por um número pequeno de trocas entre pivôs. Esta abordagem não apenas minimiza o tráfego mas também aproveita as características geográficas do cenário, pois em cruzamentos urbanos existe uma segmentação natural por faixas, o que facilita a eleição de nós agregadores.
+
+A integração com o SVSync reforça a adequação da solução, dado que este protocolo já foi desenhado para suportar sincronização assíncrona eficiente com codificação explícita de vetores de estado em cada interesse. Ao delegar em pivôs a emissão dos anúncios de estado para fora da faixa, evita-se que múltiplos produtores gerem respostas concorrentes, problema reconhecido nos trabalhos de análise sobre protocolos de sincronização distribuída em NDN. Além disso, a arquitetura mantém compatibilidade com os princípios de funcionamento do NDN, explorando a multicast por nome e a cache de conteúdos na rede, enquanto reduz a latência na convergência de estados locais. Esta escolha também equilibra robustez e simplicidade: embora os pivôs se tornem potenciais pontos de falha, a utilização de mecanismos de eleição rápida e anúncios periódicos mitiga este risco, assegurando continuidade na disseminação de dados mesmo perante mobilidade elevada.
+
+Em síntese, a adoção de pivôs como agregadores de sincronização em conjunto com o SVSync permite conciliar a necessidade de escalabilidade com a manutenção de baixa latência e fiabilidade na comunicação, explorando de forma eficiente as propriedades específicas das redes veiculares. Esta estratégia surge alinhada com as limitações identificadas na literatura recente sobre sincronização em NDN e VANETs, sendo assim uma abordagem promissora para cenários urbanos de elevada densidade veicular
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Implementação}
+\label{cha:implementação}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Inicialmente, são definidos os parâmetros de entrada que configuram intervalos de publicação rápidos e lentos, a quantidade de publicações recentes e aleatórias que devem ser consideradas pelo mecanismo de sincronização SVS, a taxa de perda de pacotes no canal e a possibilidade de fragmentação de pacotes. Em seguida, são configurados os dispositivos de rede e canais com um modelo de erro de taxa, largura de banda de 50 Mbps e atraso fixo de 5 ms. A topologia adotada é um grid de 5x5 nós interconectados por enlaces ponto a ponto. Sobre essa topologia, é instalada a pilha NDN em todos os nós, bem como tracers que permitem registar estatísticas de tráfego, atraso de aplicações e estado do Content Store. Cada nó da grelha, exceto o nó central (2,2), recebe uma aplicação de chat baseada em SVS. Cada aplicação tem um prefixo próprio e uma cadência de publicação que pode ser rápida ou lenta dependendo da paridade da posição do nó. Esses nós são também registados como origens de conteúdo para que possam ser alcançados através das rotas calculadas globalmente. Paralelamente, a classe HierarchicalSyncMobilityManager é responsável por orquestrar a mobilidade lógica dos nós, que consiste em movê-los ao ponto central. Cada nó possui metadados que incluem sua posição, um identificador lógico, a versão inicial dos dados e se ele atua como pivô ou provedor de dados. Os pivôs são definidos como os nós localizados na última coluna, e o provedor de dados é selecionado como aquele com a versão inicial mais alta.
+Quando todos os 24 nós periféricos atingem o centro, a simulação regista o instante de início da sincronização e quando termina o tempo de término é registaado e a duração total do processo é calculada. Em termos funcionais, todos os nós atualizam sua versão de dados para a maior versão observada na rede, simulando o efeito da convergência proporcionada pelo SVS. O estado final de cada nó é então impresso e, para enriquecer a análise. Para simplificar esta analise podemos visualizar na figura \ref{fig:Fluxograma} um fluxograma do código feito.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Chapters/Figures/Fluxograma.png}
+    \caption{Fluxograma do código.} 
+    \label{fig:Fluxograma}   
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Resultados}
+\label{cha:resultados}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para demonstrar a diferença entre a sincronização normal num cruzamento, e a sincronização de com pivôs vão ser apresentados os resultados das duas implementações. Para simular os resultados foram utilizados 24 nós.
+Para começar apresentam-se os resultados da simulação sem pivô.
+Na figura \ref{fig:SVSP} temos o vetor de estado final da implementação. Como podemos ver tudo correu bem pois a versão final corresponde à versão mais recente em todos os nós da simulação.
+\begin{figure}[h]
+    \centering
+    \includegraphics{Chapters/Figures/VersaoSP.png}
+    \caption{Vetor de estado} 
+    \label{fig:SVSP}   
+\end{figure}
+
+De seguida na fiugra \ref{PacketsSP} podemos ver o número de pacotes que foram trocados, e isso vai ser muito importante para as conclusõees finais desta secção. Mas, por alto podemos ver um elevado número de pacotes, que se deve a colisões e perdas durante a sincronização, visto que o processo neste caso é bastante mais desorganizado.
+\begin{figure}[h]
+    \centering
+    \includegraphics{Chapters/Figures/Packetssp.png}
+    \caption{Número de pacotes trocados.} 
+    \label{fig:PacketsSP}   
+\end{figure}
+
+Passando agora para os resultados da simulação que implementa a solução proposta.
+Começando tambem com o vetor de estado final representado na figura \ref{SVCP}, podemos também comprovar que realmente a troca de dados está a acontecer de forma correta, pois a versão final corresponde novamente à mais recente.
+\begin{figure}[h]
+    \centering
+    \includegraphics{Chapters/Figures/VersaoCP.png}
+    \caption{Vetor de estado final.} 
+    \label{fig:SVCP}   
+\end{figure}
+
+Na figura \ref{provedor} podemos ver quem foi o provedor dos dados mais recentes, e também a comprovar a existência de um pivô por cada faixa, que irá ser o ponto fulcral da diferença esperada entre as 2 soluções.
+\begin{figure}[h]
+    \centering
+    \includegraphics{Chapters/Figures/Pivoeprovedor.png}
+    \caption{Pivôs e provedor.}
+    \label{fig:provedor}   
+\end{figure}
+
+Na figura \ref{fig:PacketsCp} podemos ver o valor, que continua algo alto por ainda existirem colisões e perdas.
+\begin{figure}[h]
+    \centering
+    \includegraphics{Chapters/Figures/Packetscp.png}
+    \caption{Número de pacotes trocados} 
+    \label{fig:PacketsCp}   
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Conclusão e trabalho futuro}
+\label{cha:conc}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Concluindo como podemos ver a solução proposta acaba por ser uma ajuda bastante grande na diminuição dos pacotes trocados, permitindo assim uma maior escalabilidade da rede. A primeira solução, sem pivôs acaba por se tornar mais confusa e gerar um trâfego elevadíssimo devido a muitas colisões e perdas de interesses e dados no caminho, visto que os 24 nós estão a enviar todos interesses entre si o que causa uma sobrecarga. Na segunda solução com pivôs esse valor diminui drasticamente, e isso acontece pois no centro apenas os 4 pivôs trocam dados entre si, os outros nós estão à espera que termine esta "fase" de sincronização entre pivôs para depois envirarem novamente interesses. Ainda assim o valor é alto pois existem algumas colisões e perdas no caminho. Como podemos observar a solução de sincronização com pivôs acaba por se tornar mais eficiente e escalável que a solução sem pivôs, pelo que comprovamos que realmente a solução proposta no capitulo \ref{cha:estrategia}, é positiva e ajuda a resolver muitos dos problemas da sincronização nas redes veiculares, tais como a escalabilidade e a latência.
+
+Apesar das vantagens da solução proposta, a sua aplicação em cenários veiculares apresenta algumas limitações que importa reconhecer. A elevada mobilidade dos veículos e a consequente intermitência de conectividade podem comprometer a eficácia do processo de sincronização, já que os nós podem abandonar o cruzamento ou mudar de faixa antes de concluírem a atualização do seu vetor de estado. Esta característica torna a convergência temporalmente dependente e sujeita a falhas de consistência momentânea. Outro desafio relevante é a elevada taxa de colisões e perdas de pacotes no meio sem fios, particularmente em ambientes urbanos densos, onde a contenção no canal de comunicação aumenta de forma significativa. Mesmo que a arquitetura com pivôs reduza o número de mensagens globais, a qualidade do canal pode limitar a fiabilidade da sincronização. Adicionalmente, a escolha de pivôs introduz um risco de pontos únicos de falha: se o pivô de uma faixa ficar indisponível, o processo de disseminação pode ser temporariamente interrompido, exigindo mecanismos rápidos de eleição de substitutos. Também se deve considerar o custo computacional da assinatura digital dos interesses de sincronização exigida pelo SVSync, que pode tornar-se pesado para unidades embarcadas com recursos limitados. Por outro lado, a escalabilidade global do sistema continua a depender da forma como os vetores de estado são codificados, uma vez que o tamanho destes cresce com o número de produtores, o que pode gerar overhead em cenários de tráfego intenso.
