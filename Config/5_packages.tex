@@ -84,4 +84,23 @@
 %       {€}{{\EUR}}1 {£}{{\pounds}}1
 % }
 
+% --- Pacotes extra para código fonte ---
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstdefinestyle{cppstyle}{
+  language=C++,
+  numbers=left,
+  numberstyle=\tiny\ttfamily,
+  stepnumber=1,
+  numbersep=6pt,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{red},
+  breaklines=true,
+  frame=single
+}
+\lstset{style=cppstyle}
+
 \usepackage{glossaries}    % To create glossaries and lists of acronyms
