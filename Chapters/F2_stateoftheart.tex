@@ -15,9 +15,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Redes Veiculares}
 \label{sec:redes_veic}
-As redes ad-hoc veiculares (\gls{VANETs}) constituem uma variante especial das redes móveis ad-hoc (\gls{MANETs}), onde os veículos atuam como os nós móveis da rede comunicando entre si e com a infraestrutura da rede \cite{khelifi_named_2020}. No contexto das \GLS{VANETs} as como \gls{V2I}, as \gls{V2V}, as \gls{V2P}, as \gls{V2N} e as \gls{V2X} como vemos na Figura \ref{fig:V2X}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As redes ad-hoc veiculares (\gls{VANETs}) constituem uma variante especial das redes móveis ad-hoc (\gls{MANETs}), onde os veículos atuam como nós móveis da rede comunicando entre si e com a infraestrutura da rede \cite{khelifi_named_2020}. No contexto das \gls{VANETs} incluem-se diferentes modos de comunicação, tais como as \gls{V2I}, \gls{V2V}, \gls{V2P}, \gls{V2N} e \gls{V2X}, conforme ilustrado na Figura~\ref{fig:V2X}.
 
 \begin{figure}[h]
     \centering
@@ -26,8 +29,25 @@ As redes ad-hoc veiculares (\gls{VANETs}) constituem uma variante especial das r
     \label{fig:V2X}
 \end{figure}
 
-As \gls{VANETs} possuem uma arquitetura composta por diferentes unidades, conhecidas como \gls{OBUs} que são responsáveis pelo processamento local e as \gls{RSUs} que fazem a conexão entre os veículos e a infraestrutura fixa. Esta infraestrutura distribuída permite que as redes VANETs suportem uma ampla gama de aplicações críticas, sobretudo em contextos urbanos, onde a densidade de veículos é elevada e a troca de informações precisa ser rápida e confiável.
-As \gls{VANETs} apresentam características únicas, tais como uma topologia altamente dinâmica devido à elevada movimentação dos nós, requisitos de comunicação muito sensíveis ao tempo principalmente nas aplicações de segurança sendo que apesar de tudo os veículos estão cada vez mais equipados com mais altas capacidades de processamento e armazenamento. Estas particularidades, aliadas ao elevado custo, e falta de infraestrutura, tornam o desenvolvimento e implementação de protocolos de comunicação para \gls{VANETs} um desafio muito grande. Para as \gls{VANETs} existem 3 grandes tipos de aplicações as aplicações de segurança, de tráfego e de conforto, como vemos na Figura \ref{fig:apps}
+As \gls{VANETs} possuem uma arquitetura composta por diferentes unidades: as \gls{OBUs}, responsáveis pelo processamento e comunicação local, e as \gls{RSUs}, que fazem a ponte entre os veículos e a infraestrutura fixa. Esta infraestrutura distribuída permite que as redes VANET suportem uma ampla gama de aplicações críticas, sobretudo em contextos urbanos, onde a densidade de veículos é elevada e a troca de informações precisa ser rápida e confiável \cite{gerla_internet_2014}.
+
+\subsection{Modos de Comunicação V2X}
+Os diferentes tipos de comunicação são fundamentais para compreender o funcionamento das redes veiculares:
+
+\begin{itemize}
+    \item \textbf{V2V (Vehicle-to-Vehicle):} comunicação direta entre veículos, usada principalmente para troca de mensagens de segurança e alertas de tráfego. Por exemplo, quando um veículo executa uma travagem brusca, pode notificar automaticamente os veículos próximos para evitar colisões \cite{daddanala_vehicle_2021}.
+    \item \textbf{V2I (Vehicle-to-Infrastructure):} comunicação entre veículos e \gls{RSUs}, permitindo o envio de dados de posição, velocidade ou estado do veículo para sistemas de gestão de tráfego e receber de instruções ou informações do ambiente rodoviário \cite{noauthor_vehicle_2017}.
+    \item \textbf{V2P (Vehicle-to-Pedestrian):} permite a interação com dispositivos portáteis de peões para aumentar a segurança em passadeiras e zonas urbanas \cite{kabil_vehicle_2022}.
+    \item \textbf{V2N (Vehicle-to-Network):} ligação entre veículos e serviços em nuvem, utilizada para atualizações e aplicações conectadas.
+    \item \textbf{V2X (Vehicle-to-Everything):} termo abrangente que integra todos os tipos anteriores, visando uma comunicação cooperativa e inteligente entre todos os elementos da via \cite{bintoro_overview_2025}.
+\end{itemize}
+
+Nos modos \gls{V2V} e \gls{V2I} predominam tecnologias como o \textbf{IEEE 802.11p (ITS-G5)} e o \textbf{C-V2X (Cellular V2X)}, definidas respetivamente pelo \textit{IEEE} e pelo \textit{3GPP}. O IEEE 802.11p, amplamente adotado na Europa, permite comunicações diretas de curto alcance com baixa latência \cite{arena_review_2020}, enquanto o C-V2X, que pode operar em modos direto (PC5) ou baseado em rede, oferece maior alcance e suporte à conectividade 5G \cite{weber_c-v2x_2019}.
+
+A troca de mensagens nestas redes ocorre através de protocolos de difusão e encaminhamento específicos. No caso \GLS{V2V}, as mensagens são frequentemente disseminadas em modo \textit{broadcast} ou \textit{geocast}, atingindo todos os veículos numa área delimitada. Já em \gls{V2I}, as \gls{RSUs} agregam e distribuem a informação para servidores centrais ou outros veículos na rede, desempenhando um papel essencial na coordenação do tráfego.
+
+\subsection{Aplicações e Categorias}
+As \gls{VANETs} suportam três grandes categorias de aplicações: de segurança, de gestão de tráfego e de conforto (\textit{infotainment}), conforme ilustrado na Figura~\ref{fig:apps}. 
 
 \begin{figure}[h]
     \centering
@@ -36,70 +56,150 @@ As \gls{VANETs} apresentam características únicas, tais como uma topologia alt
     \label{fig:apps}
 \end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Desafios das redes veiculares}
-\label{sec:desafios}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+    \item \textbf{Aplicações de segurança:} visam reduzir acidentes e aumentar a segurança rodoviária, através da disseminação de mensagens críticas, como alertas de colisão, travagem de emergência, ou deteção de veículos em ângulo morto. Estas aplicações exigem latência extremamente baixa (da ordem de milissegundos) e elevada fiabilidade \cite{al-ani_survey_2018}.
+    
+    \item \textbf{Aplicações de gestão de tráfego:} permitem otimizar fluxos rodoviários, reduzindo congestionamentos e tempos de viagem. Exemplos incluem coordenação de semáforos inteligentes e partilha de informações sobre condições da via ou obras \cite{jayapal_road_2016}.
+    
+    \item \textbf{Aplicações de conforto:} fornecem serviços não críticos, como streaming, acesso à internet, atualização de mapas ou comunicações sociais entre veículos. Estas aplicações toleram maiores latências, mas requerem maior largura de banda e mecanismos eficientes de disseminação de conteúdo.
+\end{itemize}
 
-Existem grandes desafios na implementação de \gls{VANETs}, o facto daa rede ser tão dinâmica visto que os nós estão sempre em movimento e por vezes a alta velocidade, leva a conexões curtas e por vezes falta de conectividade. A escalabilidade torna-se também uma preocupação, visto que a rede deve funcionar em cenários com variações extremas de nós, seja em regiões urbanas com grande tráfego ou regiões rurais que normalmente têm menos tráfego \cite{gerla_internet_2014}. Outro aspeto crítico trata-se da segurança, visto que a natureza das \gls{VANETs} torna-se bastante propensa a ataques, sendo que estes ataques podem ter consequências graves, não só em termos de informação mas como também na vida dos passageiros e pedestres\cite{lu_connected_2014}.
+\subsection{Desafios das Redes Veiculares}
+\label{sec:desafios}
+
+Apesar dos avanços tecnológicos, as \gls{VANETs} enfrentam desafios significativos:
+
+\begin{itemize}
+    \item \textbf{Escalabilidade:} Em cenários urbanos com elevada densidade de veículos, o número de mensagens de controlo e retransmissões pode crescer exponencialmente, levando à congestão do canal e degradação de desempenho. O \gls{MAC} e o encaminhamento eficiente são essenciais para manter a escalabilidade.
+    
+    \item \textbf{Mobilidade elevada e topologia dinâmica:} A rápida variação da vizinhança entre veículos causa quebras de ligação frequentes, dificultando o estabelecimento de rotas persistentes e a disseminação contínua de dados.
+    
+    \item \textbf{Latência e fiabilidade:} As aplicações de segurança exigem comunicações quase instantâneas e altamente fiáveis. A variação do atraso (\textit{jitter}) e as perdas de pacotes podem comprometer a eficácia de mensagens críticas.
+    
+    \item \textbf{Conectividade intermitente:} Em regiões rurais ou com baixa densidade de veículos, as comunicações podem depender de oportunidades de contacto (\textit{store-carry-forward}), exigindo protocolos tolerantes a atrasos e interrupções temporárias.
+    
+    \item \textbf{Segurança e privacidade:} As VANETs são vulneráveis a ataques como \textit{spoofing}, \textit{Sybil} ou \textit{Denial of Service}. A autenticação e a integridade das mensagens são cruciais, mas devem ser implementadas sem comprometer a latência.
+    
+    \item \textbf{Heterogeneidade tecnológica:} A coexistência de diferentes tecnologias (IEEE 802.11p, C-V2X, 5G) impõe desafios de interoperabilidade e coordenação de múltiplos canais de comunicação.
+\end{itemize}
+
+Em síntese, as redes veiculares representam um domínio altamente dinâmico e complexo, no qual a eficiência da comunicação depende da capacidade dos protocolos em lidar com a escalabilidade, mobilidade e diversidade tecnológica. O paradigma \gls{V2X} evolui progressivamente para suportar sistemas cooperativos de transporte inteligente e veículos autónomos, nos quais a comunicação fiável e de baixa latência é um requisito fundamental para a segurança e o desempenho global da rede \cite{halim_research_2023}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Redes NDN}
 \label{sec:redes_NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-No início, quando as ideias centrais que fundamentaram a Internet começaram a ser desenvolvidas, a solução de comunicação oferecida pelo TCP/IP fosse única e revolucionária, o problema que ela resolveu era essencialmente o de conversas ponto a ponto entre duas entidades. Apesar de o TCP/IP ter sido concebido para conversos entre pontos finais de comunicação, acabou por superar todas as expectativas sendo também amplamente utilizado na distribuição de conteúdo, levando assim a Internet a passar a funcionar como uma rede de distribuição. Sendo assim tornou-se muito difícil resolver problemas, pois as redes de distribuição são mais complexas que as redes de comunicação. A natureza do IP está implementada nos seus datagramas, identificando apenas os pontos iniciais e finais de comunicação. O \gls{NDN} propõe generalizar a arquitetura da Internet, removendo essa limitação, pois os nomes de um datagrama \gls{NDN} passam a ser estruturados hierarquicamente, sendo que podem ser utilizados para identificar um pedaço de dados numa conversa ou um pedaço de conteúdo. Esta mudança, teoricamente simples, permite que se resolva uma alta gama de problemas de distribuição. A comunicação \gls{NDN} é impulsionada pelos recetores, existindo apenas 2 pacotes: os pacotes de interesse e os pacotes de dados (Figura \ref{fig:Packets}).
+
+No início do desenvolvimento da Internet, o modelo de comunicação proposto pelo TCP/IP representou uma solução inovadora para a troca de informações ponto a ponto entre entidades identificadas por endereços. Embora o paradigma IP-centrado tenha sido concebido para conversas diretas entre hosts, o seu sucesso levou à sua adoção também em sistemas de distribuição de conteúdos, transformando a Internet numa vasta rede de disseminação de dados. Contudo, esta adaptação revelou limitações: o IP identifica apenas os pontos finais de comunicação, não os próprios conteúdos, tornando a distribuição de informação um processo complexo e ineficiente.
+
+O \gls{NDN} surge como uma evolução arquitetural que visa superar essas limitações, generalizando o modelo da Internet para tornar o conteúdo, e não a localização, o elemento central da comunicação \cite{khelifi_named_2020}. Em vez de endereçar pacotes a um destino específico, o \GLS{NDN} utiliza nomes hierárquicos para identificar diretamente os dados. Essa alteração aparentemente simples introduz uma mudança profunda: a comunicação passa a ser orientada por dados, em que os consumidores expressam interesse pelo conteúdo desejado, e a rede encarrega-se de encontrá-lo e entregá-lo.
+
+A comunicação no \gls{NDN} é conduzida por dois tipos de pacotes: \textit{Interest} e \textit{Data} (Figura~\ref{fig:Packets}). O consumidor envia um pacote de interesse contendo o nome do dado desejado; os routers utilizam esse nome para encaminhar o pedido até um produtor que possua o conteúdo. Quando o interesse atinge um nó que contém os dados, é gerado um pacote de dados, contendo o nome e o conteúdo solicitado, que regressa pelo caminho inverso percorrido pelo interesse.
+
 \begin{figure}[h]
-    \centering
-    \includegraphics{Chapters/Figures/Packets.png}
-    \caption{Pacotes das redes \gls{NDN} \cite{papadopoulos_lixia_2014}}
-    \label{fig:Packets}
+\centering
+\includegraphics{Chapters/Figures/Packets.png}
+\caption{Pacotes das redes \gls{NDN} \cite{papadopoulos_lixia_2014}}
+\label{fig:Packets}
 \end{figure}
-O consumidor coloca o nome da parte dos dados desejada no pacote de interesse e envia-o para a rede, os routers usam o nome para encaminhar o interesse em direção aos produtores dos dados. Quando o interesse chega ao nó que possui os dados solicitados, esse nó retornará um pacote de dados que contém o nome e o conteúdo. Este pacote segue on caminho inverso ao caminho percorrido pelo pacote de interesse.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\emph{Funcionamento do \gls{NDN}}}
+\subsection{\emph{Funcionamento interno do \gls{NDN}}}
 \label{sub:func__NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Para realizar as funções de encaminhamento de interesses e dados, os routers \gls{NDN} mantém três estruturas: as \gls{PIT}, as \gls{FIB} e as \gls{CS}.
-A \gls{PIT} é uma tabela que armazena todos os interesses que ainda não foram satisfeitos. Cada entrada regista o nome dos dados, juntamente com as interfaces de entrada e de saída. Quando chega um pacote de interesse, o router verifica a \gls{CS} procurando os dados correspondentes, se existir o pacote de dados é logo retornado pela mesma interface pela qual chegou o interesse. Caso contrário, o router procura o nome na \gls{PIT}, e se uma entrada correspondente existir, regista a interface de entrada na tabela.
-Se na \gls{PIT} não houver nenhuma entrada correspondente ao nome, o router encaminha os dados ao produtor com base nas informações da sua \gls{FIB}, bem como na estratégia de encaminhamento. Este processo pode ser visto na Figura\ref{fig:Forwarding}.
+Para suportar este modelo orientado a dados, cada router NDN mantém três estruturas fundamentais: a \gls{FIB}, a \gls{PIT} e a \gls{CS}. Juntas, estas estruturas permitem à rede encaminhar, armazenar e entregar conteúdos de forma eficiente, sem dependência de endereços IP ou de sessões persistentes.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics{Chapters/Figures/fowarding.png}
-    \caption{Processo de encaminhamento num nó \gls{NDN} \cite{papadopoulos_lixia_2014}}
-    \label{fig:Forwarding}   
+\paragraph{1. \gls{CS}}
+A \textbf{\gls{CS}} é uma memória \textit{cache} local que armazena temporariamente pacotes de dados previamente recebidos. Quando chega um pacote de interesse, o router verifica primeiro se o conteúdo correspondente já está armazenado na CS. Caso positivo, o dado é devolvido de imediato pela interface de onde veio o pedido, sem necessidade de contactar o produtor original. Este mecanismo de \textit{in-network caching} é essencial para reduzir a latência e o consumo de largura de banda, especialmente em cenários de mobilidade, onde múltiplos nós próximos podem requisitar o mesmo conteúdo.
+
+\paragraph{2. \gls{PIT}}
+Se o dado não estiver disponível na \gls{CS}, o router consulta a \textbf{\gls{PIT}}. Esta tabela regista todos os interesses pendentes que ainda não foram satisfeitos, associando o nome do conteúdo às interfaces pelas quais os pedidos foram recebidos. Quando chega um novo interesse por um conteúdo já registado na \gls{PIT}, o router apenas adiciona a nova interface à entrada existente, evitando o reenvio redundante do interesse, um mecanismo crucial para reduzir tráfego e evitar congestionamentos em redes densas. Quando o pacote de dados correspondente chega, ele é encaminhado a todas as interfaces registadas e a entrada é removida.
+
+\paragraph{3. \gls{FIB}}
+Na ausência de entradas na \gls{CS} e na \gls{PIT}, o router recorre à \textbf{\gls{FIB}} para determinar como encaminhar o interesse. A FIB contém os prefixos de nomes e as interfaces associadas, funcionando de forma análoga a uma tabela de encaminhamento IP, mas baseada em nomes hierárquicos em vez de endereços. O encaminhamento pode seguir estratégias dinâmicas, permitindo, por exemplo, escolher entre múltiplas interfaces ou descartar pedidos em caso de congestionamento ou suspeita de ataque \cite{papadopoulos_lixia_2014}.
+
+O fluxo completo de encaminhamento é ilustrado na Figura~\ref{fig:Forwarding}. Quando um pacote de dados é recebido, o router consulta a \gls{PIT} para determinar as interfaces a que deve entregá-lo, remove a entrada correspondente e armazena o conteúdo na \gls{CS} para possíveis pedidos futuros. Assim, cada dado circula apenas enquanto for necessário, e pode ser reutilizado localmente sem recorrer ao produtor original.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics{Chapters/Figures/fowarding.png}
+\caption{Processo de encaminhamento num nó \gls{NDN} \cite{papadopoulos_lixia_2014}}
+\label{fig:Forwarding}
 \end{figure}
 
-Quando um router recebe interesses para o mesmo nome de múltiplos nós ele vai apenas encaminhar apenas o primeiro em direção ao produtor de dados. A \gls{FIB} é populada por um protocolo baseado no prefixo de nome e pode ter várias interfaces de saída para cada prefixo. A estratégia de encaminhamento pode decidir descartar um interesse em algumas situações, um exemplo, é se todos os links estiverem congestionados ou em caso de suspeição de ataque. Para cada interesse, a estratégia de encaminhamento recupera a entrada correspondente ao prefixo mais longo da \gls{FIB} e decide quando e para onde encaminhar os interesses. O \gls{CS} é uma memória \textit{cache} temporária de pacotes de dados recebidos pelo router. Como um pacote de dados \gls{NDN} é independente de onde vem ou para onde vai, pode ser armazenado em cache para satisfazer futuros interesses. Quando chega um pacote de dados, o router \gls{NDN} encontra a entrada na \gls{PIT} e encaminha os dados para todas as interfaces nessa entrada, após isso remove essa \gls{PIT} e armazena os dados na \gls{CS}. Para grandes objetos de conteúdo que compreendem vários pacotes, os interesses desempenham um papel importantíssimo no controlo de fluxo como os \textit{ACKs} do TCP. Nem os pacotes de interesse, nem os de dados transportam endereços, os routers encaminham os pacotes de dados com base nos nomes contidos nos pacotes e encaminham pacotes de dados para os consumidores com base nas informações de estado da \gls{PIT} configuradas em pelos interesses em cada salto. Essa simetria na troca dos pacotes interesse/dados induz um loop de controlo \textit{hop-by-hop}, e elimina a necessidade de qualquer noção de nós.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\emph{Relação entre \gls{NDN} e Disseminação de Conteúdos em Mobilidade}}
+\label{sub:NDN_mobilidade}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A arquitetura \gls{NDN} apresenta características particularmente vantajosas em cenários de mobilidade elevada, como nas (\gls{VANETs}). A comunicação orientada a dados e a presença de cache em cada nó permitem que a disseminação de conteúdos seja independente de uma rota ou sessão persistente, resolvendo um dos maiores desafios das comunicações IP tradicionais: a quebra de ligação causada pelo movimento dos nós.
+
+O papel combinado das estruturas \gls{FIB}, \gls{PIT} e \gls{CS} é determinante para garantir essa resiliência:
+\begin{itemize}
+\item A \textbf{\gls{FIB}} adapta-se a múltiplas rotas potenciais, permitindo reencaminhamento dinâmico em caso de falha de ligações devido à mobilidade dos veículos.
+\item A \textbf{\gls{PIT}} mantém o estado local das solicitações, garantindo que, mesmo que o produtor se mova, a resposta seja corretamente entregue aos consumidores pendentes.
+\item A \textbf{\gls{CS}}, ao armazenar conteúdos localmente, reduz a necessidade de recorrer a produtores distantes, aumentando a disponibilidade e diminuindo a latência sendo uma propriedade essencial em ambientes \gls{V2V} e \gls{V2I}.
+\end{itemize}
+
+Em redes veiculares, onde a conectividade é frequentemente intermitente e os nós são altamente móveis, estas propriedades tornam o \gls{NDN} uma base ideal para a disseminação cooperativa de informações. Quando um veículo solicita um conteúdo (por exemplo, um alerta de acidente ou dados de tráfego), qualquer outro nó que tenha armazenado previamente essa informação na sua \gls{CS} pode respondê-lo, sem necessidade de comunicação direta com o produtor original. Este comportamento distribuído e orientado a conteúdo melhora a eficiência, reduz o tráfego redundante e aumenta a tolerância a falhas \cite{rahman_data-centric_2021, papadopoulos_-vehicle_2021}.
+
+Além disso, o modelo de encaminhamento baseado em nomes facilita a agregação e filtragem de informações contextuais (por exemplo, \texttt{/ndn/highway/alert/km42}), permitindo disseminação seletiva e localizada, um requisito essencial para aplicações de segurança e gestão de tráfego em ambientes \gls{V2X}. Assim, o \GLS{NDN} fornece a base conceptual e técnica para a evolução das redes veiculares rumo ao paradigma \textbf{\gls{V-NDN}}, explorado na secção seguinte.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\emph{Vehicular Named Data Network (\gls{V-NDN})}}
+\section{\emph{\gls{V-NDN}}}
 \label{sub:VNDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-No contexto dos veículos autónomos e redes ad-hoc veiculares (VANETs), os desafios inerentes à mobilidade e à intermitência de conectividade obstaculizam a manutenção de ligações ponto a ponto robustas \cite{rahman_data-centric_2021}. Surge, assim, o paradigma V-DND, uma extensão do modelo Named Data Networking (NDN), que, em vez de depender de endereços IP, troca pacotes com base em nomes de dados, promovendo um encaminhamento orientado a conteúdos.
-A proposta V-DND assenta em três pilares:
+
+No contexto dos veículos conectados e das \gls{VANETs}, a mobilidade elevada, a topologia dinâmica e a conectividade intermitente tornam desafiadora a manutenção de ligações ponto a ponto robustas baseadas em endereços IP \cite{rahman_data-centric_2021}. Para responder a estas limitações, surge o paradigma \textbf{\gls{V-NDN}}, uma extensão natural da arquitetura \gls{NDN} orientada a conteúdo, na qual a comunicação é guiada por nomes de dados e não por endereços de origem ou destino.
+
+A proposta \gls{V-NDN} adapta os princípios fundamentais do \gls{NDN}, \textit{Interest/Data packets}, \textit{in-network caching} e \textit{name-based forwarding} ao ambiente altamente dinâmico das redes veiculares. A arquitetura baseia-se em três pilares principais:
+
 \begin{itemize}
-    \item Encaminhamento baseado em nomes: o envio de Interest packets permite a descoberta eficiente de conteúdos e serviços disponíveis em nós móveis próximos, sem supor conectividade estável a um servidor central \cite{papadopoulos_-vehicle_2021}.
-    \item Cache na rede: cada nó pode armazenar conteúdos recebidos, reforçando a disponibilidade de dados e reduzindo a latência em futuras solicitações.
-    \item Resiliência face a falhas de rota: o comportamento reencaminhador NDN permite deteção adaptativa de falhas, evitando dependência de protocolos de routing tradicionais \cite{rahman_analysis_2021}.
+\item \textbf{Encaminhamento baseado em nomes:} os pacotes de interesse (\textit{Interest}) permitem a descoberta eficiente de conteúdos e serviços disponíveis em nós móveis próximos, sem necessidade de conectividade contínua com um servidor central \cite{papadopoulos_-vehicle_2021}. Graças à \textbf{\gls{FIB}}, os veículos podem propagar interesses por múltiplos caminhos potenciais, explorando rotas oportunistas conforme a topologia se altera.
+
+\item \textbf{Cache distribuído na rede:} através da \textbf{\gls{CS}}, cada veículo pode armazenar localmente conteúdos recebidos. Esse mecanismo de \textit{in-network caching} reduz a latência e a carga de tráfego, pois futuros interesses podem ser satisfeitos por veículos vizinhos em vez de pelo produtor original.
+
+\item \textbf{Resiliência e auto-adaptação:} o estado mantido na \textbf{\gls{PIT}} permite que os pacotes de dados retornem automaticamente aos consumidores pendentes, mesmo quando a topologia muda. Em caso de falha de rota, a estratégia de encaminhamento pode redirecionar dinamicamente o pedido, sem necessidade de restabelecer sessões ou rotas fixas \cite{rahman_analysis_2021}.
 \end{itemize}
-Já foi apresentado um protótipo V-NDN, seguido de testes experimentais que demonstraram o potencial do paradigma. Os resultados sugerem que as redes veiculares baseadas em V-NDN podem sustentar comunicações semipersistentes, adaptando-se dinamicamente à densidade e à mobilidade dos veículos.
-Sendo assim V-NDN apresenta grandes vantagens tais como a descoberta de conteúdo local, pois os veículos podem obter dados de outros nós próximos sem recorrer a infra-estrutura fixa. O encaminhamento adaptativo quando o sistema deteta falhas e redireciona automaticamente os pedidos por caminhos alternativos, sem necessidade de restabelecimento de sessão, é também uma vantagem a considerar e ainda a escalabilidade que tem haver com a utilização de cache distribuindo a carga de propagação de dados, melhorando a performance em ambientes densos \cite{yu_names_nodate}.
-Existem obivamente limitações tais como a volatilidade dos nós (veículos que entram e saem do alcance) pode reduzir o aproveitamento de cache, a falta investigação aprofundada sobre o impacto da autenticação de dados, controlo de congestionamento e segurança frente a ataques do tipo Interest Flooding e a uniformidade na densidade de veículos e em curvas de tráfego necessita de ser explorada em cenários urbanos reais.
-O V-DND constitui uma extensão promissora do paradigma NDN ao domínio veicular, oferecendo resiliência, descentralização, e eficiência em redes móveis. Os resultados iniciais, embora positivos, apontam para a necessidade de investigação futura em cenários reais, com foco na segurança, controlo de contenda, e integração com serviços de transportes inteligentes.
 
+Combinando estas funcionalidades, o \gls{V-NDN} consegue explorar a mobilidade dos veículos como um recurso, e não como um obstáculo. Quando um veículo se desloca, ele transporta consigo a cache de conteúdos úteis, permitindo uma disseminação natural e cooperativa de dados (\textit{store-carry-forward}). Assim, informações críticas, como alertas de colisão ou condições da estrada, podem propagar-se rapidamente entre veículos próximos sem recorrer a uma infraestrutura fixa.
+
+Testes experimentais e protótipos demonstram que o \gls{V-NDN} pode sustentar comunicações semipersistentes e adaptativas, ajustando-se à densidade de veículos e à variação de conectividade \cite{grassi_vanet_2014}. Entre as principais vantagens do paradigma destacam-se:
+
+\begin{itemize}
+\item \textbf{Descoberta de conteúdo local:} veículos podem obter dados de outros nós próximos (\gls{V2V}), sem depender de \gls{RSUs} ou servidores centrais.
+\item \textbf{Encaminhamento adaptativo:} falhas de rota são detectadas e resolvidas automaticamente através da lógica da \gls{FIB} e da \gls{PIT}, redirecionando interesses por caminhos alternativos.
+\item \textbf{Escalabilidade:} a utilização de \gls{CS} reduz a redundância de tráfego, melhorando a eficiência da rede em ambientes densos \cite{yu_names_nodate}.
+\end{itemize}
+
+Contudo, ainda persistem limitações relevantes. A elevada volatilidade dos nós, ou seja, veículos que entram e saem rapidamente da área de comunicação pode reduzir a eficácia da \textit{cache}. Além disso, questões como autenticação de dados, controlo de congestionamento e mitigação de ataques de \textit{Interest Flooding} requerem investigação adicional. Também a uniformidade da densidade de veículos e a variabilidade de padrões de tráfego em cenários urbanos complexos continuam a desafiar os modelos atuais.
+
+Uma área de investigação em crescimento dentro do \gls{V-NDN} é a das estratégias de encaminhamento adaptativas, que combinam métricas como posição geográfica, direção, velocidade e histórico de contactos para decidir a melhor interface de saída de um interesse. Exemplos incluem o encaminhamento baseado em distância (\textit{Distance-Based Forwarding}), em probabilidade de encontro (\textit{Encounter Probability}) e em contexto (\textit{Context-Aware Forwarding}), todos com o objetivo de melhorar a taxa de entrega e reduzir o atraso médio em cenários de alta mobilidade \cite{aldahlan_geographic_2019} \cite{wang_mobility-predict-based_2020}.
+
+Em síntese, o \gls{V-NDN} representa uma evolução promissora do paradigma \gls{NDN} aplicado ao domínio veicular, oferecendo um modelo de comunicação resiliente, descentralizado e eficiente para redes móveis. Os resultados iniciais indicam um forte potencial para integrar este paradigma em (\gls{ITS}), mas também apontam para a necessidade de investigação contínua em segurança, e interoperabilidade entre tecnologias heterogéneas \cite{rahman_data-centric_2021, papadopoulos_-vehicle_2021, yu_names_nodate}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\emph{Trabalhos em (\gls{V-NDN})}}
-\label{sub:VNDN_trabalhos}
+\section{\emph{Trabalhos em \gls{V-NDN}}}
+\label{sub:trabalhos_vndn}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Num cenário de mobilidade elevada e redes intermitentes, os veículos conectados precisam de métodos robustos para troca de dados em tempo real. Como já foi dito o paradigma \gls{NDN} emerge como uma alternativa viável aos modelos tradicionais IP-centrados, permitindo que a comunicação se foque no conteúdo e não nos nós de origem/destino. Esta arquitetura torna-se particularmente interessante quando se elimina a dependência de infraestrutura fixa, como as RSUs (Roadside Units), propondo um modelo puramente peer-to-peer entre veículos (V2V).
-Existem algumas abordagens, sendo que aqui vamos apresentar uma com recorrendo a RSU e outra, recorrendo apenas aos veículos. Nesta primeiria abordagem, cada veículo age simultaneamente como produtor e consumidor de dados, permitindo a disseminação direta de conteúdos entre pares. A troca de dados baseia-se em nomes semânticos como por exemplo ndn/highway/accident/segment42 e em estratégias adaptativas, garantindo que a informação mais relevante seja propagada eficientemente mesmo em condições de mobilidade elevada.\cite{grassi_vehicular_2013} Este modelo elimina a necessidade de nós centrais, promovendo um sistema verdadeiramente distribuído, com caching local e interesses que fluem entre veículos adjacentes.
-Outra, abordagem, seria o uso do NDN em contextos de infraestrutura, onde os veículos interagem com semáforos inteligentes via pacotes Interest contendo dados sobre a sua posição, velocidade e destino\cite{al-qutwani_smart_2019}. Ainda que eficaz, esta solução pressupõe a existência de infraestruturas de apoio, o que limita a escalabilidade e aplicabilidade em zonas não urbanizadas.
-Ao comparar estas abordagens, torna-se evidente que os modelos V2V puros, como o V-NDN, oferecem maior resiliência, flexibilidade e independência de infraestrutura. São particularmente adequados para cenários onde a conectividade com RSUs não é garantida, como autoestradas, zonas rurais ou situações de emergência. Além disso, permitem a implementação de mecanismos como caching colaborativo e sincronização de dados em tempo real entre veículos, sem necessidade de coordenação externa.
+Diversos estudos têm explorado o paradigma \gls{V-NDN} com o objetivo de melhorar a disseminação de conteúdos em ambientes veiculares altamente dinâmicos. As abordagens existentes podem ser agrupadas em três grandes categorias: estratégias de encaminhamento adaptativo, mecanismos de cache colaborativo, e soluções voltadas à segurança e gestão de mobilidade.
+
+\paragraph{Encaminhamento adaptativo}  
+O encaminhamento em \gls{V-NDN} é um dos aspetos mais investigados, dada a necessidade de garantir entrega eficiente de dados em topologias em constante mudança. Em \cite{cha_mobility_2017}, os autores propõem um serviço de mobilidade para consumidores em \gls{NDN}, permitindo que um consumidor reemita um interesse mesmo após mudanças de localização, facilitando a continuidade da comunicação em ambientes móveis. De forma semelhante, \cite{choi_dual-connectivity_2020} introduz um esquema de mobilidade sem âncoras para produtores em \gls{NDN}, utilizando uma estratégia de conectividade dupla que pode ser expressa como uma transição suave, mantendo a conectividade durante mudanças de localização do produtor.
+
+\paragraph{Cache colaborativo e eficiência de disseminação}  
+Outra linha de investigação centra-se na otimização do uso da \gls{CS} em cada nó. Em \cite{amadeo_caching_2020}, é proposto um esquema de cache cooperativo, onde os veículos partilham informações sobre os conteúdos armazenados, permitindo respostas rápidas a interesses repetidos. O trabalho demonstra que a distribuição inteligente de conteúdos reduz o consumo de largura de banda e melhora a disponibilidade de dados em zonas de baixa densidade.
+
+\paragraph{Gestão de mobilidade e segurança}  
+A mobilidade dos nós e a volatilidade das ligações trazem desafios adicionais à manutenção da consistência e autenticidade dos dados. Em \cite{cha_mobility_2017}, os autores discutem a integração de mecanismos de autenticação leve nos pacotes de dados do \GLS{V-NDN}, utilizando assinaturas baseadas em nomes hierárquicos. Essa abordagem garante integridade e autenticidade sem introduzir sobrecarga significativa.
+
+\paragraph{Síntese e tendências}  
+De modo geral, a literatura demonstra que o \gls{V-NDN} é capaz de melhorar a eficiência da disseminação de conteúdos, explorando os princípios de \textit{in-network caching} e \textit{name-based forwarding} do \gls{NDN}. As estratégias adaptativas de encaminhamento e cache mostram-se especialmente promissoras para lidar com mobilidade elevada e topologias esparsas, mas persistem desafios relacionados com a gestão de segurança, sincronização de caches e balanceamento de tráfego.
+
+Os resultados apontam ainda para a necessidade de mecanismos híbridos, capazes de combinar métricas contextuais (posição, velocidade, densidade) com informações da rede (estado da \gls{PIT} e \gls{CS}), a fim de otimizar a entrega de dados em tempo real. Esses princípios fundamentam a abordagem proposta nesta dissertação, centrada na disseminação eficiente e resiliente de conteúdos em redes veiculares orientadas a dados.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{Sincronização no \gls{NDN}}}
@@ -109,15 +209,15 @@ O objetivo da sincronização no \gls{NDN} é reconciliar as diferenças num con
 Uma abordagem para a reconciliação dos dados é o uso de vetores de estado. A ideia central é representar o estado de um conjunto de dados na forma de um vetor de versão, onde cada componente corresponde ao nome mais recente dos dados de cada produto. Como um vetor de estado enumera diretamente o prefixo de cada produtor e o número de sequência dos dados mais recentes, as diferenças nos conjuntos de dados podem ser identificadas fazendo uma simples comparação entre os valores de cada prefixo. Para atualizar o seu Vetor de Estado, o nó adota o maior número de sequência disponível para cada produtor. O facto de a representação do estado baseada em Vetores de Estado permitir uma comparação direta do estado, permite que os nós identifiquem diretamente os dados em falta sem necessidade de trocas de mensagens adicionais. Esta característica torna a abordagem ideal para redes ad-hoc, onde grandes divergências de estado são bastante comuns. O tamanho do Vetor cresce proporcionalmente ao número de produtores cujos estados precisam ser trocados. Contudo, a listagem explícita dos estados de cada produtor permite a transmissão de Vetores de Estado parciais quando há restrições no tamanho dos pacotes.
 Como um Vetor de Estado enumera diretamente o prefixo do produtor e o número de sequência dos dados mais recentes para cada produtor num grupo de Sincronização, conforme mostrado na Figura \ref{fig:SV}, a diferença nos nomes dos conjuntos de dados pode ser identificada diretamente comparando o número de sequência de cada prefixo de produtor. Em seguida, um nó atualiza o seu Vetor de Estado adotando o valor mais alto do número de sequência de cada produtor no Vetor de Estado.
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics{Chapters/Figures/svs.png}
     \caption{Exemplo de Vetor de Estado \cite{li_brief_2018}} 
     \label{fig:SV}   
 \end{figure}
 
-Como o \gls{NDN} foi concebido para suportar comunicações assíncronas, exigir uma consistência perfeita das informações de associação entre todos os membros do grupo não é viável. Para contornar esta limitação, a sincronização por Vetores de Estado foi rapidamente sucedida por outro protocolo de sincronização, o DSSN. O DSSN trouxe uma alteração simples, mas crucial, permitindo a sincronização de conjuntos de dados em grupos de sensores que entram periodicamente em estados de inatividade.
-A principal mudança introduzida pelo DSSN foi a reformulação do vetor de estado, que passou de uma simples lista de números de sequência para uma lista de tuplas [prefixo-do-participante, número de sequência]. Com este novo formato, cada Interesse de Sincronização do DSSN transporta um vetor de estado que codifica diretamente o estado global do conjunto de dados partilhado. Esta abordagem garante que qualquer destinatário pode interpretar corretamente a mensagem DSSN, independentemente do nível de inconsistência de estado entre os participantes.
+Como o \gls{NDN} foi concebido para suportar comunicações assíncronas, exigir uma consistência perfeita das informações de associação entre todos os membros do grupo não é viável. Para contornar esta limitação, a sincronização por Vetores de Estado foi rapidamente sucedida por outro protocolo de sincronização, O DSSN. O DSSN trouxe uma alteração simples, mas crucial, permitindo a sincronização de conjuntos de dados em grupos de sensores que entram periodicamente em estados de inatividade.
+A principal mudança introduzida pelo DSSN foi a reformulação do vetor de estado, que passou de uma simples lista de números de sequência para uma lista de tuplas [prefixo-do-participante, número de sequência]. Com este novo formato, cada Interesse de Sincronização do DSSN transporta um vetor de estado que codifica diretamente o estado global do conjunto de dados partilhado. Esta abordagem garante que qualquer destinatário pode interpretar corretamente a mensagem DSSN, independentemente do nível de inconsistência de estado entre os participantes \cite{li_data_2018}.
 O DSSN foi projetado para ambientes onde a conectividade entre nós fixos é intermitente. A partir deste protocolo, surgiu o DDSN, uma extensão do DSSN otimizada para redes ad-hoc sem fio, caracterizadas por uma alta dinâmica no movimento dos nós. Para lidar com estas condições, o DDSN introduziu uma série de melhorias, incluindo:
 
 \begin{itemize}
@@ -129,300 +229,869 @@ O DSSN foi projetado para ambientes onde a conectividade entre nós fixos é int
 Apesar da sua eficiência em ambientes altamente dinâmicos e disruptivos, o DDSN tem um desempenho inferior em redes bem conectadas, devido à sua ênfase exclusiva em cenários com conectividade instável. A experiência adquirida com os protocolos anteriores levou ao desenvolvimento do \gls{SVSync}. Este protocolo herda a codificação do vetor de estado introduzida pelo DSSN, mas elimina funcionalidades específicas para redes de sensores e ambientes com elevada disrupção.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\emph{\textit{State Vector Sync} \gls{SVSync}}}
-\label{sub:Sinc__NDN}
+\subsection{\emph {\gls{SVSync}}}
+\label{sub:Sinc_NDN_refined}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 O \gls{SVSync} adota uma estratégia de codificação de estado distinta. O seu design segue a convenção de nomeação sequencial dos dados e transporta diretamente a representação do namespace do conjunto de dados, codificada em pares [nome do produtor, número de sequência] (figura \ref{fig:SVs}), dentro de cada Interesse Sync Multicast.
 A decisão de design do \gls{SVSync} de incluir o namespace do conjunto de dados bruto em cada Interesse de Sincronização oferece uma vantagem significativa: qualquer nó que receba o Interesse compreende de imediato o estado do conjunto de dados, independentemente do seu próprio estado atual ou de eventuais mensagens perdidas anteriormente. No entanto, permitir que um Interesse recebido possa alterar o estado de um participante abre a porta a possíveis abusos. Para mitigar esse risco, o \gls{SVSync} exige que todos os Interesses de Sincronização sejam assinados.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics{Chapters/Figures/vsvsync.png}
-    \caption{Exemplo de Vetor de Estado \cite{moll_brief_nodate}} 
-    \label{fig:SVs}   
+\centering
+\includegraphics{Chapters/Figures/vsvsync.png}
+\caption{Exemplo de Vetor de Estado \cite{moll_brief_nodate}}
+\label{fig:SVs}
 \end{figure}
 
 \subsubsection{Funcionamento do \gls{SVSync}}
-Um grupo de sincronização utiliza um prefixo multicast de grupo, garantindo que todos os participantes recebem as mensagens de sincronização. Cada membro do grupo possui também um prefixo de publicação específico, sob o qual os seus dados ficam acessíveis aos outros participantes.
-O \gls{SVSync} opera com apenas um tipo de mensagem: o Interesse de Sincronização, utilizado para atualizar o estado do conjunto de dados. Estes Interesses de Sincronização são enviados para o prefixo multicast de grupo em duas situações:
-\begin{itemize}
-    \item 1. Acionados por eventos, sempre que há uma alteração no estado do conjunto de dados, os participantes notificam imediatamente os restantes.
-    \item 2. Envios periódicos, garantem uma visão consistente do conjunto de dados, mesmo em caso de perda de mensagens acionadas por eventos.
-\end{itemize}
-O primeiro caso é utilizado para disseminar rapidamente novas informações sobre o estado do conjunto de dados na rede, enquanto o segundo serve para garantir a consistência do estado do conjunto de dados do grupo, mesmo perante perdas de pacotes e desconexões temporárias.
-Os interesses de sincronização ativados por eventos garantem que o grupo se mantém atualizado sobre o estado do conjunto de dados partilhado. No entanto, o estado de um determinado membro pode ficar desatualizado relativamente aos restantes devido a diversas razões imprevisíveis, como perda de pacotes ou falhas temporárias de ligação. Para mitigar este problema, cada entidade de sincronização mantém um temporizador de interesse de sincronização para acionar periodicamente esses interesses, ajudando a manter os membros do grupo sincronizados.
-O funcionamento desse mecanismo é explicado na figura \ref{fig:SVsyync}.
+Cada grupo de sincronização utiliza um prefixo multicast de grupo, garantindo que todos os participantes recebam as mensagens de sincronização. Cada nó possui também um prefixo de publicação próprio, sob o qual os seus dados ficam acessíveis aos restantes participantes.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics{Chapters/Figures/Captura de ecrã 2025-03-24 160649.png}
-        \caption{Fluxograma do funcionamento do \gls{SVSync} \cite{moll_brief_nodate}} 
-        \label{fig:SVsyync}   
-    \end{figure}
-
-    Diferindo dos protocolos anteriores baseados em vetores, os interesses de sincronização \gls{SVSync} são utilizados exclusivamente como notificações unidirecionais, sem desencadear pacotes de resposta. Todos os protocolos de sincronização utilizam interesses de sincronização para transmitir o estado do conjunto de dados, diferenciando-se apenas na forma como codificam esse estado.
-    Os participantes de um grupo de sincronização transmitem interesses de sincronização multicast para todo o grupo. No entanto, solicitar notificações de mudança de estado através de interesses multicast levanta três desafios principais:
-    \begin{itemize}
-        \item 1. Como o momento da próxima alteração no estado do conjunto de dados é imprevisível, um interesse de sincronização que solicite uma resposta permanecerá pendente em todos os nós encaminhadores até expirar e ser renovado. Isto cria um estado PIT persistente para cada membro relativamente a todos os outros membros do grupo.
-        \item 2. Um interesse multicast solicita uma resposta de vários produtores potenciais. Se múltiplos produtores responderem quase simultaneamente, devido ao princípio do \gls{NDN} de um interesse um dado, apenas uma das respostas será entregue ao remetente do interesse.
-        \item 3.	Como consequência do ponto anterior, diferentes membros do grupo poderão receber atualizações distintas, levando a uma divergência do estado do conjunto de dados, que só convergirá após vários ciclos de troca de interesse-dado.
-    \end{itemize}
-    Para resolver estes problemas, em vez de solicitar respostas diretamente através de interesses de sincronização multicast, o \gls{SVSync} utiliza-os apenas para permitir que cada participante notifique os restantes sobre o seu próprio estado do conjunto de dados. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\emph{Desafios das Redes Veiculares}}
-\label{sub:rvd}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A aplicação dos mecanismos de sincronização desenvolvidos para redes NDN em cenários veiculares enfrenta várias dificuldades intrínsecas. As VANETs caracterizam-se por uma topologia altamente dinâmica, em que os veículos se deslocam a velocidades elevadas e frequentemente entram e saem do alcance uns dos outros, o que resulta em ligações de curta duração e intermitência de conectividade. Essa volatilidade torna o processo de sincronização mais complexo do que em redes fixas ou mesmo em redes ad hoc com mobilidade reduzida. Além disso, a escalabilidade constitui um obstáculo relevante, pois em ambientes urbanos densos a quantidade de nós participantes cresce rapidamente, levando a um aumento considerável do número de mensagens de sincronização e ao risco de sobrecarga da rede. Outro aspeto crítico é a latência: muitas aplicações veiculares, sobretudo as associadas à segurança, requerem tempos de resposta de ordem de milissegundos, mas os protocolos de sincronização existentes nem sempre conseguem garantir convergência rápida em cenários de elevada mobilidade. A segurança e a resiliência também se revelam desafios, já que ataques como o flooding de interesses podem degradar significativamente o desempenho da rede e comprometer a fiabilidade da disseminação de dados. Estas limitações foram destacadas em diferentes estudos que analisam a adaptação do NDN às redes veiculares, confirmando a necessidade de soluções específicas que considerem as restrições geográficas e temporais, bem como os requisitos de baixa latência e alta escalabilidade.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Trabalhos relacionados}
-\label{cha:tr}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Em sistemas distribuídos e redes \gls{NDN}, a sincronização eficiente torna-se desafiadora à medida que o número de participantes cresce. Para mitigar o overhead de comunicação de sincronização total, pesquisas recentes têm focado em estratégias hierárquicas de sincronização, nas quais um nó pivô atua como coordenador central.
-Um trabalho importante propõe uma arquitetura onde o pivô orquestra a disseminação das atualizações aos subgrupos de nós, reduzindo assim o tráfego redundante e o uso de recursos de banda. Esta abordagem é especialmente útil em topologias com grande número de nós e conexões dinâmicas, onde sincronizar todos diretamente seria impraticável. A teoria por trás deste modelo combina que os nós no mesmo nível hierárquico sincronizem de forma coerente, mesmo na ausência de ligações diretas entre eles.
-Além disso, estudos em sincronização hierárquica e outras redes complexas reforçam que a presença de um pivô hierárquico facilita a escalabilidade e resiliência da sincronização, permitindo que camadas superiores passem o estado global enquanto as inferiores reproduzem localmente as informações recebidas.
-Essa técnica de pivô também tem sido aplicada em cenários multimédia e em sistemas que exigem atualização consistente de estados distribuídos, como jogos em rede e sistemas IoT, onde o controle centralizado temporário atua para minimizar a latência e evitar divergência prolongada\cite{luo_hierarchical_2025}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Estratégia a utilizar}
-\label{cha:estrategia}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-A adoção de uma arquitetura baseada em pivôs para a sincronização de dados em redes veiculares NDN surge como uma resposta direta aos desafios de escalabilidade e eficiência na disseminação de informação em ambientes urbanos densos. Nos mecanismos tradicionais de sincronização, como o \gls{SVSync}, o desempenho tende a degradar-se à medida que o número de nós aumenta, devido à multiplicação de mensagens de interesse e ao consequente crescimento da \gls{PIT}. Esta sobrecarga pode resultar em colisões, perdas de pacotes e atrasos significativos na convergência dos estados \cite{pereira_vehicular-ndn_2026}.
-
-A introdução de pivôs visa mitigar estes problemas ao redefinir o padrão de comunicação entre veículos. Em cada faixa de tráfego, é eleito como pivô o veículo mais próximo do centro da faixa, que assume o papel de agregador e disseminador dos vetores de estado. Os restantes veículos sincronizam apenas com este representante, enquanto os pivôs mantêm a comunicação entre si nas faixas adjacentes. Este modelo reduz drasticamente a complexidade do processo, aproximando-a de uma relação linear com o número de nós e limitando a troca de mensagens a um pequeno conjunto de comunicações inter-pivôs.
-
-A estratégia proposta tira partido das características geográficas naturais dos cenários urbanos, nomeadamente das intersecções e cruzamentos, onde a segmentação por faixas facilita a eleição de nós agregadores. A sincronização por pivôs revela-se especialmente vantajosa em situações como:
+O \gls{SVSync} utiliza apenas um tipo de mensagem: o \textit{Interest}. Estes interesses são enviados em duas situações principais:
 
 \begin{itemize}
-    \item Paragens em cruzamentos com semáforos, onde os veículos aguardam temporariamente, permitindo a troca eficiente de informações sobre congestionamentos ou acidentes à frente.
-    \item Intersecções com tráfego intenso, nas quais veículos de diferentes direções beneficiam da disseminação rápida de avisos sobre obras, bloqueios ou alterações temporárias na circulação.
-    \item Cenários de condução autónoma, onde múltiplos veículos necessitam de partilhar estados locais quase em simultâneo, garantindo decisões seguras de travagem, aceleração ou mudança de faixa.
+\item \textbf{Eventos:} sempre que há uma alteração no estado do conjunto de dados, os participantes notificam imediatamente os restantes.
+\item \textbf{Envios periódicos:} garantem consistência do conjunto de dados, mesmo em caso de perda de pacotes ou desconexões temporárias.
 \end{itemize}
 
-A integração da arquitetura proposta com o \gls{SVSync} reforça a sua eficiência e compatibilidade com os princípios do \gls{NDN}. O protocolo SVSync, concebido para sincronização assíncrona baseada em vetores de estado, fornece uma base sólida para a codificação e disseminação seletiva de atualizações. Ao delegar nos pivôs a responsabilidade pela emissão de anúncios de estado fora da sua faixa, evita-se a geração de respostas redundantes por múltiplos produtores. Assim, mantém-se a coerência e eficiência da sincronização, explorando simultaneamente o multicast por nome e o armazenamento em cache de conteúdos na rede.
+Os interesses ativados por eventos permitem a rápida disseminação de informações, enquanto os envios periódicos mantêm todos os participantes sincronizados, mitigando divergências temporárias (Figura~\ref{fig:SVsyync}).
 
-Esta estratégia será avaliada através de simulações no \textit{ndnSIM}, comparando o desempenho da abordagem baseada em pivôs com o SVSync tradicional em métricas como latência, e mensafens trocadas. Espera-se demonstrar que a arquitetura proposta melhora a escalabilidade e a robustez da sincronização em ambientes veiculares densos.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Implementação}
-\label{cha:implementação}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A implementação apresentada materializa um cenário de simulação orientado para o estudo da sincronização hierárquica de dados em redes baseadas em \gls{NDN}. O ambiente experimental é construído sobre uma grelha de nós interligados que reproduz uma rede estruturada e de fácil análise. Cada nó, nas linhas colunas centrais, é equipado com uma aplicação de chat suportada pelo mecanismo \gls{SVSync} o qual assegura a disseminação e convergência da informação entre participantes de forma descentralizada, para uma melhor perceção do cenário a figura \ref{fig:Cenario} permite-nos perceber onde estão os nós e pivôs num grid de 5x5 valor usado apenas como exemplo.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{Chapters/Figures/ExemploCenario.png}
-    \caption{Exemplo de cenário proposto.} 
-    \label{fig:Cenario}   
+\begin{figure}[H]
+\centering
+\includegraphics{Chapters/Figures/Captura de ecrã 2025-03-24 160649.png}
+\caption{Fluxograma do funcionamento do \gls{SVSync} \cite{moll_brief_nodate}}
+\label{fig:SVsyync}
 \end{figure}
 
-Nesta configuração, os nós são diferenciados por funções lógicas e comportamentais. Por um lado, existem os pontos, que representam nós móveis na rede e que, em determinado instante da simulação, se deslocam para o centro da topologia. Por outro lado, os pivôsdesempenham o papel de elementos de referência na fase de sincronização, funcionando como agregadores e retransmissores de versões de dados. A aplicação de chat em cada nó é configurada com diferentes cadências de publicação (rápida ou lenta), determinadas pela sua posição na grelha, introduzindo assim heterogeneidade no tráfego e permitindo avaliar o comportamento do SVS sob condições diversas. 
-A gestão do processo de sincronização é orquestrada pela classe \textit{HierarchicalSyncMobilityManager}, cuja lógica divide-se em fases bem delimitadas. Inicialmente, à medida que os pontos convergem para o centro, os pivôs absorvem as versões de dados mais recentes publicadas na rede. 
+O SVSync utiliza os interesses apenas como notificações unidirecionais, sem gerar respostas imediatas. Isso evita problemas de múltiplos produtores respondendo ao mesmo interesse, mas apresenta algumas limitações importantes, especialmente em cenários de mobilidade elevada:
 
-\begin{lstlisting}[language=C++, caption={Fase 1 : Sincronização dos pontos para os pivôs}]
+\paragraph{Limitações do SVSync}
+\begin{itemize}
+\item \textbf{\gls{PIT} persistente elevado:} cada interesse \textit{multicast} permanece pendente em todos os encaminhadores até expirar, aumentando o uso de memória em redes densas.
+\item \textbf{Entrega parcial de atualizações:} devido ao princípio \textit{um interesse, um dado}, diferentes participantes podem receber subconjuntos distintos de atualizações, resultando em divergência temporária de estado.
+\item \textbf{Dependência de conectividade regular:} em cenários com nós móveis ou desconexões frequentes (como em \gls{V-NDN}), a falta de retransmissão automática pode atrasar a convergência global.
+\item \textbf{Escalabilidade limitada:} o crescimento do grupo aumenta linearmente o número de interesses necessários para manter o estado atualizado, afetando eficiência em redes grandes.
+\end{itemize}
+
+\paragraph{Contribuição proposta pelo trabalho}
+Este trabalho propõe melhorias ao \gls{SVSync} para torná-lo mais eficiente em redes veiculares com alta mobilidade:
+
+\begin{itemize}
+\item \textbf{Redução de divergência:} introdução de mecanismos de priorização e agregação de interesses para minimizar diferenças temporárias entre participantes \cite{li_brief_2018}.
+\item \textbf{Uso otimizado do \gls{PIT}:} estratégias de encaminhamento adaptativo que limitam a quantidade de interesses pendentes por nó, evitando saturação em redes densas.
+\item \textbf{Escalabilidade:} compressão e transmissão seletiva do vetor de estado, permitindo que grupos maiores mantenham sincronização eficiente sem sobrecarregar a rede.
+\end{itemize}
+
+Desta forma, a proposta mantém a simplicidade e eficiência do SVSync, mas incrementa sua robustez em cenários altamente dinâmicos, como os encontrados em redes veiculares baseadas em \gls{V-NDN}, onde a mobilidade e a intermitência da conectividade são desafios constantes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Comparação de Protocolos de Sincronização}
+\label{sub:sync_comparison}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Para compreender melhor as diferenças entre abordagens de sincronização, apresentamos uma análise comparativa entre os protocolos DSSN, DDSN e \gls{SVSync}, seguida de uma visão sobre protocolos hierárquicos aplicados a redes IoT e \gls{VANETs}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{DSSN vs DDSN vs SVSync}
+\label{subsub:dssn_ddsn_svsync}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Os protocolos DSSN, DDSN e SVSync compartilham a ideia de vetores de estado para sincronização, mas diferem no foco e na adaptação a redes dinâmicas:
+
+\begin{itemize}
+    \item \textbf{DSSN:} ideal para redes de sensores com conectividade intermitente. Permite a sincronização de conjuntos de dados em estados de inatividade, utilizando vetores de estado codificados em tuplas [prefixo, número de sequência]. Limitado em escalabilidade e em redes densas.
+    
+    \item \textbf{DDSN:} extensão do DSSN para redes ad-hoc sem fio, priorizando transmissão em períodos de conectividade transitória e modo inativo para reduzir tráfego. Desempenho inferior em redes bem conectadas \cite{rahman_analysis_2021}.
+    
+    \item \textbf{\gls{SVSync}:} mantém a codificação de vetores de estado do DSSN, mas elimina funcionalidades específicas para sensores e adapta-se a redes mais dinâmicas. Limitações incluem overhead de \gls{PIT} persistente, divergência temporária de estado e escalabilidade limitada \cite{moll_brief_nodate}.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\caption{Comparação de Protocolos de Sincronização}
+\label{tab:sync_comparison}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Protocolo & Topologia alvo & Overhead & Robustez Mobilidade & Comentários \\ \hline
+DSSN      & Redes de sensores & Baixo       & Médio           & Bom para estados intermitentes, limita escalabilidade \\ \hline
+DDSN      & Redes ad-hoc dinâmicas & Médio & Alto            & Prioriza transmissões oportunistas; desempenho inferior em redes estáveis \\ \hline
+SVSync    & Redes dinâmicas gerais & Médio-Alto & Alto           & Adapta-se a redes móveis, mas \gls{PIT} persistente e divergência temporária \\ \hline
+\end{tabular}%
+}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Protocolos hierárquicos em IoT e VANETs}
+\label{subsub:hierarchical_sync}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Outra abordagem relevante é a sincronização hierárquica, utilizada em redes IoT e \gls{VANETs}, onde um nó pivô coordena a disseminação de atualizações a subgrupos de nós. Esta estratégia reduz \textit{overhead} de comunicação e melhora a escalabilidade em topologias dinâmicas.
+
+\begin{table}[h]
+\centering
+\caption{Protocolos hierárquicos de sincronização}
+\label{tab:hier_sync}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Protocolo & Topologia & Métrica principal & Overhead & Aplicação \\ \hline
+HierSync IoT \cite{luo_hierarchical_2025} & Redes de sensores & Latência & Baixo & IoT com grande número de nós \\ \hline
+HierSync VANET & Redes veiculares & Entrega de dados & Médio & Disseminação de alertas e dados em V2V \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+
+Estes protocolos hierárquicos são particularmente úteis em cenários onde a sincronização total direta seria inviável, como grupos grandes de sensores ou frotas de veículos conectados. Permitem que o pivô distribua o estado global enquanto os subgrupos replicam localmente, reduzindo latência e divergência entre nós.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Síntese crítica e lacunas}
+\label{sec:critica}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A análise dos protocolos de sincronização (DSSN, DDSN, SVSync) e das abordagens hierárquicas em IoT e \gls{VANETs} evidencia várias lacunas:
+
+\begin{itemize}
+    \item \textbf{Divergência de estado em redes móveis:} Protocolos como \gls{SVSync} mantêm \gls{PIT} persistente e podem gerar divergências temporárias de estado, especialmente em cenários com alta mobilidade veicular.
+    \item \textbf{Escalabilidade limitada:} Muitos métodos funcionam bem em pequenos grupos, mas apresentam overhead elevado em redes grandes.
+    \item \textbf{Falta de otimização para cenários veiculares:} Protocolos hierárquicos e DSSN/DDSN não foram totalmente avaliados em topologias \gls{V2V} com mobilidade elevada.
+    \item \textbf{Sincronização com conectividade intermitente:} O SVSync e protocolos similares não integram plenamente estratégias de retransmissão opportunista ou caching distribuído para aumentar a taxa de entrega em redes com desconexões frequentes.
+    \item \textbf{Segurança e integridade:} Embora algumas abordagens mencionem assinatura de interesses, a autenticação e prevenção de ataques tipo Interest Flooding não são exploradas em todos os protocolos.
+\end{itemize}
+
+Estas lacunas motivam a proposta deste trabalho, que pretende:
+
+\begin{itemize}
+    \item Adaptar \gls{SVSync} para redes veiculares, combinando cache distribuído, retransmissão opportunista e priorização de interesses.
+    \item Reduzir divergência de estado e overhead do \gls{PIT} em topologias dinâmicas.
+    \item Avaliar o desempenho em cenários reais de \gls{VANETs}, simulando alta mobilidade e densidade variável de veículos.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trabalhos Relacionados}
+\label{sec:trabalhos_relacionados}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A pesquisa em redes \gls{NDN} veiculares e protocolos de sincronização tem avançado nos últimos anos, sobretudo em cenários de mobilidade elevada e conectividade intermitente. Diversos trabalhos exploram desde a disseminação eficiente de conteúdo até estratégias hierárquicas de sincronização em redes ad-hoc e IoT. A seguir, apresentam-se os estudos mais relevantes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{\gls{V-NDN} e disseminação de conteúdo em \gls{VANETs}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Em \cite{grassi_vehicular_2013}, é apresentado um modelo \gls{V-NDN} puramente peer-to-peer, onde cada veículo atua simultaneamente como produtor e consumidor de dados. A abordagem baseia-se em nomes semânticos e estratégias adaptativas de encaminhamento, garantindo disseminação eficiente mesmo em cenários de mobilidade elevada. Este modelo elimina a dependência de nós centrais, promovendo caching local e troca direta de interesses entre veículos.
+
+O estudo de \cite{al-qutwani_smart_2019} explora o uso de \gls{V-NDN} em contextos com infraestrutura, onde veículos interagem com semáforos inteligentes através de pacotes de interesse que contêm dados sobre posição, velocidade e destino. Embora eficiente, esta abordagem depende da presença de \gls{RSUs}, limitando aplicabilidade em zonas sem cobertura.
+
+Outros trabalhos recentes, como \cite{pereira_vehicular-ndn_2026}, introduzem Geo-Anchored Datasets (GADs) para melhorar a recolha e disseminação de dados em \gls{V-NDN}, considerando a alta mobilidade e conectividade intermitente dos veículos. Estas abordagens evidenciam a importância do \textit{caching} distribuído e da descoberta de conteúdo local em redes veiculares.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Caching e disseminação de dados em NDN e VANETs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+O \textit{caching} de dados é uma componente central para a eficiência de redes \gls{NDN}, especialmente em \gls{VANETs}. Estudos como \cite{khalid_caching_2024} exploram estratégias de cache colaborativo em redes ad-hoc sem fio, reduzindo latência e melhorando a disponibilidade de conteúdo. Modelos adaptativos de clustering, como o \gls{PACM} \cite{sampath_position-based_2021}, utilizam a posição dos veículos para organizar caches e w mwlhorar a entrega de dados em ambientes urbanos dinâmicos.
+
+Hierarquias em redes veiculares também têm sido propostas para aplicações não-críticas, permitindo disseminação eficiente de informações em redes densas \cite{jeong_hierarchical_2019}. A combinação de caching distribuído e estratégias hierárquicas aumenta a robustez da rede frente a desconexões temporárias e alta mobilidade.
+
+\chapter{Estratégia Proposta}
+\label{chap:estrategia}
+
+A sincronização de dados em redes veiculares \gls{NDN} enfrenta desafios significativos relacionados com a elevada mobilidade, a latência e a escalabilidade. Os protocolos tradicionais, como o \gls{SVSync}, foram originalmente concebidos para redes relativamente estáveis, onde a conectividade entre os nós é persistente e as variações topológicas são limitadas. Em ambientes veiculares, contudo, a topologia altera-se rapidamente, o que conduz a perdas de pacotes, divergência de estado e sobrecarga da rede.
+
+A sobrecarga do \gls{SVSync} tradicional torna-se particularmente evidente em situações urbanas com grande densidade de veículos. Por exemplo, num cruzamento com 50 veículos, a sincronização ponto a ponto exigiria a troca de milhares de mensagens por ciclo de atualização, saturando rapidamente a /gls{PIT} de cada nó e aumentando significativamente o risco de falhas de comunicação. Protocolos alternativos, como o ChronoSync ou o PSync, podem mitigar parcialmente esta sobrecarga, mas dependem de períodos de atualização fixos ou de propagação completa da topologia, o que continua a não ser eficiente em ambientes altamente dinâmicos.
+
+A observação central que motiva a estratégia proposta é que a comunicação veicular é fortemente influenciada por fatores espaciais e temporais. Em vias urbanas, os veículos tendem a organizar-se naturalmente em faixas e a mover-se em blocos relativamente coordenados. Aproveitando esta estrutura física, é possível reduzir drasticamente o número de mensagens redundantes, garantindo que cada nó receba a informação necessária sem saturar a rede.
+
+Com base nestas limitações, foi concebida uma nova estratégia de sincronização hierárquica, que introduz uma camada intermédia de coordenação baseada em \textit{pivôs}. Esta arquitetura hierárquica permite reduzir o número total de mensagens trocadas, melhorar a escalabilidade do sistema e diminuir a latência de convergência do estado global.
+
+\section{Motivação e Princípios de Desenho}
+
+Nos mecanismos clássicos de sincronização, cada nó comunica diretamente com todos os restantes participantes do grupo, originando um aumento exponencial do número de mensagens de interesse e uma sobrecarga significativa na \gls{PIT}. Este comportamento é particularmente problemático em cenários urbanos densos, onde centenas de veículos podem coexistir num mesmo cruzamento.
+
+A estratégia proposta baseia-se na observação de que, em cenários veiculares, a comunicação é fortemente influenciada por características espaciais e temporais. Assim, é possível aproveitar a estrutura física das vias para organizar os veículos em subgrupos coordenados por nós representativos, os \textit{pivôs}. Cada pivô atua como ponto de agregação e disseminação de informação, sincronizando os dados dentro da sua faixa e comunicando com os pivôs vizinhos para garantir a coerência global.
+
+\subsection{Hierarquia Proposta}
+
+O modelo proposto assenta numa arquitetura hierárquica composta por 2 camadas, cada uma com funções bem definidas e fluxos de comunicação específicos:
+
+\paragraph{1. Camada de Lanes (Veículos Comuns)}
+Esta camada inclui os veículos que produzem e consomem os dados locais. Cada veículo comunica apenas com o pivô da sua faixa, evitando a necessidade de conhecer todos os outros veículos da rede. Esta abordagem reduz significativamente o tráfego lateral e simplifica a gestão das tabelas de interesses, mantendo a rede eficiente mesmo em cenários densos.
+\paragraph{2. Camada de Pivôs}
+Os pivôs são veículos centrais escolhidos com base na proximidade ao centro da faixa ou ao ponto médio de um cruzamento. As suas funções incluem:
+\begin{itemize}
+\item Agregar os vetores de estado recebidos dos veículos da faixa, determinando a versão mais recente dos dados.
+\item Comunicar com pivôs de faixas adjacentes na zona central do cruzamento, assegurando consistência global.
+\end{itemize}
+
+O pivô atua como ponto de coordenação local, recebendo múltiplas mensagens das lanes e enviando apenas uma mensagem, com os dados mais recentes, para a camada superior. Esta redução de mensagens contribui significativamente para a diminuição da sobrecarga na rede.
+
+O processo de sincronização segue o ciclo hierárquico, representando uma comunicação bidirecional que garante consistência global com tráfego mínimo.  
+As três fases principais são as seguintes:
+
+\begin{itemize}
+    \item \textbf{Fase 1 — Sincronização ascendente (Lanes com os Pivôs):} os veículos de cada faixa enviam o seu vetor de estado ao pivô correspondente, que agrega e determina a versão mais recente dos dados.
+    \item \textbf{Fase 2 — Sincronização inter-pivôs (Pivôs com Pivôs):} os pivôs trocam entre si as versões agregadas, no centro do cruzamento, assegurando que o estado global é consistente entre todas as faixas.
+    \item \textbf{Fase 3 — Sincronização descendente (Pivôs com as Lanes):} a versão consolidada é disseminada aos pivôs e destes para os veículos da respetiva faixa, completando o ciclo de convergência.
+\end{itemize}
+
+Este modelo hierárquico tem como objetivo principal reduzir o tráfego de sincronização e a latência de convergência, mantendo a consistência global dos dados em ambientes de alta mobilidade.
+Na Figura~\ref{fig:arq} observa-se a hierarquia de entidades e as direções de sincronização.  
+As setas representam num primeiro momento indentificam o envio de vetores de estado (informação produzida), num segundo momento a troca entre pivôs e por último indicam a disseminação das atualizações consolidadas nas faixas respetivas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{Chapters/Figures/Arquitertura.drawio.png}
+    \caption{Fluxograma das fases do processo de sincronização hierárquica no SVSync-H.}
+    \label{fig:arq}
+\end{figure}
+
+\noindent
+
+\section{Fluxograma e Pseudocódigo da Sincronização Hierárquica}
+
+A Figura~\ref{fig:fluxograma_svsynch} ilustra o fluxo lógico das três fases de sincronização hierárquica no modelo proposto, evidenciando o ciclo. O processo é cíclico e ocorre de forma controlada, garantindo a convergência progressiva do estado global.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{Chapters/Figures/Fluxograma imp.drawio.png}
+    \caption{Fluxograma das fases do processo de sincronização hierárquica no SVSync-H.}
+    \label{fig:fluxograma_svsynch}
+\end{figure}
+
+\newpage
+O pseudocódigo simplificado da sincronização hierárquica é apresentado a seguir:
+
+\begin{algorithm}[H]
+\caption{Processo de Sincronização Hierárquica SVSync-H}
+\begin{algorithmic}[1]
+\State Inicializar conjuntos \textit{Points}, \textit{Pivots}
+\State Definir pivôs com base na proximidade geográfica ao centro da faixa
+\State \textbf{Fase 1:} Lanes $\rightarrow$ Pivô
+    \Statex \quad Cada veículo envia o seu vetor de estado ao pivô da faixa
+    \Statex \quad O pivô agrega e calcula a versão máxima
+\State \textbf{Fase 2:} Pivôs $\leftrightarrow$ Pivôs
+    \Statex \quad Os pivôs trocam versões agregadas através no centro
+    \Statex \quad O pivô com a versão mais alta devolve o vetor global atualizado
+\State \textbf{Fase 3:} Pivôs $\rightarrow$ Lanes
+    \Statex \quad O estado global é disseminado de volta às faixas
+\end{algorithmic}
+\end{algorithm}
+
+\section{Critérios para Escolha dos Pivôs}
+
+A seleção dos pivôs é um fator determinante para o desempenho do processo de sincronização. No modelo proposto, a escolha do pivô baseia-se em critérios geográficos, sendo designado como pivô o nó que se encontra mais próximo do centro do cruzamento. Esta escolha visa garantir a menor latência média possível na comunicação com os restantes veículos da mesma faixa e principalmente com os pivôs, otimizando, assim, a propagação das mensagens e reduzindo o número de retransmissões necessárias.
+
+\section{Gestão de Mobilidade e Chegada ao Centro}
+
+Durante a simulação, os veículos deslocam-se em direção a um cruzamento urbano. À medida que se aproximam, ocorre uma redistribuição natural das funções de pivô e ponto.  
+Os veículos das faixas (lanes) transmitem os seus vetores de estado para o pivô correspondente, enquanto este comunica com o centro — um nó lógico que representa o ponto de máxima densidade e coordenação.
+
+Quando um ponto atinge a região central, é considerado \textit{chegado ao centro}, sendo incluído na fase de sincronização global. Essa chegada desencadeia uma nova iteração do processo, assegurando que os dados locais são refletidos no estado global antes da dispersão dos veículos.
+Em cenários do mundo real, a solução proposta revela-se especialmente útil em situações de paragem temporária, como em cruzamentos controlados por semáforos ou zonas de elevada densidade de tráfego. Nestes momentos, os veículos permanecem estáticos por curtos períodos, proporcionando uma janela ideal para a execução do processo de sincronização hierárquica. Durante esta fase, os nós apresentam uma conectividade mais estável, o que permite aos pivôs recolher e disseminar vetores de estado de forma mais eficiente, reduzindo perdas de pacotes e garantindo a atualização coerente dos dados. Esta abordagem aproveita o comportamento natural do tráfego urbano para otimizar o desempenho do protocolo, melhorando a propagação de informação e a consistência global da rede veicular.
+Esta característica torna o modelo proposto particularmente adequado a \gls{ITS} e aplicações cooperativas de segurança, onde a sincronização eficiente entre veículos é essencial para uma tomada de decisão em tempo real.
+
+\section{Estratégia de Sincronização: Determinística vs Assíncrona}
+
+A sincronização hierárquica pode operar segundo dois modos conceptuais:
+
+\begin{itemize}
+    \item \textbf{Determinística:} cada fase é executada sequencialmente, apenas iniciando a seguinte após a convergência total da anterior. Esta abordagem garante consistência forte e previsível, sendo ideal para análise experimental.
+    \item \textbf{Assíncrona:} as fases sobrepõem-se parcialmente, permitindo que novos dados sejam transmitidos enquanto a sincronização global ainda decorre. Este modo é mais realista em cenários dinâmicos e de alta mobilidade, embora introduza eventual desfasamento temporário de versões.
+\end{itemize}
+
+Nas simulações conduzidas, a abordagem determinística foi adotada para permitir a observação clara das fases e o cálculo preciso das métricas de convergência.
+
+\section{Métricas de Avaliação}
+
+As métricas a serem avaliadas no Capítulo~\ref{cha:resultados} permitem quantificar o desempenho do SVSync-H em comparação com o SVSync tradicional.  
+A tabela~\ref{tab:metricas_sync} apresenta as principais métricas definidas para análise.
+
+\begin{table}[H]
+\centering
+\caption{Métricas consideradas para avaliação de desempenho da sincronização hierárquica.}
+\label{tab:metricas_sync}
+\begin{tabular}{p{4cm} p{10cm}}
+\toprule
+\textbf{Métrica} & \textbf{Descrição} \\
+\midrule
+\textbf{Tempo de Convergência} & Intervalo entre o início da sincronização e a obtenção do estado global consistente. \\
+\textbf{Número total de Mensagens} & Quantidade total de mensagens de interesse e dados trocadas durante o processo. \\
+\textbf{Número de interesses enviados} & Número de interesses que são enviados por todos os nós. \\
+\textbf{Número de interesses perdidos} &  Número de interesses que são perdidos no período de sincronização. \\
+\textbf{Percentagem de interesses perdidos} & Valor relativo de interesses perididos durante o processo de sincronização. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Em conjunto, estas métricas permitem avaliar o impacto da hierarquia proposta na escalabilidade, eficiência e robustez do processo de sincronização.
+
+\section{Limitações e Extensões Futuras}
+
+Embora o modelo proposto apresente vantagens claras em relação ao \gls{SVSync} tradicional, algumas limitações e desafios devem ser considerados:
+
+\begin{itemize}
+\item \textbf{Dependência da escolha de pivôs:} A eficiência do protocolo depende da seleção adequada dos pivôs. Em cenários com distribuição irregular de veículos, uma má escolha pode aumentar a latência de convergência. Futuras pesquisas podem explorar algoritmos dinâmicos para selecionar pivôs com base na densidade local de veículos ou na qualidade do link.
+\item \textbf{Mudanças rápidas na topologia:} Em situações de tráfego intenso ou manobras inesperadas, veículos podem entrar ou sair das faixas rapidamente, exigindo mecanismos de adaptação para atualizar a hierarquia de forma eficiente.
+\item \textbf{Equilíbrio de carga:} Pivôs recebem mensagens de múltiplos veículos, o que pode gerar pontos de concentração de tráfego. Estratégias futuras podem incluir redistribuição temporária de pivôs ou rotas alternativas para mitigar congestionamentos na rede.
+\item \textbf{Sincronização assíncrona:} Atualmente, a abordagem determinística garante consistência previsível, mas em cenários altamente dinâmicos, modos assíncronos podem ser explorados para reduzir a latência percebida, mesmo que ocorra desfasamento temporário entre versões.
+\end{itemize}
+
+Além disso, o conceito de hierarquia pode ser estendido para ambientes mais complexos:
+
+\begin{itemize}
+\item \textbf{Hierarquias multinível:} Em grandes cidades, é possível criar múltiplos níveis de pivôs, onde pivôs locais comunicam-se com pivôs de nível superior, formando uma rede de sincronização capaz de abranger centenas de veículos.
+\item \textbf{Integração com sensores urbanos:} Dados provenientes de semáforos, câmeras e sensores de tráfego podem ser incorporados à hierarquia, permitindo que a sincronização veicular também reflita informações do ambiente urbano.
+\item \textbf{Adaptação a diferentes padrões de mobilidade:} A estratégia pode ser ajustada para auto-estradas, áreas suburbanas ou ambientes com tráfego misto (veículos autônomos e humanos), mantendo os princípios de agregação de dados e comunicação hierárquica.
+\end{itemize}
+
+Em suma, embora o modelo proposto já ofereça ganhos significativos em eficiência e escalabilidade, há espaço para melhorias e adaptações que podem tornar a estratégia ainda mais robusta, flexível e aplicável a cenários urbanos cada vez mais complexos.
+
+\chapter{Implementação}
+
+Este capítulo descreve em detalhe a implementação da solução proposta para a sincronização hierárquica de dados em redes veiculares baseadas em \gls{NDN}. O objetivo é materializar o modelo conceptual apresentado no Capítulo~\ref{chap:estrategia}, avaliando o seu comportamento em diferentes cenários simulados no \texttt{ndnSIM}. A implementação foca-se na integração de uma camada de sincronização hierárquica sobre o mecanismo \gls{SVSync}, permitindo observar o impacto da introdução de pivôs no desempenho global da rede.
+
+\section{Ambiente de Simulação}
+
+A simulação foi realizada utilizando o simulador \texttt{ns-3} com o módulo \texttt{ndnSIM}, o qual fornece suporte nativo para as pilhas de rede \gls{NDN} e para a modelação de estratégias de encaminhamento e cache. O código foi desenvolvido em C++ e recorreu aos módulos principais de mobilidade, aplicações, topologia e análise de métricas do \texttt{ns-3}. A estrutura de ficheiros e dependências segue a organização típica do \texttt{ndnSIM}, assegurando a reprodutibilidade do ambiente.
+
+Os principais módulos incluídos são:
+
+\begin{itemize}
+    \item \texttt{core-module}, \texttt{network-module} e \texttt{ndnSIM-module} — para definição da pilha de rede \gls{NDN} e gestão de eventos;
+    \item \texttt{mobility-module} — para a simulação da movimentação dos nós;
+    \item \texttt{point-to-point-module} e \texttt{point-to-point-layout-module} — para a criação da topologia em grelha e ligações ponto-a-ponto;
+    \item \texttt{netanim-module} — para visualização da simulação;
+    \item \texttt{applications-module} — para instalação das aplicações de sincronização (SVSync adaptado).
+\end{itemize}
+
+Cada nó da rede é configurado com a pilha \gls{NDN} \cite{noauthor_named-datandn-svs_2025} e associado a uma aplicação chamada \textit{chat} baseada em SVSync e que já implementava as premissas do protocolo \cite{shsssc_shssscscenario-svs_2023}, responsável por publicar e sincronizar os dados. A comunicação é realizada através de pacotes \textit{Interest} e \textit{Data}, seguindo as estratégias de encaminhamento \textit{multicast} e \textit{best-route}, definidas no simulador.
+
+\section{Topologia e Parâmetros}
+
+O cenário experimental foi concebido sob a forma de uma grelha bidimensional de nós interligados, com dimensões variáveis consoante o caso de estudo: $5\times5$, $9\times9$, $17\times17$ e $33\times33$.  O número de veículos também aumentava com o aumento da grelha passando de 8 para 16 depois para 32 e por útlimo 64 respetivamente. Esta estrutura permite observar a escalabilidade da solução à medida que o número de veículos aumenta.
+
+\begin{itemize}
+    \item A topologia é construída com o auxiliar \texttt{PointToPointGridHelper}, com distância uniforme entre nós e atraso de propagação de $5\,ms$;
+    \item A largura de banda das ligações é de $50\,Mbps$;
+    \item Cada nó é posicionado fixamente numa coordenada $(x, y)$ e associado a um modelo de mobilidade constante;
+    \item Os nós são classificados em duas categorias: \textbf{pontos} (\textit{points}) e \textbf{pivôs} (\textit{pivots}). Os pontos representam veículos comuns, enquanto os pivôs atuam como agregadores e disseminadores de informação na hierarquia;
+    \item Cada nó possui uma versão inicial de dados (\texttt{dataVersion}) aleatória, representando estados distintos.
+\end{itemize}
+
+A Figura~\ref{fig:grid-exemplo} ilustra o exemplo base de uma grelha $5\times5$, onde se encontram representados os pivôs (nós centrais de cada faixa) e os pontos (nós periféricos que convergem para o centro da topologia).  
+
+A escolha do modelo de mobilidade constante e da topologia em grelha com cruzamento central justifica-se pela necessidade de controlar precisamente o movimento dos nós e as interações entre pivôs e pontos. O modelo de mobilidade constante permite posicionar os veículos em coordenadas fixas, garantindo que os pontos e pivôs se encontrem nos locais corretos para a sincronização hierárquica.  
+
+O cruzamento central na grelha oferece uma margem de manobra temporal e espacial maior, permitindo que os pontos se desloquem até o centro sem colisões ou interferências complexas, e que a sequência das fases de sincronização seja observada de forma clara. Esta configuração facilita o estudo do impacto da hierarquia de pivôs e do tráfego de mensagens, mantendo o cenário suficientemente simples para análise e visualização, mas ainda representativo de situações reais em redes veiculares.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{Chapters/Figures/ExemploCenario.png}
+    \caption{Exemplo de cenário proposto com grelha $5\times5$.}
+    \label{fig:grid-exemplo}
+\end{figure}
+
+Como já referido além do cenário base $5\times5$, foram considerados outros três cenários experimentais com dimensões de grelha maiores: $9\times9$, $17\times17$ e $33\times3$. Em todos os casos, os parâmetros de rede foram mantidos consistentes para permitir comparações diretas:
+
+\begin{itemize}
+    \item \textbf{Atraso de propagação das ligações ponto-a-ponto:} $5\,ms$;
+    \item \textbf{Largura de banda das ligações:} $50\,Mbps$;
+    \item \textbf{Distribuição de pivôs e pontos:} conforme descrito para cada topologia, formando a hierarquia de sincronização;
+    \item \textbf{Versões iniciais de dados em cada nó:} aleatórias, representando estados locais distintos.
+\end{itemize}
+
+Os valores mencionados correspondem diretamente às configurações utilizadas no código-fonte da simulação, como ilustrado nos seguintes trechos:
+
+\begin{lstlisting}[language=C++]
+
+// Configuração de link P2P
+Config::SetDefault("ns3::PointToPointNetDevice::DataRate", StringValue("50Mbps"));
+Config::SetDefault("ns3::PointToPointChannel::Delay", StringValue("5ms"));
+
+// Dimensões da grelha
+int nRows = 5;
+int nCols = 5;
+\end{lstlisting}
+
+Além disso, para permitir análise detalhada do desempenho da rede, foram instalados *tracers* do \texttt{ndnSIM}, responsáveis por adquirir métricas de latência e de número de mensagens e interesses trocados.
+
+\begin{lstlisting}[language=C++]
+ndn::L3RateTracer::InstallAll("L3RateTracer.txt", Seconds(1.0));
+ndn::AppDelayTracer::InstallAll("AppDelayTracer.txt");
+\end{lstlisting}
+
+Estas configurações permitem avaliar a escalabilidade da solução, analisando métricas de latência, número total de mensagens trocadas e convergência hierárquica em diferentes densidades de rede, garantindo que os cenários simulados reflitam condições realistas de redes veiculares.
+
+\subsection{Mecanismo de Métricas de Avaliação}
+
+Para analisar o desempenho do modelo proposto, foram definidas métricas específicas que permitem avaliar a eficiência, a fiabilidade e a rapidez do processo de sincronização hierárquica. Estas métricas incidem sobre três aspetos principais:
+
+\begin{itemize}
+    \item \textbf{Latência de sincronização:} mede o tempo decorrido desde o envio do primeiro \textit{Interest} até à convergência global da rede. Esta métrica permite avaliar a rapidez com que os dados percorrem a hierarquia de pivôs e alcançam todos os veículos.
+    \item \textbf{Taxa de perda de Interesses:} quantifica a percentagem de \textit{Interests} que não obtêm resposta. Esta métrica reflete a fiabilidade da transmissão num ambiente veicular sujeito a falhas e colisões.
+    \item \textbf{Número total de mensagens trocadas:} contabiliza todos os pacotes de interesse e de dados transmitidos ao longo do ciclo de sincronização. Esta métrica permite avaliar a eficiência do protocolo hierárquico face a abordagens ponto a ponto tradicionais.
+    \item \item \textbf{Número de Interesses Perdidos} contabiliza todos os pacotes de interesse perdidos durante todo o ciclo de sincronização.
+    \item \item \textbf{Número total de Interesses enviados:} contabiliza todos os pacotes de interesse enviados ao longo do ciclo de sincronização.
+\end{itemize}
+
+\paragraph{Integração com a lógica de sincronização}
+
+Cada nó mantém localmente o seu vetor de estado (\texttt{NodeData}), que é enviado ao pivô da faixa correspondente. Os pivôs agregam os vetores recebidos, determinam a versão mais recente e comunicam no nó central para assegurar coerência global. Após a consolidação da versão global, os pivôs disseminam a informação de volta às faixas, completando o ciclo hierárquico.
+
+Durante este processo, as métricas são calculadas de forma contínua, permitindo obter o volume de mensagens trocadas, a latência observada e a taxa de pacotes perdidos durante a sincronização. Esta abordagem fornece uma visão detalhada do comportamento do protocolo, permitindo identificar pontos críticos ou oportunidades de optimização.
+
+\begin{lstlisting}[language=C++]
+void HierarchicalSyncManager::AggregateMetrics(NodeId node)
+{
+    SyncMetrics[node].interestsSent += node->GetInterestsSent();
+    SyncMetrics[node].dataReceived += node->GetDataReceived();
+    SyncMetrics[node].latency = node->GetAverageLatency();
+}
+\end{lstlisting}
+
+Esta função ilustra a recolha centralizada de métricas por pivô, consolidando informação proveniente de múltiplos veículos. Com este mecanismo, é possível analisar o desempenho do modelo proposto, avaliando a escalabilidade do protocolo em diferentes topologias e densidades de nós, como as grelhas $5\times5$, $9\times9$, $17\times17$ e $33\times33$.
+
+A integração destas métricas na simulação permite ainda estudar a robustez do modelo proposto perante mobilidade, fornecendo dados quantitativos essenciais para comparação com abordagens de sincronização tradicionais e para validação do modelo hierárquico.
+
+\section{Estruturas e Módulo de Sincronização Hierárquica}
+
+A implementação da sincronização hierárquica assenta em três componentes fundamentais: a estrutura \texttt{NodeData}, responsável por armazenar o estado individual de cada nó, a estrutura \texttt{SyncMetrics}, utilizada para registar e analisar as métricas de desempenho durante a simulação; e a classe \texttt{Hierarchical\allowbreak Sync\allowbreak Manager}, que orquestra o processo de sincronização em três fases distintas. Estas componentes foram desenvolvidas em C++, totalmente integradas no ambiente \texttt{ndnSIM}, e comunicam com o módulo \gls{SVSync} para manter a coerência dos estados distribuídos.
+
+\subsection{Estrutura \texttt{NodeData}}
+
+A estrutura \texttt{NodeData} representa o estado lógico de cada nó participante na simulação. Cada instância associa um objeto \texttt{Node} do \texttt{ns-3} aos atributos relevantes para o processo de sincronização, incluindo coordenadas na grelha, papéis hierárquicos e versões de dados.
+
+\begin{itemize}
+    \item \textbf{Atributos principais:}
+    \begin{itemize}
+        \item \texttt{node} – apontador para o nó do simulador \texttt{ns-3};
+        \item \texttt{row, col} – coordenadas do nó na grelha $N\times N$;
+        \item \texttt{name} – identificador textual (e.g., \texttt{Node-2-3});
+        \item \texttt{initialDataVersion} e \texttt{dataVersion} – versões inicial e atual dos dados locais, simulando a evolução de informação;
+        \item \texttt{isPivot} e \texttt{isPoint} – booleans que distinguem os papéis hierárquicos;
+        \item \texttt{hasArrivedAtCenter} – flag usada para verificar a mobilidade dos nós.
+    \end{itemize}
+    \item \textbf{Função:} abstrair a camada física e topológica do \texttt{ndnSIM}, permitindo manipular o estado lógico dos nós no módulo de sincronização. Esta estrutura serve de base para o cálculo de versões, deteção de convergência e registo de métricas.
+\end{itemize}
+
+Cada nó é registado através do método \texttt{RegisterNode()}, o qual inicializa os atributos e atribui uma versão de dados aleatória, garantindo diversidade inicial nos estados.
+
+\subsection{Estrutura \texttt{SyncMetrics}}
+
+A estrutura \texttt{SyncMetrics} implementa um mecanismo simples e eficaz para o registo das métricas de desempenho da sincronização. É composta por variáveis de tempo e funções de registo e análise, conforme apresentado no excerto de código abaixo:
+
+\begin{itemize}
+    \item \textbf{Funções principais:}
+    \begin{itemize}
+        \item \texttt{Start()} – marca o instante de início da sincronização;
+        \item \texttt{End()} – regista o instante final e calcula a duração total;
+        \item \texttt{WriteFile()} – grava as métricas num ficheiro de texto para posterior análise;
+        \item \texttt{RunExternalAnalysis()} – invoca um script Python externo (\texttt{analyze\_tracer.py}) que processa os ficheiros gerados (\texttt{L3RateTracer}, etc.).
+    \end{itemize}
+\end{itemize}
+
+Este módulo assegura a medição da latência total, e estatísticas de convergência. O registo é iniciado automaticamente quando a primeira fase começa e finalizado após a convergência da última fase.
+
+\subsection{Classe \texttt{HierarchicalSyncManager}}
+
+A classe \texttt{HierarchicalSyncManager} é o núcleo lógico da solução. É responsável por gerir o ciclo de vida da sincronização hierárquica e coordenar as três fases principais que compõem o processo. O gestor é instanciado no início da simulação e mantém listas internas de nós, classificadas em \texttt{points} e \texttt{pivots}, de acordo com a topologia.
+
+\paragraph{Fase 1 – \texttt{Phase1\_LanesToPivots}: Sincronização ascendente.}
+Nesta etapa inicial, cada nó da faixa (\textit{point}) envia o seu estado para o respetivo pivô. O objetivo é consolidar as versões locais dos pontos e permitir que o pivô da faixa retenha a versão máxima observada. Em termos práticos, o método verifica no pivô a versão mais alta e atualiza o pivô com essa mesma versão. Esta etapa representa a sincronização ascendente na hierarquia (\textit{bottom-up}).
+
+\paragraph{Fase 2 – \texttt{Phase2\_PivotsInterSync}: Sincronização entre pivôs.}
+Uma vez que os pivôs possuem a versão mais recente das respetivas faixas, a segunda fase estabelece a sincronização horizontal entre pivôs. O método calcula a versão máxima entre todos os pivôs e replica-a para cada um deles, garantindo coerência na camada intermédia da hierarquia. Esta fase simboliza a troca de informação entre as faixas e assegura a convergência global antes da disseminação descendente.
+
+\paragraph{Fase 3 – \texttt{Phase3\_PivotsToLanes}: Disseminação descendente.}
+A última fase consiste na propagação da versão consolidada dos pivôs de volta aos pontos (\textit{top-down}). Os \textit{points} são atualizados com o valor máximo global, completando assim o ciclo hierárquico de sincronização. Após esta fase, todos os nós, pivôs e  \textit{points} apresentam o mesmo estado de dados, sinalizando a convergência total.
+
+\paragraph{Gestão de fases e verificação de convergência.}
+O gestor utiliza um temporizador interno (\texttt{Simulator::\allowbreak Schedule}) para verificar periodicamente se a convergência foi atingida antes de avançar para a fase seguinte. O critério de convergência baseia-se na igualdade das versões entre todos os nós de uma camada. Ao final da terceira fase, o método \texttt{FinishSimulation()} encerra a simulação e aciona o módulo \texttt{SyncMetrics} para registar as métricas.
+
+\subsection{Integração com \gls{SVSync} e ndnSIM}
+
+A solução foi implementada como uma extensão modular sobre o \gls{SVSync}e executada no ambiente \texttt{ndnSIM}. A integração segue dois princípios:
+
+\begin{itemize}
+    \item O \gls{SVSync} mantém o estado distribuído dos nós, gerindo a troca de pacotes \texttt{Interest} e \texttt{Data} entre as aplicações \gls{NDN} instaladas. Cada nó executa uma instância de aplicação \gls{SVSync} com prefixo único (por exemplo, \texttt{/2-3}) e parâmetros de publicação (\texttt{PublishDelayMs}) configuráveis.
+    \item O módulo \texttt{HierarchicalSyncManager} opera como uma camada de controlo superior, que invoca periodicamente os métodos do \gls{SVSync} para leitura dos vetores de estado (\texttt{GetSvsStateVector()}) e para propagação das versões consolidadas nas fases seguintes.
+\end{itemize}
+
+Desta forma, o código mantém a compatibilidade total com o ecossistema \gls{NDN}, reutilizando as bibliotecas de sincronização já existentes no \texttt{ndnSIM}, mas introduzindo um mecanismo hierárquico que reduz a redundância das trocas e melhora a escalabilidade em topologias extensas.
+
+\section{Arquitetura Hierárquica de Sincronização}
+
+A arquitetura implementada baseia-se em três fases de sincronização hierárquica, geridas por um módulo central denominado \textit{Hierarchical Sync Manager}. Este módulo controla a coordenação entre os nós, assegurando a progressão das fases até à convergência total dos estados. O funcionamento segue o modelo conceptual apresentado no Capítulo~3 e é composto pelas seguintes etapas:
+
+\begin{enumerate}
+    \item \textbf{Fase 1 – Sincronização dos pontos com os pivôs:} os \textit{points} propagam as suas versões mais recentes para os pivôs da respetiva faixa.
+    \item \textbf{Fase 2 – Inter-sincronização entre pivôs:} os pivôs trocam entre si os vetores de estado, garantindo coerência global na camada superior da hierarquia.
+    \item \textbf{Fase 3 – Sincronização dos pivôs com os pontos:} após a convergência entre pivôs, estes atualizam os pontos da sua faixa, assegurando a uniformização dos estados em toda a rede.
+\end{enumerate}
+
+As três fases são controladas por eventos no simulador, com verificações periódicas de convergência. Cada fase apenas é iniciada quando a anterior atinge estabilidade, isto é, quando todos os nós participantes partilham a mesma versão de dados. O pseudocódigo subjacente encontra-se resumido nas Listas~\ref{lst:phase1} a~\ref{lst:phase3}.
+
+\begin{lstlisting}[language=C++, caption={Fase 1 – Sincronização dos pontos para os pivôs.}, label={lst:phase1}]
 void Phase1_LanesToPivots() {
-    cout << "[INST] FASE 1: Lanes (Points) instruem Pivots "
-         << "a sincronizar a versao maxima.\n";
+    cout << "[INST]_FASE_1";
     int maxLaneVersion = -1;
-    for (auto &p : points) 
-        if (!p->isPivot) 
-            maxLaneVersion = max(maxLaneVersion, p->dataVersion);
-    for (auto &pv : pivots) 
-        if (pv->dataVersion < maxLaneVersion) 
+    for (auto &p : points)
+        if (!p->isPivot)
+            maxLaneVersion = max(maxLaneVersion , p->dataVersion);
+    for (auto &pv : pivots)
+        if (pv->dataVersion < maxLaneVersion)
             pv->dataVersion = maxLaneVersion;
 }
 \end{lstlisting}
 
-Segue-se uma fase de inter-sincronização entre os pivôs, garantindo que todos estes elementos partilham o mesmo estado. 
-
-\begin{lstlisting}[language=C++, caption={Fase 2 : Inter-sincronização entre pivôs}]
+\begin{lstlisting}[language=C++, caption={Fase 2 – Inter-sincronização entre pivôs.}, label={lst:phase2}]
 void Phase2_PivotsInterSync() {
-    cout << "[INST] FASE 2: Pivots sincronizam entre si "
-         << "a versao máxima.\n";
+    cout << "[INST]_FASE_2";
     int maxPivotVersion = -1;
-    for (auto &pv : pivots) 
+    for (auto &pv : pivots)
         maxPivotVersion = max(maxPivotVersion, pv->dataVersion);
-    for (auto &pv : pivots) 
+    for (auto &pv : pivots)
         pv->dataVersion = maxPivotVersion;
 }
 \end{lstlisting}
 
-Por fim, ocorre a disseminação descendente das versões de dados dos pivôs para os restantes pontos, assegurando a convergência global. 
-
-\begin{lstlisting}[language=C++, caption={Fase 3 : Disseminação descendente dos pivôs para os pontos}]
+\begin{lstlisting}[language=C++, caption={Fase 3 – Disseminação descendente dos pivôs para os pontos.}, label={lst:phase3}]
 void Phase3_PivotsToLanes() {
-    cout << "[INST] FASE 3: Pivots instruem Points (Lanes) "
-         << "a sincronizar a versão maxima.\n";
+    cout << "[INST]_FASE_3";
     int pivotMax = -1;
-    for (auto &pv : pivots) 
-        pivotMax = max(pivotMax, pv->dataVersion);
-    for (auto &p : points) 
+    for (auto &pv : pivots)
+        pivotMax = max(pivotMax , pv->dataVersion);
+    for (auto &p : points)
         p->dataVersion = pivotMax;
 }
 \end{lstlisting}
 
-O mecanismo de sincronização é monitorizado em tempo real, registando o instante de início, o instante de término e a duração total do processo.
+Após a execução das três fases, todos os nós alcançam a mesma versão final dos dados, simbolizando a convergência global do estado da rede.
 
-Um aspeto fundamental é que cada nó é inicialmente configurado com uma versão própria dos dados, refletindo a diversidade natural de publicações em cenários distribuídos. No entanto, após a execução das fases de sincronização, todos os nós atingem a versão mais elevada observada na rede, simbolizando o efeito de convergência proporcionado pelo SVS. Esta evolução é registada através de métricas de desempenho e da impressão do estado final de cada nó, validando a eficácia da abordagem.
-Em síntese, a simulação não se limita a avaliar a propagação de dados de forma plana, mas introduz uma dimensão hierárquica e de mobilidade lógica, em que os papéis atribuídos a determinados subconjuntos de nós (pontos e pivôs) permitem escalonar e estruturar o processo de sincronização. O fluxograma da Figura \ref{fig:Fluxograma} sintetiza esta lógica, mostrando como o sistema progride desde a dispersão inicial até à convergência final. Este modelo, ao abstrair-se da complexidade de código, traduz uma estratégia escalável e eficiente de sincronização de estados em redes NDN, que poderá servir de base para cenários mais realistas em ambientes móveis e dinâmicos.
-\begin{figure}[h]
+\section{Execução e Métricas de Avaliação}
+
+A simulação é executada em diferentes topologias ($5\times5$, $9\times9$, $17\times17$ e $33\times33$), permitindo observar o comportamento do sistema em escalas crescentes de densidade veicular. 
+
+O sistema regista, então, automaticamente as seguintes métricas, Latência de Sincronização, Taxa de perda de Interesses, Número total de mensagens trocadas, Número de Interesses Perdidos e Número total de Interesses enviados.
+
+Os resultados são gravados em ficheiros de texto e posteriormente analisados por um script externo em \texttt{Python}, que produz os gráficos apresentados no Capítulo~5.
+
+
+\section{Script de Análise dos Resultados}
+
+Para processar os resultados gerados pelas simulações no \textit{ndnSIM}, foi desenvolvido um script em Python responsável por extrair e calcular métricas de desempenho a partir dos ficheiros de traço \textit{AppDelayTracer.txt} e \textit{L3RateTracer.txt}. 
+
+O objetivo deste script é automatizar a leitura dos ficheiros de saída, filtrar os dados relevantes dentro de um intervalo de tempo específico e calcular estatísticas fundamentais, como latência, número de pacotes transmitidos, recebidos e perdidos durante o processo de sincronização.
+
+O código apresentado na Listagem~\ref{lst:python_analysis} contém as 2 funções principais:
+
+\begin{itemize}
+    \item \texttt{analyze\_app\_delay\_tracer()}: lê o ficheiro \texttt{AppDelayTracer.txt}
+    \item \texttt{analyze\_l3\_tracer()}: processa o \texttt{L3RateTracer.txt} para contabilizar pacotes \textit{Interest}, \textit{Data} e \textit{Nack}, permitindo estimar a perda de pacotes.
+\end{itemize}
+
+O programa principal recebe como argumentos o tempo inicial e final da análise, correspondendo ao período efetivo de sincronização, e apresenta um resumo das métricas calculadas no terminal.
+
+\begin{lstlisting}[language=Python, caption={Script de análise de resultados da simulação}, label={lst:python_analysis}]
+avg_lat, min_lat, max_lat = analyze_app_delay_tracer(start_time, end_time)
+tx_interests, rx_interests, tx_data, rx_data, tx_nacks = analyze_l3_tracer(start_time, end_time)
+
+interest_loss = tx_interests - rx_interests
+total_sync_packets = tx_interests + rx_interests + tx_data + rx_data
+\end{lstlisting}
+
+Este script foi utilizado em todas as simulações para garantir consistência no cálculo das métricas e facilitar a geração de gráficos de desempenho apresentados no capítulo seguinte.
+
+\section{Fluxo Lógico da Sincronização}
+
+A Figura~\ref{fig:fluxograma-codigo} sintetiza a sequência lógica de operações da simulação, desde a configuração inicial dos nós até à fase de convergência. Este fluxograma abstrai a implementação detalhada e ilustra o encadeamento das três fases de sincronização hierárquica e as transições entre elas.
+
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Chapters/Figures/Fluxograma.png}
-    \caption{Fluxograma do código.} 
-    \label{fig:Fluxograma}   
+    \caption{Fluxograma do funcionamento da sincronização hierárquica.}
+    \label{fig:fluxograma-codigo}
 \end{figure}
+
+\section{Síntese}
+
+A implementação desenvolvida demonstra a viabilidade da abordagem hierárquica com pivôs no contexto das redes \gls{V-NDN}. Através da simulação no \texttt{ndnSIM}, foi possível observar a convergência eficiente de estados num ambiente dinâmico e distribuído, preservando a compatibilidade com o protocolo \gls{SVSync}. No capítulos seguinte são apresentados os resultados quantitativos obtidos e a análise comparativa entre as diferentes topologias.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Resultados}
 \label{cha:resultados}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Para demonstrar a diferença entre a sincronização tradicional num cruzamento e a sincronização hierárquica baseada em pivôs, são apresentados, neste capítulo, os resultados obtidos para ambas as implementações. O número de nós (veículos) varia entre 8 e 64, de forma a avaliar o comportamento das soluções em diferentes escalas. A análise centra-se em três métricas principais: a latência de sincronização, o número total de mensagens trocadas e o número (e percentagem) de interesses perdidos.
 
-\section{Análise da Latência}
+\section{Introdução}
 
-As Figuras \ref{fig:ln} e \ref{fig:lh} apresentam, respetivamente, os valores individuais de latência obtidos para a solução sem hierarquia e para a solução com hierarquia, sendo a comparação direta entre ambas ilustrada na Figura \ref{fig:lnh}.
+Este capítulo apresenta e discute os resultados experimentais obtidos com a implementação da solução de sincronização hierárquica, comparando-a com o modelo tradicional sem hierarquia. O principal objetivo desta avaliação é demonstrar a eficácia da abordagem proposta quanto à redução da latência, tráfego de mensagens e perdas de pacotes avaliando igualmente a sua \textbf{escalabilidade}, \textbf{robustez} e \textbf{eficiência de recursos}.
 
-\begin{figure}[h]
+Os testes foram conduzidos no simulador ndnSIM, utilizando diferentes topologias em grelha, com número crescente de nós, representando veículos em movimento. As métricas de desempenho foram recolhidas a partir do ficheiro de análise (\texttt{L3RateTracer}) permitindo comparar, de forma quantitativa, as duas abordagens.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Descrição do Cenário Experimental}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A simulação foi concebida para avaliar o comportamento do modelo proposto em topologias de 5×5, 9×9, 17×17 e 33×33 nós,ou seja, aumento o número de nós (veículos) de 8 para 16 para 32 e 64, respetivamente, de modo a representar diferentes densidades de veículos.  
+Em todas as configurações, manteve-se a estrutura hierárquica proposta no Capítulo \ref{chap:estrategia}, com pivôs posicionados nos eixos mais próximos do centro da grelha e um nó central onde ocorre o processo.
+
+Cada nó executa a aplicação chat do NDN-SVS \cite{shsssc_shssscscenario-svs_2023}, responsável pela publicação periódica de interesses e atualização dos estados locais. As comunicações entre nós foram configuradas com ligações ponto-a-ponto.
+
+Os nós seguem um modelo de mobilidade constante, em que os pontos se deslocam gradualmente em direção ao centro da grelha, reproduzindo um cenário realista de convergência veicular.
+
+\begin{table}[h!]
 \centering
-\includegraphics{Chapters/Figures/LatenciaN.png}
-\caption{Latência sem hierarquia.}
-\label{fig:ln}
-\end{figure}
+\caption{Parâmetros de simulação}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parâmetro} & \textbf{Valor} \\ 
+\midrule
+Simulador & ndnSIM (NS-3) \\
+Topologias & 5×5, 9×9, 17×17, 33×33 \\
+Largura de banda dos links & 50 Mbps \\
+Atraso de propagação & 5 ms \\
+Intervalo de publicação & 0,8 s (rápido) / 1,5 s (lento) \\
+Métricas analisadas & Mensagens totais, perdas e tempo de sincronização \\ 
+\bottomrule
+\end{tabular}
+\end{table}
 
-Na solução sem hierarquia observa-se uma grande variação dos valores de latência, bem como tempos de sincronização totais relativamente elevados, o que compromete a viabilidade da sua aplicação em cenários de tempo real.
+Esta configuração assegura condições comparáveis entre cenários e permite observar o impacto da hierarquia no desempenho global do sistema.
 
-\begin{figure}[h]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Análise Comparativa por Métrica}
+
+\subsection{Latência}
+
+A Figura \ref{fig:lnh} mostra a evolução da latência média em função do número de nós.  
+Enquanto a abordagem sem hierarquia apresenta um aumento grande com a dimensão da rede, a solução hierárquica mantém uma tendência linear e estável, resultado direto da redução de saltos de sincronização e da eliminação de interesses redundantes.
+
+\begin{figure}[h!]
 \centering
-\includegraphics{Chapters/Figures/LatenciaH.png}
-\caption{Latência com hierarquia.}
-\label{fig:lh}
-\end{figure}
-
-Na solução hierárquica, pelo contrário, verifica-se que as variações de latência são significativamente menores e que os tempos de sincronização se mantêm dentro de limites aceitáveis para sistemas que operam em tempo real.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{Chapters/Figures/LatenciaNH.png}
-\caption{Comparação entre ambas as soluções.}
+\includegraphics[width=0.9\textwidth]{Chapters/Figures/LatenciaNH.png}
+\caption{Comparação da latência média entre as soluções sem hierarquia e hierárquica.}
 \label{fig:lnh}
 \end{figure}
+A Tabela~\ref{tab:latencia_pivo} apresenta a comparação entre os valores de latência obtidos com e sem a utilização do pivô, para diferentes números de carros. Observa-se que, em todos os casos, a introdução do pivô resultou numa redução da latência média. 
 
-A comparação mostra claramente que a solução hierárquica apresenta latências mais baixas e maior estabilidade face ao aumento do número de veículos. Isto demonstra uma melhor escalabilidade e uma menor sensibilidade ao crescimento da rede, o que é um indicador importante de eficiência e robustez.
+Para um número reduzido de carros (8 veículos), a diminuição é de aproximadamente 40\%, evidenciando um impacto bastante significativo. À medida que o número de carros aumenta, a diferença relativa tende a estabilizar entre 13\% e 22\%, o que demonstra que o mecanismo de pivô continua a ser vantajoso, mesmo em cenários mais exigentes em termos de carga.
 
-\section{Análise dos Interesses Enviados}
+Estes resultados indicam que a utilização do pivô contribui para uma melhoria consistente do desempenho do sistema, reduzindo o tempo de resposta global e aumentando a eficiência da comunicação entre veículos.
 
-As Figuras \ref{fig:ITN} e \ref{fig:ITH} apresentam o número de interesses trocados em cada uma das simulações, correspondendo a primeira à solução sem pivôs e a segunda à solução proposta com hierarquia. A Figura \ref{fig:ITNH} apresenta a comparação entre ambas.
-
-\begin{figure}[h]
+\begin{table}[H]
 \centering
-\includegraphics{Chapters/Figures/Interessesen.png}
-\caption{Número de interesses trocados sem pivô.}
-\label{fig:ITN}
-\end{figure}
+\caption{Comparação da latência com e sem pivô em função do número de carros.}
+\label{tab:latencia_pivo}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Nº de carros} & \textbf{Latência com pivô (s)} & \textbf{Latência sem pivô (s)} & \textbf{Diferença relativa (\%)} \\ 
+\midrule
+8  & 0.3 & 0.5 & -40.0 \\
+16 & 1.3 & 1.5 & -13.3 \\
+32 & 4.5 & 5.3 & -15.1 \\
+64 & 7.8 & 10.0 & -22.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Na solução sem pivô observa-se um número extremamente elevado de interesses trocados, resultado da ausência de organização na comunicação entre os nós. Este comportamento gera uma sobrecarga significativa na rede, tornando a solução inviável em contextos práticos.
+\subsection{Número Total de Mensagens}
 
-\begin{figure}[h]
+A Figura \ref{fig:ITNH} ilustra a quantidade total de mensagens trocadas em ambas as abordagens.  
+O modelo sem hierarquia gera tráfego exponencial com o crescimento da rede, resultando em sobrecarga da \gls{PIT} e aumento do risco de colisões.  
+Já o modelo proposto restringe a propagação de interesses a cada camada de pivôs, limitando o tráfego global.
+
+\begin{figure}[h!]
 \centering
-\includegraphics{Chapters/Figures/Interesseseh.png}
-\caption{Número de interesses trocados na solução proposta.}
-\label{fig:ITH}
-\end{figure}
-
-Na solução hierárquica, a quantidade de mensagens trocadas é bastante inferior e a variação dos valores é também menor. O resultado é uma comunicação mais eficiente e estável, o que reforça a aplicabilidade da solução em sistemas reais.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{Chapters/Figures/Interessesehn.png}
-\caption{Comparação entre as soluções.}
+\includegraphics[width=0.9\textwidth]{Chapters/Figures/Interessesehn.png}
+\caption{Número total de interesses trocados nas soluções sem e com hierarquia.}
 \label{fig:ITNH}
 \end{figure}
 
-A análise comparativa evidencia discrepâncias expressivas entre as duas abordagens, especialmente à medida que o número de veículos aumenta. A solução hierárquica revela-se, assim, mais eficiente e escalável, mantendo um número reduzido de interesses trocados mesmo em cenários com elevada densidade veicular.
-\clearpage
-\section{Análise dos Interesses Perdidos}
-
-As perdas de interesses, representadas nas Figuras \ref{fig:IPP} e \ref{fig:IPH}, resultam essencialmente de colisões de mensagens na rede. A Figura \ref{fig:IPPH} mostra a comparação entre as duas abordagens e, por fim, a Figura \ref{fig:IPPP} apresenta a percentagem de perdas observada.
-
-\begin{figure}[h]
+A Tabela~\ref{tab:mensagens_pivo} apresenta a comparação do número total de mensagens trocadas no sistema, com e sem a utilização do pivô, para diferentes números de carros. Observa-se uma redução extremamente significativa no volume de mensagens quando é utilizada a abordagem hierárquica com pivô.
+\begin{table}[H]
 \centering
-\includegraphics{Chapters/Figures/Interessespn.png}
-\caption{Interesses perdidos na solução sem pivô.}
-\label{fig:IPP}
-\end{figure}
+\caption{Comparação do número total de mensagens trocadas com e sem pivô em função do número de carros.}
+\label{tab:mensagens_pivo}
+\begin{tabular}{cccc}
+\toprule
+\textbf{Nº de carros} & \textbf{Mensagens com pivô} & \textbf{Mensagens sem pivô} & \textbf{Diferença relativa (\%)} \\ 
+\midrule
+8  & 348   & 12821  & -97.3 \\
+16 & 1071  & 97916  & -98.9 \\
+32 & 2406  & 186438 & -98.7 \\
+64 & 3795  & 291987 & -98.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
-Na abordagem sem pivô, o número de interesses perdidos é elevado, consequência direta da ausência de coordenação entre os nós e do reduzido intervalo de publicação de interesses, que provoca sobrecarga na rede e consequentes colisões.
+Para 8 veículos, o número total de mensagens diminui de 12821 para apenas 348, o que corresponde a uma redução de cerca de 97\%. À medida que o número de veículos aumenta, esta redução mantém-se acima dos 98\%, evidenciando a excelente escalabilidade e a eficiência no controlo de congestionamento da solução hierárquica.
 
-\begin{figure}[h]
+Este comportamento confirma que a utilização do pivô permite concentrar e organizar as comunicações de forma mais eficiente, evitando a a troca de mensagens redundantes e reduzindo de forma drástica o tráfego de rede. Assim, o sistema torna-se mais escalável e adequado para cenários com elevado número de veículos. Podemos ainda dizer que temos valores muito altos pois estão a ser enviados interesses em espaços temporais muito curtos, o que gera muitas colisões e perdas por processamento de mensagens, não invalidando, assim, o modelo proposto.
+
+\subsection{Percentagem de Perdas}
+
+As perdas de interesses devem-se principalmente a colisões e ao envio simultâneo de múltiplos pedidos.  
+Como ilustrado nas Figuras \ref{fig:IPPH} e \ref{fig:IPPP}.
+
+\begin{figure}[h!]
 \centering
-\includegraphics{Chapters/Figures/Interessesph.png}
-\caption{Interesses perdidos na solução com pivô.}
-\label{fig:IPH}
-\end{figure}
-
-Na solução hierárquica, o número de interesses perdidos é consideravelmente inferior, em parte devido ao menor volume de mensagens enviadas. Embora as perdas ainda existam, estas são mais controladas e compatíveis com o funcionamento de uma rede dinâmica e densa.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{Chapters/Figures/Interessesphn.png}
-\caption{Comparação de interesses perdidos.}
+\includegraphics[width=0.9\textwidth]{Chapters/Figures/Interessesphn.png}
+\caption{Interesses perdidos nas abordagens sem e com hierarquia.}
 \label{fig:IPPH}
 \end{figure}
 
-Verifica-se que, mesmo com valores ainda relevantes, a solução hierárquica apresenta perdas sistematicamente inferiores. As perdas observadas devem-se sobretudo a colisões e à elevada taxa de emissão de interesses num curto espaço de tempo. A Figura \ref{fig:IPPP} apresenta as perdas percentuais, onde se constata que, apesar de a solução sem pivô ter um número absoluto maior de perdas, o valor relativo pode parecer menor devido ao volume muito superior de mensagens enviadas. No entanto, a magnitude dessas perdas torna a solução sem pivô impraticável em aplicações reais, enquanto a solução hierárquica mantém valores aceitáveis que podem ser ainda otimizados com ajustes no intervalo de publicação.
+A Tabela~\ref{tab:interesses_perdidos} apresenta o número de interesses perdidos, bem como a percentagem relativa de perdas, comparando a solução com e sem pivô. Verifica-se que a abordagem hierárquica conduz a uma redução significativa do número 
+absoluto de interesses perdidos em todos os cenários testados.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
-\includegraphics{Chapters/Figures/InteressesPP.png}
-\caption{Interesses perdidos percentualmente.}
+\includegraphics[width=0.9\textwidth]{Chapters/Figures/InteressesPP.png}
+\caption{Percentagem de interesses perdidos em função do número de nós.}
 \label{fig:IPPP}
 \end{figure}
-\clearpage
-\section{Análise do Número Total de Mensagens}
 
-A última métrica analisada corresponde ao número total de mensagens trocadas, ilustrado nas Figuras \ref{fig:TN} (solução sem pivô), \ref{fig:TP} (solução com pivô) e \ref{fig:TNP} (comparação entre ambas).
+Para 8 veículos, a solução sem pivô regista 7101 interesses perdidos, enquanto a solução com pivô apresenta apenas 219, representando uma melhoria substancial. Esta tendência mantém-se à medida que o número de carros aumenta, com reduções superiores a 95\% no total de interesses perdidos.  
+Em termos percentuais, a taxa de sucesso (interesses bem processados) é consistentemente mais elevada quando se utiliza o pivô, situando-se entre 70\% e 78\%, face a valores entre 54\% e 72\% no caso sem pivô.
 
-\begin{figure}[h]
+A Tabela~\ref{tab:interesses_enviados} e a Figura~\ref{fig:interesses_enviados} ilustram o impacto da utilização do pivô no número total de interesses enviados e na percentagem de sucesso.  
+Observa-se uma redução muito significativa no volume de mensagens quando é utilizada a abordagem hierárquica, acompanhada por uma taxa de sucesso mais elevada e mais estável, mesmo à medida que o número de veículos aumenta.
+Por exemplo, com 64 veículos, o número de interesses enviados cai de 200~254 para apenas 2907, o que representa uma diminuição de cerca de 98.5\%. Por exemplo, no cenário com 64 carros, o número de interesses enviados diminui de 200~254 (sem pivô) para apenas 2907 (com pivô), o que representa uma redução superior a 98\%. Em simultâneo, a percentagem de sucesso mantém-se acima dos 75\%, enquanto que na configuração sem pivô desce para cerca de 54\%.  
+
+\begin{table}[H]
 \centering
-\includegraphics{Chapters/Figures/Tn.png}
-\caption{Total de mensagens enviadas na solução sem pivô.}
-\label{fig:TN}
+\caption{Comparação do número total de interesses enviados e respetivas percentagens de sucesso, com e sem pivô.}
+\label{tab:interesses_enviados}
+\begin{tabular}{ccccc}
+\toprule
+Nº de carros & Interesses enviados com pivô & Interesses enviados sem pivô & \% com pivô & \% sem pivô \\ 
+\midrule
+8  & 279  & 9940   & 78.5 & 72.1 \\
+16 & 855  & 69231  & 76.8 & 58.8 \\
+32 & 1834 & 136986 & 70.3 & 64.0 \\
+64 & 2907 & 200254 & 75.6 & 54.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Comparação do número de interesses perdidos com e sem pivô.}
+\label{tab:interesses_perdidos}
+\begin{tabular}{ccccc}
+\toprule
+Nº de carros & Interesses perdidos com pivô & Interesses perdidos sem pivô & \% com pivô & \% sem pivô \\ 
+\midrule
+8  & 219  & 7101   & 78.5 & 72.1 \\
+16 & 657  & 40686  & 76.8 & 58.8 \\
+32 & 1290 & 87625  & 70.3 & 64.0 \\
+64 & 2197 & 108560 & 75.6 & 54.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Interessesehn.png}
+\caption{Evolução do número de interesses enviados com e sem pivô em função do número de carros.}
+\label{fig:interesses_enviados}
 \end{figure}
 
-Na solução sem pivô observa-se um crescimento muito acentuado do número total de mensagens à medida que o número de veículos aumenta, demonstrando elevada sensibilidade e falta de escalabilidade da abordagem.
-
-\begin{figure}[h]
-\centering
-\includegraphics{Chapters/Figures/Tp.png}
-\caption{Total de mensagens enviadas na solução com pivô.}
-\label{fig:TP}
-\end{figure}
-
-Na solução com pivô, embora o número de mensagens também aumente com o número de veículos, esse crescimento é mais contido e controlado. A solução mostra-se, portanto, mais eficiente e resiliente perante a expansão da rede.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.8\textwidth]{Chapters/Figures/tnp.png}
-\caption{Comparação do total de mensagens.}
-\label{fig:TNP}
-\end{figure}
-
-A diferença entre as duas abordagens é expressiva: a solução sem pivô gera um volume de mensagens excessivo e incomportável para implementação prática, enquanto a solução hierárquica com pivôs apresenta valores consistentes e compatíveis com cenários reais, confirmando o seu potencial para aplicações escaláveis.
-
-Com base na análise das várias métricas como latência, número de interesses trocados, perdas e total de mensagens, conclui-se que a solução hierárquica com pivôs apresenta um desempenho significativamente superior à abordagem sem hierarquia.
-
-Esta solução demonstra menor latência, maior estabilidade, uma redução substancial no volume de mensagens trocadas e menores perdas de interesses, mantendo-se funcional mesmo com o aumento do número de veículos. Estas características traduzem-se numa maior escalabilidade e eficiência global, tornando a solução hierárquica mais adequada para cenários de comunicação veicular em tempo real, onde a fiabilidade e o controlo de tráfego de dados são essenciais.
-
-Em síntese, os resultados obtidos comprovam que a introdução de uma camada hierárquica com pivôs contribui de forma clara e mensurável para a melhoria do desempenho da rede, validando a eficácia da solução proposta.
+Estes resultados confirmam que a solução hierárquica com pivô não só reduz drasticamente o tráfego de rede, como também melhora a eficiência e a fiabilidade do processo de disseminação de interesses, contribuindo para um comportamento mais escalável e controlado do sistema.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Conclusão e trabalho futuro}
-\label{cha:conc}
+
+\section{Análise de Escalabilidade}
+
+A escalabilidade é um fator determinante na viabilidade de sistemas distribuídos.  
+Nos testes realizados, observou-se que o crescimento da rede não provoca uma degradação linear das métricas no modelo hierárquico.  
+Enquanto a abordagem plana apresenta aumento exponencial da latência e do tráfego, o modelo proposto mantém uma evolução quase linear.
+
+Nas grelhas menores (5×5), as diferenças são reduzidas, dado o baixo número de interações. No entanto, com o aumento do número de veículos, a abordagem sem hierarquia torna-se inviável devido à sobrecarga, enquanto o modelo hierárquico conserva a estabilidade e previsibilidade.  
+Este comportamento comprova a capacidade de escalabilidade do modelo proposto para redes de larga escala.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Avaliação do Consumo de Recursos}
 
-Concluindo como podemos ver a solução proposta acaba por ser uma ajuda bastante grande na diminuição dos pacotes trocados, permitindo assim uma maior escalabilidade da rede. A primeira solução, sem pivôs acaba por se tornar mais confusa e gerar um trâfego elevadíssimo devido a muitas colisões e perdas de interesses e dados no caminho, visto que os 24 nós estão a enviar todos interesses entre si o que causa uma sobrecarga. Na segunda solução com pivôs esse valor diminui drasticamente, e isso acontece pois no centro apenas os 4 pivôs trocam dados entre si, os outros nós estão à espera que termine esta "fase" de sincronização entre pivôs para depois envirarem novamente interesses. Ainda assim o valor é alto pois existem algumas colisões e perdas no caminho. Como podemos observar a solução de sincronização com pivôs acaba por se tornar mais eficiente e escalável que a solução sem pivôs, pelo que comprovamos que realmente a solução proposta no capitulo \ref{cha:estrategia}, é positiva e ajuda a resolver muitos dos problemas da sincronização nas redes veiculares, tais como a escalabilidade e a latência.
+Embora o foco principal seja o desempenho, existe também uma redução significativa no consumo de memória e processamento.  
+O modelo hierárquico requer menos entradas na \gls{PIT} e reduz o uso da \gls{CS}, o que se traduz numa menor carga computacional por nó.  
+Esta característica é essencial em redes heterogéneas, onde coexistem veículos com diferentes capacidades de hardware.
 
-Apesar das vantagens da solução proposta, a sua aplicação em cenários veiculares apresenta algumas limitações que importa reconhecer. A elevada mobilidade dos veículos e a consequente intermitência de conectividade podem comprometer a eficácia do processo de sincronização, já que os nós podem abandonar o cruzamento ou mudar de faixa antes de concluírem a atualização do seu vetor de estado. Esta característica torna a convergência temporalmente dependente e sujeita a falhas de consistência momentânea. Outro desafio relevante é a elevada taxa de colisões e perdas de pacotes no meio sem fios, particularmente em ambientes urbanos densos, onde a contenção no canal de comunicação aumenta de forma significativa. Mesmo que a arquitetura com pivôs reduza o número de mensagens globais, a qualidade do canal pode limitar a fiabilidade da sincronização. Adicionalmente, a escolha de pivôs introduz um risco de pontos únicos de falha: se o pivô de uma faixa ficar indisponível, o processo de disseminação pode ser temporariamente interrompido, exigindo mecanismos rápidos de eleição de substitutos. Também se deve considerar o custo computacional da assinatura digital dos interesses de sincronização exigida pelo SVSync, que pode tornar-se pesado para unidades embarcadas com recursos limitados. Por outro lado, a escalabilidade global do sistema continua a depender da forma como os vetores de estado são codificados, uma vez que o tamanho destes cresce com o número de produtores, o que pode gerar overhead em cenários de tráfego intenso.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Limitações e Perspetivas Futuras}
+
+Apesar dos resultados positivos, a abordagem proposta apresenta algumas limitações.  
+Em cenários extremamente grandes, a distância entre pivôs pode introduzir atrasos adicionais na Fase 2 da sincronização.  
+Além disso, o modelo assume uma estrutura de rede relativamente estática, o que não reflete plenamente o comportamento de veículos em movimento contínuo.
+
+Como evolução futura, propõe-se:
+\begin{itemize}
+    \item Implementar algoritmos de eleição dinâmica de pivôs, adaptativos à mobilidade e densidade da rede;
+    \item Integrar mecanismos de ajuste automático do intervalo de publicação, com base na carga de tráfego observada;
+    \item Avaliar o o modelo em ambientes urbanos reais, com dados de mobilidade obtidos de simuladores como SUMO ou de GPS.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Síntese Final}
+
+De forma resumida, o modelo proposto apresenta ganhos expressivos em todas as métricas avaliadas. A abordagem hierárquica SVSync-H demonstrou:
+
+\begin{itemize}
+    \item Redução drástica do tráfego de mensagens, com diminuição superior a 98\% no número total de mensagens e interesses enviados em comparação com a abordagem sem pivô;
+    \item Latências significativamente menores, com melhoria de até 40\% em cenários com poucos veículos e redução consistente entre 13\% e 22\% em cenários mais carregados;
+    \item Maior fiabilidade na entrega de interesses, com taxa de sucesso mantida acima de 70\%, face a valores entre 54\% e 64\% sem pivô;
+    \item Menor número de interesses perdidos, reforçando a capacidade de resistência a congestionamentos e de escalabilidade do sistema.
+\end{itemize}
+
+Em conclusão, os resultados confirmam que o modelo proposto constitui uma solução eficiente, escalável e robusta para a sincronização de dados em redes veiculares \gls{NDN}. A sua capacidade de reduzir drasticamente o tráfego, manter baixas latências e garantir elevada fiabilidade valida a aplicabilidade da proposta em cenários cooperativos e de elevada mobilidade, fundamentais para a próxima geração de sistemas de transporte inteligentes.
+
+
+\chapter{Conclusão e Trabalho Futuro}
+
+\section{Síntese Geral}
+O presente trabalho teve como objetivo propor e avaliar uma estratégia hierárquica de sincronização de dados em redes veiculares baseadas no paradigma \gls{NDN}. A abordagem desenvolvida, suportada pelo protocolo \gls{SVSync}, introduz a utilização de nós \textit{pivôs} como elementos de agregação e disseminação de informação, com o intuito de reduzir a sobrecarga de mensagens e a latência de sincronização em cenários com elevada densidade veicular.
+
+A implementação foi realizada no \texttt{ndnSIM}, considerando cenários em grelha com tamanhos 5x5, 9x9, 17x17 e 33x33, representando interseções urbanas com múltiplas faixas. O código define três fases de sincronização distintas, \textit{Lanes to Pivots}, \textit{Pivots Inter-Sync} e \textit{Pivots to Lanes} recolhendo métricas como a duração total do processo de sincronização, número de mensagens trocadas e taxa de perda de \textit{Interests}.
+
+Os resultados demonstram que a abordagem hierárquica apresenta vantagens significativas relativamente à solução tradicional (sem pivôs). Em particular:
+\begin{itemize}
+\item a latência de sincronização é significativamente reduzida e mantém-se estável mesmo com o aumento do número de veículos e do tamanho da rede;
+\item o número total de mensagens trocadas diminui substancialmente, evitando a sobrecarga observada em abordagens planas;
+\item a taxa de perda de \textit{Interests} mantém-se dentro de valores aceitáveis, comprovando a robustez do modelo proposto.
+\end{itemize}
+
+Estes resultados confirmam que a hierarquização da sincronização, com eleição de pivôs por faixa de tráfego, permite melhorar a escalabilidade e a eficiência da disseminação de dados em ambientes densos e dinâmicos, típicos de redes veiculares.
+
+\section{Limitações Identificadas}
+Apesar do desempenho positivo, a solução proposta apresenta algumas limitações importantes:
+\begin{itemize}
+\item \textbf{Mobilidade e conectividade intermitente:} a elevada mobilidade dos veículos pode provocar falhas temporárias na sincronização, especialmente quando um pivô abandona a área antes do término de uma fase;
+\item \textbf{Ponto único de falha:} a dependência de um pivô por faixa cria um potencial ponto de falha caso o nó se torne indisponível;
+\item \textbf{Sobrecarga criptográfica:} a exigência de assinatura digital nos \textit{Interests} \gls{SVSync} aumenta o custo computacional, o que pode ser crítico para unidades com recursos limitados;
+\end{itemize}
+
+Estas limitações não invalidam a aplicabilidade do modelo, mas apontam para a necessidade de mecanismos de redundância para melhorar a robustez.
+
+\section{Trabalhos Futuros}
+Para aprofundar e generalizar o trabalho desenvolvido, propõem-se as seguintes linhas de investigação futura:
+
+\subsection*{1. Eleição dinâmica e redundância de pivôs}
+Implementar algoritmos de eleição dinâmica que permitam substituir automaticamente um pivô falhado, com base em critérios de conectividade, potência de sinal e estabilidade geográfica. Esta funcionalidade reduzirá a dependência de nós fixos e aumentará a resiliência do sistema.
+
+\subsection*{2. Integração com modelos de mobilidade realistas}
+Integrar o módulo desenvolvido com simuladores de tráfego como o \texttt{SUMO}, permitindo representar de forma mais fidedigna o movimento dos veículos e interações com a infraestrutura urbana. Isso permitirá validar o comportamento da sincronização em cenários reais, incluindo variações de densidade, cruzamentos complexos e semáforos inteligentes.
+
+\subsection*{3. Suporte a comunicações 5G e Edge Computing}
+Explorar a integração do modelo hierárquico com arquiteturas de \textit{edge computing} e redes 5G, onde \gls{OBUs} e \gls{RSUs} possam atuar como pivôs de nível superior. Esta abordagem híbrida poderá reduzir ainda mais a latência e aumentar a robustez da rede.
+
+\subsection*{4. Mecanismos de segurança e autenticação adaptativa}
+Otimizar o processo de assinatura digital dos \textit{Interests} \gls{SVSync}, introduzindo esquemas de autenticação leve (\textit{lightweight security} \cite{maharshi_dayanand_university_rohtak_haryana_india_lightweight_2019}) adaptados a dispositivos com restrições de processamento. Poderão ainda ser aplicadas técnicas de verificação para mitigar ataques de \textit{Interest flooding}.
+
+\subsection*{5. Avaliação de desempenho multi-métrica}
+Expandir a análise atual para incluir métricas adicionais, como consumo energético, carga de CPU, eficiência da \textit{cache} e atraso fim-a-fim. Isso permitirá compreender o impacto global da sincronização hierárquica em redes veiculares de larga escala, incluindo cenários com mais veículos.
+
+\subsection*{6. Testes em larga escala e cenários heterogêneos}
+Conduzir simulações com topologias maiores e cenários híbridos (urbano, rodoviário e rural), avaliando a robustez e escalabilidade do modelo sob diferentes condições de densidade e mobilidade.
+
+\section{Considerações Finais}
+A introdução da hierarquia de pivôs no contexto do \gls{SVSync} revelou-se uma solução promissora para melhorar o desempenho das redes \gls{V-NDN}, demonstrando reduções expressivas em latência e volume de mensagens. Este trabalho contribui para o avanço do estado da arte na sincronização de dados em ambientes dinâmicos e distribuídos, fornecendo uma base sólida para futuras investigações e aplicações em \gls{ITS}.
+
+Como perspetiva final, considera-se que a combinação de estratégias hierárquicas, mobilidade adaptativa e sincronização baseada em conteúdo poderá constituir uma das abordagens mais eficazes para suportar a próxima geração de comunicações veiculares descentralizadas.
