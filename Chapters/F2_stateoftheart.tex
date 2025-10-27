@@ -995,6 +995,34 @@ Nº de carros & Interesses perdidos com pivô & Interesses perdidos sem pivô & 
 \end{figure}
 
 Estes resultados confirmam que a solução hierárquica com pivô não só reduz drasticamente o tráfego de rede, como também melhora a eficiência e a fiabilidade do processo de disseminação de interesses, contribuindo para um comportamento mais escalável e controlado do sistema.
+
+\section{Taxa da rede}
+
+A Tabela~\ref{tab:taxa_rede} apresenta a eficiência da rede, calculada como a razão entre o número de interesses entregues com sucesso e o total de interesses enviados. 
+\begin{table}[H]
+\centering
+\caption{Taxa da rede (eficiência de entrega de interesses) com e sem pivô.}
+\label{tab:taxa_rede}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccccc}
+\toprule
+Nº de carros & Enviados c/ pivô & Perdidos c/ pivô & Taxa c/ pivô (\%) & Enviados s/ pivô & Perdidos s/ pivô & Taxa s/ pivô (\%) \\ 
+\midrule
+8  & 279  & 219  & 21.5 & 9940   & 7101   & 28.6 \\
+16 & 855  & 657  & 23.1 & 69231  & 40686  & 41.2 \\
+32 & 1834 & 1290 & 29.6 & 136986 & 87625  & 36.1 \\
+64 & 2907 & 2197 & 24.4 & 200254 & 108560 & 45.8 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+Observa-se que a taxa percentual de rede é ligeiramente inferior na configuração com pivô, variando entre 21\% e 30\%, em comparação com valores entre 28\% e 46\% na abordagem sem pivô. 
+
+No entanto, esta diferença deve ser interpretada em conjunto com o volume total de mensagens. 
+Apesar de uma menor taxa percentual, o número absoluto de mensagens trocadas e de interesses perdidos é várias ordens de grandeza inferior na abordagem hierárquica, o que indica uma utilização muito mais eficiente dos recursos da rede. 
+Em termos globais, a estratégia com pivô demonstra um comportamento mais estável e controlado, reduzindo a sobrecarga de comunicação e assegurando uma sincronização eficaz mesmo em cenários com elevado número de veículos.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
