@@ -439,7 +439,7 @@ As setas representam num primeiro momento indentificam o envio de vetores de est
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{Chapters/Figures/Arquitertura.drawio.png}
-    \caption{Fluxograma das fases do processo de sincronização hierárquica no SVSync-H.}
+    \caption{Fluxograma das fases do processo de sincronização hierárquica.}
     \label{fig:arq}
 \end{figure}
 
@@ -452,7 +452,7 @@ A Figura~\ref{fig:fluxograma_svsynch} ilustra o fluxo lógico das três fases de
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{Chapters/Figures/Fluxograma imp.drawio.png}
-    \caption{Fluxograma das fases do processo de sincronização hierárquica no SVSync-H.}
+    \caption{Fluxograma das fases do processo de sincronização hierárquica.}
     \label{fig:fluxograma_svsynch}
 \end{figure}
 
@@ -460,7 +460,7 @@ A Figura~\ref{fig:fluxograma_svsynch} ilustra o fluxo lógico das três fases de
 O pseudocódigo simplificado da sincronização hierárquica é apresentado a seguir:
 
 \begin{algorithm}[H]
-\caption{Processo de Sincronização Hierárquica SVSync-H}
+\caption{Processo de Sincronização Hierárquica.}
 \begin{algorithmic}[1]
 \State Inicializar conjuntos \textit{Points}, \textit{Pivots}
 \State Definir pivôs com base na proximidade geográfica ao centro da faixa
@@ -501,7 +501,7 @@ Nas simulações conduzidas, a abordagem determinística foi adotada para permit
 
 \section{Métricas de Avaliação}
 
-As métricas a serem avaliadas no Capítulo~\ref{cha:resultados} permitem quantificar o desempenho do SVSync-H em comparação com o SVSync tradicional.  
+As métricas a serem avaliadas no Capítulo~\ref{cha:resultados} permitem quantificar o desempenho do modelo proposto em comparação com o SVSync tradicional.  
 A tabela~\ref{tab:metricas_sync} apresenta as principais métricas definidas para análise.
 
 \begin{table}[H]
@@ -580,7 +580,7 @@ A Figura~\ref{fig:grid-exemplo} ilustra o exemplo base de uma grelha $5\times5$,
 
 A escolha do modelo de mobilidade constante e da topologia em grelha com cruzamento central justifica-se pela necessidade de controlar precisamente o movimento dos nós e as interações entre pivôs e pontos. O modelo de mobilidade constante permite posicionar os veículos em coordenadas fixas, garantindo que os pontos e pivôs se encontrem nos locais corretos para a sincronização hierárquica.  
 
-O cruzamento central na grelha oferece uma margem de manobra temporal e espacial maior, permitindo que os pontos se desloquem até o centro sem colisões ou interferências complexas, e que a sequência das fases de sincronização seja observada de forma clara. Esta configuração facilita o estudo do impacto da hierarquia de pivôs e do tráfego de mensagens, mantendo o cenário suficientemente simples para análise e visualização, mas ainda representativo de situações reais em redes veiculares.
+O cruzamento central na grelha oferece uma margem de manobra temporal e espacial maior permitindo que os pontos se desloquem até o centro sem colisões ou interferências complexase que a sequência das fases de sincronização seja observada de forma clara. Esta configuração facilita o estudo do impacto da hierarquia de pivôs e do tráfego de mensagens, mantendo o cenário suficientemente simples para análise e visualização, mas ainda representativo de situações reais em redes veiculares.
 
 \begin{figure}[H]
     \centering
@@ -636,7 +636,7 @@ Para analisar o desempenho do modelo proposto, foram definidas métricas especí
 
 Cada nó mantém localmente o seu vetor de estado (\texttt{NodeData}), que é enviado ao pivô da faixa correspondente. Os pivôs agregam os vetores recebidos, determinam a versão mais recente e comunicam no nó central para assegurar coerência global. Após a consolidação da versão global, os pivôs disseminam a informação de volta às faixas, completando o ciclo hierárquico.
 
-Durante este processo, as métricas são calculadas de forma contínua, permitindo obter o volume de mensagens trocadas, a latência observada e a taxa de pacotes perdidos durante a sincronização. Esta abordagem fornece uma visão detalhada do comportamento do protocolo, permitindo identificar pontos críticos ou oportunidades de optimização.
+Durante este processo, as métricas são calculadas de forma contínua, permitindo obter o volume de mensagens trocadas, a latência observada e a taxa de pacotes perdidos durante a sincronização. Esta abordagem fornece uma visão detalhada do comportamento do protocolo, permitindo identificar pontos críticos oucoportunidades de optimização.
 
 \begin{lstlisting}[language=C++]
 void HierarchicalSyncManager::AggregateMetrics(NodeId node)
@@ -764,7 +764,7 @@ void Phase3_PivotsToLanes() {
 }
 \end{lstlisting}
 
-Após a execução das três fases, todos os nós alcançam a mesma versão final dos dados, simbolizando a convergência global do estado da rede.
+Após a execução das três fases, todos os nósn alcançam a mesma versão final dos dados, simbolizando a convergência global do estado da rede.
 
 \section{Execução e Métricas de Avaliação}
 
@@ -798,7 +798,7 @@ interest_loss = tx_interests - rx_interests
 total_sync_packets = tx_interests + rx_interests + tx_data + rx_data
 \end{lstlisting}
 
-Este script foi utilizado em todas as simulações para garantir consistência no cálculo das métricas e facilitar a geração de gráficos de desempenho apresentados no capítulo seguinte.
+Este script foi utilizado em todas asnsimulações para garantir consistência no cálculo das métricas e facilitar a geração de gráficos de desempenho apresentados no capítulo seguinte.
 
 \section{Fluxo Lógico da Sincronização}
 
@@ -1054,7 +1054,7 @@ Como evolução futura, propõe-se:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Síntese Final}
 
-De forma resumida, o modelo proposto apresenta ganhos expressivos em todas as métricas avaliadas. A abordagem hierárquica SVSync-H demonstrou:
+De forma resumida, o modelo proposto apresenta ganhos expressivos em todas as métricas avaliadas. A abordagem hierárquica demonstrou:
 
 \begin{itemize}
     \item Redução drástica do tráfego de mensagens, com diminuição superior a 98\% no número total de mensagens e interesses enviados em comparação com a abordagem sem pivô;
