@@ -111,7 +111,7 @@ A comunicação no \gls{NDN} é conduzida por dois tipos de pacotes: \textit{Int
 Para suportar este modelo orientado a dados, cada router NDN mantém três estruturas fundamentais: a \gls{FIB}, a \gls{PIT} e a \gls{CS}. Juntas, estas estruturas permitem à rede encaminhar, armazenar e entregar conteúdos de forma eficiente, sem dependência de endereços IP ou de sessões persistentes.
 
 \paragraph{1. \gls{CS}}
-A \textbf{\gls{CS}} é uma memória \textit{cache} local que armazena temporariamente pacotes de dados previamente recebidos. Quando chega um pacote de interesse, o router verifica primeiro se o conteúdo correspondente já está armazenado na CS. Caso positivo, o dado é devolvido de imediato pela interface de onde veio o pedido, sem necessidade de contactar o produtor original. Este mecanismo de \textit{in-network caching} é essencial para reduzir a latência e o consumo de largura de banda, especialmente em cenários de mobilidade, onde múltiplos nós próximos podem requisitar o mesmo conteúdo.
+é uma memória \textit{cache} local que armazena temporariamente pacotes de dados previamente recebidos. Quando chega um pacote de interesse, o router verifica primeiro se o conteúdo correspondente já está armazenado na CS. Caso positivo, o dado é devolvido de imediato pela interface de onde veio o pedido, sem necessidade de contactar o produtor original. Este mecanismo de \textit{in-network caching} é essencial para reduzir a latência e o consumo de largura de banda, especialmente em cenários de mobilidade, onde múltiplos nós próximos podem requisitar o mesmo conteúdo.
 
 \paragraph{2. \gls{PIT}}
 Se o dado não estiver disponível na \gls{CS}, o router consulta a \textbf{\gls{PIT}}. Esta tabela regista todos os interesses pendentes que ainda não foram satisfeitos, associando o nome do conteúdo às interfaces pelas quais os pedidos foram recebidos. Quando chega um novo interesse por um conteúdo já registado na \gls{PIT}, o router apenas adiciona a nova interface à entrada existente, evitando o reenvio redundante do interesse, um mecanismo crucial para reduzir tráfego e evitar congestionamentos em redes densas. Quando o pacote de dados correspondente chega, ele é encaminhado a todas as interfaces registadas e a entrada é removida.
@@ -477,7 +477,7 @@ O pseudocódigo simplificado da sincronização hierárquica é apresentado a se
 
 \section{Critérios para Escolha dos Pivôs}
 
-A seleção dos pivôs é um fator determinante para o desempenho do processo de sincronização. No modelo proposto, a escolha do pivô baseia-se em critérios geográficos, sendo designado como pivô o nó que se encontra mais próximo do centro do cruzamento. Esta escolha visa garantir a menor latência média possível na comunicação com os restantes veículos da mesma faixa e principalmente com os pivôs, otimizando, assim, a propagação das mensagens e reduzindo o número de retransmissões necessárias.
+A seleção dos pivôs é um fator determinante para o desempenho do processo de sincronização. No modelo proposto, a escolha do pivô baseia-se em critérios geográficos, sendo designado como pivô o nó que se encontra mais próximo do centro do cruzamento. Esta escolha visa garantir a menor latência possível na comunicação com os restantes veículos da mesma faixa e principalmente com os pivôs, otimizando, assim, a propagação das mensagens e reduzindo o número de retransmissões necessárias.
 
 \section{Gestão de Mobilidade e Chegada ao Centro}
 
@@ -861,16 +861,16 @@ Esta configuração assegura condições comparáveis entre cenários e permite 
 
 \subsection{Latência}
 
-A Figura \ref{fig:lnh} mostra a evolução da latência média em função do número de nós.  
+A Figura \ref{fig:lnh} mostra a evolução da latência em função do número de nós.  
 Enquanto a abordagem sem hierarquia apresenta um aumento grande com a dimensão da rede, a solução hierárquica mantém uma tendência linear e estável, resultado direto da redução de saltos de sincronização e da eliminação de interesses redundantes.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{Chapters/Figures/LatenciaNH.png}
-\caption{Comparação da latência média entre as soluções sem hierarquia e hierárquica.}
+\caption{Comparação da latência entre as soluções sem hierarquia e hierárquica.}
 \label{fig:lnh}
 \end{figure}
-A Tabela~\ref{tab:latencia_pivo} apresenta a comparação entre os valores de latência obtidos com e sem a utilização do pivô, para diferentes números de carros. Observa-se que, em todos os casos, a introdução do pivô resultou numa redução da latência média. 
+A Tabela~\ref{tab:latencia_pivo} apresenta a comparação entre os valores de latência obtidos com e sem a utilização do pivô, para diferentes números de carros. Observa-se que, em todos os casos, a introdução do pivô resultou numa redução da latência. 
 
 Para um número reduzido de carros (8 veículos), a diminuição é de aproximadamente 40\%, evidenciando um impacto bastante significativo. À medida que o número de carros aumenta, a diferença relativa tende a estabilizar entre 13\% e 22\%, o que demonstra que o mecanismo de pivô continua a ser vantajoso, mesmo em cenários mais exigentes em termos de carga.
 
@@ -948,7 +948,7 @@ absoluto de interesses perdidos em todos os cenários testados.
 \label{fig:IPPP}
 \end{figure}
 
-Para 8 veículos, a solução sem pivô regista 7101 interesses perdidos, enquanto a solução com pivô apresenta apenas 219, representando uma melhoria substancial. Esta tendência mantém-se à medida que o número de carros aumenta, com reduções superiores a 95\% no total de interesses perdidos.  
+Para 8 veículos, a  solução sem pivô regista 7101 interesses perdidos, enquanto a solução com pivô apresenta apenas 219, representando uma melhoria substancial. Esta tendência mantém-se à medida que o número de carros aumenta, com reduções superiores a 95\% no total de interesses perdidos.  
 Em termos percentuais, a taxa de sucesso (interesses bem processados) é consistentemente mais elevada quando se utiliza o pivô, situando-se entre 70\% e 78\%, face a valores entre 54\% e 72\% no caso sem pivô.
 
 A Tabela~\ref{tab:interesses_enviados} e a Figura~\ref{fig:interesses_enviados} ilustram o impacto da utilização do pivô no número total de interesses enviados e na percentagem de sucesso.  
@@ -1037,12 +1037,6 @@ Nas grelhas menores (5×5), as diferenças são reduzidas, dado o baixo número 
 Este comportamento comprova a capacidade de escalabilidade do modelo proposto para redes de larga escala.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Avaliação do Consumo de Recursos}
-
-Embora o foco principal seja o desempenho, existe também uma redução significativa no consumo de memória e processamento.  
-O modelo hierárquico requer menos entradas na \gls{PIT} e reduz o uso da \gls{CS}, o que se traduz numa menor carga computacional por nó.  
-Esta característica é essencial em redes heterogéneas, onde coexistem veículos com diferentes capacidades de hardware.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Limitações e Perspetivas Futuras}
 
