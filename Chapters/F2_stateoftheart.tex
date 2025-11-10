@@ -729,40 +729,57 @@ A arquitetura implementada baseia-se em três fases de sincronização hierárqu
 
 As três fases são controladas por eventos no simulador, com verificações periódicas de convergência. Cada fase apenas é iniciada quando a anterior atinge estabilidade, isto é, quando todos os nós participantes partilham a mesma versão de dados. O pseudocódigo subjacente encontra-se resumido nas Listas~\ref{lst:phase1} a~\ref{lst:phase3}.
 
-\begin{lstlisting}[language=C++, caption={Fase 1 – Sincronização dos pontos para os pivôs.}, label={lst:phase1}]
-void Phase1_LanesToPivots() {
-    cout << "[INST]_FASE_1";
-    int maxLaneVersion = -1;
-    for (auto &p : points)
-        if (!p->isPivot)
-            maxLaneVersion = max(maxLaneVersion , p->dataVersion);
-    for (auto &pv : pivots)
-        if (pv->dataVersion < maxLaneVersion)
-            pv->dataVersion = maxLaneVersion;
-}
-\end{lstlisting}
+\begin{algorithm}[H]
+\caption{Fase 1 – Sincronização dos Pontos para os Pivôs}
+\begin{algorithmic}[1]
+\State Escrever ``[INST] FASE 1 - Pontos enviam as versões mais recentes aos pivôs''
+\State $maxVersaoPontos \gets -1$
+\For{cada ponto em \textit{points}}
+    \If{ponto não é pivô}
+        \If{$ponto.dataVersion > maxVersaoPontos$}
+            \State $maxVersaoPontos \gets ponto.dataVersion$
+        \EndIf
+    \EndIf
+\EndFor
+\For{cada pivô em \textit{pivots}}
+    \If{$pivô.dataVersion < maxVersaoPontos$}
+        \State $pivô.dataVersion \gets maxVersaoPontos$
+    \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
-\begin{lstlisting}[language=C++, caption={Fase 2 – Inter-sincronização entre pivôs.}, label={lst:phase2}]
-void Phase2_PivotsInterSync() {
-    cout << "[INST]_FASE_2";
-    int maxPivotVersion = -1;
-    for (auto &pv : pivots)
-        maxPivotVersion = max(maxPivotVersion, pv->dataVersion);
-    for (auto &pv : pivots)
-        pv->dataVersion = maxPivotVersion;
-}
-\end{lstlisting}
+\begin{algorithm}[H]
+\caption{Fase 2 – Inter-sincronização entre Pivôs}
+\begin{algorithmic}[1]
+\State Escrever ``[INST] FASE 2 - Pivôs trocam versões entre si''
+\State $maxVersaoPivos \gets -1$
+\For{cada pivô em \textit{pivots}}
+    \If{$pivô.dataVersion > maxVersaoPivos$}
+        \State $maxVersaoPivos \gets pivô.dataVersion$
+    \EndIf
+\EndFor
+\For{cada pivô em \textit{pivots}}
+    \State $pivô.dataVersion \gets maxVersaoPivos$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
-\begin{lstlisting}[language=C++, caption={Fase 3 – Disseminação descendente dos pivôs para os pontos.}, label={lst:phase3}]
-void Phase3_PivotsToLanes() {
-    cout << "[INST]_FASE_3";
-    int pivotMax = -1;
-    for (auto &pv : pivots)
-        pivotMax = max(pivotMax , pv->dataVersion);
-    for (auto &p : points)
-        p->dataVersion = pivotMax;
-}
-\end{lstlisting}
+\begin{algorithm}[H]
+\caption{Fase 3 – Disseminação dos Pivôs para os Pontos}
+\begin{algorithmic}[1]
+\State Escrever ``[INST] FASE 3 - Pivôs actualizam todos os pontos''
+\State $maxVersaoPivos \gets -1$
+\For{cada pivô em \textit{pivots}}
+    \If{$pivô.dataVersion > maxVersaoPivos$}
+        \State $maxVersaoPivos \gets pivô.dataVersion$
+    \EndIf
+\EndFor
+\For{cada ponto em \textit{points}}
+    \State $ponto.dataVersion \gets maxVersaoPivos$
+\EndFor
+\end{algorithmic}
+\end{algorithm}
 
 Após a execução das três fases, todos os nósn alcançam a mesma versão final dos dados, simbolizando a convergência global do estado da rede.
 
