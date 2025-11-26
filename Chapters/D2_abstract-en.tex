@@ -8,17 +8,21 @@
 
 \typeout{NT FILE D2_abstract-en.tex}%
 
-Efficient and reliable data dissemination in vehicular networks is an increasing challenge in the context of intelligent transportation systems. The \gls{NDN} paradigm emerges as a promising alternative to IP-based architectures, as it focuses communication on the data itself. However, information synchronization between continuously moving vehicles remains a complex problem due to high mobility and rapid changes in network topology.  
-This work addresses this challenge through the design and implementation of \gls{SVSync}, a synchronization layer specifically designed for Vehicular NDN. SVSync proposes an adaptive model that incorporates geographic and temporal constraints into data synchronization management, enabling efficient and consistent information sharing among vehicles.  
-The solution is integrated and evaluated in the ndnSIM simulator, where parameters such as latency and scalability are analyzed.
+The \gls{NDN} paradigm offers a promising alternative to traditional IP-based communication by focusing on data instead of host addresses. However, existing synchronization mechanisms such as \gls{SVSync} were originally designed for stable environments and do not fully exploit the dynamics of \glspl{VANETs}.
 
-% Keywords of the abstract in English
+This work proposes a \textit{hierarchical} synchronization model based on \gls{SVSync}, tailored to the characteristics of vehicular \gls{V-NDN}. The architecture introduces three synchronization phases coordinated by distributed pivots, aiming to reduce message overhead, improve scalability, and accelerate the convergence of network state. The solution was implemented and evaluated using the \textit{ndnSIM} simulator, where multiple network densities were tested and metrics such as latency, synchronization traffic, packet losses, and scalability were analyzed.
+
+Results show that the proposed hierarchical model significantly improves synchronization performance compared to non-hierarchical approaches, reducing message exchange and improving overall efficiency. These findings contribute to the development of more effective data dissemination and coordination mechanisms for vehicular networks based on \gls{NDN}.
+
+% Keywords for the English abstract
 \keywords{
   \gls{NDN} \and
   \gls{SVSync} \and
   Synchronization \and
   Vehicular Networks \and
-  \gls{VANETs}
+  \glspl{VANETs}
 }
+
+
 
 % to add an extra black line
