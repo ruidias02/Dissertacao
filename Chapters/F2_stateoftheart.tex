@@ -578,9 +578,7 @@ Estes dois protocolos, embora eficientes em redes moderadamente dinâmicas, não
 
 Para compreender melhor as diferenças entre abordagens de sincronização, apresentamos uma análise comparativa entre os protocolos \gls{DSSN}, \gls{DDSN} e \gls{SVSync}, seguida de uma visão sobre protocolos hierárquicos aplicados a redes IoT e \gls{VANETs}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% --- SEGUIR O TEU TEXTO ORIGINAL SEM ALTERAÇÕES ---
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection{\gls{DSSN} vs \gls{DDSN} vs \gls{SVSync}}
 \label{subsub:dssn_ddsn_svsync}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -594,21 +592,6 @@ Os protocolos \gls{DSSN}, \gls{DDSN} e \gls{SVSync} compartilham a ideia de veto
     
     \item \textbf{\gls{SVSync}:} mantém a codificação de vetores de estado do \gls{DSSN}, mas elimina funcionalidades específicas para sensores e adapta-se a redes mais dinâmicas. Limitações incluem overhead de \gls{PIT} persistente, divergência temporária de estado e escalabilidade limitada \cite{moll_brief_nodate}.
 \end{itemize}
-
-\begin{table}[h]
-\centering
-\caption{Comparação de Protocolos de Sincronização}
-\label{tab:sync_comparison}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-Protocolo & Topologia alvo & Overhead & Robustez Mobilidade & Comentários \\ \hline
-DSSN      & Redes de sensores & Baixo       & Médio           & Bom para estados intermitentes, limita escalabilidade \\ \hline
-DDSN      & Redes ad-hoc dinâmicas & Médio & Alto            & Prioriza transmissões oportunistas; desempenho inferior em redes estáveis \\ \hline
-SVSync    & Redes dinâmicas gerais & Médio-Alto & Alto           & Adapta-se a redes móveis, mas \gls{PIT} persistente e divergência temporária \\ \hline
-\end{tabular}%
-}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Protocolos hierárquicos em IoT e VANETs}
