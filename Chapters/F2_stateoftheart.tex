@@ -557,9 +557,6 @@ O SVSync utiliza os interesses apenas como notificações unidirecionais, sem ge
 
 \vspace{0.15cm}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% --- ADIÇÃO: ChronoSync e PSync (mínima intervenção) ---
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{ChronoSync e PSync no contexto da sincronização NDN}
 
@@ -577,6 +574,125 @@ Estes dois protocolos, embora eficientes em redes moderadamente dinâmicas, não
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Para compreender melhor as diferenças entre abordagens de sincronização, apresentamos uma análise comparativa entre os protocolos \gls{DSSN}, \gls{DDSN} e \gls{SVSync}, seguida de uma visão sobre protocolos hierárquicos aplicados a redes IoT e \gls{VANETs}.
+
+\subsubsection{DSSN}
+\label{subsub:dssn}
+
+O protocolo \gls{DSSN} \Cite{xu_achieving_2018} utiliza vetores de estado codificados em tuplas do tipo 
+\texttt{[prefixo, número-de-sequência]}, permitindo que cada nó compare
+diretamente o seu estado local com o estado recebido. Esta abordagem é robusta
+a conectividade intermitente e adequada a redes de sensores, embora apresente
+limitações de escalabilidade.
+
+\begin{algorithm}[H]
+\caption{Processo de sincronização no DSSN}
+\begin{algorithmic}[1]
+\Procedure{SendSyncInterest}{}
+    \State interest.payload $\gets$ LocalStateVector
+    \State \textbf{broadcast}(interest)
+\EndProcedure
+
+\Statex
+
+\Procedure{OnReceiveSyncInterest}{RemoteVector}
+    \State MissingData $\gets \emptyset$
+    \ForAll{(prefix, remoteSeq) $\in$ RemoteVector}
+        \State localSeq $\gets$ LocalStateVector[prefix]
+        \If{remoteSeq $>$ localSeq}
+            \State MissingData $\gets$ MissingData $\cup$ (prefix, localSeq+1..remoteSeq)
+        \EndIf
+    \EndFor
+    \If{MissingData $\neq \emptyset$}
+        \State \Call{RequestMissingData}{MissingData}
+    \EndIf
+\EndProcedure
+
+\Statex
+
+\Procedure{RequestMissingData}{MissingData}
+    \ForAll{(prefix, seqRange) $\in$ MissingData}
+        \ForAll{seq $\in$ seqRange}
+            \State sendInterest(prefix/seq)
+        \EndFor
+    \EndFor
+\EndProcedure
+
+\Statex
+
+\Procedure{OnReceiveData}{prefix, seq}
+    \State store(data)
+    \If{seq $>$ LocalStateVector[prefix]}
+        \State LocalStateVector[prefix] $\gets$ seq
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{DDSN}
+\label{subsub:ddsn}
+
+O protocolo \gls{DDSN} \cite{li_distributed_2019} estende o \gls{DSSN} e introduz dois mecanismos
+adicionais: (i) \textit{prioritização} de dados em falta, e (ii) modo
+\textit{inativo} que reduz a sobrecarga quando o nó não tem vizinhos. O vetor de
+estado mantém o mesmo formato do DSSN, mas o processo de disseminação adapta-se
+à mobilidade e instabilidade da conectividade.
+
+\begin{algorithm}[H]
+\caption{Processo de sincronização no DDSN}
+\begin{algorithmic}[1]
+\State Mode $\in$ \{ACTIVE, SLEEP\}
+
+\Statex
+
+\Procedure{PeriodicCheckNeighbors}{}
+    \If{NeighborSet é vazio}
+        \State Mode $\gets$ SLEEP
+    \Else
+        \State Mode $\gets$ ACTIVE
+    \EndIf
+\EndProcedure
+
+\Statex
+
+\Procedure{SendSyncInterest}{}
+    \State interest.payload $\gets$ LocalStateVector
+    \If{Mode = ACTIVE}
+        \State \textbf{broadcast}(interest)
+    \Else
+        \State \textbf{probabilisticBroadcast}(interest, $p_{low}$)
+    \EndIf
+\EndProcedure
+
+\Statex
+
+\Procedure{OnReceiveSyncInterest}{RemoteVector, Sender}
+    \State NeighborSet.add(Sender)
+    \State MissingData $\gets \emptyset$
+    \ForAll{(prefix, remoteSeq) $\in$ RemoteVector}
+        \State localSeq $\gets$ LocalStateVector[prefix]
+        \If{remoteSeq $>$ localSeq}
+            \State urgency $\gets$ remoteSeq - localSeq
+            \State MissingData.add((prefix, localSeq+1..remoteSeq, urgency))
+        \EndIf
+    \EndFor
+    \If{MissingData $\neq \emptyset$}
+        \State \Call{PrioritizedRequest}{MissingData}
+    \EndIf
+\EndProcedure
+
+\Statex
+
+\Procedure{PrioritizedRequest}{MissingData}
+    \State sort MissingData by urgency descending
+    \ForAll{(prefix, seqRange, urgency) $\in$ MissingData}
+        \ForAll{seq $\in$ seqRange}
+            \State sendInterest(prefix/seq)
+        \EndFor
+    \EndFor
+\EndProcedure
+
+\end{algorithmic}
+\end{algorithm}
 
 
 \subsubsection{\gls{DSSN} vs \gls{DDSN} vs \gls{SVSync}}
