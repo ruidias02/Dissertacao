@@ -8,9 +8,9 @@
 
 \typeout{NT FILE D1_abstract-pt.tex}%
 
-A disseminação eficiente de dados em redes veiculares constitui um desafio significativo nos Sistemas de Transporte Inteligentes, devido à elevada mobilidade dos veículos e às rápidas mudanças de topologia. O paradigma \gls{NDN} apresenta-se como uma alternativa promissora às arquiteturas tradicionais baseadas em IP, ao centrar a comunicação nos próprios dados. Contudo, mecanismos de sincronização existentes, como o \gls{SVSync}, foram inicialmente concebidos para cenários estáveis e não tiram partido da dinâmica inerente às \glspl{VANETs}.
+A disseminação eficiente de dados em redes veiculares constitui um desafio significativo nos Sistemas de Transporte Inteligentes, devido à elevada mobilidade dos veículos e às rápidas mudanças de topologia. O paradigma \gls{NDN} apresenta-se como uma alternativa promissora às arquiteturas tradicionais baseadas em IP, ao centrar a comunicação nos próprios dados. Contudo, mecanismos de sincronização existentes, como o \gls{SVSync}, foram inicialmente concebidos para cenários estáveis e não tiram partido da dinâmica inerente às \gls{VANETs}.
 
-Neste trabalho, propõe-se um modelo \textit{hierárquico} de sincronização baseado no \gls{SVSync}, adaptado às características de redes veiculares \gls{V-NDN}. A arquitetura introduz três fases de sincronização suportadas por pivôs distribuídos, com o objetivo de reduzir a sobrecarga de mensagens, melhorar a escalabilidade e acelerar a convergência dos estados entre veículos. A solução foi implementada e avaliada no simulador \textit{ndnSIM}, onde foram simulados diferentes densidades de nós e analisadas métricas como latência, tráfego de sincronização, perdas de pacotes e escalabilidade.
+Neste trabalho, propõe-se um modelo \textit{hierárquico} de sincronização baseado no \gls{SVSync}, adaptado às características de redes veiculares \gls{V-NDN}. A arquitetura introduz três fases de sincronização suportadas por pivôs, com o objetivo de reduzir a sobrecarga de mensagens, melhorar a escalabilidade e acelerar a convergência dos estados entre veículos. A solução foi implementada e avaliada no simulador \textit{ndnSIM}, onde foram simulados diferentes densidades de nós e analisadas métricas como latência, tráfego de sincronização, perdas de pacotes e escalabilidade.
 
 Os resultados demonstram que o modelo hierárquico proposto melhora significativamente o desempenho da sincronização quando comparado com abordagens não hierárquicas, reduzindo o número de mensagens trocadas e aumentando a eficiência global. Estas conclusões contribuem para o desenvolvimento de soluções mais eficazes de disseminação e coordenação de dados em redes veiculares baseadas em \gls{NDN}.
 
@@ -20,6 +20,6 @@ Os resultados demonstram que o modelo hierárquico proposto melhora significativ
   \gls{SVSync} \and
   Sincronização \and
   Redes Veiculares \and
-  \glspl{VANETs}
+  \gls{VANETs}
 }
 

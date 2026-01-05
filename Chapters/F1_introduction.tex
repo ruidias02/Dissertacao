@@ -42,7 +42,7 @@ A investigação na área destaca diversas lacunas ainda não resolvidas:
 
 Torna-se, portanto, evidente a necessidade de um modelo de sincronização adaptativo e hierárquico, capaz de lidar com a volatilidade das conexões e de explorar a estrutura geográfica e temporal dos ambientes veiculares.  
 
-A presente dissertação propõe uma camada de sincronização hierárquica, inspirada nos princípios do SVSync, mas especificamente adaptada às particularidades das redes \gls{V-NDN}. Esta solução incorpora restrições geográficas e temporais na gestão de estados, utiliza clusterização hierárquica para otimizar a disseminação e adapta-se dinamicamente às variações da topologia. O resultado é um modelo mais eficiente e consistente de partilha de informação, que contribui para a fiabilidade dos sistemas cooperativos de transporte.  
+A presente dissertação propõe uma camada de sincronização hierárquica, inspirada nos princípios do SVSync, mas especificamente adaptada às particularidades das redes \gls{V-NDN}. Esta solução, utiliza clusterização hierárquica para otimizar a disseminação e adapta-se dinamicamente às variações da topologia. O resultado é um modelo mais eficiente e consistente de partilha de informação, que contribui para a fiabilidade dos sistemas cooperativos de transporte.  
 
 Do ponto de vista prático, o impacto deste tipo de solução é vasto. Sistemas de coordenação de frotas, gestão de interseções, condução autónoma colaborativa e resposta rápida a emergências dependem de comunicações sincronizadas em tempo real. Assim, qualquer avanço na eficiência dos mecanismos de sincronização traduz-se diretamente em melhorias práticas, por exemplo na disseminação atempada de alertas de travagem de emergência, ou na partilha coordenada de informação sobre o estado do tráfego para apoio à gestão inteligente de rotas, contribuindo para maior segurança rodoviária, redução de congestionamentos e melhor eficiência energética.
 
@@ -55,8 +55,8 @@ O objetivo central desta dissertação é conceber, implementar e avaliar uma so
 
 \begin{itemize}
     \item Analisar os principais mecanismos de sincronização do \gls{NDN}, com foco no \gls{SVSync}, identificando as suas limitações quando aplicados a ambientes de elevada veiculares.
-    \item Propor uma versão adaptada do \gls{SVSync}, concebida para \gls{VANETs}, integrando fatores como mobilidade, restrições geográficas e temporais.
-    \item Desenvolver algoritmos de sincronização hierárquicos e contextuais, que organizem os veículos em múltiplas camadas (como \textit{lanes} e \textit{pivots}), reduzindo redundâncias e otimizando a disseminação.
+    \item Propor uma versão adaptada do \gls{SVSync}, concebida para \gls{VANETs}, integrando fatores como mobilidade e volumes de dados variáveis.
+    \item Desenvolver o algoritmo de sincronização hierárquico, que organiza os veículos em múltiplas camadas (como \textit{lanes} e \textit{pivots}), reduzindo redundâncias e otimizando a disseminação.
     \item Implementar a solução no ambiente de simulação \textit{ndnSIM}, assegurando compatibilidade e capacidade de reprodução de cenários realistas.
     \item Avaliar o desempenho da proposta em termos de latência, taxa de sincronização e escalabilidade, comparando-a com a versão clássica do \gls{SVSync}.
 \end{itemize}
@@ -70,7 +70,7 @@ Este trabalho oferece um conjunto de contributos científicos e tecnológicos qu
 
 \begin{itemize}
     \item \textbf{Modelo Hierárquico Adaptativo:} Desenvolvimento de uma arquitetura de sincronização em múltiplos níveis, onde veículos “pivô” atuam como agregadores temporários de estado, reduzindo o tráfego redundante e otimizando a convergência de dados.
-    \item \textbf{Camada SVSync-V:} Proposta de uma camada de sincronização específica para ambientes veiculares, incorporando métricas de tempo e localização na decisão de sincronização.
+    \item \textbf{Camada SVSync-V:} Proposta de uma camada de sincronização específica para ambientes veiculares, incorporando métricas de localização na decisão de sincronização.
     \item \textbf{Integração Avançada com ndnSIM:} Implementação completa e funcional da solução no simulador \textit{ndnSIM}, com novos módulos e parâmetros configuráveis que permitem avaliar cenários de mobilidade complexa.
     \item \textbf{Avaliação Experimental Detalhada:} Comparação rigorosa entre a abordagem hierárquica proposta e o \gls{SVSync} convencional, quantificando os ganhos em eficiência e robustez.
 \end{itemize}

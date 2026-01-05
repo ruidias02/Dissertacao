@@ -35,7 +35,7 @@ A arquitetura das \gls{VANETs} assenta em dois componentes principais: as unidad
 
 As \textbf{\gls{OBUs}} estão instaladas nos veículos, tipicamente no interior do habitáculo ou integradas na unidade telemática do veículo. São responsáveis por processar informação sensorial local, armazenar dados temporariamente e comunicar com outros veículos ou com a infraestrutura. Incluem normalmente módulos de posicionamento, processadores de bordo e interfaces rádio compatíveis com IEEE 802.11p ou C-V2X. Para além disso, as OBUs agregam sensores e atuadores do veículo, permitindo a integração com sistemas avançados de assistência à condução.
 
-As \textbf{\gls{RSUs}} são dispositivos fixos montados em elementos da via, como semáforos, postes de iluminação, portagens, cruzamentos ou entradas de autoestradas. Estão estrategicamente posicionadas para maximizar a cobertura e garantir visibilidade direta dos veículos. Atuando como pontos de acesso distribuídos, estendem a conectividade da rede e permitem a ligação aos sistemas centrais de gestão de tráfego. Em muitos cenários, as RSUs suportam também computação de borda, permitindo processar dados localmente e reduzir a latência de aplicações críticas.
+As \textbf{\gls{RSUs}} são dispositivos fixos montados em elementos da via, como semáforos, postes de iluminação, portagens, cruzamentos ou entradas de autoestradas. Estão estrategicamente posicionadas para maximizar a cobertura e garantir visibilidade direta dos veículos. Atuando como pontos de acesso distribuídos, estendem a conectividade da rede e permitem a ligação aos sistemas centrais de gestão de tráfego. Em muitos cenários, as RSUs suportam também computação, permitindo processar dados localmente e reduzir a latência de aplicações críticas.
 
 Esta arquitetura, definida em normas como o \textit{ETSI ITS-G5} e o \textit{3GPP C-V2X}, fornece a base para aplicações cooperativas que exigem baixas latências, elevada fiabilidade e comunicação persistente em cenários complexos \cite{gerla_internet_2014}.
 
@@ -50,7 +50,7 @@ Permite comunicação direta de curto alcance com latências reduzidas (da ordem
 \paragraph{C-V2X (3GPP).}  
 Opera em modo direto (\textit{sidelink} PC5) e em modo assistido pela rede. Utiliza programação sem necessidade de contenção, o que reduz colisões e melhora a fiabilidade em cenários densos. Nas evoluções 5G (NR-V2X), oferece maior alcance, mais robustez e suporte nativo a baixa latência. Este modo introduz ainda melhor suporte para condução cooperativa e aplicações de automação avançada.
 
-\paragraph{Comparação técnica resumida.}
+\paragraph{Comparação técnica:}
 \begin{itemize}
     \item \textit{Acesso ao meio:} 802.11p usa contenção (mais colisões em ambientes densos); C-V2X utiliza agendamento semi-persistente (melhor fiabilidade).
     \item \textit{Alcance:} 802.11p é tipicamente limitado a 300-500 m; C-V2X pode atingir 1 km em modo PC5.
@@ -88,7 +88,7 @@ de informações sobre condições da via ou obras. As exigências de latência 
 fornecem serviços não críticos, como streaming, acesso à internet,
 atualização de mapas ou comunicações sociais entre veículos. Estas aplicações toleram maiores
 latências, mas requerem maior largura de banda e mecanismos eficientes de disseminação de
-conteúdo., sendo frequentemente suportadas por \gls{V2N} ou redes celulares.
+conteúdo, sendo frequentemente suportadas por \gls{V2N} ou redes celulares.
 
 \subsection{Desafios Técnicos das VANETs}
 \label{sec:desafios}
@@ -117,7 +117,7 @@ A comunicação no NDN envolve dois papéis fundamentais, aqui introduzidos form
     \item \textbf{Produtor}: a entidade que origina ou detém o conteúdo solicitado e responde com um pacote \textit{Data}.
 \end{itemize}
 
-A comunicação no \gls{NDN} é conduzida por dois tipos de pacotes: \textit{Interest} e \textit{Data} (Figura~\ref{fig:Packets}). O consumidor envia um pacote de interesse contendo o nome do dado desejado; os routers utilizam esse nome para encaminhar o pedido até um produtor que possua o conteúdo. Quando o interesse atinge um nó que contém os dados, é gerado um pacote de dados, contendo o nome e o conteúdo solicitado, que regressa pelo caminho inverso percorrido pelo interesse.
+A comunicação no \gls{NDN} é conduzida por dois tipos de pacotes: \textit{Interest} e \textit{Data} (Figura~\ref{fig:Packets_NDN}). O consumidor envia um pacote de interesse contendo o nome do dado desejado; os routers utilizam esse nome para encaminhar o pedido até um produtor que possua o conteúdo. Quando o interesse atinge um nó que contém os dados, é gerado um pacote de dados, contendo o nome e o conteúdo solicitado, que regressa pelo caminho inverso percorrido pelo interesse.
 
 \begin{figure}[h]
 \centering
@@ -181,7 +181,7 @@ Funções fundamentais:
 
 \subsubsection{\gls{FIB}}
 Na ausência de entradas na \gls{CS} e na \gls{PIT}, o router recorre à \textbf{\gls{FIB}} para determinar como encaminhar o interesse. A FIB contém os prefixos de nomes e as interfaces associadas, funcionando de forma análoga a uma tabela de encaminhamento IP, mas baseada em nomes hierárquicos em vez de endereços. O encaminhamento pode seguir estratégias dinâmicas, permitindo, por exemplo, escolher entre múltiplas interfaces ou descartar pedidos em caso de congestionamento ou suspeita de ataque \cite{papadopoulos_lixia_2014}.
-A \gls{FIB} permitinde assim:
+A \gls{FIB} permite assim:
 \begin{itemize}
     \item encaminhamento por nomes hierárquicos;
     \item múltiplas estratégias de envio (\textit{best-route}, \textit{multicast}, \textit{adaptive forwarding});
@@ -380,7 +380,7 @@ Aspectos a destacar incluem:
     \item Comparação com autenticação tradicional do \gls{NDN}, em termos de overhead computacional.
 \end{itemize}
 Esta abordagem garante integridade e autenticidade sem introduzir sobrecarga significativa.
-\subsection{Estruturas Hierárquicas e Clustering em \gls{V-NDN}}
+\subsubsection{Estruturas Hierárquicas e Clustering em \gls{V-NDN}}
 \label{sec:hierarquia-vndn}
 
 Modelos hierárquicos baseados em \textit{clustering}, como o \gls{PACM} \cite{sampath_position-based_2021}, 
@@ -477,7 +477,7 @@ As redes veiculares (\gls{V2V}, \gls{V2X}) apresentam características extremas:
 \end{itemize}
 
 Estes requisitos motivaram o desenvolvimento de mecanismos de sincronização adaptados ao paradigma \gls{NDN}, culminando na evolução 
-\gls{DSSN} → \gls{DDSN} → \gls{SVSync}.
+\gls{DSSN} para \gls{DDSN} e \gls{SVSync}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{Sincronização no \gls{NDN}}}
