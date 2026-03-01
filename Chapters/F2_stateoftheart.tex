@@ -18,86 +18,83 @@
 \label{sec:redes_veic}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-As redes ad-hoc veiculares (VANETs) constituem uma variante especial das redes móveis ad-hoc \gls{MANETs} onde os veículos atuam como nós móveis da rede comunicando entre si e com
-a infraestrutura da rede \cite{khelifi_named_2020}. No contexto das \gls{VANETs} incluem-se diferentes modos de comunicação, tais como \gls{V2V}, \gls{V2I}, \gls{V2P}, \gls{V2N} e \gls{V2X}, conforme ilustrado na Figura~\ref{fig:V2X}. Além disso, estes modos integram o paradigma cooperativo de transporte inteligente, no qual a troca contínua de mensagens suporta funcionalidades avançadas de segurança e automação.
+As redes veiculares (\gls{VANETs}) constituem uma variante especial das (\gls{MANETs}), onde os veículos atuam como nós móveis da rede comunicando entre si e com a infraestrutura da rede \cite{khelifi_named_2020}. Estas redes caracterizam-se por elevada mobilidade, topologias altamente dinâmicas e padrões de deslocamento condicionados pela geometria das vias, o que impõe requisitos particularmente exigentes em termos de latência, fiabilidade e escalabilidade.
+
+No contexto das \gls{VANETs}, incluem-se diferentes modos de comunicação, nomeadamente \gls{V2V}, \gls{V2I}, \gls{V2P}, \gls{V2N} e, de forma genérica, \gls{V2X}, conforme ilustrado na Figura~\ref{fig:V2X}. Além disso, estes modos integram o paradigma cooperativo dos sistemas de transporte inteligentes, no qual a troca contínua de mensagens suporta aplicações de segurança, eficiência do tráfego e serviços de conforto.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{Chapters/Figures/V2X.png}
-    \caption{Mensagens das \gls{VANETs} \cite{noauthor_figure_nodate}}
+    \caption{Modos de comunicação V2X nas \gls{VANETs} \cite{noauthor_figure_nodate}}
     \label{fig:V2X}
 \end{figure}
 
 \subsection{Arquitetura e Componentes (OBU–RSU)}
 \label{sec:arquitetura}
 
-A arquitetura das \gls{VANETs} assenta em dois componentes principais: as unidades nos veículos (\gls{OBUs}) e as unidades fixas na infraestrutura rodoviária (\gls{RSUs}).
+A arquitetura típica das \gls{VANETs} assenta em dois componentes principais: as unidades embarcadas nos veículos (\gls{OBUs}) e as unidades fixas de infraestrutura (\gls{RSUs}).
 
-As \textbf{\gls{OBUs}} estão instaladas nos veículos, tipicamente no interior do habitáculo ou integradas na unidade telemática do veículo. São responsáveis por processar informação sensorial local, armazenar dados temporariamente e comunicar com outros veículos ou com a infraestrutura. Incluem normalmente módulos de posicionamento, processadores de bordo e interfaces rádio compatíveis com IEEE 802.11p ou C-V2X. Para além disso, as OBUs agregam sensores e atuadores do veículo, permitindo a integração com sistemas avançados de assistência à condução.
+As \textbf{\gls{OBUs}} estão instaladas nos veículos, geralmente integradas na unidade telemática, e agregam interfaces rádio V2X, módulos de posicionamento GNSS, sensores do veículo (via CAN/OBD) e capacidade de processamento local. São responsáveis pela geração, receção e processamento de mensagens cooperativas, bem como pelo armazenamento temporário de dados e execução das pilhas de protocolos de comunicação (por exemplo, CAM/DENM em arquiteturas ITS clássicas). Adicionalmente, as OBUs implementam mecanismos de controlo de congestão e políticas de privacidade, como a utilização de pseudónimos, sendo também o ponto de integração com sistemas avançados de assistência à condução.
 
-As \textbf{\gls{RSUs}} são dispositivos fixos montados em elementos da via, como semáforos, postes de iluminação, portagens, cruzamentos ou entradas de autoestradas. Estão estrategicamente posicionadas para maximizar a cobertura e garantir visibilidade direta dos veículos. Atuando como pontos de acesso distribuídos, estendem a conectividade da rede e permitem a ligação aos sistemas centrais de gestão de tráfego. Em muitos cenários, as RSUs suportam também computação, permitindo processar dados localmente e reduzir a latência de aplicações críticas.
+As \textbf{\gls{RSUs}} são dispositivos fixos instalados em elementos da infraestrutura rodoviária, como semáforos, cruzamentos, portagens ou entradas de autoestradas. Estes nós estendem a conectividade da rede veicular, suportam comunicações \gls{V2I} e disponibilizam ligação a sistemas centrais de gestão de tráfego através de backhaul (fibra ou redes celulares). Em cenários mais recentes, as RSUs incorporam capacidades de computação na borda (\textit{edge computing}), permitindo a agregação e processamento local de dados e a redução da latência em aplicações críticas.
 
-Esta arquitetura, definida em normas como o \textit{ETSI ITS-G5} e o \textit{3GPP C-V2X}, fornece a base para aplicações cooperativas que exigem baixas latências, elevada fiabilidade e comunicação persistente em cenários complexos \cite{gerla_internet_2014}.
+Esta arquitetura, definida em normas como o \textit{ETSI} (ITS-G5) e o \textit{3GPP} (C-V2X/NR-V2X), fornece a base para aplicações cooperativas que exigem comunicações fiáveis e de baixa latência em ambientes complexos e dinâmicos \cite{gerla_internet_2014}.
 
 \subsection{Tecnologias de Comunicação V2X}
 \label{sec:tecnologias_v2x}
 
-Os modos \gls{V2V} e \gls{V2I} utilizam sobretudo duas tecnologias padrão: \textbf{IEEE 802.11p (ITS-G5)} e \textbf{C-V2X}, definidas respetivamente pelo \textit{IEEE/ETSI} e pelo \textit{3GPP}. Ambas suportam comunicação direta, mas diferem nos mecanismos físicos e no desempenho.
+Os modos de comunicação \gls{V2V} e \gls{V2I} baseiam-se principalmente em duas tecnologias padrão: \textbf{IEEE 802.11p (ITS-G5)} e \textbf{C-V2X}, definidas respetivamente pelo \textit{IEEE/ETSI} e pelo \textit{3GPP}. Ambas suportam comunicação direta entre nós, mas diferem significativamente nos mecanismos fisicos e no desempenho.
 
-\paragraph{IEEE 802.11p (ITS-G5).}  
-Permite comunicação direta de curto alcance com latências reduzidas (da ordem dos milissegundos), mas é sensível à congestão do canal em cenários de elevada densidade, devido ao mecanismo de contenção do meio. É amplamente utilizado na norma europeia \textit{ETSI ITS-G5}. Em ambientes densos pode ocorrer o fenómeno de \textit{broadcast storm}, onde transmissões simultâneas causam colisões e perda de desempenho.
+\paragraph{IEEE 802.11p (ITS-G5).}
+O IEEE 802.11p opera tipicamente na banda ITS dos 5.9 GHz, utilizando canais de 10 MHz, e permite comunicação direta de curto alcance com latências reduzidas ao nível da camada de enlace. O acesso ao meio baseia-se em CSMA/CA, o que facilita uma operação totalmente descentralizada, mas torna o sistema sensível à congestão do canal em cenários de elevada densidade veicular. Nestes contextos, a probabilidade de colisões aumenta, podendo ocorrer o fenómeno de \textit{broadcast storm}, com impacto negativo na fiabilidade e no atraso das mensagens. Esta tecnologia é amplamente adotada no padrão europeu \textit{ETSI ITS-G5}.
 
-\paragraph{C-V2X (3GPP).}  
-Opera em modo direto (\textit{sidelink} PC5) e em modo assistido pela rede. Utiliza programação sem necessidade de contenção, o que reduz colisões e melhora a fiabilidade em cenários densos. Nas evoluções 5G (NR-V2X), oferece maior alcance, mais robustez e suporte nativo a baixa latência. Este modo introduz ainda melhor suporte para condução cooperativa e aplicações de automação avançada.
+\paragraph{C-V2X (3GPP).}
+O C-V2X suporta comunicação direta através do \textit{sidelink} PC5 e comunicação assistida pela rede celular. Nos modos autónomos, os veículos selecionam recursos de forma distribuída com base em mecanismos de \textit{sensing} e reserva semi-persistente, reduzindo a probabilidade de colisões em cenários densos. As evoluções para 5G (NR-V2X) introduzem melhorias adicionais em termos de alcance, robustez e suporte a serviços de baixa latência, tornando esta tecnologia particularmente adequada para aplicações de condução cooperativa e automação avançada.
 
-\paragraph{Comparação técnica:}
+\paragraph{Comparação técnica.}
 \begin{itemize}
-    \item \textit{Acesso ao meio:} 802.11p usa contenção (mais colisões em ambientes densos); C-V2X utiliza agendamento semi-persistente (melhor fiabilidade).
-    \item \textit{Alcance:} 802.11p é tipicamente limitado a 300-500 m; C-V2X pode atingir 1 km em modo PC5.
-    \item \textit{Latência:} ambos suportam latências baixas, mas C-V2X mantém-nas de forma mais estável sob carga elevada.
-    \item \textit{Interoperabilidade futura:} 5G NR-V2X expande capacidades para condução cooperativa e veículos autónomos, enquanto 802.11p apresenta limitações para evoluções mais complexas.
+    \item \textit{Acesso ao meio:} 802.11p utiliza contenção (CSMA/CA), enquanto o C-V2X recorre a agendamento e reserva de recursos.
+    \item \textit{Alcance:} 802.11p apresenta alcances típicos entre 100 e 500 m; C-V2X pode atingir distâncias superiores, dependendo do modo de operação.
+    \item \textit{Latência:} ambas suportam latências da ordem dos milissegundos, sendo o C-V2X mais estável sob elevada carga.
+    \item \textit{Evolução futura:} o NR-V2X oferece maior flexibilidade e integração com redes 5G e computação na borda.
 \end{itemize}
 
-A disseminação das mensagens é feita por \textit{broadcast} ou \textit{geocast} no caso de \gls{V2V}, enquanto na \gls{V2I} as \gls{RSUs} reencaminham dados para sistemas centrais, permitindo coordenação global.
+A disseminação de mensagens em \gls{V2V} é geralmente efetuada por \textit{broadcast} ou \textit{geocast}, enquanto no modo \gls{V2I} as \gls{RSUs} reencaminham dados para sistemas centrais, permitindo coordenação a nível global.
 
 \subsection{Aplicações}
 \label{sec:aplicacoes}
 
-As \gls{VANETs} suportam três grandes categorias de aplicações: de segurança, de gestão de tráfego e de
-conforto \textit{(infotainment)}, conforme ilustrado (Figura~\ref{fig:apps}), cada uma com requisitos distintos de latência, fiabilidade e largura de banda . Estas aplicações cooperativas utilizam mensagens padronizadas como CAM e DENM, fundamentais para a operação segura dos sistemas ITS europeus.
+As \gls{VANETs} suportam três grandes categorias de aplicações: segurança, gestão de tráfego e conforto (\textit{infotainment}), conforme ilustrado (Figura~\ref{fig:apps}), cada uma com requisitos distintos de latência, fiabilidade e largura de banda. Estas aplicações utilizam mensagens normalizadas, como \gls{CAM} e \gls{DENM}, fundamentais para os sistemas ITS europeus.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics{Chapters/Figures/VANETs_apps.png}
-    \caption{Aplicações das \gls{VANETs} \cite{khelifi_named_2020}}
-    \label{fig:apps}
-\end{figure}
+\begin{figure}[h] \centering \includegraphics{Chapters/Figures/VANETs_apps.png} \caption{Aplicações das \gls{VANETs} \cite{khelifi_named_2020}} \label{fig:apps} \end{figure}
 
-\paragraph{Aplicações de segurança.}  
-visam reduzir acidentes e aumentar a segurança rodoviária, através
-da disseminação de mensagens críticas, como alertas de colisão, travagem de emergência, ou
-deteção de veículos em ângulo morto. Estas aplicações exigem latência extremamente baixa (da
-ordem dos milissegundos) e elevada fiabilidade \cite{al-ani_survey_2018}. São reguladas por normas como ETSI ITS-G5 CAM/DENM.
+\paragraph{Aplicações de segurança.}
+Visam reduzir acidentes e aumentar a segurança rodoviária através da disseminação de mensagens críticas, como alertas de colisão, travagem de emergência ou deteção de veículos em ângulo morto. Estas aplicações exigem latência extremamente baixa (da ordem dos
+milissegundos) e elevada fiabilidade \cite{al-ani_survey_2018}.
 
-\paragraph{Aplicações de gestão de tráfego.}  
-permitem otimizar fluxos rodoviários, reduzindo congestionamentos
-e tempos de viagem. Exemplos incluem coordenação de semáforos inteligentes e partilha
-de informações sobre condições da via ou obras. As exigências de latência são moderadas, mas requerem cobertura ampla via \gls{V2I} \cite{jayapal_road_2016}.
+\paragraph{Aplicações de gestão de tráfego.}
+permitem otimizar os fluxos rodoviários reduzindo congestionamentos e tempos de viagem. Exemplos incluem a coordenação de semáforos inteligentes partilha de informação sobre condições da via ou obras. As exigências de latência são moderadas, mas requerem
+cobertura ampla via \gls{V2I} \cite{jayapal_road_2016}.
 
-\paragraph{Aplicações de conforto}  
-fornecem serviços não críticos, como streaming, acesso à internet,
-atualização de mapas ou comunicações sociais entre veículos. Estas aplicações toleram maiores
-latências, mas requerem maior largura de banda e mecanismos eficientes de disseminação de
-conteúdo, sendo frequentemente suportadas por \gls{V2N} ou redes celulares.
+\paragraph{Aplicações de conforto.}
+fornecem serviços não críticos, como streaming, acesso à internet ou atualização de mapas. Estas aplicações toleram maiores latências,
+mas requerem maior largura de banda e mecanismos eficientes de disseminação de conteúdo, sendo frequentemente suportadas por \gls{V2N} ou redes celulares.
 
 \subsection{Desafios Técnicos das VANETs}
 \label{sec:desafios}
 
-Apesar dos avanços tecnológicos, as \gls{VANETs} enfrentam desafios significativos: \begin{itemize} \item \textbf{Escalabilidade:} Em cenários urbanos com elevada densidade de veículos, o número de mensagens de controlo e retransmissões pode crescer exponencialmente, levando à congestão do canal e degradação de desempenho. O \gls{MAC} e o encaminhamento eficiente são essenciais para manter a escalabilidade. \item \textbf{Mobilidade elevada e topologia dinâmica:} A rápida variação da vizinhança entre veículos causa quebras de ligação frequentes, dificultando o estabelecimento de rotas persistentes e a disseminação contínua de dados. \item \textbf{Latência e fiabilidade:} As aplicações de segurança exigem comunicações quase instantâneas e altamente fiáveis. A variação do atraso (\textit{jitter}) e as perdas de pacotes podem comprometer a eficácia de mensagens críticas. \item \textbf{Conectividade intermitente:} Em regiões rurais ou com baixa densidade de veículos, as comunicações podem depender de oportunidades de contacto (\textit{store-carry-forward}), exigindo protocolos tolerantes a atrasos e interrupções temporárias. \item \textbf{Segurança e privacidade:} As VANETs são vulneráveis a ataques como \textit{spoofing}, \textit{Sybil} ou \textit{Denial of Service}. A autenticação e a integridade das mensagens são cruciais, mas devem ser implementadas sem comprometer a latência. \item \textbf{Heterogeneidade tecnológica:} A coexistência de diferentes tecnologias (IEEE 802.11p, C-V2X, 5G) impõe desafios de interoperabilidade e coordenação de múltiplos canais de comunicação. \item \textbf{Broadcast storm:} Em cenários densos, a disseminação massiva de mensagens pode provocar redundância e colisões, exigindo técnicas de supressão e temporização. \end{itemize}
+Apesar dos avanços tecnológicos, as \gls{VANETs} enfrentam desafios significativos:
+\begin{itemize}
+    \item \textbf{Escalabilidade:} em cenários urbanos densos, a taxa elevada de mensagens pode conduzir à congestão do canal, exigindo mecanismos de controlo de congestão e limitação adaptativa da taxa de transmissão.
+    \item \textbf{Mobilidade elevada e topologia dinâmica:} a curta duração das ligações entre veículos dificulta o estabelecimento de rotas persistentes e a disseminação contínua de dados.
+    \item \textbf{Latência e fiabilidade:} aplicações de segurança requerem comunicações quase determinísticas, com jitter controlado e perdas mínimas.
+    \item \textbf{Conectividade intermitente:} em cenários de baixa densidade, podem ser necessárias abordagens tolerantes a atrasos, como \textit{store-carry-forward}.
+    \item \textbf{Segurança e privacidade:} a autenticação e integridade das mensagens devem ser garantidas sem comprometer a latência, recorrendo a infraestruturas PKI veiculares e pseudónimos.
+    \item \textbf{Heterogeneidade tecnológica:} a coexistência de múltiplas tecnologias impõe desafios de interoperabilidade.
+    \item \textbf{Broadcast storm:} a disseminação massiva de mensagens requer técnicas de supressão e temporização para reduzir redundância.
+\end{itemize}
 
-Em síntese, as redes veiculares representam um domínio altamente dinâmico e complexo, no qual
-a eficiência da comunicação depende da capacidade dos protocolos em lidar com a escalabilidade, mobilidade
-e diversidade tecnológica. O paradigma V2X evolui progressivamente para suportar sistemas
+Em síntese, as redes veiculares constituem um domínio altamente dinâmico e complexo, no qual a eficiência da comunicação depende da capacidade dos protocolos em lidar com mobilidade, escala e diversidade tecnológica. A evolução do paradigma V2X evolui progressivamente para suportar sistemas
 cooperativos de transporte inteligente e veículos autónomos, nos quais a comunicação fiável e de baixa
 latência é um requisito fundamental para a segurança e o desempenho global da rede \cite{halim_research_2023}.
 
@@ -107,386 +104,340 @@ latência é um requisito fundamental para a segurança e o desempenho global da
 \label{sec:redes_NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-No início do desenvolvimento da Internet, o modelo de comunicação proposto pelo TCP/IP representou uma solução inovadora para a troca de informações ponto a ponto entre entidades identificadas por endereços. Embora o paradigma IP tenha sido concebido para conversas diretas entre hosts, o seu sucesso levou à sua adoção também em sistemas de distribuição de conteúdos, transformando a Internet numa vasta rede de disseminação de dados. Contudo, esta adaptação revelou limitações: o IP identifica apenas os pontos finais de comunicação, não os próprios conteúdos, tornando a distribuição de informação um processo complexo e ineficiente.
+No início do desenvolvimento da Internet, o modelo de comunicação proposto pelo TCP/IP representou
+uma solução inovadora para a troca de informações ponto a ponto entre entidades identificadas por endereços. Embora o paradigma IP tenha sido concebido para conversas diretas entre hosts, o seu sucesso
+levou à sua adoção também em sistemas de distribuição de conteúdos, transformando a Internet numa
+vasta rede de disseminação de dados. Contudo, esta adaptação revelou limitações: o IP identifica apenas
+os pontos finais de comunicação, não os próprios conteúdos, tornando a distribuição de informação um
+processo complexo e ineficiente, ou seja, a arquitetura TCP/IP foi concebida para a comunicação entre \textit{hosts} identificados por endereços, assumindo sessões relativamente estáveis e percursos explícitos entre origem e destino. Embora este modelo tenha sido adaptado para a distribuição de conteúdos em larga escala, essa transição exige mecanismos sobrepostos (como CDNs e DNS dinâmico) que introduzem complexidade e ineficiências, sobretudo em cenários de elevada dinâmica de rede.
 
-O \gls{NDN} surge como uma evolução arquitetural que visa superar essas limitações, generalizando o modelo da Internet para tornar o conteúdo, e não a localização, o elemento central da comunicação \cite{khelifi_named_2020}. Em vez de endereçar pacotes a um destino específico, o \GLS{NDN} utiliza nomes hierárquicos para identificar diretamente os dados. Essa alteração aparentemente simples introduz uma mudança profunda: a comunicação passa a ser orientada por dados, em que os consumidores expressam interesse pelo conteúdo desejado, e a rede encarrega-se de encontrá-lo e entregá-lo.
+O \gls{NDN} surge como uma evolução arquitetural que visa superar essas limitações \textit{host-centric} por um modelo \textit{data-centric}, no qual os dados são identificados diretamente por nomes hierárquicos, independentes da sua localização física \cite{khelifi_named_2020}. Neste paradigma, a rede assume a responsabilidade de localizar, encaminhar e entregar conteúdos nomeados, eliminando a dependência de endereços IP de destino e sessões persistentes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Modelo de Comunicação e Estruturas Internas}
+\label{sub:NDN_modelo_estruturas}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 A comunicação no NDN envolve dois papéis fundamentais, aqui introduzidos formalmente:
 \begin{itemize}
-    \item \textbf{Consumidor}: a entidade que expressa um pedido por dados, enviando um pacote \textit{Interest};
-    \item \textbf{Produtor}: a entidade que origina ou detém o conteúdo solicitado e responde com um pacote \textit{Data}.
+ \item \textbf{Interest}, que transporta o nome do conteúdo solicitado; \item \textbf{Data}, que transporta o conteúdo, o nome correspondente e uma assinatura criptográfica para validação.
+
+\end{itemize}
+A comunicação no NDN é conduzida por dois tipos de pacotes: Interest e Data (Figura \ref{fig:Packets_NDN}). O consumidor
+envia um pacote de interesse contendo o nome do dado desejado; os routers utilizam esse nome
+para encaminhar o pedido até um produtor que possua o conteúdo. Quando o interesse atinge um nó
+que contém os dados, é gerado um pacote de dados, contendo o nome e o conteúdo solicitado, que
+regressa pelo caminho inverso percorrido pelo interesse.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\linewidth]{Chapters/Figures/Packets.png}
+    \caption{Estrutura básica dos pacotes \gls{NDN} \cite{papadopoulos_lixia_2014}.}
+    \label{fig:Packets_NDN}
+\end{figure}
+
+Para suportar este modelo, cada nó (router) NDN mantém três estruturas de dados principais que coordenam o plano de encaminhamento. Juntas, estas
+estruturas permitem à rede encaminhar, armazenar e entregar conteúdos de forma eficiente, sem dependência
+de endereços IP ou de sessões persistentes. A interação entre estas três tabelas é frequentemente
+designada por triângulo de encaminhamento do NDN.
+
+\begin{itemize}
+    \item \textbf{\gls{CS} (Content Store):} Uma memória \textit{cache} local que armazena pacotes de dados previamente encaminhados. Permite que pedidos por conteúdos populares sejam satisfeitos de imediato por nós intermédios, reduzindo a latência e o tráfego no produtor original. A sua gestão é feita por políticas de substituição como LRU (\textit{Least Recently Used}) ou LFU (\textit{Least Frequently Used}).
+    
+    \item \textbf{\gls{PIT} (Pending Interest Table):} Regista os \textit{Interests} que aguardam resposta, mapeando o nome do dado às interfaces (\textit{faces}) de entrada. Esta estrutura é vital para a \textbf{agregação de interesses}: se múltiplos pedidos pelo mesmo nome chegarem antes da resposta, o router apenas reencaminha o primeiro, registando os restantes para posterior satisfação.
+    
+    \item \textbf{\gls{FIB} (Forwarding Information Base):} Uma tabela que mapeia prefixos de nomes a interfaces de saída. Ao contrário do IP, a FIB no NDN permite múltiplas interfaces para o mesmo prefixo, suportando estratégias de \textit{multicast} e encaminhamento adaptativo através de algoritmos de \textit{Longest Prefix Match} (LPM).
 \end{itemize}
 
-A comunicação no \gls{NDN} é conduzida por dois tipos de pacotes: \textit{Interest} e \textit{Data} (Figura~\ref{fig:Packets_NDN}). O consumidor envia um pacote de interesse contendo o nome do dado desejado; os routers utilizam esse nome para encaminhar o pedido até um produtor que possua o conteúdo. Quando o interesse atinge um nó que contém os dados, é gerado um pacote de dados, contendo o nome e o conteúdo solicitado, que regressa pelo caminho inverso percorrido pelo interesse.
+
+
+\subsubsection{Fluxo de Encaminhamento}
+
+O processo de decisão de um nó NDN ao receber um pacote segue uma lógica sequencial que otimiza o uso da largura de banda, conforme ilustrado na Figura~\ref{fig:Forwarding}:
+
+\begin{enumerate}
+    \item \textbf{Chegada do Interest:} O router consulta primeiro a \textbf{CS}. Se o dado estiver presente (\textit{Cache Hit}), o pacote \textit{Data} é enviado pela interface de origem.
+    \item \textbf{Verificação da PIT:} Caso o dado não esteja na cache, a PIT é consultada. Se já existir uma entrada para esse nome, a nova interface é agregada à lista e o pacote Interest é descartado, evitando retransmissões redundantes.
+    \item \textbf{Encaminhamento via FIB:} Se for um pedido novo, o router consulta a \textbf{FIB} para determinar a interface de saída com base no prefixo do nome. Uma nova entrada é então criada na PIT.
+    \item \textbf{Caminho de Retorno (Data Path):} Quando o pacote \textit{Data} chega, o router consulta a PIT para identificar todas as interfaces que solicitaram aquele conteúdo, replica o pacote para as mesmas e, em seguida, remove a entrada da PIT. O dado é opcionalmente armazenado na CS para satisfazer pedidos futuros.
+\end{enumerate}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=0.75\linewidth]{Chapters/Figures/Packets.png}
-\caption{Estrutura básica dos pacotes \gls{NDN} \cite{papadopoulos_lixia_2014}.}
-\label{fig:Packets_NDN}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Chapters/Figures/fowarding.png}
+    \caption{Processo de encaminhamento num nó \gls{NDN} \cite{papadopoulos_lixia_2014}.}
+    \label{fig:Forwarding}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modelo de comunicação centrado em dados}
-\label{sub:NDN_modelo}
+\subsection{Segurança e Desafios em Mobilidade}
+\label{sub:NDN_seguranca_mobilidade}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-No \gls{NDN}, o fluxo de Interest e Data ocorre como se segue:
+No NDN, a segurança é intrínseca ao dado e não ao canal. Cada pacote de dados é assinado pelo produtor, garantindo a autenticidade e integridade independentemente da fonte ou do percurso percorrido. Esta abordagem resolve problemas de confiança em redes abertas, mas exige uma gestão eficiente de chaves em larga escala.
 
-\begin{enumerate}
-    \item O consumidor envia um \textit{Interest} contendo o \textbf{nome do conteúdo} desejado.
-    \item A rede encaminha o \textit{Interest} com base em nomes, de forma hop-by-hop.
-    \item Quando um nó (router ou produtor) possui o conteúdo, gera um pacote \textit{Data}.
-    \item O \textit{Data} regressa ao consumidor seguindo exatamente o caminho inverso do \textit{Interest}, utilizando a informação guardada ao longo do percurso.
-\end{enumerate}
-
-Esta comunicação não requer sessões persistentes, endereços IP ou manutenção explícita de rotas fim-a-fim.  
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Estruturas internas: FIB, PIT e Content Store}
-\label{sub:NDN_estruturas}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Para suportar este modelo orientado a dados, cada router NDN mantém três estruturas fundamentais: a \gls{FIB}, a \gls{PIT} e a \gls{CS}. Juntas, estas estruturas permitem à rede encaminhar, armazenar e entregar conteúdos de forma eficiente, sem dependência de endereços IP ou de sessões persistentes. A interação entre estas três tabelas é frequentemente designada por \textit{triângulo de encaminhamento} do \gls{NDN}.
-
-\subsubsection{\gls{CS}}
-
-A \gls{CS} funciona como uma memória \textit{cache} local que armazena temporariamente pacotes de dados previamente recebidos. Quando chega um pacote de interesse, o router verifica primeiro se o conteúdo correspondente já está armazenado na CS. Caso esteja, os dados são devolvidos de imediato pela interface de onde veio o pedido, sem necessidade de contactar o produtor original, caso contrário, prossegue-se para as restantes estruturas. Este mecanismo de \textit{in-network caching} é essencial para reduzir a latência e o consumo de largura de banda, especialmente em cenários de mobilidade, onde múltiplos nós próximos podem requisitar o mesmo conteúdo.
-
-A CS é essencial para:
+Contudo, a aplicação do NDN em cenários de elevada mobilidade, como as \gls{VANETs}, revela limitações críticas:
 \begin{itemize}
-    \item reduzir latência;
-    \item diminuir carga na rede e no produtor;
-    \item aumentar resiliência em ambientes móveis e intermitentes.
+    \item \textbf{Rutura do Caminho Inverso:} A entrega do \textit{Data} depende da validade da interface registada na PIT. Se o consumidor mudar de localização (ou de ponto de acesso) antes da resposta chegar, o percurso inverso rompe-se, causando a perda do pacote.
+    \item \textbf{Overhead de Estado:} Em redes densas, o crescimento da PIT e as operações frequentes de LPM na FIB podem sobrecarregar os recursos de processamento dos nós móveis.
+    \item \textbf{Instabilidade da FIB:} A rápida mudança da topologia veicular dificulta a atualização das rotas na FIB, conduzindo a elevados rácios de \textit{timeouts} e retransmissões excessivas (\textit{Interest Flooding}).
 \end{itemize}
 
-As políticas de substituição de cache mais comuns são:
-\begin{itemize}
-    \item \textbf{LRU (Least Recently Used)} — remove o conteúdo menos recentemente utilizado;
-    \item \textbf{FIFO (First-In First-Out)} — remove o conteúdo mais antigo;
-    \item \textbf{LFU (Least Frequently Used)} — remove o conteúdo menos requisitado.
-\end{itemize}
-
-\subsubsection{\gls{PIT}}
-Se o dado não estiver disponível na \gls{CS}, o router consulta a \textbf{\gls{PIT}}. Esta tabela regista todos os interesses pendentes que ainda não foram satisfeitos, associando o nome do conteúdo às interfaces pelas quais os pedidos foram recebidos. Quando chega um novo interesse por um conteúdo já registado na \gls{PIT}, o router apenas adiciona a nova interface à entrada existente, evitando o reenvio redundante do interesse, um mecanismo crucial para reduzir tráfego e evitar congestionamentos em redes densas. Quando o pacote de dados correspondente chega, ele é encaminhado por todas as interfaces registadas e a entrada é removida.
-
-Funções fundamentais:
-\begin{enumerate}
-    \item \textbf{Agregação de interesses}: vários pedidos pelo mesmo conteúdo só originam um único reenvio.
-    \item \textbf{Encaminhamento inverso}: quando o \textit{Data} chega, o router consulta a PIT e devolve-o por todas as interfaces registadas.
-\end{enumerate}
-
-
-
-\subsubsection{\gls{FIB}}
-Na ausência de entradas na \gls{CS} e na \gls{PIT}, o router recorre à \textbf{\gls{FIB}} para determinar como encaminhar o interesse. A FIB contém os prefixos de nomes e as interfaces associadas, funcionando de forma análoga a uma tabela de encaminhamento IP, mas baseada em nomes hierárquicos em vez de endereços. O encaminhamento pode seguir estratégias dinâmicas, permitindo, por exemplo, escolher entre múltiplas interfaces ou descartar pedidos em caso de congestionamento ou suspeita de ataque \cite{papadopoulos_lixia_2014}.
-A \gls{FIB} permite assim:
-\begin{itemize}
-    \item encaminhamento por nomes hierárquicos;
-    \item múltiplas estratégias de envio (\textit{best-route}, \textit{multicast}, \textit{adaptive forwarding});
-    \item redundância e diversidade de caminhos.
-\end{itemize}
-
-\subsubsection{Fluxo completo Interest e Data}
-
-O fluxo completo de encaminhamento é ilustrado na Figura~\ref{fig:Forwarding}.
-\begin{figure}[H]
-\centering
-\includegraphics{Chapters/Figures/fowarding.png}
-\caption{Processo de encaminhamento num nó \gls{NDN} \cite{papadopoulos_lixia_2014}}
-\label{fig:Forwarding}
-\end{figure}
-
-Após a análise da imagem podemos retirar que o fluxo segue os seguintes passos:
-\begin{enumerate}
-    \item Receção do \textit{Interest}.
-    \item Consulta da \textbf{Content Store}:
-    \begin{itemize}
-        \item se \textit{cache hit}: envia \textit{Data} pela interface de entrada.
-        \item se \textit{cache miss}: avança para a PIT.
-    \end{itemize}
-    \item Consulta/atualização da \textbf{PIT}:
-    \begin{itemize}
-        \item se já existir uma entrada: adiciona-se a interface e descarta-se o Interest (evita duplicações).
-        \item caso contrário: cria-se uma nova entrada.
-    \end{itemize}
-    \item Consulta da \textbf{FIB} para determinar o(s) próximo(s) salto(s).
-    \item Reencaminhamento do \textit{Interest}.
-    \item À chegada do pacote \textit{Data}:
-    \begin{itemize}
-        \item consulta-se a PIT para determinar as interfaces de saída;
-        \item envia-se o \textit{Data} por todas as interfaces registadas;
-        \item armazena-se o conteúdo na CS (política dependente do router);
-        \item remove-se a entrada da PIT.
-    \end{itemize}
-\end{enumerate}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Mecanismos de caching e segurança}
-\label{sub:NDN_cache_seguranca}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{Caching distribuído}
-
-O \gls{NDN} implementa \textit{in-network caching}, permitindo que qualquer router responda a um \textit{Interest} se tiver uma cópia válida do conteúdo. Este comportamento melhora substancialmente:
-\begin{itemize}
-    \item eficiência da rede;
-    \item tolerância a falhas;
-    \item desempenho em mobilidade.
-\end{itemize}
-
-
-
-\subsubsection{Segurança no NDN}
-
-A segurança no NDN é \textbf{orientada aos dados}, e não aos canais.  
-Cada pacote \textit{Data} inclui obrigatoriamente:
-
-\begin{itemize}
-    \item assinatura criptográfica do produtor;
-    \item nome do dado;
-    \item conteúdo e metadados.
-\end{itemize}
-
-Este mecanismo permite que os consumidores validem a autenticidade do conteúdo independentemente da fonte que o entregou (router, cache, produtor). A validação do nome e da assinatura é guiada por \textbf{trust schemas}, que definem regras estruturadas para relacionar nomes de conteúdos, identidades e chaves de assinatura.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Limitações do NDN em contextos móveis}
-\label{sub:NDN_limitacoes_mobilidade}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Apesar das vantagens, o NDN enfrenta limitações importantes em cenários altamente dinâmicos, como redes veiculares:
-
-\begin{itemize}
-    \item \textbf{Rutura do caminho inverso}: a entrega do \textit{Data} depende da validade da entrada na PIT, que assume que o percurso inverso continua disponível. Em mobilidade elevada, produtor e consumidor podem mover-se antes da chegada da resposta.
-    \item \textbf{PIT flooding}: mobilidade provoca elevada taxa de timeouts e criação de novas entradas, aumentando risco de congestionamento.
-    \item \textbf{Encaminhamento instável}: a FIB pode não refletir rapidamente as mudanças topológicas.
-    \item \textbf{Desperdício de cache}: conteúdos relevantes podem ficar armazenados em nós que rapidamente se afastam da área onde são úteis.
-\end{itemize}
-
-Em redes veiculares, onde a conectividade é frequentemente intermitente e os nós são altamente móveis, estas propriedades tornam o \gls{NDN} uma base ideal para a disseminação cooperativa de informações. Quando um veículo solicita um conteúdo (por exemplo, um alerta de acidente ou dados de tráfego), qualquer outro nó que tenha armazenado previamente essa informação na sua \gls{CS} pode responder, sem necessidade de comunicação direta com o produtor original. Este comportamento distribuído e orientado ao conteúdo melhora a eficiência, reduz o tráfego redundante e aumenta a tolerância a falhas \cite{rahman_data-centric_2021, papadopoulos_-vehicle_2021}.
-
-Além disso, o modelo de encaminhamento baseado em nomes facilita a agregação e filtragem de informações contextuais (por exemplo, \texttt{/ndn/highway/alert/km42}), permitindo disseminação seletiva e localizada, um requisito essencial para aplicações de segurança e gestão de tráfego em ambientes \gls{V2X}. Assim, o \GLS{NDN} fornece a base conceptual e técnica para a evolução das redes veiculares rumo ao paradigma \textbf{\gls{V-NDN}}, explorado na secção seguinte.
+Estas limitações motivam o desenvolvimento do paradigma \textbf{\gls{V-NDN}}, que introduz adaptações específicas para suportar a comunicação em ambientes veiculares altamente dinâmicos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{\gls{V-NDN}}}
 \label{sub:VNDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No contexto dos veículos conectados e das VANETs, a mobilidade elevada, a topologia dinâmica e a
+conectividade intermitente tornam desafiadora a manutenção de ligações fim a fim robustas baseadas
+em endereços IP. Nestes ambientes, a manutenção de rotas fim-a-fim baseadas em endereços IP implica elevado overhead de sinalização e resulta frequentemente em perdas de pacotes, especialmente em cenários urbanos densos ou rodoviários de alta velocidade \cite{rahman_data-centric_2021}.
 
-No contexto dos veículos conectados e das \gls{VANETs}, a mobilidade elevada, a topologia dinâmica e a conectividade intermitente tornam desafiadora a manutenção de ligações fim a fim robustas baseadas em endereços IP \cite{rahman_data-centric_2021}. Para responder a estas limitações, surge o paradigma \textbf{\gls{V-NDN}}, uma extensão natural da arquitetura \gls{NDN} orientada ao conteúdo, na qual a comunicação é guiada por nomes de dados e não por endereços de origem ou destino.
+Neste contexto, o paradigma \gls{V-NDN} surge como uma adaptação da arquitetura \gls{NDN} ao domínio veicular, explorando a comunicação orientada ao conteúdo para reduzir a dependência de estados fim-a-fim persistentes. Em vez de estabelecer ligações entre veículos específicos, a disseminação de informação passa a ser guiada por nomes de dados, permitindo que qualquer nó que possua uma cópia válida do conteúdo satisfaça um pedido, independentemente da sua localização ou identidade.
 
-A comunicação deixa de depender de endereços e rotas estáticas, passando a ser guiada por \textbf{nomes de dados}, explorando \textit{Interest/Data packets}, \textit{in-network caching} e \textit{name-based forwarding}. No entanto, aplicar o \gls{NDN} ao domínio veicular implica resolver desafios específicos da mobilidade rápida, que afetam particularmente a \textbf{\gls{PIT}} e a \textbf{\gls{FIB}}, cujo estado pode tornar-se inválido antes da receção dos dados.
+No entanto, a aplicação direta do \gls{NDN} em ambientes veiculares não é suficiente. A elevada mobilidade afeta de forma crítica os mecanismos centrais da arquitetura, nomeadamente a \gls{PIT} e a \gls{FIB}, tornando explícita a necessidade de adaptações específicas ao nível do encaminhamento, da gestão de estado e das estratégias de caching.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Motivação para V-NDN}
+\subsection{Motivação e princípios do V-NDN}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Ao contrário do paradigma IP tradicional, o NDN permite que os dados sejam requisitados pelo seu nome,
+independentemente da localização do produtor, assim o paradigma \gls{V-NDN} assenta em três princípios fundamentais que o tornam particularmente adequado a cenários veiculares:
+
+\begin{enumerate}
+    \item \textbf{Desacoplamento entre dados e localização}, eliminando a necessidade de conhecer a posição ou identidade do produtor;
+    \item \textbf{Exploração de estado transitório}, permitindo decisões de encaminhamento oportunísticas sem dependência de rotas estáveis;
+    \item \textbf{Persistência distribuída de conteúdos}, através de caching cooperativo entre veículos.
+\end{enumerate}
+
+Em cenários veiculares, estes princípios permitem mitigar falhas frequentes de conectividade ao possibilitar que conteúdos relevantes, como alertas de segurança, eventos de tráfego ou condições da via, permaneçam acessíveis localmente mesmo após o nó produtor abandonar a região. Além disso, o modelo \textit{store-carry-forward} transforma a mobilidade dos próprios veículos num mecanismo ativo de transporte de dados, explorando contactos temporários para a disseminação de informação.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Impacto da mobilidade nos mecanismos NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Ao contrário do paradigma IP tradicional, o \gls{NDN} permite que os dados sejam requisitados pelo seu nome, independentemente da localização do produtor. Em contexto veicular, esta abordagem é especialmente vantajosa, pois:
+A mobilidade rápida introduz instabilidade direta nos mecanismos internos do \gls{NDN}. Em particular:
+
 \begin{itemize}
-    \item evita dependência de ligações fim-a-fim frágeis;
-    \item permite descoberta de conteúdo local através de \gls{V2V};
-    \item explora mobilidade como mecanismo de transporte de dados (\textit{store-carry-forward});
-    \item suporta comunicação resiliente em cenários com topologias altamente voláteis.
+    \item \textbf{\gls{PIT}}: entradas podem expirar antes da receção do pacote \textit{Data}, uma vez que o percurso inverso deixa de existir devido ao movimento dos nós;
+    \item \textbf{\gls{FIB}}: nexthops tornam-se rapidamente obsoletos, refletindo topologias já inexistentes;
+    \item \textbf{Difusão excessiva de interesses}: a ausência de rotas estáveis favorece estratégias baseadas em broadcast, aumentando colisões e redundância.
 \end{itemize}
 
-O paradigma \gls{V-NDN} aproveita ainda o \textit{in-network caching} para disponibilizar informação crítica, como alertas de colisão ou condições da via sem necessidade de recorrer a \gls{RSUs} ou a servidores centrais.
+Estes efeitos não são meramente conceptuais. A expiração prematura de entradas na PIT conduz a retransmissões frequentes de interesses, enquanto decisões de encaminhamento baseadas em FIBs desatualizadas aumentam a latência e o overhead de sinalização. Em cenários densos, estes fenómenos podem degradar significativamente o desempenho global da rede, exigindo mecanismos de encaminhamento explicitamente adaptados à mobilidade.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Mecanismos adaptados de encaminhamento}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-O encaminhamento baseado em nomes do \gls{NDN} necessita de adaptações significativas para funcionar em mobilidade extrema. Em redes veiculares, os problemas mais evidentes incluem:
+O encaminhamento baseado em nomes do NDN necessita de adaptações significativas para funcionar
+em mobilidade extrema. Em redes veiculares, os problemas mais evidentes incluem:
 \begin{itemize}
-    \item \textbf{invalidação rápida de entradas na \gls{PIT}} devido ao movimento dos nós antes da receção do pacote \textit{Data};
-    \item \textbf{obsolescência da \gls{FIB}}, cujo conjunto de nexthops deixa de refletir a topologia atual;
-    \item \textbf{broadcast excessivo}, gerando conteúdo redundante e colisões.
+    \item  invalidação rápida de entradas na PIT devido ao movimento dos nós antes da receção do
+pacote Data;
+\item obsolescência da FIB, cujo conjunto de nexthops deixa de refletir a topologia atual;
+\item  broadcast excessivo, gerando conteúdo redundante e colisões.
 \end{itemize}
 
-Para mitigar estas limitações, a literatura propõe várias estratégias específicas de \gls{V-NDN}:
+Para mitigar estas limitações, a literatura propõe várias estratégias específicas de V-NDN:
 
-\subsubsection*{Forwarding oportunístico}
-Os interesses são reenviados por qualquer nó que apresente melhores condições momentâneas de conectividade. O processo explora oportunidades de contacto, reduzindo a dependência de rotas estáveis
-\subsubsection*{Forwarding geográfico}
-A decisão de encaminhamento usa a posição, velocidade e direção do veículo. Esta técnica permite reduzir o espaço de procura e limita a difusão de interesses a regiões relevantes \cite{aldahlan_geographic_2019}.
+\subsubsection*{Encaminhamento oportunístico}
 
-\subsubsection*{Seleção de nós dominantes}
-Alguns nós são escolhidos como retransmissores preferenciais (por exemplo, veículos mais centrais na topologia ou com maior grau de conetividade). A técnica reduz duplicação de mensagens e colisões, melhorando a eficiência
+Nesta abordagem, os interesses são reenviados com base em oportunidades temporárias de contacto, sem dependência de nexthops estáveis. Cada nó toma decisões localmente, considerando métricas como qualidade do enlace, histórico recente de encaminhamento ou tempo estimado de contacto. O pacote \textit{Data} pode ser armazenado temporariamente e transportado fisicamente até encontrar um consumidor ou outro nó relevante (\textit{store-carry-forward}), reduzindo perdas em cenários com conectividade fragmentada \cite{rahman_data-centric_2021}. Esta estratégia diminui a dependência de entradas persistentes na FIB e atenua o impacto da sua obsolescência.
+
+\subsubsection*{Encaminhamento geográfico}
+
+O encaminhamento é condicionado por informação de posição, velocidade e direção dos veículos. Os interesses são propagados apenas dentro de regiões geográficas relevantes para o conteúdo solicitado, reduzindo o domínio de difusão e evitando a propagação desnecessária de mensagens. Ao restringir o alcance espacial dos interesses, esta técnica limita o crescimento da PIT e reduz congestionamento no meio sem fios, embora introduza dependência de sistemas de posicionamento e sincronização espacial.
+
+\subsubsection*{Seleção de retransmissores dominantes}
+
+Algoritmos de eleição de nós selecionam subconjuntos de veículos com maior centralidade, estabilidade ou grau de conectividade para atuar como retransmissores preferenciais. Estes nós assumem um papel semelhante a \textit{forwarding relays}, concentrando a difusão de interesses e dados em pontos com melhores características de propagação, o que reduz duplicação de mensagens e colisões \cite{khelifi_named_2020}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Caching distribuído e cooperativo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A \gls{CS} desempenha um papel fundamental no \gls{V-NDN}, pois permite:
-\begin{itemize}
-    \item reduzir latência através de respostas locais;
-    \item aumentar a disponibilidade de dados em regiões com baixa densidade;
-    \item evitar retransmissões desnecessárias ao produtor original.
-\end{itemize}
+O caching assume um papel central no \gls{V-NDN}, funcionando não apenas como mecanismo de otimização de desempenho, mas como elemento ativo de resiliência face à mobilidade. Para além do armazenamento local na \gls{CS}, são propostas estratégias cooperativas que coordenam a distribuição de conteúdos entre veículos.
 
-Estratégias de \textbf{caching cooperativo} (por exemplo, \cite{amadeo_caching_2020}) incluem:
-\begin{itemize}
-    \item partilha de metadados sobre conteúdos armazenados;
-    \item coordenação entre veículos para evitar armazenamento redundante;
-    \item políticas adaptadas de substituição (LRU/LFU/contexto veicular);
-    \item associação do cache ao movimento do veículo (conteúdo “transportado” fisicamente).
-\end{itemize}
-
-Assim, os veículos tornam-se distribuidores móveis de informação, ampliando a eficácia do paradigma.
+Em \cite{amadeo_caching_2020}, são introduzidos mecanismos de troca periódica de metadados de cache, políticas de substituição dependentes do contexto veicular e associação do tempo de vida do conteúdo à sua relevância geográfica. Estas estratégias reduzem redundância excessiva, aumentam a probabilidade de resposta local a interesses repetidos e permitem que os veículos atuem como distribuidores móveis de informação crítica.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Limitações atuais da V-NDN}
+\subsection{Limitações atuais do V-NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Apesar das vantagens, subsistem desafios importantes:
+Apesar das melhorias introduzidas, o \gls{V-NDN} apresenta limitações estruturais relevantes:
+
 \begin{itemize}
-    \item \textbf{volatilidade extrema}, que provoca expiração prematura de entradas na \gls{PIT};
-    \item \textbf{dinâmica da \gls{FIB}}, que necessita de atualizações frequentes e não escaláveis em grandes cenários;
-    \item \textbf{gestão de congestionamento e duplicação}, particularmente crítica em broadcast;
-    \item vulnerabilidade a ataques como \textit{Interest Flooding};
-    \item impacto de cenários urbanos complexos, com sombra e irregularidade de densidade veicular.
+    \item elevada volatilidade do estado da \gls{PIT};
+    \item escalabilidade limitada da manutenção da \gls{FIB};
+    \item dificuldade em controlar congestionamento em estratégias baseadas em broadcast;
+    \item vulnerabilidade a ataques de \textit{Interest Flooding};
+    \item dependência de heurísticas locais sem garantias globais de consistência.
 \end{itemize}
 
-Estas limitações demonstram que o \gls{V-NDN} requer ainda investigação em mecanismos de segurança, coordenação de caches e encaminhamento inteligente.
+Em particular, a ausência de mecanismos explícitos de sincronização de estado entre nós faz com que muitas soluções dependam excessivamente de decisões locais, dificultando a obtenção de desempenho previsível em cenários de larga escala.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Trabalhos relevantes sobre disseminação de informação em V-NDN}
+\subsection{Síntese dos trabalhos relevantes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Diversos estudos têm explorado o paradigma \gls{V-NDN} com o objetivo de melhorar a disseminação de conteúdos em ambientes veiculares altamente dinâmicos. As abordagens existentes podem ser agrupadas em três grandes categorias: estratégias de encaminhamento adaptativo, mecanismos de cache colaborativo e soluções voltadas à segurança e gestão de mobilidade.
 
-\subsubsection{Encaminhamento e mobilidade}
-O encaminhamento em \gls{V-NDN} é um dos aspetos mais investigados, dada a necessidade de garantir entrega eficiente de dados em topologias em constante mudança. Em \cite{cha_mobility_2017}, os autores propõem um serviço de mobilidade para consumidores em \gls{NDN}, permitindo que um consumidor reemita um interesse mesmo após mudanças de localização, facilitando a continuidade da comunicação em ambientes móveis.  
-Além disso, mecanismos de priorização de interesses e redução de duplicação de pedidos têm sido estudados, de modo a otimizar a utilização da largura de banda e reduzir atrasos em cenários com alta densidade veicular.
+A literatura recente demonstra que o \gls{V-NDN} tem potencial para melhorar significativamente a eficiência da disseminação de informação em redes veiculares, explorando encaminhamento adaptativo e caching distribuído. No entanto, a maioria das abordagens existentes aborda apenas subconjuntos do problema, focando-se isoladamente em mobilidade, caching ou segurança.
 
-\subsubsection{Cache colaborativo e eficiência de disseminação}  
-A otimização do uso da \gls{CS} em cada nó é outra linha de investigação relevante. Em \cite{amadeo_caching_2020}, é proposto um esquema de cache cooperativo, onde os veículos partilham informações sobre os conteúdos armazenados, permitindo respostas rápidas a interesses repetidos.
-Para compreender o funcionamento do esquema, é importante detalhar:
-\begin{itemize}
-\item Algoritmos de gestão do cache (por exemplo, LRU, LFU ou variantes específicas para \gls{V-NDN});
-\item Tipo de metadados partilhados e periodicidade das mensagens de sincronização;
-\item Critérios utilizados para decidir qual veículo responde a um interesse.
-\end{itemize}
-A distribuição inteligente de conteúdos reduz o consumo de largura de banda e melhora a disponibilidade de dados em zonas de baixa densidade.
-Um exemplo concreto deste tipo de abordagem é discutido em \cite{amadeo_caching_2020}, onde conteúdos transitórios, como alertas de travagem brusca ou variações rápidas de velocidade são armazenados cooperativamente pelos veículos que passam pela zona afetada. Assim, mesmo após o veículo que gerou o alerta já ter abandonado a área, os nós vizinhos conseguem responder rapidamente a novos interesses, garantindo que os veículos a montante recebem a informação crítica com baixa latência, mesmo em cenários de conectividade intermitente.
-
-\subsubsection{Gestão de mobilidade e segurança}  
-A mobilidade dos nós e a volatilidade das ligações representam desafios adicionais para manter a consistência e autenticidade dos dados. Em \cite{cha_mobility_2017}, os autores discutem a integração de mecanismos de autenticação leve nos pacotes de dados do \gls{V-NDN}, utilizando assinaturas baseadas em nomes hierárquicos.  
-Aspectos a destacar incluem:
-\begin{itemize}
-    \item Processo de assinatura hierárquica e verificação nos nós veiculares;
-    \item Gestão das chaves hierárquicas e distribuição segura;
-    \item Comparação com autenticação tradicional do \gls{NDN}, em termos de overhead computacional.
-\end{itemize}
-Esta abordagem garante integridade e autenticidade sem introduzir sobrecarga significativa.
-\subsubsection{Estruturas Hierárquicas e Clustering em \gls{V-NDN}}
-\label{sec:hierarquia-vndn}
-
-Modelos hierárquicos baseados em \textit{clustering}, como o \gls{PACM} \cite{sampath_position-based_2021}, 
-organizam os veículos em grupos estruturados para facilitar a disseminação de dados. Ao utilizar a posição 
-como critério de agrupamento, estes sistemas oferecem maior estabilidade na comunicação dentro de 
-clusters e podem servir como base para mecanismos escaláveis em redes veiculares.
-
-A literatura recente demonstra que estruturas hierárquicas são particularmente eficazes em ambientes 
-de elevada mobilidade, pois permitem reduzir a complexidade da comunicação ao nível local antes da 
-agregação global. Trabalhos como \cite{de_castro_dynamic_2015} propõem arquiteturas hierárquicas 
-dinâmicas especificamente orientadas a NDN em cenários veiculares, evidenciando que a 
-agregação local de informação e a existência de líderes de cluster podem reduzir a redundância de 
-mensagens e melhorar a estabilidade da comunicação.
-
-De forma complementar, surveys como \cite{ayyub_comprehensive_2022} destacam que clusters 
-geograficamente estáveis aumentam a longevidade das ligações e reduzem a oscilação do estado, 
-características essenciais para a resiliência e eficiência da disseminação de conteúdos em ambientes 
-veiculares altamente dinâmicos.
-
-\subsection{Síntese}
-De modo geral, a literatura demonstra que o \gls{V-NDN} é capaz de melhorar a eficiência da disseminação de conteúdos, explorando os princípios de \textit{in-network caching} e \textit{name-based forwarding} do \gls{NDN}, ainda assim indica que o \gls{V-NDN} tem potencial para superar limitações das redes \gls{V2X} tradicionais, oferecendo um modelo mais resiliente e orientado ao conteúdo.
-As estratégias adaptativas de encaminhamento e cache mostram-se promissoras para lidar com mobilidade elevada e topologias esparsas, mas persistem desafios relacionados com a gestão de segurança, sincronização de caches e balanceamento de tráfego.  
-O desenvolvimento de mecanismos combinados, que integrem encaminhamento adaptativo, cache cooperativo e autenticação leve, constitui uma tendência atual de investigação em \gls{V-NDN}.
+A tendência atual aponta para soluções integradas, capazes de combinar encaminhamento oportunístico, cache cooperativo e autenticação leve, de forma a lidar simultaneamente com mobilidade elevada, restrições de latência e requisitos de segurança, mantendo um equilíbrio entre eficiência, escalabilidade e robustez.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sincronização de Bases de Dados}
 \label{sec:sync_distrib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A sincronização de bases de dados distribuídas visa garantir que múltiplos nós, potencialmente dispersos geograficamente e sujeitos a falhas de comunicação, mantêm uma visão coerente de um conjunto de dados partilhado. Em ambientes estáveis, esta sincronização pode ser assegurada através de mecanismos centralizados ou com garantias fortes de consistência. No entanto, em redes móveis, intermitentes e sem infraestruturas como as \glspl{VANETs} este problema torna-se substancialmente mais complexo.
+A sincronização de bases de dados distribuídas visa garantir que múltiplos nós, potencialmente dispersos geograficamente e sujeitos a falhas de comunicação, mantêm uma visão coerente de um conjunto de
+dados partilhado evoluem de forma coerente ao longo do tempo, mesmo na presença de atrasos, perdas de pacotes e partições de rede. Em sistemas com conectividade estável, esta coerência pode ser assegurada através de mecanismos de coordenação e consenso que impõem consistência forte. Contudo, em redes móveis e intermitentes, como as \glspl{VANETs}, estas premissas deixam de ser válidas: não existe conectividade fim-a-fim garantida, a latência é altamente variável e o conjunto de participantes muda constantemente.
 
-Nesta secção apresentam-se os princípios fundamentais da sincronização distribuída, modelos de consistência, e os protocolos clássicos que servem de base conceptual para os mecanismos de sincronização em \gls{NDN}. Estes conceitos são essenciais para compreender a evolução e o funcionamento de protocolos como o \gls{DSSN}, \gls{DDSN} e, finalmente, o \gls{SVSync}.
+Nestes cenários, a sincronização deixa de poder depender de coordenação centralizada e passa a ter como objetivo principal a \textbf{convergência eventual}, a \textbf{robustez a partições} e a \textbf{redução do overhead de comunicação}. Estes requisitos são particularmente relevantes no contexto \gls{NDN}, onde a descoberta de dados em falta e a reconciliação de estado entre nós são realizadas através da troca de metadados e não por comunicação direta entre produtores e consumidores.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Conceitos Gerais de Sincronização Distribuída}
-\label{sub:conc_gerais_sync}
+\subsection{Problema de sincronização e modelo de sistema}
+\label{sub:sync_modelo_sistema}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A sincronização distribuída procura assegurar que múltiplos repositórios de dados evoluem de forma coerente ao longo do tempo, mesmo quando cada nó observa apenas uma parte do estado global. Os desafios clássicos incluem:
+Considere-se um conjunto de nós que mantém réplicas de um conjunto de dados particionado por produtores. Cada produtor $p$ gera atualizações ordenadas localmente por um número de sequência monotónico $s_p$. O estado de uma réplica $i$ pode ser descrito por um vetor:
+
+\[
+\mathbf{V}_i = \langle v_i(p_1), v_i(p_2), \dots, v_i(p_n) \rangle,
+\]
+
+onde $v_i(p)$ representa o maior número de sequência conhecido por $i$ relativamente ao produtor $p$.
+
+O problema de sincronização pode então ser decomposto em três tarefas fundamentais:
+
+\begin{enumerate}
+    \item \textbf{Deteção}: identificar rapidamente quais os dados em falta numa réplica;
+    \item \textbf{Aquisição}: transferir apenas os dados necessários, com custo controlado;
+    \item \textbf{Reconciliação}: lidar com atualizações concorrentes e garantir convergência.
+\end{enumerate}
+
+Em \gls{NDN}, estes passos são tipicamente implementados através da troca de resumos de estado transportados em \textit{Interests} sob um prefixo comum, permitindo aos nós detetar divergências sem necessidade de conhecer a identidade dos produtores.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Desafios técnicos em redes móveis e ad-hoc}
+\label{sub:desafios_sync}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A sincronização em redes móveis é condicionada por propriedades que afetam diretamente o desenho dos protocolos:
 
 \begin{itemize}
-    \item \textbf{Latências variáveis:} diferentes caminhos na rede conduzem a tempos de propagação distintos;
-    \item \textbf{Partições de rede e churn:} nós podem entrar e sair constantemente;
-    \item \textbf{Atualizações concorrentes:} múltiplos produtores podem gerar versões distintas de um mesmo objeto;
-    \item \textbf{Links instáveis:} presentes especialmente em redes ad-hoc e veiculares.
+    \item \textbf{Latência e perdas variáveis}: pacotes podem chegar fora de ordem ou não chegar;
+    \item \textbf{Partições temporárias}: durante períodos de desconexão, o progresso global é impossível;
+    \item \textbf{Churn elevado}: a vizinhança muda rapidamente e os contactos têm duração reduzida;
+    \item \textbf{Overhead de metadados}: estruturas de estado crescem com o número de produtores;
+    \item \textbf{Atualizações concorrentes}: podem surgir versões divergentes do mesmo objeto lógico.
 \end{itemize}
 
-Para resolver estes desafios, diversas estruturas de metadados foram propostas, como vetores de versão, relógios lógicos ou timestamps híbridos. Estes mecanismos permitem identificar causalidade entre eventos e detetar divergências entre réplicas.
+Em \gls{VANETs}, o custo dominante tende a ser a disseminação de metadados de sincronização, e não o transporte dos dados em si, o que torna essencial a utilização de representações compactas de estado.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Modelos de Consistência}
+\subsection{Modelos de consistência relevantes}
 \label{sub:modelos_consistencia}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Os modelos de consistência definem as garantias observáveis pelos clientes no que respeita à ordem e visibilidade das atualizações.
+A escolha do modelo de consistência determina as garantias observáveis durante a execução do sistema.
 
-\subsubsection*{Consistência Forte}
-Garante que todas as réplicas observam exatamente o mesmo estado a qualquer instante, frequentemente através de mecanismos de bloqueio, consenso (e.g., Paxos, Raft) ou coordenação centralizada. Embora desejável, é impraticável em redes móveis devido ao elevado custo de coordenação e à sensibilidade a partições.
+\subsubsection*{Consistência forte}
 
-\subsubsection*{Consistência Eventual}
-Assegura que, na ausência de novas atualizações e assumindo alguma conectividade, todas as réplicas convergem para o mesmo estado. Este modelo é mais adequado a redes veiculares, onde falhas de ligação são frequentes.
+Requer coordenação contínua e consenso, tornando-se impraticável em redes sujeitas a partições frequentes.
 
-\subsubsection*{Consistência Causal}
-Garante que relações de dependência entre atualizações são preservadas. Vetores de versão e relógios lógicos são mecanismos típicos para atingir esta consistência, equilibrando custo e precisão.
+\subsubsection*{Consistência eventual}
+
+Garante convergência após cessarem as atualizações, sendo o modelo mais adequado a redes ad-hoc e veiculares.
+
+\subsubsection*{Consistência causal}
+
+Preserva relações de dependência entre atualizações, sendo frequentemente implementada com vetores de versão. Representa um compromisso eficaz entre garantias e overhead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Protocolos Clássicos de Sincronização}
+\subsection{Metadados para deteção e reconciliação}
+\label{sub:metadados_sync}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A deteção eficiente de divergências entre réplicas depende da troca de resumos de estado.
+
+\subsubsection*{Vetores de versão}
+
+Permitem comparar o progresso entre nós:
+
+\begin{itemize}
+    \item se $\mathbf{V}_i \le \mathbf{V}_j$, então $j$ possui todas as atualizações de $i$;
+    \item caso contrário, existem dados em falta ou concorrência.
+\end{itemize}
+
+Na prática, estes mecanismos permitem reduzir o problema de sincronização à identificação eficiente das componentes em falta entre vetores de estado.
+
+\subsubsection*{Resumos compactos}
+
+Estruturas como árvores de hash (Merkle) ou filtros probabilísticos permitem reduzir o tamanho dos metadados, ao custo de rondas adicionais para localizar exatamente os dados em falta.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Protocolos clássicos e relação com NDN}
 \label{sub:protocolos_classicos}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Antes da evolução para mecanismos específicos de \gls{NDN}, vários protocolos foram desenvolvidos com o objetivo de sincronizar conjuntos de dados de forma eficiente.
-
-\subsubsection*{Vetores de Versão}
-Os vetores de versão permitem representar o estado de cada produtor através de números de sequência. A comparação entre vetores possibilita a deteção imediata de dados em falta. São a base conceptual dos vetores de estado utilizados em \gls{DSSN}, \gls{DDSN} e \gls{SVSync}.
-
-\subsubsection*{Pub/Sub}
-Modelos de \textit{publish/subscribe} fornecem uma forma eficaz de disseminar atualizações, mas dependem tipicamente de brokers ou overlays estáveis, o que os torna pouco adequados a redes altamente móveis.
-
-\subsubsection*{Flooding Confiável}
-Técnicas de flooding com mecanismos de supressão ou retransmissão controlada garantem disseminação rápida, mas geram overhead elevado em redes densas.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Requisitos de Sincronização em Ambientes Veiculares}
-\label{sub:requisitos_veiculares}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-As redes veiculares (\gls{V2V}, \gls{V2X}) apresentam características extremas:
+Três abordagens clássicas influenciam diretamente os mecanismos de sincronização utilizados em \gls{NDN}:
 
 \begin{itemize}
-    \item \textbf{Mobilidade elevada:} ligações com durações de poucos segundos;
-    \item \textbf{Churn intenso:} conjunto de vizinhos muda constantemente;
-    \item \textbf{Latência crítica:} informação como alertas de segurança deve ser disseminada rapidamente;
-    \item \textbf{Baixo overhead:} excesso de tráfego compromete segurança e QoS.
+    \item \textbf{Anti-entropy (gossip)}: troca periódica de resumos e reconciliação sob pedido;
+    \item \textbf{Publish/Subscribe}: desacoplamento entre produtores e consumidores;
+    \item \textbf{Flooding confiável com supressão}: elevada disponibilidade com controlo de redundância.
 \end{itemize}
 
-Estes requisitos motivaram o desenvolvimento de mecanismos de sincronização adaptados ao paradigma \gls{NDN}, culminando na evolução 
-\gls{DSSN} para \gls{DDSN} e \gls{SVSync}.
+Em \gls{NDN}, estes princípios materializam-se na troca de \textit{Interests} que transportam resumos de estado e na utilização do \textit{in-network caching} para reduzir dependência de produtores originais.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Requisitos específicos em \gls{VANETs}}
+\label{sub:desafios_requisitos_veiculares}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Em ambientes veiculares, a sincronização deve satisfazer requisitos adicionais:
+
+\begin{itemize}
+    \item \textbf{Janelas curtas de contacto}: deteção e início de aquisição devem ocorrer em poucos RTTs;
+    \item \textbf{Baixa latência}: dados críticos perdem utilidade rapidamente;
+    \item \textbf{Overhead controlado}: excesso de tráfego compromete o canal sem fios;
+    \item \textbf{Escalabilidade}: comportamento deve degradar suavemente com a densidade.
+\end{itemize}
+
+Estes requisitos motivaram o desenvolvimento de mecanismos de sincronização especificamente desenhados para o paradigma \gls{NDN}, culminando em protocolos como \gls{DSSN}, \gls{DDSN} e \gls{SVSync}, analisados nas secções seguintes.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\emph{Sincronização no \gls{NDN}}}
 \label{sub:Sinc__NDN}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-O objetivo da sincronização no NDN é garantir que todos os participantes mantêm uma visão atualizada e consistente do conjunto de dados partilhado. Para isso, cada nó precisa de identificar quais são os dados que lhe faltam, ou seja, quais são os dados que foram recentemente produzidos e atualizados por outros membros do grupo. Cada utilizador transmite o seu Estado para os outros participantes através de trocas de Interesse-Dados. Esta troca pode ser feita de duas formas: o produtor envia ativamente notificações sobre o seu estado, ou cada utilizador consulta periodicamente o grupo de sincronização.
+A sincronização em \gls{NDN} tem como objetivo assegurar que um conjunto de participantes partilha uma visão \textbf{eventualmente consistente} sobre um \textit{dataset} construído a partir de contribuições independentes. Ao contrário de cenários clássicos de replicação (onde todos mantêm uma cópia idêntica do mesmo objeto), em \gls{NDN} é comum cada nó publicar dados sob o seu próprio \textit{namespace}. Assim, o problema central não é “replicar um objeto único”, mas sim \textbf{descobrir e recuperar}, de forma eficiente, \textbf{quais as versões mais recentes conhecidas por cada produtor} e \textbf{quais os dados em falta} em cada participante.
 
-Uma abordagem possível para a sincronização em \gls{NDN} é o uso de vetores de estado. A ideia central é representar o estado de um conjunto de dados na forma de um vetor de versões, onde cada componente indica o prefixo de um produtor e o número de sequência dos seus dados mais recentes (conforme ilustrado na Figura \ref{fig:SV}). Como um vetor de estado enumera explicitamente a versão mais recente de cada produtor, as diferenças nos conjuntos de dados podem ser identificadas fazendo uma simples comparação entre os valores de cada prefixo. Para atualizar o seu Vetor de Estado, o nó adota o maior número de sequência disponível para cada produtor. O facto de a representação do estado baseada em Vetores de Estado permitir uma comparação direta do estado, permite que os nós identifiquem diretamente os dados em falta sem necessidade de trocas de mensagens adicionais. Esta característica torna esta abordagem especialmente adequada para redes ad-hoc, onde grandes divergências de estado são bastante comuns. O tamanho do Vetor cresce proporcionalmente ao número de produtores cujos estados precisam ser trocados. Contudo, a listagem explícita dos estados de cada produtor permite a transmissão de Vetores de Estado parciais quando há restrições no tamanho dos pacotes.
+Em termos operacionais, a sincronização é tipicamente implementada como um ciclo em dois passos:
+\begin{enumerate}
+    \item \textbf{disseminação de metadados de estado} (o que existe / até que sequência cada produtor publicou);
+    \item \textbf{aquisição dos dados em falta} via mecanismo normal Interest/Data.
+\end{enumerate}
+No \gls{NDN}, este ciclo é realizado através de trocas Interest/Data, combinando um modelo reativo (consulta periódica) e/ou orientado a eventos (notificação quando há novo dado), com o \textit{in-network caching} a reduzir a dependência do produtor original durante a fase de aquisição.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Representação de estado por Vetores de Estado}
+\label{sub:sv_basics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Uma forma direta de representar o estado de um grupo é através de um \textbf{Vetor de Estado} (\textit{State Vector}, SV). Para um conjunto de produtores $p \in P$, cada participante mantém uma estrutura:
+\[
+SV = \{ (p, s_p) \},
+\]
+em que $s_p$ é o maior número de sequência do produtor $p$ conhecido localmente. Assumindo convenções de nomeação sequencial (p.\ ex., dados publicados como \texttt{/p/.../seq=\#}), a comparação entre vetores permite identificar lacunas de forma determinística: se um nó recebe $(p, s_p^{recv})$ e possui localmente $(p, s_p^{loc})$ com $s_p^{recv} > s_p^{loc}$, então sabe que lhe faltam os itens
+\[
+\{ \texttt{/p/.../seq=}(s_p^{loc}+1), \dots, \texttt{/p/.../seq=}(s_p^{recv}) \}.
+\]
+
+\paragraph{Exemplo ilustrativo.}
+Considere-se um grupo com dois produtores $p_A$ e $p_B$. Um nó $i$ mantém $SV_i=\{(p_A,3),(p_B,7)\}$ e recebe de um vizinho $SV_j=\{(p_A,5),(p_B,7)\}$. A comparação mostra que $i$ está desatualizado relativamente a $p_A$ e deve adquirir \texttt{/p\_A/.../seq=4} e \texttt{/p\_A/.../seq=5}, enquanto não existem lacunas para $p_B$. A aquisição é feita por Interests normais para esses nomes, que podem ser satisfeitos pelo produtor $p_A$ ou por caches intermédias.
+
+A vantagem do SV explícito é eliminar fases adicionais de “descoberta”: a diferença de estado é inferida numa única comparação, o que é útil quando divergências são grandes. A limitação é a escalabilidade: o tamanho do SV cresce linearmente com o número de produtores, exigindo por vezes transmissão parcial (ou segmentação) quando existem restrições de MTU.
 
 \begin{figure}[H]
     \centering
@@ -495,16 +446,16 @@ Uma abordagem possível para a sincronização em \gls{NDN} é o uso de vetores 
     \label{fig:SV}   
 \end{figure}
 
-Como o \gls{NDN} foi concebido para suportar comunicações assíncronas, exigir uma consistência perfeita das informações de associação entre todos os membros do grupo não é viável. Para contornar esta limitação, a sincronização por Vetores de Estado foi rapidamente sucedida por outro protocolo de sincronização: o \gls{DSSN}. O \gls{DSSN} introduz uma alteração simples, mas crucial, nos vetores de estado clássicos, permitindo a sincronização eficiente de conjuntos de dados em grupos de sensores que entram periodicamente em estados de inatividade. A principal novidade do \gls{DSSN} consiste na reformulação do vetor de estado: em vez de ser apenas uma lista de números de sequência, cada elemento passa a ser uma tupla [prefixo do participante, número de sequência], transportada diretamente em cada Interesse de Sincronização. Este formato codifica de forma explícita o estado global do conjunto de dados partilhado, permitindo que qualquer nó destinatário interprete corretamente o estado, mesmo em situações de inconsistência elevada entre os participantes \cite{li_data_2018}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{De SV clássicos para DSSN/DDSN/SVSync}
+\label{sub:evolucao_sync}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Em comparação com o vetor de estado tradicional apresentado na Figura \ref{fig:SV}, a inovação do \gls{DSSN} está na capacidade de lidar com participantes intermitentes e de transmitir informação de estado global de forma compacta e consistente, sem necessidade de mensagens adicionais para reconciliação de dados. Por outro lado, o \gls{DDSN} é uma extensão do \gls{DSSN} focada em ambientes com mobilidade e topologias mais dinâmicas, introduzindo mecanismos adaptativos para manter a consistência do estado mesmo quando a conectividade entre nós é altamente variável. O \gls{DDSN} introduziu uma série de melhorias, incluindo:
+A sincronização baseada em SV evoluiu para protocolos que privilegiam robustez a perdas e estados divergentes, sem exigir consistência perfeita dos metadados a cada instante. O \gls{DSSN} foi um passo importante nesse sentido: em vez de assumir implicitamente uma correspondência comum de produtores e interpretação do vetor, cada mensagem transporta explicitamente pares \texttt{[prefixo, sequência]}, o que permite ao recetor interpretar o estado conhecido pelo emissor mesmo quando existem perdas ou inconsistências prévias \cite{li_data_2018}.
 
-\begin{itemize}
-    \item 1. Priorização de transmissão que permite determinar quais mensagens devem ser enviadas primeiro durante períodos de conectividade transitória.
-    \item 2. Modo inativo que reduz o tráfego de sincronização e otimiza o consumo de energia quando não há outros nós dentro da área de comunicação.
-\end{itemize}
+O \gls{DDSN} estende o \gls{DSSN} para ambientes mais dinâmicos, introduzindo (i) mecanismos de priorização na recuperação de dados em falta e (ii) um modo de redução de tráfego quando não existem vizinhos, visando melhorar a eficiência em conectividade intermitente.
 
-Apesar da sua eficiência em ambientes altamente dinâmicos e disruptivos, o \gls{DDSN} tem um desempenho inferior em redes bem conectadas, devido à sua ênfase exclusiva em cenários com conectividade instável. A experiência adquirida com os protocolos anteriores levou ao desenvolvimento do \gls{SVSync}. Este protocolo herda a codificação do vetor de estado introduzida pelo \gls{DSSN}, mas elimina funcionalidades específicas para redes de sensores e ambientes com elevada disrupção. **Importa salientar que o SVSync não foi concebido para cenários veiculares ou para \gls{V-NDN}, sendo um protocolo de sincronização genérico para grupos NDN.**
+O \gls{SVSync} herda a codificação explícita do estado (pares \texttt{[produtor, sequência]}) mas remove funcionalidades específicas de redes de sensores/disrupção extrema, assumindo um protocolo genérico para grupos \gls{NDN}. Embora não seja desenhado especificamente para \gls{V-NDN}, é uma referência útil por explicitar claramente a separação entre \textbf{notificação de estado} e \textbf{aquisição de dados}.
 
 \vspace{0.3cm}
 
@@ -513,7 +464,10 @@ Apesar da sua eficiência em ambientes altamente dinâmicos e disruptivos, o \gl
 \label{sub:Sinc_NDN_refined}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-O \gls{SVSync} adota uma estratégia de codificação de estado distinta. O seu design segue a convenção de nomeação sequencial dos dados e transporta diretamente a representação do namespace do conjunto de dados, codificada em pares [nome do produtor, número de sequência] (Figura \ref{fig:SVs}), dentro de cada Interesse Sync Multicast. A decisão de design do \gls{SVSync} de incluir o namespace do conjunto de dados bruto em cada Interesse de Sincronização oferece uma vantagem significativa: qualquer nó que receba o Interesse compreende de imediato o estado do conjunto de dados, independentemente do seu próprio estado atual ou de eventuais mensagens perdidas anteriormente. No entanto, permitir que um Interesse recebido possa alterar o estado de um participante abre a porta a possíveis abusos. Para mitigar esse risco, o \gls{SVSync} exige que todos os Interesses de Sincronização sejam assinados.
+O \gls{SVSync} utiliza um prefixo de grupo (p.\ ex., \texttt{/sync/<grupo>}) para disseminar notificações de estado a todos os participantes, e um prefixo de publicação por nó (p.\ ex., \texttt{/pub/<nó>}) para disponibilizar os seus dados. O elemento central é a inclusão do estado (SV) \textbf{no próprio Interest de sincronização}: cada Interest transporta um conjunto de pares \texttt{[nome-do-produtor, número-de-sequência]} (Figura~\ref{fig:SVs}), permitindo ao recetor inferir imediatamente as lacunas sem pedir “metadados auxiliares”.
+
+\paragraph{Disseminação para o grupo.}
+Embora se use frequentemente a designação “multicast”, em \gls{NDN} a entrega ao grupo é tipicamente obtida através de estratégias de encaminhamento para um prefixo comum (p.\ ex., difusão controlada a nível local) e pela presença de múltiplos recetores interessados nesse prefixo. Assim, o Interest de sincronização funciona como uma \textit{notificação} difundida para os vizinhos/participantes, enquanto os dados em falta são depois recuperados por Interests convencionais, seguindo o encaminhamento normal do NDN.
 
 \begin{figure}[h]
 \centering
@@ -522,21 +476,34 @@ O \gls{SVSync} adota uma estratégia de codificação de estado distinta. O seu 
 \label{fig:SVs}
 \end{figure}
 
-\subsubsection{Funcionamento do \gls{SVSync}}
-Cada grupo de sincronização utiliza um prefixo multicast de grupo, garantindo que todos os participantes recebam as mensagens de sincronização. Cada nó possui também um prefixo de publicação próprio, sob o qual os seus dados ficam acessíveis aos restantes participantes.
+\paragraph{Assinatura de Interesses de sincronização.}
+Como um Interest recebido pode induzir ações (p.\ ex., disparar pedidos de dados em falta) e, portanto, influenciar o comportamento do nó, o \gls{SVSync} exige que os Interesses de sincronização sejam assinados, de forma a evitar que terceiros injetem vetores fraudulentos que provoquem tráfego indevido ou forcem divergências. Esta decisão tem impacto direto no custo computacional e no tamanho do Interest.
 
-O \gls{SVSync} utiliza apenas um tipo de mensagem: o \textit{Interest}. Estes interesses são enviados em duas situações principais:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Funcionamento do \gls{SVSync}}
+\label{subsub:svsync_func}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+O \gls{SVSync} usa um único tipo de mensagem de controlo: o \textbf{Interest de sincronização}. Estes interesses são emitidos em dois modos complementares:
 
 \begin{itemize}
-\item \textbf{Eventos:} sempre que há uma alteração no estado do conjunto de dados, os participantes notificam imediatamente os restantes.
-\item \textbf{Envios periódicos:} garantem consistência do conjunto de dados, mesmo em caso de perda de pacotes ou desconexões temporárias.
+\item \textbf{Trigger por evento}: quando o nó publica novos dados e incrementa a sequência local, atualiza o seu SV e emite imediatamente um Interest com o novo estado.
+\item \textbf{Trigger periódico}: em intervalos regulares (com \textit{jitter} para reduzir sincronização indesejada), o nó reemite o Interest de sincronização para compensar perdas e suportar convergência após desconexões.
 \end{itemize}
 
-Os interesses ativados por eventos permitem a rápida disseminação de informações, enquanto os envios periódicos mantêm todos os participantes sincronizados, mitigando divergências temporárias. O fluxograma apresentado na Figura~\ref{fig:SVsyync} ilustra o funcionamento do protocolo \gls{SVSync} na partilha e sincronização do estado entre os participantes. Cada nó, ao detetar uma alteração no seu estado local, gera um interesse de sincronização contendo o novo vetor de estado (par nome-produtor, número de sequência), que é enviado por multicast a todos os membros do grupo. Paralelamente, mesmo na ausência de eventos, cada nó envia de forma periódica estes interesses para garantir a convergência do estado global, mitigando os efeitos de perdas de pacotes ou desconexões temporárias.
+Ao receber um Interest de sincronização, um nó executa uma sequência determinística:
 
-Ao receber um interesse de sincronização, cada participante compara o vetor de estado recebido com o seu próprio estado atual. Caso identifique diferenças, solicita diretamente os dados em falta usando o mecanismo de interesse do \gls{NDN}, garantindo assim a atualização eficiente e atempada de todos os membros do grupo. O processo repete-se ciclicamente, assegurando que novas atualizações são prontamente disseminadas e integradas por todos os participantes.
+\begin{enumerate}
+    \item \textbf{Validação}: verifica assinatura e elegibilidade do emissor (p.\ ex., pertença ao grupo, políticas locais).
+    \item \textbf{Comparação SV}: para cada produtor $p$, compara $s_p^{recv}$ com $s_p^{loc}$.
+    \item \textbf{Cálculo de lacunas}: se $s_p^{recv} > s_p^{loc}$, determina as sequências em falta (intervalo $(s_p^{loc}+1) \dots s_p^{recv}$).
+    \item \textbf{Aquisição}: emite Interests NDN convencionais para os nomes em falta, que podem ser satisfeitos por produtor ou por caches intermédias.
+    \item \textbf{Atualização local}: à medida que os Data chegam, atualiza $s_p^{loc}$ e (se houve progresso) pode emitir novo Interest de sincronização para propagar o estado atualizado.
+\end{enumerate}
 
-Em síntese, o fluxograma evidencia as duas fontes principais de emissão dos interesses (evento e período), a receção e análise desses interesses, e as ações subsequentes de pedido dos dados em falta. Este ciclo contínuo é a base da robustez do \gls{SVSync}, permitindo elevada consistência dos dados partilhados mesmo em redes dinâmicas e sujeitas a desconexões frequentes, como é o caso das redes veiculares.
+Este desenho separa claramente \textbf{controlo} (Interest de sincronização com SV) de \textbf{dados} (Interest/Data normal). Na prática, para evitar explosão de pedidos quando faltam muitas sequências, implementações recorrem frequentemente a recuperação incremental (\textit{batching}), pedindo uma janela limitada de sequências por produtor e avançando à medida que os dados são recebidos.
+
+A Figura~\ref{fig:SVsyync} ilustra o ciclo operacional do protocolo.
 
 \begin{figure}[H]
 \centering
@@ -545,312 +512,123 @@ Em síntese, o fluxograma evidencia as duas fontes principais de emissão dos in
 \label{fig:SVsyync}
 \end{figure}
 
-O SVSync utiliza os interesses apenas como notificações unidirecionais, sem gerar respostas imediatas. Isso evita problemas de múltiplos produtores respondendo ao mesmo interesse, mas apresenta algumas limitações importantes, especialmente em cenários de mobilidade elevada:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Implicações e limitações do SVSync}
+\label{subsub:svsync_limit}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\paragraph{Limitações do SVSync}
+A opção por Interesses de sincronização como \textit{notificações} (sem Data correspondente) simplifica a difusão para o grupo e evita múltiplas respostas ao mesmo Interest. No entanto, tem consequências técnicas importantes:
+
 \begin{itemize}
-\item \textbf{\gls{PIT} persistente elevado:} cada interesse \textit{multicast} permanece pendente em todos os encaminhadores até expirar, aumentando o uso de memória em redes densas.
-\item \textbf{Entrega parcial de atualizações:} devido ao princípio \textit{um interesse, um dado}, diferentes participantes podem receber subconjuntos distintos de atualizações, resultando em divergência temporária de estado.
-\item \textbf{Dependência de conectividade regular:} em cenários com nós móveis ou desconexões frequentes (como em \gls{V-NDN}), a falta de retransmissão automática pode atrasar a convergência global.
-\item \textbf{Escalabilidade limitada:} o crescimento do grupo aumenta linearmente o número de interesses necessários para manter o estado atualizado, afetando a eficiência em redes grandes.
+\item \textbf{Pressão sobre a \gls{PIT}:} como não existe Data que satisfaça estes Interesses, cada Interest permanece pendente até expirar (\textit{InterestLifetime}). Em redes densas e com períodos curtos, isto pode aumentar significativamente o consumo de memória na PIT e interferir com tráfego de aplicação.
+\item \textbf{Overhead linear do estado:} o SV explícito cresce com o número de produtores; em grupos grandes, pode obrigar a fragmentação/segmentação (ou a envio parcial), aumentando probabilidade de perda e a latência de convergência.
+\item \textbf{Convergência dependente de conectividade}: a robustez baseia-se na reemissão periódica; em mobilidade elevada, a fase de aquisição pode não completar dentro da janela de contacto, atrasando a convergência.
+\item \textbf{Superfície de ataque}: mesmo com assinatura, um nó autorizado mas malicioso pode enviar SVs extremos (muito grandes ou muito frequentes), induzindo tráfego excessivo; mitigação exige \textit{rate-limiting} e políticas de aceitação.
 \end{itemize}
+
+Estas limitações tornam o \gls{SVSync} uma boa referência de desenho, mas levantam questões quando o objetivo é operar em ambientes como \gls{V-NDN}, onde (i) os vizinhos mudam rapidamente e (ii) a difusão do Interest tende a amplificar overhead.
 
 \vspace{0.15cm}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsection{Comparação de Protocolos de Sincronização} 
+\label{sub:sync_comparison} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\paragraph{ChronoSync e PSync no contexto da sincronização NDN}
+A evolução \gls{DSSN}$\rightarrow$\gls{DDSN}$\rightarrow$\gls{SVSync} reflete compromissos distintos entre robustez a disrupção, eficiência em redes estáveis e complexidade de implementação.
 
-Embora o foco principal desta secção seja o SVSync e os protocolos que lhe deram origem, existem outros protocolos amplamente utilizados no NDN que merecem referência, pois têm sido considerados para sincronização em cenários móveis.
+\subsubsection{DSSN} 
+\label{subsub:dssn} 
 
-O \textbf{ChronoSync} utiliza um \emph{digest tree} para representar o estado global e detetar diferenças entre produtores, recorrendo a sincronização incremental sempre que o digest muda. Esta abordagem é eficiente quando a conectividade é relativamente estável, mas sofre quebras significativas quando a vizinhança muda rapidamente, como acontece em redes veiculares \cite{zhu_lets_2013}.
+O \gls{DSSN} \cite{xu_achieving_2018} codifica explicitamente o estado global em cada Interest de sincronização como tuplas \texttt{[prefixo, sequência]}. A comparação direta permite inferir lacunas sem mensagens adicionais, sendo eficiente quando existem grandes divergências (p.\ ex., nós que acordam após períodos de inatividade). A principal limitação é não incorporar mecanismos específicos para vizinhanças altamente transitórias.
 
-Já o \textbf{PSync} combina vetores de estado com estruturas compactas como os \emph{Invertible Bloom Lookup Tables (IBLTs)}, permitindo sincronização parcial e escalável entre grandes grupos de produtores. No entanto, como o desempenho dos IBLTs depende de estimativas corretas do tamanho do conjunto, variações abruptas de vizinhança, típicas de \gls{V-NDN}, levam a erros de decodificação e necessidade de retransmissões adicionais \cite{dragoi_psync_2016}.
+\subsubsection{DDSN} 
+\label{subsub:ddsn} 
 
-Estes dois protocolos, embora eficientes em redes moderadamente dinâmicas, não conseguem garantir convergência rápida e estável em cenários de mobilidade extrema.
+O \gls{DDSN} \cite{li_distributed_2019} acrescenta duas ideias práticas:
+\begin{itemize}
+    \item \textbf{Priorização}: quando existem múltiplas lacunas, solicita primeiro os produtores/intervalos com maior desfasamento, aumentando a probabilidade de progresso útil em janelas curtas.
+    \item \textbf{Modo inativo}: reduz tráfego quando não há vizinhos detetados, evitando sincronizações “no vazio”.
+\end{itemize}
+Mantém, contudo, a limitação estrutural de escalabilidade do SV explícito (crescimento linear).
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Comparação de Protocolos de Sincronização}
-\label{sub:sync_comparison}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{SVSync}
+\label{subsub:svsync}
 
-Para compreender melhor as diferenças entre abordagens de sincronização, apresentamos uma análise comparativa entre os protocolos \gls{DSSN}, \gls{DDSN} e \gls{SVSync}, seguida de uma visão sobre protocolos hierárquicos aplicados a redes IoT e \gls{VANETs}.
+O \gls{SVSync} simplifica o desenho e generaliza-o para grupos \gls{NDN}. A decisão mais relevante é tratar o Interest de sincronização como notificação para o grupo (sem resposta), o que facilita difusão mas pode penalizar PIT e aumentar dependência de temporizadores periódicos para convergência.
 
-\subsubsection{DSSN}
-\label{subsub:dssn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsubsection{ChronoSync e PSync} 
+\label{subsub:chronosync_psync} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-O protocolo \gls{DSSN} \Cite{xu_achieving_2018} utiliza vetores de estado codificados em tuplas do tipo 
-\texttt{[prefixo, número-de-sequência]}, permitindo que cada nó compare
-diretamente o seu estado local com o estado recebido. Esta abordagem é robusta
-a conectividade intermitente e adequada a redes de sensores, embora apresente
-limitações de escalabilidade.
+ChronoSync \cite{zhu_lets_2013} e PSync \cite{dragoi_psync_2016} reduzem overhead substituindo SV explícito por resumos compactos.
 
-\begin{algorithm}[H]
-\caption{Processo de sincronização no DSSN}
-\begin{algorithmic}[1]
-\Procedure{SendSyncInterest}{}
-    \State interest.payload $\gets$ LocalStateVector
-    \State \textbf{broadcast}(interest)
-\EndProcedure
+\paragraph{ChronoSync.}
+Troca \textit{digests} do estado (hashes). Divergência é detetada rapidamente (digest diferente), mas a identificação exata das lacunas requer mensagens adicionais (pelo menos mais uma ronda), o que pode ser penalizante quando o contacto é curto.
 
-\Statex
+\paragraph{PSync.}
+Usa \textit{Invertible Bloom Lookup Tables} (IBLT) para permitir, em muitos casos, extrair diretamente a diferença entre estados com uma única troca. O desempenho depende da capacidade do IBLT face ao número de divergências: se a diferença excede a capacidade, a decodificação falha e é necessário \textit{fallback} (p.\ ex., troca de estruturas mais completas). Em mobilidade elevada, onde divergências podem ser grandes, isto pode ocorrer com frequência, reduzindo a vantagem.
 
-\Procedure{OnReceiveSyncInterest}{RemoteVector}
-    \State MissingData $\gets \emptyset$
-    \ForAll{(prefix, remoteSeq) $\in$ RemoteVector}
-        \State localSeq $\gets$ LocalStateVector[prefix]
-        \If{remoteSeq $>$ localSeq}
-            \State MissingData $\gets$ MissingData $\cup$ (prefix, localSeq+1..remoteSeq)
-        \EndIf
-    \EndFor
-    \If{MissingData $\neq \emptyset$}
-        \State \Call{RequestMissingData}{MissingData}
-    \EndIf
-\EndProcedure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsection{Síntese crítica e lacunas} 
+\label{sec:critica} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\Statex
-
-\Procedure{RequestMissingData}{MissingData}
-    \ForAll{(prefix, seqRange) $\in$ MissingData}
-        \ForAll{seq $\in$ seqRange}
-            \State sendInterest(prefix/seq)
-        \EndFor
-    \EndFor
-\EndProcedure
-
-\Statex
-
-\Procedure{OnReceiveData}{prefix, seq}
-    \State store(data)
-    \If{seq $>$ LocalStateVector[prefix]}
-        \State LocalStateVector[prefix] $\gets$ seq
-    \EndIf
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-\subsubsection{DDSN}
-\label{subsub:ddsn}
-
-O protocolo \gls{DDSN} \cite{li_distributed_2019} estende o \gls{DSSN} e introduz dois mecanismos
-adicionais: (i) \textit{prioritização} de dados em falta, e (ii) modo
-\textit{inativo} que reduz a sobrecarga quando o nó não tem vizinhos. O vetor de
-estado mantém o mesmo formato do DSSN, mas o processo de disseminação adapta-se
-à mobilidade e instabilidade da conectividade.
-
-\begin{algorithm}[H]
-\caption{Processo de sincronização no DDSN}
-\begin{algorithmic}[1]
-\State Mode $\in$ \{ACTIVE, SLEEP\}
-
-\Statex
-
-\Procedure{PeriodicCheckNeighbors}{}
-    \If{NeighborSet é vazio}
-        \State Mode $\gets$ SLEEP
-    \Else
-        \State Mode $\gets$ ACTIVE
-    \EndIf
-\EndProcedure
-
-\Statex
-
-\Procedure{SendSyncInterest}{}
-    \State interest.payload $\gets$ LocalStateVector
-    \If{Mode = ACTIVE}
-        \State \textbf{broadcast}(interest)
-    \Else
-        \State \textbf{probabilisticBroadcast}(interest, $p_{low}$)
-    \EndIf
-\EndProcedure
-
-\Statex
-
-\Procedure{OnReceiveSyncInterest}{RemoteVector, Sender}
-    \State NeighborSet.add(Sender)
-    \State MissingData $\gets \emptyset$
-    \ForAll{(prefix, remoteSeq) $\in$ RemoteVector}
-        \State localSeq $\gets$ LocalStateVector[prefix]
-        \If{remoteSeq $>$ localSeq}
-            \State urgency $\gets$ remoteSeq - localSeq
-            \State MissingData.add((prefix, localSeq+1..remoteSeq, urgency))
-        \EndIf
-    \EndFor
-    \If{MissingData $\neq \emptyset$}
-        \State \Call{PrioritizedRequest}{MissingData}
-    \EndIf
-\EndProcedure
-
-\Statex
-
-\Procedure{PrioritizedRequest}{MissingData}
-    \State sort MissingData by urgency descending
-    \ForAll{(prefix, seqRange, urgency) $\in$ MissingData}
-        \ForAll{seq $\in$ seqRange}
-            \State sendInterest(prefix/seq)
-        \EndFor
-    \EndFor
-\EndProcedure
-
-\end{algorithmic}
-\end{algorithm}
-
-
-\subsubsection{\gls{DSSN} vs \gls{DDSN} vs \gls{SVSync}}
-\label{subsub:dssn_ddsn_svsync}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Os protocolos \gls{DSSN}, \gls{DDSN} e \gls{SVSync} compartilham a ideia de vetores de estado para sincronização, mas diferem no foco e na adaptação a redes dinâmicas:
+A análise sugere um conjunto de limitações recorrentes quando estes protocolos são considerados para \gls{VANETs}:
 
 \begin{itemize}
-    \item \textbf{\gls{DSSN}:} ideal para redes de sensores com conectividade intermitente. Permite a sincronização de conjuntos de dados em estados de inatividade, utilizando vetores de estado codificados em tuplas [prefixo, número de sequência]. Limitado em escalabilidade e em redes densas.
-    
-    \item \textbf{\gls{DDSN}} extensão do DSSN para redes ad-hoc sem fio, priorizando transmissão em períodos de conectividade transitória e modo inativo para reduzir tráfego. Desempenho inferior em redes bem conectadas \cite{rahman_analysis_2021}.
-    
-    \item \textbf{\gls{SVSync}:} mantém a codificação de vetores de estado do \gls{DSSN}, mas elimina funcionalidades específicas para sensores e adapta-se a redes mais dinâmicas. Limitações incluem overhead de \gls{PIT} persistente, divergência temporária de estado e escalabilidade limitada \cite{moll_brief_nodate}.
+    \item \textbf{Divergências grandes e rápidas}: a vizinhança muda em poucos segundos, dificultando completar ciclos de sincronização e aquisição.
+    \item \textbf{Overhead de controlo}: difusão periódica e SV explícito podem saturar o meio em alta densidade; além disso, Interesses “sem Data” aumentam pressão sobre a PIT.
+    \item \textbf{Escalabilidade}: SV explícito cresce com o número de produtores; soluções compactas (digest/IBLT) reduzem tamanho, mas podem introduzir rondas extra ou falhas de decodificação.
+    \item \textbf{Falta de integração com decisões veiculares}: prioridade temporal/geográfica do conteúdo, seleção de retransmissores e coordenação com caching cooperativo não são tratadas de forma nativa.
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Protocolos hierárquicos em IoT e VANETs}
-\label{subsub:hierarchical_sync}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Em síntese, o \gls{SVSync} oferece uma descrição operacional clara de sincronização por estado explícito em \gls{NDN}, mas as suas escolhas (difusão de notificação, dependência de temporizadores, SV linear e pressão sobre PIT) expõem pontos críticos que tendem a agravar-se em cenários veiculares. Estas lacunas motivam adaptações orientadas a janelas curtas de contacto, priorização por relevância (temporal/geográfica) e mecanismos de redução de overhead e de pressão sobre a \gls{PIT}.
 
-Outra abordagem relevante é a sincronização hierárquica, utilizada em redes IoT e \gls{VANETs}, onde um nó pivô coordena a disseminação de atualizações a subgrupos de nós. Esta estratégia reduz \textit{overhead} de comunicação e melhora a escalabilidade em topologias dinâmicas.
-
-\begin{table}[h]
-\centering
-\caption{Protocolos hierárquicos de sincronização}
-\label{tab:hier_sync}
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-Protocolo & Topologia & Métrica principal & Overhead & Aplicação \\ \hline
-HierSync IoT \cite{luo_hierarchical_2025} & Redes de sensores & Latência & Baixo & IoT com grande número de nós \\ \hline
-HierSync VANET & Redes veiculares & Entrega de dados & Médio & Disseminação de alertas e dados em V2V \\ \hline
-\end{tabular}%
-}
-\end{table}
-
-Estes protocolos hierárquicos são particularmente úteis em cenários onde a sincronização total direta seria inviável, como grupos grandes de sensores ou frotas de veículos conectados. Permitem que o pivô distribua o estado global enquanto os subgrupos replicam localmente, reduzindo latência e divergência entre nós.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Síntese crítica e lacunas}
-\label{sec:critica}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-A análise dos protocolos de sincronização (\gls{DSSN}, \gls{DDSN}, \gls{SVSync}, ChronoSync e PSync) e das abordagens hierárquicas em IoT e \gls{VANETs} evidencia várias lacunas:
-
-\begin{itemize}
-    \item \textbf{Divergência de estado em redes móveis:} Protocolos como \gls{SVSync} mantêm \gls{PIT} persistente e podem gerar divergências temporárias de estado, especialmente em cenários com alta mobilidade veicular.
-    \item \textbf{Escalabilidade limitada:} Muitos métodos funcionam bem em pequenos grupos, mas apresentam overhead elevado em redes grandes e altamente dinâmicas.
-    \item \textbf{Falta de otimização para cenários veiculares:} Protocolos como ChronoSync e PSync assumem estabilidade temporal na vizinhança, o que não se verifica em \gls{V-NDN}.
-    \item \textbf{Sincronização com conectividade intermitente:} O SVSync e protocolos similares não integram plenamente estratégias de retransmissão oportunista ou caching distribuído para aumentar a taxa de entrega em redes com desconexões frequentes.
-    \item \textbf{Segurança e integridade:} Embora o SVSync utilize assinaturas, a mitigação de ataques como \emph{Interest Flooding} não é totalmente explorada nas abordagens de sincronização.
-\end{itemize}
-
-Estas lacunas motivam a proposta deste trabalho, que pretende:
-
-\begin{itemize}
-    \item Adaptar \gls{SVSync} para redes veiculares, combinando cache distribuído, retransmissão oportunista e priorização de interesses.
-    \item Reduzir divergência de estado e overhead do \gls{PIT} em topologias dinâmicas.
-    \item Avaliar o desempenho em cenários realistas de \gls{VANETs}, simulando alta mobilidade e densidade variável de veículos.
-\end{itemize}
 
 \section{Sincronização de Informação em \gls{V-NDN}}
 \label{sec:sync-vndn}
 
-A sincronização de informação em \gls{V-NDN}, como já vimos, constitui um desafio técnico
-particularmente exigente, devido à elevada mobilidade dos veículos, à conectividade intermitente e à
-variação constante da topologia. Neste contexto, mecanismos tradicionais de sincronização concebidos
-para redes fixas, ou com mobilidade reduzida, revelam-se insuficientes. Esta secção apresenta uma
-revisão aprofundada dos principais trabalhos dedicados à sincronização de dados em ambientes V-NDN.
+A sincronização de informação em \gls{V-NDN} é um problema particularmente exigente porque combina (i) produção distribuída e frequente de dados (múltiplos veículos), (ii) conectividade \gls{V2V} instável e (iii) requisitos de utilidade temporal e geográfica (muitos dados “expiram” rapidamente ou são relevantes apenas numa região). Em redes fixas, ou com mobilidade reduzida, é comum assumir conectividade suficiente para reconciliar estados em múltiplas rondas; em ambientes veiculares, as janelas de contacto e a vizinhança mudam rapidamente, tornando essas premissas frágeis. Esta secção revê e organiza os principais trabalhos relacionados com sincronização (ou mecanismos que a suportam indiretamente) em cenários \gls{V-NDN}, destacando contribuições técnicas e limitações.
 
-Apesar da crescente adoção do paradigma \gls{NDN} em cenários veiculares, os mecanismos de 
-sincronização continuam a ser um dos componentes menos amadurecidos no ecossistema \gls{V-NDN}.
-Estudos iniciais como \cite{papadopoulos_lixia_2014} e \cite{moll_sok_2022} salientam que
-a mobilidade extrema introduz desafios específicos, como a rápida perda de vizinhança e oscilações
-na conectividade que comprometem a convergência e a consistência dos dados partilhados entre
-veículos. Estas características tornam insuficientes abordagens concebidas para Wi-Fi estático, 
-wireless mesh ou IoT estável, reforçando a necessidade de mecanismos de sincronização mais robustos
-e adaptáveis ao contexto veicular.
+Apesar da crescente adoção de arquiteturas centradas em dados em cenários veiculares, a sincronização de \textit{datasets} (descoberta consistente de novidades e recuperação de lacunas de estado) continua a ser um dos componentes menos amadurecidos no ecossistema \gls{V-NDN}. Trabalhos clássicos e revisões do domínio \cite{papadopoulos_lixia_2014,moll_sok_2022} salientam que a mobilidade elevada afeta diretamente o modelo \textit{Interest/Data} quando este é usado para manter estado partilhado: a invalidação prematura de entradas na \gls{PIT} e a quebra do caminho inverso degradam a recuperação de dados, conduzindo a \textit{timeouts} e reexpressões frequentes de interesses. Em particular, \cite{papadopoulos_lixia_2014} evidencia que a robustez do \gls{NDN} em redes mais estáveis não se traduz automaticamente para ambientes com vizinhança efémera. Complementarmente, \cite{moll_sok_2022} sistematiza protocolos de sincronização de \textit{datasets} no \gls{NDN} (e.g., ChronoSync, PSync, \gls{SVSync}) e conclui que as escolhas de desenho desses protocolos não foram feitas com as restrições operacionais típicas de \gls{VANETs} em mente, abrindo uma lacuna clara para adaptações específicas ao contexto veicular.
 
-\subsection{Sincronização em Ambientes \gls{V-NDN}}
+\subsection{Disseminação vs. coerência de estado}
 
-Trabalhos demonstram que, embora a disseminação de conteúdos seja eficiente, a 
-manutenção da coerência de dados persistentes requer mecanismos adicionais de sincronização 
-\cite{ahlgren_survey_2012}. Em cenários onde múltiplos veículos produzem informação
-relacionada como atualizações de tráfego, segurança ou sensorização urbana, a simples difusão
-não garante alinhamento entre estados, levando frequentemente à inconsistência temporal ou
-geográfica da informação disponível.
+Uma parte significativa da literatura em \gls{V-NDN} foca-se na disseminação eficiente de conteúdos (encaminhamento, caching, supressão de broadcast). No entanto, disseminação eficiente não implica coerência de estado quando existem múltiplos produtores e versões concorrentes/assincrónicas. Surveys de arquiteturas centradas em informação, como \cite{ahlgren_survey_2012}, destacam que o \textit{in-network caching} aumenta disponibilidade e reduz latência, mas não resolve, por si só, o problema de (i) identificar sistematicamente o que falta a cada nó e (ii) convergir para um estado comum quando as atualizações são frequentes e distribuídas. Em cenários veiculares, isto manifesta-se como divergência: veículos em zonas distintas podem observar conjuntos diferentes de atualizações “recentes”, mesmo que o conteúdo exista na rede, devido à mobilidade e à distribuição espacial dos caches.
 
-Outras abordagens exploram cenários híbridos que integram infraestrutura. Em \cite{noauthor_vehicle_2017}, a
-sincronização entre veículos e \gls{RSUs} é mediada por interesses contendo metadados de localização e
-estado, permitindo uma atualização eficiente de informação contextual. Embora eficaz em ambientes
-urbanos com boa cobertura, esta estratégia depende fortemente da presença de \gls{RSUs}, tornando-se
-inadequada para zonas rurais ou cenários exclusivamente \gls{V2V}.
+\subsection{Integração com infraestrutura e agregação por \gls{RSUs}}
 
-Mais recentemente, \cite{pereira_vehicular-ndn_2026} propõe o conceito de \textit{Geo-Anchored Datasets} (GADs), nos quais
-o estado de determinados conjuntos de dados é ancorado a regiões geográficas específicas. Esta
-abordagem facilita a coerência local da informação e reduz a necessidade de propagação global,
-mostrando-se promissora para aplicações como alerta de tráfego ou condições meteorológicas.
-Apesar disso, o modelo não define um protocolo de sincronização genérico, focando-se sobretudo na
-descoberta e disponibilização de conteúdo.
+Alguns trabalhos exploram arquiteturas híbridas em que a infraestrutura fixa auxilia a sincronização. Em \cite{noauthor_vehicle_2017}, a sincronização entre veículos e \gls{RSUs} é mediada por interesses que transportam metadados (estado + localização), usando a \gls{RSUs} como ponto de agregação temporário: veículos reportam resumos (parciais) do estado observado na área de cobertura, a \gls{RSUs} consolida esse estado e difunde novamente para reduzir consultas redundantes e acelerar a descoberta de novidades. Este tipo de desenho tem duas vantagens técnicas claras: (i) reduz a necessidade de cada veículo “varrer” a vizinhança para descobrir atualizações e (ii) introduz um ponto natural para cache e coordenação. A limitação é estrutural: o desempenho depende da densidade e cobertura das \gls{RSUs}, o que restringe a aplicabilidade em autoestradas, zonas rurais ou cenários puramente \gls{V2V}.
 
-A ideia de associar dados a regiões é consistente com tendências observadas em mecanismos
-geocêntricos de VANET, sendo particularmente explorada em surveys como \cite{noauthor_geocast_2025},
-que destacam que limitar espacialmente a disseminação reduz drasticamente o overhead. Contudo,
-estes sistemas tratam sobretudo encaminhamento geográfico e não sincronização entre produtores
-distribuídos, deixando uma lacuna importante para cenários em que é necessário alinhar versões
-divergentes do mesmo conjunto de dados.
+\subsection{Escopo geográfico: dados ancorados em regiões e geocast}
 
-\subsection{Estruturas Hierárquicas e Suporte à Sincronização}
+Uma linha complementar procura reduzir overhead limitando o \textit{escopo} da sincronização por critérios geográficos. Em \cite{pereira_vehicular-ndn_2026} é introduzido o conceito de \textit{Geo-Anchored Datasets} (GADs), em que a nomenclatura associa um \textit{dataset} a uma região (e.g., \texttt{/cidade/zona/trafego/...}), favorecendo descoberta e acesso local sem exigir propagação global. A contribuição central é o \textbf{acoplamento entre nome e região}, que reduz a área onde faz sentido “sincronizar” e onde os dados são semanticamente relevantes. Contudo, a ancoragem geográfica, por si só, não especifica um mecanismo completo de sincronização: permanecem em aberto aspetos como (i) reconciliação quando múltiplos nós atualizam o mesmo \textit{dataset} regional e (ii) garantias mínimas sobre ordenação/causalidade das atualizações.
 
-Modelos hierárquicos baseados em \textit{clustering}, como o \gls{PACM} \cite{sampath_position-based_2021}, organizam os veículos em
-grupos estruturados para facilitar a disseminação de dados. Ao utilizar a posição como critério de 
-agrupamento, estes sistemas oferecem maior estabilidade na comunicação dentro de clusters e podem 
-servir como base para mecanismos de sincronização escaláveis.
+Esta intuição está alinhada com literatura de geocast em redes veiculares (e.g., surveys como \cite{noauthor_geocast_2025}), que mostra que restringir espacialmente a difusão reduz redundância e congestão. Ainda assim, protocolos de geocast tratam sobretudo \textbf{entrega de mensagens} (eventos) e não \textbf{sincronização de estado} (convergência de conjuntos de versões). Assim, mesmo com geocast eficiente, continua a faltar um mecanismo de “descoberta do que falta” e “recuperação incremental” que permita alinhar versões ao longo do tempo.
 
-A literatura recente demonstra que estruturas hierárquicas são particularmente eficazes em
-ambientes de elevada mobilidade, pois permitem reduzir a complexidade da sincronização ao nível
-local antes da agregação global. Trabalhos como \cite{de_castro_dynamic_2015} propõem arquiteturas
-hierárquicas dinâmicas especificamente orientadas a NDN em cenários veiculares, evidenciando que a
-agregação local de informação e a existência de líderes de cluster podem reduzir a redundância de
-mensagens e melhorar a estabilidade da comunicação. De forma complementar, surveys como
-\cite{ayyub_comprehensive_2022} destacam que clusters geograficamente estáveis aumentam a longevidade
-das ligações e reduzem a oscilação do estado, o que abre espaço para mecanismos de sincronização
-baseados em níveis algo ausente nos protocolos atuais de \gls{V-NDN}.
+\subsection{Estruturas hierárquicas e \textit{clustering} como suporte à sincronização}
 
-\subsection{Protocolos de Sincronização Orientados a Estado}
+Estruturas hierárquicas baseadas em \textit{clustering} surgem como uma forma de reduzir a complexidade do problema, ao introduzir agregação local antes de sincronização global. O \gls{PACM} \cite{sampath_position-based_2021} propõe um modelo de clustering adaptativo em que veículos são agrupados por proximidade e similaridade de trajetória, elegendo \textit{cluster heads} que estabilizam a comunicação intra-cluster e reduzem o número de retransmissores efetivos. Do ponto de vista de sincronização, este tipo de organização permite um desenho em duas fases: (i) sincronização intra-cluster (onde a vizinhança é mais estável) e (ii) troca resumida/intermitente entre líderes de clusters, reduzindo overhead global.
 
-A sincronização explícita de conjuntos de dados em ambientes dinâmicos tem sido tradicionalmente
-abordada através de protocolos baseados em vetores de estado. O \gls{DSSN} e o \gls{SVSync} são exemplos
-clássicos de mecanismos que utilizam listas de tuplas \texttt{[prefixo, número de sequência]} para
-codificar o estado global do sistema. Embora eficazes em redes de sensores ou ad-hoc com
-conectividade instável, estes protocolos apresentam limitações significativas em redes veiculares, tais
-como elevada sensibilidade à escalabilidade e ausência de mecanismos que lidem adequadamente com
-mobilidade extrema.
+Trabalhos como \cite{de_castro_dynamic_2015} exploram explicitamente hierarquias para \gls{NDN} veicular, organizando nós em camadas e usando nós “pivô”/líderes para agregação de interesses e de estado. A ideia técnica é que líderes atuem como pontos de consolidação: em vez de múltiplos veículos emitirem interesses semelhantes/concorrentes, o líder agrega e reexpressa pedidos, reduzindo redundância e melhorando estabilidade local. Surveys como \cite{ayyub_comprehensive_2022} reforçam a importância de estabilidade de clusters (via previsão de mobilidade) para reduzir os ciclos de reconfiguração e, consequentemente, a necessidade de re-sincronizações completas. Em síntese, clustering não resolve sincronização “por si”, mas cria uma \textbf{estrutura de comunicação} onde mecanismos de sincronização podem ser mais eficientes e previsíveis.
 
-O SVSync representa um avanço na simplificação dos mecanismos de sincronização, mantendo a
-codificação por vetores de estado, mas removendo funcionalidades específicas de redes de sensores.
-Contudo, estudos recentes apontam diversas limitações quando aplicado a V-NDN: \textit{overhead}
-elevado devido à manutenção persistente da PIT, divergências temporárias de estado e falta de
-otimizações orientadas à mobilidade.
+\subsection{Protocolos de sincronização aplicados a \gls{V-NDN}: vetores de estado e limitações}
 
-\subsection{Síntese e Tendências}
+A sincronização explícita de \textit{datasets} em redes dinâmicas é frequentemente suportada por protocolos baseados em vetores de estado (pares \texttt{[prefixo, sequência]}), como \gls{DSSN} e \gls{SVSync}. Estes mecanismos partilham uma ideia fundamental: cada nó mantém um resumo determinístico do “progresso” de cada produtor e, ao comparar resumos, identifica diretamente lacunas (sequências em falta) e inicia a recuperação via interesses normais.
 
-De forma geral, os trabalhos existentes demonstram que a sincronização em V-NDN continua a ser um
-problema em aberto. As abordagens atuais tendem a focar-se na disseminação de conteúdos ou em
-heurísticas de encaminhamento, deixando lacunas importantes ao nível da coerência global do estado,
-resiliência a desconexões e escalabilidade. Protocolos baseados em vetores de estado constituem uma
-base sólida, mas carecem de adaptações que tirem partido de atributos específicos das redes veiculares,
-como a mobilidade previsível, padrões de trânsito e oportunidade de comunicação.
+O \gls{SVSync} é, em geral, considerado um protocolo maduro no ecossistema \gls{NDN} para sincronização por estado explícito: (i) mantém um vetor local com a última sequência conhecida por produtor, (ii) dissemina periodicamente (e/ou por evento) um interesse de sincronização com esse vetor e (iii) após receção, cada nó calcula as lacunas e emite interesses convencionais para recuperar os \textit{Data} em falta. Este desenho é atrativo por duas razões: a comparação de vetores é direta (boa para grandes divergências) e cada mensagem de sincronização é autoexplicativa (robusta a perdas de mensagens anteriores).
 
-A literatura aponta, de forma consistente, para a necessidade de mecanismos híbridos que combinem
-sincronização incremental, agregação hierárquica e delimitação geográfica do estado. Estes elementos
-surgem como o caminho natural para reduzir a redundância de mensagens, melhorar a robustez a
-desconexões e permitir que a sincronização acompanhe a mobilidade extrema observada em cenários
-veiculares. Assim, torna-se evidente que uma solução que una hierarquia, agregação local e
-sincronização orientada a vetores de estado responde diretamente às lacunas identificadas nos
-trabalhos existentes.
+Contudo, ao transpor este modelo para \gls{V-NDN}, surgem limitações estruturais já referidas na literatura do domínio \cite{moll_sok_2022}: (1) \textbf{pressão sobre a \gls{PIT}} quando a sincronização usa interesses multicast sem resposta \textit{Data} correspondente (interesses persistem até expirar), (2) \textbf{overhead de estado} que cresce com o número de produtores (vetor linear) e (3) \textbf{ausência de otimizações orientadas à mobilidade}, como priorização geográfica/temporal de lacunas, sincronização oportunista dependente de padrões de movimento, ou coordenação explícita com estratégias de caching cooperativo. Em prática, estas limitações traduzem-se em maior tráfego de controlo e em ciclos de convergência mais longos quando a aquisição de dados não completa dentro da janela de contacto.
+
+\subsection{Síntese e tendências}
+
+Em síntese, a literatura aponta para um consenso: a sincronização em \gls{V-NDN} permanece um problema em aberto, sobretudo quando se exige simultaneamente (i) baixo overhead, (ii) convergência rápida sob conectividade intermitente e (iii) escalabilidade com muitos produtores. As abordagens existentes contribuem com peças importantes — escopo geográfico \cite{pereira_vehicular-ndn_2026}, organização hierárquica via clustering \cite{sampath_position-based_2021,de_castro_dynamic_2015,ayyub_comprehensive_2022} e sincronização determinística por vetores de estado no ecossistema \gls{NDN} \cite{moll_sok_2022} — mas raramente integram estas dimensões num mecanismo único, desenhado de raiz para restrições veiculares.
+
+A tendência natural que emerge é a combinação de três ideias: (i) sincronização incremental baseada em resumos determinísticos de estado (para descoberta direta de lacunas), (ii) agregação hierárquica (para reduzir redundância e estabilizar o plano de controlo localmente) e (iii) delimitação geográfica do escopo (para evitar propagação desnecessária). Adicionalmente, a coordenação entre sincronização e decisões de caching distribuído permanece pouco explorada: identificar nós com maior estabilidade/conectividade para armazenar conteúdos críticos pode aumentar a probabilidade de recuperação local quando produtores originais deixam rapidamente a vizinhança.
+
+Desta análise resulta uma lacuna concreta: apesar de existirem múltiplas propostas para encaminhamento e caching em \gls{V-NDN}, permanece em aberto um mecanismo de sincronização hierárquico que integre explicitamente mobilidade, escalabilidade e (pelo menos) convergência eventual do estado, validado em cenários representativos. Esta lacuna motiva diretamente as opções de desenho consideradas nesta dissertação.
 
 
 \chapter{Estratégia Proposta}

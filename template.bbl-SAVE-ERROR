@@ -18,29 +18,158 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global/global}
-    \entry{noauthor_figure_nodate}{misc}{}{}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{zeadally_vehicular_2020}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=293aa951928de5b545b038b510c6e434}{%
+           family={Zeadally},
+           familyi={Z\bibinitperiod},
+           given={Sherali},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0b322e5ce82827f32025710f48e75628}{%
+           family={Javed},
+           familyi={J\bibinitperiod},
+           given={Muhammad\bibnamedelima Awais},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ac71397d83323735a90a6ad0db6e0279}{%
+           family={Hamida},
+           familyi={H\bibinitperiod},
+           given={Elyes\bibnamedelima Ben},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{fullhash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{fullhashraw}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{bibnamehash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{authorbibnamehash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{authornamehash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{authorfullhash}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \strng{authorfullhashraw}{77a4a9693fd3abd56a91fc19bc72b3ef}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Intelligent transportation systems (ITS) are fast moving from connected vehicles on the road to autonomous driving. Vehicular communication is a key enabler for the deployment of advanced ITS applications such as platooning and remote vehicle control. DSRC and C-V2X are two key wireless technologies that will play a vital role in the implementation and deployment of an autonomous transport system. We review the current standardization efforts for both of these technologies with a focus on MAC and PHY layers. The automotive industry and research community have been working on new standards – IEEE 802.11bd (for DSRC) and 5G NR V2X (for C-V2X) – to meet the high reliability and low latency requirements of autonomous driving. We also highlight the major changes that have been made to previous standards such as IEEE 802.11p and C-V2X. Finally, we present open challenges that need to be addressed to further improve these standards for vehicular communications.}
+      \field{issn}{2471-2833}
+      \field{journaltitle}{IEEE Communications Standards Magazine}
+      \field{month}{3}
+      \field{number}{1}
+      \field{shorttitle}{Vehicular {Communications} for {ITS}}
+      \field{title}{Vehicular {Communications} for {ITS}: {Standardization} and {Challenges}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{4}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{11\bibrangedash 17}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/MCOMSTD.001.1900044
+      \endverb
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\NMHZXV39\\9088324.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9088324
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9088324
+      \endverb
+      \keyw{Vehicular ad hoc networks,Autonomous vehicles,Channel estimation,Media Access Protocol,Parity check codes}
+    \endentry
+    \entry{da_silva_realization_2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=ac0879880ae5cdb50f3cc057ad05f265}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Elídio\bibnamedelima Tomás},
+           giveni={E\bibinitperiod\bibinitdelim T\bibinitperiod},
+           prefix={da},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=c0892d4ddc6ac05bc3e2ee2fd20b08c2}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={António\bibnamedelimb Luís\bibnamedelima Duarte},
+           giveni={A\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=7c25270b817589ddf3982cc121e26a4d}{%
+           family={Macedo},
+           familyi={M\bibinitperiod},
+           given={Joaquim\bibnamedelimb Melo\bibnamedelima Henriques},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
       \list{language}{1}{%
         {en}%
       }
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Download scientific diagram {|} Four types of V2X application support in 3GPP (i.e., V2V, V2P, V2N and V2I).  from publication: An Overview of 3GPP Cellular Vehicle-to-Everything Standards {|} With the growth of mobile data and devices, cellular networks have great potential to support various vehicular communication services for safety and non-safety applications. This paper presents an overview of the 3GPP cellular vehicle-to-everything (V2X) standards. We... {|} Reference Standards {|} ResearchGate, the professional network for scientists.}
-      \field{journaltitle}{ResearchGate}
-      \field{title}{{FIGURE} 1. {Four} types of {V2X} application support in {3GPP} (i.e., {V2V},...}
-      \field{urlday}{22}
-      \field{urlmonth}{4}
+      \strng{namehash}{1b8773d674f1319336694ed78137024f}
+      \strng{fullhash}{1b8773d674f1319336694ed78137024f}
+      \strng{fullhashraw}{1b8773d674f1319336694ed78137024f}
+      \strng{bibnamehash}{1b8773d674f1319336694ed78137024f}
+      \strng{authorbibnamehash}{1b8773d674f1319336694ed78137024f}
+      \strng{authornamehash}{1b8773d674f1319336694ed78137024f}
+      \strng{authorfullhash}{1b8773d674f1319336694ed78137024f}
+      \strng{authorfullhashraw}{1b8773d674f1319336694ed78137024f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Named data networking (NDN) presents a huge opportunity to tackle some of the unsolved issues of IP-based vehicular ad hoc networks (VANET). The core characteristics of NDN such as the name-based routing, in-network caching, and built-in data security provide better management of VANET proprieties (e.g., the high mobility, link intermittency, and dynamic topology). This study aims at providing a clear view of the state-of-the-art on the developments in place, in order to leverage the characteristics of NDN in VANET. We resort to a systematic literature review (SLR) to perform a reproducible study, gathering the proposed solutions and summarizing the main open challenges on implementing NDN-based VANET. There exist several related studies, but they are more focused on other topics such as forwarding. This work specifically restricts the focus on VANET improvements by NDN-based routing (not forwarding), caching, and security. The surveyed solution herein presented is performed between 2010 and 2021. The results show that proposals on the selected topics for NDN-based VANET are recent (mainly from 2016 to 2021). Among them, caching is the most investigated topic. Finally, the main findings and the possible roadmaps for further development are highlighted.}
+      \field{issn}{1099-1131}
+      \field{journaltitle}{International Journal of Communication Systems}
+      \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1002/dac.5348}
+      \field{number}{18}
+      \field{shorttitle}{On the realization of {VANET} using named data networking}
+      \field{title}{On the realization of {VANET} using named data networking: {On} improvement of {VANET} using {NDN}-based routing, caching, and security}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
       \field{urlyear}{2025}
+      \field{volume}{35}
+      \field{year}{2022}
       \field{urldateera}{ce}
+      \field{pages}{e5348}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1002/dac.5348
+      \endverb
       \verb{file}
-      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\IRHM3FV6\\Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744.html:text/html
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\XDUW5V88\\da Silva et al. - 2022 - On the realization of VANET using named data netwo.pdf:application/pdf;Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\GK5GCLJ9\\dac.html:text/html
       \endverb
       \verb{urlraw}
-      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.5348
       \endverb
       \verb{url}
-      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1002/dac.5348
+      \endverb
+      \keyw{named data networking,caching,routing,security,vehicular ad hoc networks}
+    \endentry
+    \entry{noauthor_ndn-waze_nodate}{inproceedings}{}{}
+      \list{language}{1}{%
+        {en}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Request PDF {|} NDN-Waze: Um Sistema Distribuído para Gerenciamento de Tráfego Veicular via Redes de Dados Nomeados {|} Em redes veiculares (VANETs) há vários sistemas de transporte que se apoiam em diferentes modelos dependentes do IP para comunicação entre... {|} Find, read and cite all the research you need on ResearchGate}
+      \field{booktitle}{{ResearchGate}}
+      \field{shorttitle}{{NDN}-{Waze}}
+      \field{title}{{NDN}-{Waze}: {Um} {Sistema} {Distribuído} para {Gerenciamento} de {Tráfego} {Veicular} via {Redes} de {Dados} {Nomeados} {|} {Request} {PDF}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5753/sbrc.2023.405
+      \endverb
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\NK2PEEXE\\371930029_NDN-Waze_Um_Sistema_Distribuido_para_Gerenciamento_de_Trafego_Veicular_via_Redes_de_D.html:text/html;Texto Completo:C\:\\Users\\Asus\\Zotero\\storage\\IBZZAF4I\\NDN-Waze Um Sistema Distribuído para Gerenciament.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/371930029_NDN-Waze_Um_Sistema_Distribuido_para_Gerenciamento_de_Trafego_Veicular_via_Redes_de_Dados_Nomeados
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/371930029_NDN-Waze_Um_Sistema_Distribuido_para_Gerenciamento_de_Trafego_Veicular_via_Redes_de_Dados_Nomeados
       \endverb
     \endentry
     \entry{khelifi_named_2020}{article}{}{}
@@ -89,8 +218,8 @@
       \strng{authornamehash}{a99154a22e4897dbc3e00462e4ad0c44}
       \strng{authorfullhash}{0555a51355de036559e85ea0ac3632d0}
       \strng{authorfullhashraw}{0555a51355de036559e85ea0ac3632d0}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Information-centric networking (ICN) has been proposed as one of the future Internet architectures. It is poised to address the challenges faced by today's Internet that include, but not limited to, scalability, addressing, security, and privacy. Furthermore, it also aims at meeting the requirements for new emerging Internet applications. To realize ICN, named data networking (NDN) is one of the recent implementations of ICN that provides a suitable communication approach due to its clean slate design and simple communication model. There are a plethora of applications realized through ICN in different domains where data is the focal point of communication. One such domain is intelligent transportation system realized through vehicular ad hoc network (VANET) where vehicles exchange information and content with each other and with the infrastructure. Up to date, excellent research results have been yielded in the VANET domain aiming at safe, reliable, and infotainment-rich driving experience. However, due to the dynamic topologies, host-centric model, and ephemeral nature of vehicular communication, various challenges are faced by VANET that hinder the realization of successful vehicular networks and adversely affect the data dissemination, content delivery, and user experiences. To fill these gaps, NDN has been extensively used as underlying communication paradigm for VANET. Inspired by the extensive research results in NDN-based VANET, in this paper, we provide a detailed and systematic review of NDN-driven VANET. More precisely, we investigate the role of NDN in VANET and discuss the feasibility of NDN architecture in VANET environment. Subsequently, we cover in detail, NDN-based naming, routing and forwarding, caching, mobility, and security mechanism for VANET. Furthermore, we discuss the existing standards, solutions, and simulation tools used in NDN-based VANET. Finally, we also identify open challenges and issues faced by NDN-driven VANET and highlight future research directions that should be addressed by the research community.}
@@ -120,6 +249,717 @@
       \verb https://ieeexplore.ieee.org/abstract/document/8624354
       \endverb
       \keyw{Computer architecture,Internet,Routing,Information-centric networking,named data networking,Quality of service,Security,survey,Tutorials,Vehicular ad hoc networks,vehicular ad-hoc networks}
+    \endentry
+    \entry{noauthor_figure_nodate}{misc}{}{}
+      \list{language}{1}{%
+        {en}%
+      }
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Download scientific diagram {|} Four types of V2X application support in 3GPP (i.e., V2V, V2P, V2N and V2I).  from publication: An Overview of 3GPP Cellular Vehicle-to-Everything Standards {|} With the growth of mobile data and devices, cellular networks have great potential to support various vehicular communication services for safety and non-safety applications. This paper presents an overview of the 3GPP cellular vehicle-to-everything (V2X) standards. We... {|} Reference Standards {|} ResearchGate, the professional network for scientists.}
+      \field{journaltitle}{ResearchGate}
+      \field{title}{{FIGURE} 1. {Four} types of {V2X} application support in {3GPP} (i.e., {V2V},...}
+      \field{urlday}{22}
+      \field{urlmonth}{4}
+      \field{urlyear}{2025}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\IRHM3FV6\\Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/figure/Four-types-of-V2X-application-support-in-3GPP-ie-V2V-V2P-V2N-and-V2I_fig1_321088744
+      \endverb
+    \endentry
+    \entry{gerla_internet_2014}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=9f91b174c580d691e41a82babe61063b}{%
+           family={Gerla},
+           familyi={G\bibinitperiod},
+           given={Mario},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1f60d80da7eefee24de4e8bd6753f256}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Eun-Kyu},
+           giveni={E\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=b2ee3c395668c0ab3e4363a71bc76054}{%
+           family={Pau},
+           familyi={P\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+        {{hash=b722ff2d7da1febd8f60e4b61a3c1acc}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Uichin},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{a37be1adba09bac342ab77e2a85e1819}
+      \strng{fullhash}{bdcce00c3ad9d2ff52918ee982d5ec66}
+      \strng{fullhashraw}{bdcce00c3ad9d2ff52918ee982d5ec66}
+      \strng{bibnamehash}{a37be1adba09bac342ab77e2a85e1819}
+      \strng{authorbibnamehash}{a37be1adba09bac342ab77e2a85e1819}
+      \strng{authornamehash}{a37be1adba09bac342ab77e2a85e1819}
+      \strng{authorfullhash}{bdcce00c3ad9d2ff52918ee982d5ec66}
+      \strng{authorfullhashraw}{bdcce00c3ad9d2ff52918ee982d5ec66}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Traditionally, the vehicle has been the extension of the man's ambulatory system, docile to the driver's commands. Recent advances in communications, controls and embedded systems have changed this model, paving the way to the Intelligent Vehicle Grid. The car is now a formidable sensor platform, absorbing information from the environment (and from other cars) and feeding it to drivers and infrastructure to assist in safe navigation, pollution control and traffic management. The next step in this evolution is just around the corner: the Internet of Autonomous Vehicles. Pioneered by the Google car, the Internet of Vehicles will be a distributed transport fabric capable to make its own decisions about driving customers to their destinations. Like other important instantiations of the Internet of Things (e.g., the smart building), the Internet of Vehicles will have communications, storage, intelligence, and learning capabilities to anticipate the customers' intentions. The concept that will help transition to the Internet of Vehicles is the Vehicular Cloud, the equivalent of Internet cloud for vehicles, providing all the services required by the autonomous vehicles. In this article, we discuss the evolution from Intelligent Vehicle Grid to Autonomous, Internet-connected Vehicles, and Vehicular Cloud.}
+      \field{booktitle}{2014 {IEEE} {World} {Forum} on {Internet} of {Things} ({WF}-{IoT})}
+      \field{month}{3}
+      \field{shorttitle}{Internet of vehicles}
+      \field{title}{Internet of vehicles: {From} intelligent grid to autonomous cars and vehicular clouds}
+      \field{urlday}{1}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{241\bibrangedash 246}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/WF-IoT.2014.6803166
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/abstract/document/6803166
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/abstract/document/6803166
+      \endverb
+      \keyw{Vehicles,Accidents,Cameras,Cloud computing,Mobile robots,Roads}
+    \endentry
+    \entry{al-ani_survey_2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=0ce16cfd969b03485e99bb6e249b923c}{%
+           family={Al-ani},
+           familyi={A\bibinithyphendelim a\bibinitperiod},
+           given={Ruqayah},
+           giveni={R\bibinitperiod}}}%
+        {{hash=78b85e16af77a1b542f32ece926f004b}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=6a336359cddb96bbe91e58adf66384fd}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Qi},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=31da3d806a475b79b67a46a036f76ca5}{%
+           family={Sagheer},
+           familyi={S\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e70d29110e9639b3d9eda91036d2c4b3}
+      \strng{fullhash}{0e764d76d40d4cbbea84aeb9f82ee67a}
+      \strng{fullhashraw}{0e764d76d40d4cbbea84aeb9f82ee67a}
+      \strng{bibnamehash}{e70d29110e9639b3d9eda91036d2c4b3}
+      \strng{authorbibnamehash}{e70d29110e9639b3d9eda91036d2c4b3}
+      \strng{authornamehash}{e70d29110e9639b3d9eda91036d2c4b3}
+      \strng{authorfullhash}{0e764d76d40d4cbbea84aeb9f82ee67a}
+      \strng{authorfullhashraw}{0e764d76d40d4cbbea84aeb9f82ee67a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Providing an efficient secure authentication scheme in safety applications in Vehicular Ad-hoc Networks (VANETs) is a challenging issue. This is because these applications need to react to their messages, in a timely manner, before their respective deadlines. Preserving the privacy of the exchanged messages is also important since these messages include sensitive information, such as geographical locations. In this paper, we review the existing schemes that aim to meet the requirements of security and privacy. Then, we specify these requirements with a view to design an efficient scheme for secure real-time applications in VANET environments.}
+      \field{annotation}{[TLDR] This paper reviews the existing schemes that aim to meet the requirements of security and privacy in safety applications in Vehicular Ad-hoc Networks and specifies these requirements with a view to design an efficient scheme for secure real-time applications in VANET environments.}
+      \field{journaltitle}{2018 IEEE 20th International Conference on High Performance Computing and Communications; IEEE 16th International Conference on Smart City; IEEE 4th International Conference on Data Science and Systems (HPCC/SmartCity/DSS)}
+      \field{month}{6}
+      \field{note}{Conference Name: 2018 IEEE 20th International Conference on High Performance Computing and Communications; IEEE 16th International Conference on Smart City; IEEE 4th International Conference on Data Science and Systems (HPCC/SmartCity/DSS) ISBN: 9781538666142 Place: Exeter, United Kingdom Publisher: IEEE}
+      \field{title}{A {Survey} on {Secure} {Safety} {Applications} in {VANET}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{1485\bibrangedash 1490}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/HPCC/SmartCity/DSS.2018.00245
+      \endverb
+      \verb{file}
+      \verb Versão Aceite:C\:\\Users\\Asus\\Zotero\\storage\\TJ6ZF4DA\\Al-ani et al. - 2018 - A Survey on Secure Safety Applications in VANET.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8622983/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8622983/
+      \endverb
+    \endentry
+    \entry{jayapal_road_2016}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=3ef69614210976701565e47de473ed40}{%
+           family={Jayapal},
+           familyi={J\bibinitperiod},
+           given={Cynthia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3a675a0765e85e7874a5a99a3aee61d2}{%
+           family={Roy},
+           familyi={R\bibinitperiod},
+           given={S.\bibnamedelimi Sujith},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{fullhash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{fullhashraw}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{bibnamehash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{authorbibnamehash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{authornamehash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{authorfullhash}{b07cb286f980718a31ba070bc50bd16a}
+      \strng{authorfullhashraw}{b07cb286f980718a31ba070bc50bd16a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the constant increase in vehicular traffic, existing traffic management solutions have become inefficient. Urbanization has led to an increase in traffic jams and accidents in major cities. In order to accommodate the growing needs of transport systems today, there is a need for an Intelligent Transport System. Vehicular Adhoc Network (VANET) is a growing technology that assists in Intelligent Transport Systems. VANETs enable communication between vehicles as well as fixed infrastructure called Road Side Units (RSU). We propose a distributed, collaborative traffic congestion detection and dissemination system that uses VANET. Each of the driver's smart phones is equipped with a Traffic App which is capable of location detection through Geographic Position based System (GPS). This information is relayed to a remote server which detects traffic congestion. Once congestion is confirmed the congestion information is disseminated to the end user phone through RSUs. The Mobile App transmits the location information at periodic intervals. Using the latitude, longitude and the current time, the location of each vehicle is traced. Using location information, the distance moved by the vehicle at a given time is monitored. If the value is below a fixed threshold, congestion is suspected in a particular area. If many vehicles in the same area send similar messages, traffic congestion is confirmed. Once traffic congestion is confirmed, the vehicles approaching the congested area are informed about the traffic through display boards that are available in the nearest RSUs (traffic signals). The congestion information is also made available through the Mobile App present in vehicles approaching the congested area. The approaching vehicles may take diversion and alleviate congestion. Thus a smart traffic congestion detection and dissemination system is developed to divert incoming vehicles and reduce congestion without human intervention. This system can be further enhanced by communicating the congestion information directly between vehicles using IEEE 802.11p protocol.}
+      \field{annotation}{[TLDR] A smart traffic congestion detection and dissemination system is developed to divert incoming vehicles and reduce congestion without human intervention and can be further enhanced by communicating the congestion information directly between vehicles using IEEE 802.11p protocol.}
+      \field{journaltitle}{2016 International Conference on Advances in Human Machine Interaction (HMI)}
+      \field{month}{3}
+      \field{note}{Conference Name: 2016 International Conference on Advances in Human Machine Interaction (HMI) ISBN: 9781467388108 Place: Kodigehalli, Doddaballapur, Bangalore, India Publisher: IEEE}
+      \field{title}{Road traffic congestion management using {VANET}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/HMI.2016.7449188
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/7449188/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/7449188/
+      \endverb
+    \endentry
+    \entry{halim_research_2023}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=f8ee463aac953870ebf77131299f137e}{%
+           family={Halim},
+           familyi={H\bibinitperiod},
+           given={Islam\bibnamedelimb Tharwat\bibnamedelima Abdel},
+           giveni={I\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=b0532a25c7a74ac2fa31d185bbdd14a7}{%
+           family={Fahmy},
+           familyi={F\bibinitperiod},
+           given={Hossam\bibnamedelima M.A.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{fullhash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{fullhashraw}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{bibnamehash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{authorbibnamehash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{authornamehash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{authorfullhash}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \strng{authorfullhashraw}{7982ceabbcaf0578ff3c3393c3f42bfb}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{nowadays, vehicular networks constitute the core of the Intelligent Transportation Systems (ITSs) with the main objective is to improve the road safety by taking advantage of the emerging communication technology and the lower cost of wireless devices. Indeed, thanks to sensors installed in vehicles or at the edge of roads and control centers. Vehicle communications will enable drivers to be warned early enough, in case of possible dangers. In addition, these networks are no longer content to improve road safety only, but they also will offer new services to road users making the road more pleasant. The major objective of this article is to provide a brief review of vehicular networks evolution, architecture, characteristics, standards, constraints, and challenges that face designers in the design of protocols dedicated to this type of networks. Also, this paper provides perspectives for future research and developments.}
+      \field{annotation}{[TLDR] A brief review of vehicular networks evolution, architecture, characteristics, standards, constraints, and challenges that face designers in the design of protocols dedicated to this type of networks are provided.}
+      \field{journaltitle}{2023 20th ACS/IEEE International Conference on Computer Systems and Applications (AICCSA)}
+      \field{month}{12}
+      \field{note}{Conference Name: 2023 20th ACS/IEEE International Conference on Computer Systems and Applications (AICCSA) ISBN: 9798350319439 Place: Giza, Egypt Publisher: IEEE}
+      \field{title}{Research {Trends}, {Challenges}, and {Future} {Directions} in {Vehicular} {Networks}}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 7}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/AICCSA59173.2023.10479290
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/10479290/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/10479290/
+      \endverb
+    \endentry
+    \entry{papadopoulos_lixia_2014}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
+           family={Papadopoulos},
+           familyi={P\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4c32e16577a4c04e689db3ccdde1d2ea}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Beichuan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{fullhash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{fullhashraw}{35063388783dc75233b8d0b72b5d369e}
+      \strng{bibnamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorbibnamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authornamehash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorfullhash}{35063388783dc75233b8d0b72b5d369e}
+      \strng{authorfullhashraw}{35063388783dc75233b8d0b72b5d369e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Named Data Networking (NDN) is one of ﬁve projects funded by the U.S. National Science Foundation under its Future Internet Architecture Program. NDN has its roots in an earlier project, Content-Centric Networking (CCN), which Van Jacobson ﬁrst publicly presented in 2006.1 The NDN project investigates Jacobson’s proposed evolution from today’s host-centric network architecture (IP) to a data-centric network architecture (NDN). This conceptually simple shift has far-reaching implications for how we design, develop, deploy, and use networks and applications. We describe the motivation and vision of this new architecture, and its basic components and operations. We also provide a snapshot of its current design, development status, and research challenges. More information about the project, including prototype implementations, publications, and annual reports, is available on named-data.net.}
+      \field{journaltitle}{ACM SIGCOMM Computer Communication Review}
+      \field{number}{3}
+      \field{title}{Lixia {Zhang} {Alexander} {Afanasyev} {Jeffrey} {Burke} {Van} {Jacobson}}
+      \field{volume}{44}
+      \field{year}{2014}
+      \verb{file}
+      \verb Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:C\:\\Users\\Asus\\Zotero\\storage\\VB25GYG4\\Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{rahman_data-centric_2021}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=4e0a4a2fff9e4c918ad4503ff42f4dcd}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Md\bibnamedelima Ashiqur},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Beichuan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \list{location}{1}{%
+        {Athens, Greece}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{fullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{fullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{bibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorbibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authornamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorfullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \strng{authorfullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{IP networking deals with end-to-end communication where the network layer routing protocols maintain the reachability from one address to another. However, challenging environments, such as mobile ad-hoc networks or MANETs, lead to frequent path failures and changes between the sender and receiver, incurring higher packet loss. The obligatory route setup and maintenance of a device-to-device stable path in MANETs incur signiﬁcant data retrieval delay and transmission overhead. Such overhead exaggerates the packet loss manifold.}
+      \field{booktitle}{2021 {International} {Conference} on {Computer} {Communications} and {Networks} ({ICCCN})}
+      \field{isbn}{978-1-66541-278-0}
+      \field{month}{7}
+      \field{shorttitle}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}}
+      \field{title}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}: {Baseline} {Design} and {Simulation} {Analysis}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/ICCCN52240.2021.9522163
+      \endverb
+      \verb{file}
+      \verb Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:C\:\\Users\\Asus\\Zotero\\storage\\569QY4FA\\Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9522163/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9522163/
+      \endverb
+    \endentry
+    \entry{papadopoulos_-vehicle_2021}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
+           family={Papadopoulos},
+           familyi={P\bibinitperiod},
+           given={Christos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=29deaef6e88b6893276c1753a69ad43b}{%
+           family={Shannigrahi},
+           familyi={S\bibinitperiod},
+           given={Susmit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c506f91acf34578cb8a643b4eebe46ce}{%
+           family={Afanaseyv},
+           familyi={A\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{fullhash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{fullhashraw}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{bibnamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorbibnamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authornamehash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorfullhash}{053f71ba1a4b8462bec493242c68c71a}
+      \strng{authorfullhashraw}{053f71ba1a4b8462bec493242c68c71a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In-vehicle networks have been relying on primitive technologies that provide neither security nor high-throughput. As in-vehicle communication becomes more sophisticated, the automotive community is looking for better security and performance. In this work we argue for NDN as a solution for the future of the automotive community.}
+      \field{booktitle}{Proceedings of the 8th {ACM} {Conference} on {Information}-{Centric} {Networking}}
+      \field{isbn}{978-1-4503-8460-5}
+      \field{month}{9}
+      \field{series}{{ICN} '21}
+      \field{title}{In-vehicle networking with {NDN}}
+      \field{urlday}{23}
+      \field{urlmonth}{6}
+      \field{urlyear}{2025}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{127\bibrangedash 129}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1145/3460417.3483374
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3460417.3483374
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3460417.3483374
+      \endverb
+    \endentry
+    \entry{amadeo_caching_2020}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=9c4491ce24009e62567df71895c81452}{%
+           family={Amadeo},
+           familyi={A\bibinitperiod},
+           given={Marica},
+           giveni={M\bibinitperiod}}}%
+        {{hash=775535de6f8a7d63db38a8dc843b5235}{%
+           family={Campolo},
+           familyi={C\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6788738a171ebe0c93da32f81d6590df}{%
+           family={Ruggeri},
+           familyi={R\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=88d5ff22dfc777655723c229cee4e2af}{%
+           family={Lia},
+           familyi={L\bibinitperiod},
+           given={Gianmarco},
+           giveni={G\bibinitperiod}}}%
+        {{hash=0c5e9d28fe6d0d221a88279fc5a96240}{%
+           family={Molinaro},
+           familyi={M\bibinitperiod},
+           given={Antonella},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{d5c098ecfd6f77f0c50d686239069c27}
+      \strng{fullhash}{a4c0a41d9ba131b07916ec0823619cd5}
+      \strng{fullhashraw}{a4c0a41d9ba131b07916ec0823619cd5}
+      \strng{bibnamehash}{d5c098ecfd6f77f0c50d686239069c27}
+      \strng{authorbibnamehash}{d5c098ecfd6f77f0c50d686239069c27}
+      \strng{authornamehash}{d5c098ecfd6f77f0c50d686239069c27}
+      \strng{authorfullhash}{a4c0a41d9ba131b07916ec0823619cd5}
+      \strng{authorfullhashraw}{a4c0a41d9ba131b07916ec0823619cd5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Named Data Networking (NDN) is a promising communication paradigm for the challenging vehicular ad hoc environment. In particular, the built-in pervasive caching capability was shown to be essential for effective data delivery in presence of short-lived and intermittent connectivity. Existing studies have however not considered the fact that multiple vehicular contents can be transient, i.e., they expire after a certain time period since they were generated, the so-called FreshnessPeriod in NDN. In this paper, we study the effects of caching transient contents in Vehicular NDN and present a simple yet effective freshness-driven caching decision strategy that vehicles can implement autonomously. Performance evaluation in ndnSIM shows that the FreshnessPeriod is a crucial parameter that deeply influences the cache hit ratio and, consequently, the data dissemination performance.}
+      \field{issn}{1424-8220}
+      \field{journaltitle}{Sensors}
+      \field{month}{1}
+      \field{note}{Publisher: Multidisciplinary Digital Publishing Institute}
+      \field{number}{7}
+      \field{shorttitle}{Caching {Transient} {Contents} in {Vehicular} {Named} {Data} {Networking}}
+      \field{title}{Caching {Transient} {Contents} in {Vehicular} {Named} {Data} {Networking}: {A} {Performance} {Analysis}}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{20}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \field{pages}{1985}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/s20071985
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\AH3NS58X\\Amadeo et al. - 2020 - Caching Transient Contents in Vehicular Named Data.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1424-8220/20/7/1985
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1424-8220/20/7/1985
+      \endverb
+      \keyw{Named Data Networking,Caching,Information Centric Networking,Vehicular Ad Hoc Networks}
+    \endentry
+    \entry{cha_mobility_2017}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=cbeeb9ec0d91a5b9a7a5cdde3be261ba}{%
+           family={Cha},
+           familyi={C\bibinitperiod},
+           given={Jung-Hwan},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=feb8ce593d2b2ded2db57bfc4a28e557}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Ju-Ho},
+           giveni={J\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=9e6eeed95bcf4a9ca0eed786ad657fc2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Ji-Yong},
+           giveni={J\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=f788551d01fbb69a84ccdf1b1685bae4}{%
+           family={Min},
+           familyi={M\bibinitperiod},
+           given={Sung-Gi},
+           giveni={S\bibinithyphendelim G\bibinitperiod}}}%
+        {{hash=e02f3579ca2bbbe51f1045aad9ac639b}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Youn-Hee},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{efc947b4a835fd270a2cae2575b8038f}
+      \strng{fullhash}{247badc93ca04192dd7c8480d4f0d0af}
+      \strng{fullhashraw}{247badc93ca04192dd7c8480d4f0d0af}
+      \strng{bibnamehash}{efc947b4a835fd270a2cae2575b8038f}
+      \strng{authorbibnamehash}{efc947b4a835fd270a2cae2575b8038f}
+      \strng{authornamehash}{efc947b4a835fd270a2cae2575b8038f}
+      \strng{authorfullhash}{247badc93ca04192dd7c8480d4f0d0af}
+      \strng{authorfullhashraw}{247badc93ca04192dd7c8480d4f0d0af}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Named Data Networking (NDN) supports the consumer mobility service by letting a consumer reissue an interest for the content not received during handover. A pair of an interest and a data packet in NDN can be considered as a single communication working set (i.e., transaction). In this regard, reissuing an interest means creating a new transaction due to the connection damaged by the movement of a consumer. It makes all states of the current transaction useless. In order to enhance the consumer mobility service, we propose a mobility link service operated in NDN face which is responsible for management of a connection for a transaction. It establishes a new connection for a transaction, and it hides the distortion of the connection to the transaction. By embedding a mobility link service to NDN face, the consumer mobility service is transparent to the rest of NDN architecture. Therefore, the consumer mobility service and the NDN architecture can be evolved independently. The analytical investigation and the simulation result show that the proposed scheme reduces the amount of the retransmitted data and the handover latency compared with the original NDN mobility solution.}
+      \field{booktitle}{2017 {Ninth} {International} {Conference} on {Ubiquitous} and {Future} {Networks} ({ICUFN})}
+      \field{month}{7}
+      \field{note}{ISSN: 2165-8536}
+      \field{title}{A mobility link service in {NDN} face to support consumer mobility service}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \field{pages}{444\bibrangedash 449}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICUFN.2017.7993824
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/7993824
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/7993824
+      \endverb
+      \keyw{Computer architecture,IP networks,Handover,Consumer mobility,Face,Information-Centric Networking (ICN),Mobile communication,Mobility,Named Data Networking (NDN),Routing protocols}
+    \endentry
+    \entry{sampath_position-based_2021}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=9170a90661ca8530b733e640a4ec7618}{%
+           family={Sampath},
+           familyi={S\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=a19abe07fe1805843ee992ad99d16a64}{%
+           family={Karthik},
+           familyi={K\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=16da5f9fa6900f940d925128e5eae975}{%
+           family={Sabitha},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f1182560227492c066ee2da469948e3}
+      \strng{fullhash}{2f1182560227492c066ee2da469948e3}
+      \strng{fullhashraw}{2f1182560227492c066ee2da469948e3}
+      \strng{bibnamehash}{2f1182560227492c066ee2da469948e3}
+      \strng{authorbibnamehash}{2f1182560227492c066ee2da469948e3}
+      \strng{authornamehash}{2f1182560227492c066ee2da469948e3}
+      \strng{authorfullhash}{2f1182560227492c066ee2da469948e3}
+      \strng{authorfullhashraw}{2f1182560227492c066ee2da469948e3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The seamless data delivery is essential in VANET for application such as autonomous vehicle, intelligent traffic management and for the road safety and emergency applications. The incorporation of named data networking (NDN) with VANET, intended to frame intelligent traffic flow and seamless data delivery. Such integration of vehicular ad hoc networks (VANET) with NDN is termed as vehicular named data networks (VNDN). Because of the continuous node/vehicle mobility, it is a tedious process to build constant and consistent communication between vehicles. With that concern, for enhancing the performance of VNDN and solving the issues such as frequent cluster formation on heavy loaded data transmissions, position-based adaptive clustering model (PACM) is developed. The major intention of PACM is to form clusters based on trajectory. Besides, PACM performs efficient data caching by collecting significant data from vehicles to establish consistent data communication with all nodes in the network. Efficient data caching is done with the elected cluster heads among the framed clusters based on its positions and mobility models. For handling the vehicles at higher mobility speed, mutual data caching process is also designed that makes vehicles to perform on-demand data gathering from cluster heads. Further, the model is simulated and the obtained results are compared with the existing models based on the metrics such as packet delivery ratio, mean delay, cache hit rate and mean hop distance. The comparative analysis shows that the proposed model outperforms the available techniques.}
+      \field{issn}{0929-6212}
+      \field{journaltitle}{Wirel. Pers. Commun.}
+      \field{month}{4}
+      \field{number}{4}
+      \field{title}{Position-{Based} {Adaptive} {Clustering} {Model} ({PACM}) for {Efficient} {Data} {Caching} in {Vehicular} {Named} {Data} {Networks} ({VNDN})}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{117}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{2955\bibrangedash 2971}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/s11277-020-07208-2
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s11277-020-07208-2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s11277-020-07208-2
+      \endverb
+    \endentry
+    \entry{de_castro_dynamic_2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=bc1dadc2238856a3308f5ac123596251}{%
+           family={De\bibnamedelima Castro},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0174c4627b1bb3a86d1e2197ef7628c6}{%
+           family={Raffaelli},
+           familyi={R\bibinitperiod},
+           given={Carla},
+           giveni={C\bibinitperiod}}}%
+        {{hash=8999faa627c02c9e15af058c599798b2}{%
+           family={Andrisano},
+           familyi={A\bibinitperiod},
+           given={Oreste},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{fullhash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{fullhashraw}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{bibnamehash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{authorbibnamehash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{authornamehash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{authorfullhash}{81b35b3cd5140ccc654a539233ce9b90}
+      \strng{authorfullhashraw}{81b35b3cd5140ccc654a539233ce9b90}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper a hierarchical architecture for content distribution in vehicular network is proposed. A cluster-based organization of vehicles is considered based on the Named Data Networking (NDN) model where a subset of reference vehicles named barycenters plays the NDN router role. Complementary functionalities of both short-range and cellular communications are used, the former for vehicle-to-vehicle (V2V), the latter for vehicle-to-infrastructure (V2I) communications, to off-load the fixed NDN infrastructure, and increase the chance of finding a content in the VANET, while limiting the number of broadcasted information. The proposed model is described and analytical evaluations are presented to show the potential of the approach.}
+      \field{annotation}{[TLDR] A cluster-based organization of vehicles is considered based on the Named Data Networking (NDN) model where a subset of reference vehicles named barycenters plays the NDN router role.}
+      \field{journaltitle}{2015 IEEE International Conference on Communications (ICC)}
+      \field{month}{6}
+      \field{note}{Conference Name: 2015 IEEE International Conference on Signal Processing for Communications (ICC) ISBN: 9781467364324 Place: London Publisher: IEEE}
+      \field{title}{A dynamic hierarchical {VANET} architecture for {Named} {Data} {Networking} applications}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{3659\bibrangedash 3665}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/ICC.2015.7248893
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/7248893/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/7248893/
+      \endverb
+    \endentry
+    \entry{ayyub_comprehensive_2022}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=dfd36bf53e156787b29ae2321801c06d}{%
+           family={Ayyub},
+           familyi={A\bibinitperiod},
+           given={Muddasar},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f317edbe9589ca7333bc8b9b344bb69a}{%
+           family={Oracevic},
+           familyi={O\bibinitperiod},
+           given={Alma},
+           giveni={A\bibinitperiod}}}%
+        {{hash=7c433cb7869ddf208ffca5e68c29dc15}{%
+           family={Hussain},
+           familyi={H\bibinitperiod},
+           given={Rasheed},
+           giveni={R\bibinitperiod}}}%
+        {{hash=345bb33db91336f96d8898f1fe06e731}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Ammara\bibnamedelima Anjum},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d7924a3ff712ab3a86a2c254b4e379a6}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Zhongshan},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{e259318f78ce20ecb5e370ced644db45}
+      \strng{fullhash}{ca095ed5aeab1b4e5e96207f90c58c44}
+      \strng{fullhashraw}{ca095ed5aeab1b4e5e96207f90c58c44}
+      \strng{bibnamehash}{e259318f78ce20ecb5e370ced644db45}
+      \strng{authorbibnamehash}{e259318f78ce20ecb5e370ced644db45}
+      \strng{authornamehash}{e259318f78ce20ecb5e370ced644db45}
+      \strng{authorfullhash}{ca095ed5aeab1b4e5e96207f90c58c44}
+      \strng{authorfullhashraw}{ca095ed5aeab1b4e5e96207f90c58c44}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Semantic Scholar extracted view of "A comprehensive survey on clustering in vehicular networks: Current solutions and future challenges" by Muddasar Ayyub et al.}
+      \field{issn}{15708705}
+      \field{journaltitle}{Ad Hoc Networks}
+      \field{month}{1}
+      \field{shorttitle}{A comprehensive survey on clustering in vehicular networks}
+      \field{title}{A comprehensive survey on clustering in vehicular networks: {Current} solutions and future challenges}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{124}
+      \field{year}{2022}
+      \field{urldateera}{ce}
+      \field{pages}{102729}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.adhoc.2021.102729
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1570870521002183
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1570870521002183
+      \endverb
     \endentry
     \entry{li_brief_2018}{inproceedings}{}{}
       \name{author}{5}{}{%
@@ -166,8 +1006,9 @@
       \strng{authornamehash}{5574711e1cb86944706123835d2559d4}
       \strng{authorfullhash}{d70bf256b19b88b3d21c5e7e824fad05}
       \strng{authorfullhashraw}{d70bf256b19b88b3d21c5e7e824fad05}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Previous literatures articulated that the NDN architecture may possess unique advantages in supporting battleﬁeld communications [1], and that NDN can provide superior performance over TCP/IP under various scenarios, in particular in supporting multiparty distributed applications [2] by using a novel dataset synchronization protocol. In this paper we ﬁrst describe the designs of dataset synchronization protocols (Sync in short), in particular ChronoSync and PSync, that run over NDN to support multiparty applications, and summarize the lessons from their designs. We then perform a preliminary suitability assessment of the existing Sync protocols in ad hoc mobile environments with intermitted connectivity. Our assessment suggests that Sync protocols based on state vectors can operate most resiliently under highly dynamic conditions, and identiﬁes remaining issues for further investigation.}
@@ -195,38 +1036,80 @@
       \verb https://ieeexplore.ieee.org/document/8599772/
       \endverb
     \endentry
-    \entry{novathesis-manual}{manual}{}{}
-      \name{author}{1}{}{%
-        {{hash=419e7851ce9e726652864635d63207af}{%
-           family={Lourenço},
+    \entry{li_data_2018}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=8e61ede5a2bffcf60b482374d6267ca8}{%
+           family={Li},
            familyi={L\bibinitperiod},
-           given={João\bibnamedelima M.},
-           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+           given={Tianxiang},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cef54486d90d10c5eb57b8cb52e06b5e}{%
+           family={Mastorakis},
+           familyi={M\bibinitperiod},
+           given={Spyridon},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b6fc78834b479731029a5edb14fd5de0}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bbabbeede5cbe15c8e16d352ee98c17b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haitao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
       }
-      \list{organization}{1}{%
-        {NOVA University Lisbon}%
+      \list{language}{1}{%
+        {en}%
       }
-      \strng{namehash}{419e7851ce9e726652864635d63207af}
-      \strng{fullhash}{419e7851ce9e726652864635d63207af}
-      \strng{fullhashraw}{419e7851ce9e726652864635d63207af}
-      \strng{bibnamehash}{419e7851ce9e726652864635d63207af}
-      \strng{authorbibnamehash}{419e7851ce9e726652864635d63207af}
-      \strng{authornamehash}{419e7851ce9e726652864635d63207af}
-      \strng{authorfullhash}{419e7851ce9e726652864635d63207af}
-      \strng{authorfullhashraw}{419e7851ce9e726652864635d63207af}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \list{location}{1}{%
+        {Boston Massachusetts}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{5574711e1cb86944706123835d2559d4}
+      \strng{fullhash}{fcbcd9ab342b4191cdef5b1f8687959b}
+      \strng{fullhashraw}{fcbcd9ab342b4191cdef5b1f8687959b}
+      \strng{bibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorbibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authornamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorfullhash}{fcbcd9ab342b4191cdef5b1f8687959b}
+      \strng{authorfullhashraw}{fcbcd9ab342b4191cdef5b1f8687959b}
+      \field{extraname}{2}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{{The NOVAthesis \LaTeX{} Template User's Manual}}
-      \field{year}{2021}
+      \field{abstract}{Intermittent connectivity and dynamic network topology create unique challenges for distributed applications in Mobile Ad Hoc Networks (MANETs), where individual entities may produce data at any time while moving around continuously. In this poster, we present DDSN, a distributed dataset synchronization protocol in Named Data Networking (NDN) that enables applications in MANETs to keep all members in an application group synchronized on the latest state of a shared dataset. Taking intermittent connectivity as the norm, whenever nodes in the same application group are reachable to each other, DDSN provides an e cient mechanism to unify the shared state and dataset between the encountered nodes.}
+      \field{booktitle}{Proceedings of the 5th {ACM} {Conference} on {Information}-{Centric} {Networking}}
+      \field{isbn}{978-1-4503-5959-7}
+      \field{month}{9}
+      \field{title}{Data synchronization in {Ad} {Hoc} mobile networks}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{186\bibrangedash 187}
+      \range{pages}{2}
+      \verb{doi}
+      \verb 10.1145/3267955.3269024
+      \endverb
+      \verb{file}
+      \verb Li et al. - 2018 - Data synchronization in Ad Hoc mobile networks.pdf:C\:\\Users\\Asus\\Zotero\\storage\\AS5J589V\\Li et al. - 2018 - Data synchronization in Ad Hoc mobile networks.pdf:application/pdf
+      \endverb
       \verb{urlraw}
-      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \verb https://dl.acm.org/doi/10.1145/3267955.3269024
       \endverb
       \verb{url}
-      \verb https://github.com/joaomlourenco/novathesis/raw/main/template.pdf
+      \verb https://dl.acm.org/doi/10.1145/3267955.3269024
       \endverb
-      \keyw{novathesis-manual}
     \endentry
     \entry{moll_brief_nodate}{article}{}{}
       \name{author}{4}{}{%
@@ -262,8 +1145,9 @@
       \strng{authornamehash}{20659bd6222e6fd4d2de041f3afef508}
       \strng{authorfullhash}{0ae422200592f860941ff841b287a6af}
       \strng{authorfullhashraw}{0ae422200592f860941ff841b287a6af}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This report provides a brief introduction to State Vector Sync (SVS), a sync protocol for Named Data Networking (NDN). To support distributed applications, sync protocols synchronize the data names of a shared dataset among a group of participants. In this report, we explain how the SVS design is influenced by the lessons that have been cumulated over previous sync protocol designs and describe the protocol and its functions to allow experimentation with the SVS library implementations.}
@@ -272,23 +1156,252 @@
       \verb Moll et al. - A Brief Introduction to State Vector Sync.pdf:C\:\\Users\\Asus\\Zotero\\storage\\GMM8D5SZ\\Moll et al. - A Brief Introduction to State Vector Sync.pdf:application/pdf
       \endverb
     \endentry
-    \entry{papadopoulos_-vehicle_2021}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
-           family={Papadopoulos},
-           familyi={P\bibinitperiod},
-           given={Christos},
-           giveni={C\bibinitperiod}}}%
-        {{hash=29deaef6e88b6893276c1753a69ad43b}{%
-           family={Shannigrahi},
-           familyi={S\bibinitperiod},
-           given={Susmit},
+    \entry{xu_achieving_2018}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=b6fc78834b479731029a5edb14fd5de0}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bbabbeede5cbe15c8e16d352ee98c17b}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haitao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=8e61ede5a2bffcf60b482374d6267ca8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianxiang},
+           giveni={T\bibinitperiod}}}%
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{671fe94d822c40d94c3dea488dc94cf8}
+      \strng{fullhash}{b2b1e33cd4879f8a4f417df3cc0ee978}
+      \strng{fullhashraw}{b2b1e33cd4879f8a4f417df3cc0ee978}
+      \strng{bibnamehash}{671fe94d822c40d94c3dea488dc94cf8}
+      \strng{authorbibnamehash}{671fe94d822c40d94c3dea488dc94cf8}
+      \strng{authornamehash}{671fe94d822c40d94c3dea488dc94cf8}
+      \strng{authorfullhash}{b2b1e33cd4879f8a4f417df3cc0ee978}
+      \strng{authorfullhashraw}{b2b1e33cd4879f8a4f417df3cc0ee978}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Currently, most Wireless Sensor Networks (WSNs) utilize sleeping mechanisms to conserve energy, which introduces the problem of data availability. To address this problem, we designed DSSN, a Dataset Synchronization protocol for WSN with Sleeping sensors over Named Data Networking (NDN). DSSN divides sensors into groups, each has a shared dataset; through dataset synchronization within each group, DSSN ensures that the group's latest dataset is always accessible from its active sensors. DSSN utilizes State Vector to enable reliable dataset synchronization, and utilizes NDN's Interest aggregation and Data caching to optimize energy consumption. We evaluated DSSN through extensive simulation experimentation, and our results show that DSSN ensures data availability close to 100\% under various network conditions with negligible overhead.}
+      \field{annotation}{[TLDR] This work designed DSSN, a Dataset Synchronization protocol for WSN with Sleeping sensors over Named Data Networking, which utilizes State Vector to enable reliable dataset synchronization, and utilizes NDN's Interest aggregation and Data caching to optimize energy consumption.}
+      \field{journaltitle}{2018 IEEE International Conference on Communications Workshops (ICC Workshops)}
+      \field{month}{5}
+      \field{note}{Conference Name: 2018 IEEE International Conference on Communications Workshops (ICC Workshops) ISBN: 9781538643280 Place: Kansas City, MO, USA Publisher: IEEE}
+      \field{title}{Achieving {Resilient} {Data} {Availability} in {Wireless} {Sensor} {Networks}}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICCW.2018.8403581
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/8403581/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/8403581/
+      \endverb
+    \endentry
+    \entry{li_distributed_2019}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=8e61ede5a2bffcf60b482374d6267ca8}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianxiang},
+           giveni={T\bibinitperiod}}}%
+        {{hash=dd73ca10ddeaef4e6dd691e611db4ac1}{%
+           family={Kong},
+           familyi={K\bibinitperiod},
+           given={Zhaoning},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=cef54486d90d10c5eb57b8cb52e06b5e}{%
+           family={Mastorakis},
+           familyi={M\bibinitperiod},
+           given={Spyridon},
            giveni={S\bibinitperiod}}}%
-        {{hash=c506f91acf34578cb8a643b4eebe46ce}{%
-           family={Afanaseyv},
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{5574711e1cb86944706123835d2559d4}
+      \strng{fullhash}{8bf0861c778ae24e3ec29f22a78c98b3}
+      \strng{fullhashraw}{8bf0861c778ae24e3ec29f22a78c98b3}
+      \strng{bibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorbibnamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authornamehash}{5574711e1cb86944706123835d2559d4}
+      \strng{authorfullhash}{8bf0861c778ae24e3ec29f22a78c98b3}
+      \strng{authorfullhashraw}{8bf0861c778ae24e3ec29f22a78c98b3}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Disruptive network scenarios with ad hoc, intermittent connectivity and mobility create unique challenges to supporting distributed applications. In this paper, we propose Distributed Dataset Synchronization over disruptive Networks (DDSN), a protocol which provides resilient multi-party communication in adverse communication environments. DDSN is designed to work on top of the Named-Data Networking protocol and utilizes semantically named, and secured, packets to achieve distributed dataset synchronization through an asynchronous communication model. A unique design feature of DDSN is letting individual entities exchange their dataset states directly, instead of using some compressed form of the states. We have implemented a DDSN prototype and evaluated its performance through simulation experimentation under various packet loss rates. Our results show that, compared to an epidemic routing based data dissemination solution, DDSN achieves 33-56\% lower data retrieval delays and 40-44\% lower overheads, with up to 20\% packet losses. When compared to the existing NDN dataset synchronization protocols, DDSN can lower the state and data synchronization delays from one-third to two-third, and lower the protocol overhead by up to one-third, with the performance difference becoming more pronounced as network loss rates go up.}
+      \field{annotation}{[TLDR] The proposed Distributed Dataset Synchronization over disruptive Networks (DDSN), a protocol which provides resilient multi-party communication in adverse communication environments, is designed to work on top of the Named-Data Networking protocol and utilizes semantically named packets to achieve distributed dataset synchronization through an asynchronous communication model.}
+      \field{journaltitle}{2019 IEEE 16th International Conference on Mobile Ad Hoc and Sensor Systems (MASS)}
+      \field{month}{11}
+      \field{note}{Conference Name: 2019 IEEE 16th International Conference on Mobile Ad Hoc and Sensor Systems (MASS) ISBN: 9781728146010 Place: Monterey, CA, USA Publisher: IEEE}
+      \field{title}{Distributed {Dataset} {Synchronization} in {Disruptive} {Networks}}
+      \field{urlday}{8}
+      \field{urlmonth}{12}
+      \field{urlyear}{2025}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{428\bibrangedash 437}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/MASS.2019.00057
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/9077503/
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/9077503/
+      \endverb
+    \endentry
+    \entry{zhu_lets_2013}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=eef92b9c5ff02a754b8caf10f8cb2463}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Zhenkai},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=b644dbe1ca37c58a6114c17bb46f6462}{%
+           family={Afanasyev},
            familyi={A\bibinitperiod},
-           given={Alex},
+           given={Alexander},
            giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{fullhash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{fullhashraw}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{bibnamehash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{authorbibnamehash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{authornamehash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{authorfullhash}{d2624a6ccb4d20486cf9cadc5765d033}
+      \strng{authorfullhashraw}{d2624a6ccb4d20486cf9cadc5765d033}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In supporting many distributed applications, such as group text messaging, file sharing, and joint editing, a basic requirement is the efficient and robust synchronization of knowledge about the dataset such as text messages, changes to the shared folder, or document edits. We propose ChronoSync protocol, which exploits the features of the Named Data Networking architecture to efficiently synchronize the state of a dataset among a distributed group of users. Using appropriate naming rules, ChronoSync summarizes the state of a dataset in a condensed cryptographic digest form and exchange it among the distributed parties. Differences of the dataset can be inferred from the digests and disseminated efficiently to all parties. With the complete and up-to-date knowledge of the dataset changes, applications can decide whether or when to fetch which pieces of the data. We implemented ChronoSync as a C++ library and developed two distributed application prototypes based on it. We show through simulations that ChronoSync is effective and efficient in synchronization dataset state, and is robust against packet losses and network partitions.}
+      \field{annotation}{[TLDR] ChronoSync protocol is proposed, which exploits the features of the Named Data Networking architecture to efficiently synchronize the state of a dataset among a distributed group of users using appropriate naming rules.}
+      \field{journaltitle}{2013 21st IEEE International Conference on Network Protocols (ICNP)}
+      \field{month}{10}
+      \field{note}{Conference Name: 2013 21st IEEE International Conference on Network Protocols (ICNP) ISBN: 9781479912704 Place: Goettingen, Germany Publisher: IEEE}
+      \field{shorttitle}{Let's {ChronoSync}}
+      \field{title}{Let's {ChronoSync}: {Decentralized} dataset state synchronization in {Named} {Data} {Networking}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/ICNP.2013.6733578
+      \endverb
+      \verb{urlraw}
+      \verb http://ieeexplore.ieee.org/document/6733578/
+      \endverb
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/document/6733578/
+      \endverb
+    \endentry
+    \entry{dragoi_psync_2016}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6f5ea424510e2d87364f00313534a097}{%
+           family={Drăgoi},
+           familyi={D\bibinitperiod},
+           given={Cezara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=eeb928073fbee58751f87d401a62561a}{%
+           family={Henzinger},
+           familyi={H\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4dd9f8af37c3aac83637d043a13cccb0}{%
+           family={Zufferey},
+           familyi={Z\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{fullhash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{fullhashraw}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{bibnamehash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{authorbibnamehash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{authornamehash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{authorfullhash}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \strng{authorfullhashraw}{1fd2d058d44df3e04c37f5331ddb8d7c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Fault-tolerant distributed algorithms play an important role in many critical/high-availability applications. These algorithms are notoriously difficult to implement correctly, due to asynchronous communication and the occurrence of faults, such as the network dropping messages or computers crashing. We introduce PSync, a domain specific language based on the Heard-Of model, which views asynchronous faulty systems as synchronous ones with an adversarial environment that simulates asynchrony and faults by dropping messages. We define a runtime system for PSync that efficiently executes on asynchronous networks. We formalise the relation between the runtime system and PSync in terms of observational refinement. The high-level lockstep abstraction introduced by PSync simplifies the design and implementation of fault-tolerant distributed algorithms and enables automated formal verification. We have implemented an embedding of PSync in the Scala programming language with a runtime system for partially synchronous networks. We show the applicability of PSync by implementing several important fault-tolerant distributed algorithms and we compare the implementation of consensus algorithms in PSync against implementations in other languages in terms of code size, runtime efficiency, and verification.}
+      \field{issn}{0362-1340}
+      \field{journaltitle}{SIGPLAN Not.}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shorttitle}{{PSync}}
+      \field{title}{{PSync}: a partially synchronous language for fault-tolerant distributed algorithms}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{51}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{400\bibrangedash 415}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1145/2914770.2837650
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\4TDT3CTD\\Drăgoi et al. - 2016 - PSync a partially synchronous language for fault-.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/2914770.2837650
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/2914770.2837650
+      \endverb
+    \endentry
+    \entry{moll_sok_2022}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=1b3d037e42a95275c21b993fa8ee2684}{%
+           family={Moll},
+           familyi={M\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3df31a3b7be7c65f08a52fb6730ed252}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={Varun},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4c32e16577a4c04e689db3ccdde1d2ea}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Lan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=cc2e36f00f725b723902ed63824d79e4}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Lixia},
+           giveni={L\bibinitperiod}}}%
       }
       \list{location}{1}{%
         {New York, NY, USA}%
@@ -296,149 +1409,344 @@
       \list{publisher}{1}{%
         {Association for Computing Machinery}%
       }
-      \strng{namehash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{fullhash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{fullhashraw}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{bibnamehash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{authorbibnamehash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{authornamehash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{authorfullhash}{053f71ba1a4b8462bec493242c68c71a}
-      \strng{authorfullhashraw}{053f71ba1a4b8462bec493242c68c71a}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{In-vehicle networks have been relying on primitive technologies that provide neither security nor high-throughput. As in-vehicle communication becomes more sophisticated, the automotive community is looking for better security and performance. In this work we argue for NDN as a solution for the future of the automotive community.}
-      \field{booktitle}{Proceedings of the 8th {ACM} {Conference} on {Information}-{Centric} {Networking}}
-      \field{isbn}{978-1-4503-8460-5}
-      \field{month}{9}
-      \field{series}{{ICN} '21}
-      \field{title}{In-vehicle networking with {NDN}}
-      \field{urlday}{23}
-      \field{urlmonth}{6}
-      \field{urlyear}{2025}
-      \field{year}{2021}
-      \field{urldateera}{ce}
-      \field{pages}{127\bibrangedash 129}
-      \range{pages}{3}
-      \verb{doi}
-      \verb 10.1145/3460417.3483374
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/3460417.3483374
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/3460417.3483374
-      \endverb
-    \endentry
-    \entry{papadopoulos_lixia_2014}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=d939ff2a6868e0d14341dfdfaf77beb6}{%
-           family={Papadopoulos},
-           familyi={P\bibinitperiod},
-           given={Christos},
-           giveni={C\bibinitperiod}}}%
-        {{hash=4c32e16577a4c04e689db3ccdde1d2ea}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Lan},
-           giveni={L\bibinitperiod}}}%
-        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Beichuan},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \strng{namehash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{fullhash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{fullhashraw}{35063388783dc75233b8d0b72b5d369e}
-      \strng{bibnamehash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{authorbibnamehash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{authornamehash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{authorfullhash}{35063388783dc75233b8d0b72b5d369e}
-      \strng{authorfullhashraw}{35063388783dc75233b8d0b72b5d369e}
-      \field{sortinit}{P}
-      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Named Data Networking (NDN) is one of ﬁve projects funded by the U.S. National Science Foundation under its Future Internet Architecture Program. NDN has its roots in an earlier project, Content-Centric Networking (CCN), which Van Jacobson ﬁrst publicly presented in 2006.1 The NDN project investigates Jacobson’s proposed evolution from today’s host-centric network architecture (IP) to a data-centric network architecture (NDN). This conceptually simple shift has far-reaching implications for how we design, develop, deploy, and use networks and applications. We describe the motivation and vision of this new architecture, and its basic components and operations. We also provide a snapshot of its current design, development status, and research challenges. More information about the project, including prototype implementations, publications, and annual reports, is available on named-data.net.}
-      \field{journaltitle}{ACM SIGCOMM Computer Communication Review}
-      \field{number}{3}
-      \field{title}{Lixia {Zhang} {Alexander} {Afanasyev} {Jeffrey} {Burke} {Van} {Jacobson}}
-      \field{volume}{44}
-      \field{year}{2014}
-      \verb{file}
-      \verb Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:C\:\\Users\\Asus\\Zotero\\storage\\VB25GYG4\\Papadopoulos et al. - 2014 - Lixia Zhang Alexander Afanasyev Jeffrey Burke Van .pdf:application/pdf
-      \endverb
-    \endentry
-    \entry{rahman_data-centric_2021}{inproceedings}{}{}
-      \name{author}{2}{}{%
-        {{hash=4e0a4a2fff9e4c918ad4503ff42f4dcd}{%
-           family={Rahman},
-           familyi={R\bibinitperiod},
-           given={Md\bibnamedelima Ashiqur},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=15d66fc637a18a25c1df0fb5e2abfe60}{%
-           family={Zhang},
-           familyi={Z\bibinitperiod},
-           given={Beichuan},
-           giveni={B\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {en}%
-      }
-      \list{location}{1}{%
-        {Athens, Greece}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{fullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{fullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{bibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{authorbibnamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{authornamehash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{authorfullhash}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \strng{authorfullhashraw}{d4a5ed58a1868804d8f1b45d4beeb1ad}
-      \field{sortinit}{R}
-      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \strng{namehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{fullhash}{d7613521fb9e2440569ed8abc6211123}
+      \strng{fullhashraw}{d7613521fb9e2440569ed8abc6211123}
+      \strng{bibnamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authorbibnamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authornamehash}{20659bd6222e6fd4d2de041f3afef508}
+      \strng{authorfullhash}{d7613521fb9e2440569ed8abc6211123}
+      \strng{authorfullhashraw}{d7613521fb9e2440569ed8abc6211123}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{abstract}{IP networking deals with end-to-end communication where the network layer routing protocols maintain the reachability from one address to another. However, challenging environments, such as mobile ad-hoc networks or MANETs, lead to frequent path failures and changes between the sender and receiver, incurring higher packet loss. The obligatory route setup and maintenance of a device-to-device stable path in MANETs incur signiﬁcant data retrieval delay and transmission overhead. Such overhead exaggerates the packet loss manifold.}
-      \field{booktitle}{2021 {International} {Conference} on {Computer} {Communications} and {Networks} ({ICCCN})}
-      \field{isbn}{978-1-66541-278-0}
-      \field{month}{7}
-      \field{shorttitle}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}}
-      \field{title}{On {Data}-centric {Forwarding} in {Mobile} {Ad}-hoc {Networks}: {Baseline} {Design} and {Simulation} {Analysis}}
-      \field{urlday}{23}
-      \field{urlmonth}{6}
+      \field{abstract}{Distributed dataset synchronization, or Sync in short, plays the role of a transport service in the Named Data Networking (NDN) architecture. A number of NDN Sync protocols have been developed over the last decade. In this paper, we conduct a systematic examination of NDN Sync protocol designs, identify common design patterns, reveal insights behind different design approaches, and collect lessons learned over the years. We show that (i) each Sync protocol can be characterized by its design decisions on three basic components - dataset namespace representation, namespace encoding for sharing, and change notification mechanism, and (ii) two or three types of choices have been observed for each design component. Through analysis and experimental evaluation, we reveal how different design choices influence the latency, reliability, overhead, and security of dataset synchronization. We also discuss the relationship between transport and application naming, the implications of namespace encoding for Sync group scalability, and the fundamental reason behind the need for Sync Interest multicast.}
+      \field{booktitle}{Proceedings of the 9th {ACM} {Conference} on {Information}-{Centric} {Networking}}
+      \field{isbn}{978-1-4503-9257-0}
+      \field{month}{9}
+      \field{series}{{ICN} '22}
+      \field{shorttitle}{{SoK}}
+      \field{title}{{SoK}: {The} evolution of distributed dataset synchronization solutions in {NDN}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
       \field{urlyear}{2025}
-      \field{year}{2021}
+      \field{year}{2022}
       \field{urldateera}{ce}
-      \field{pages}{1\bibrangedash 9}
-      \range{pages}{9}
+      \field{pages}{33\bibrangedash 44}
+      \range{pages}{12}
       \verb{doi}
-      \verb 10.1109/ICCCN52240.2021.9522163
+      \verb 10.1145/3517212.3558092
       \endverb
       \verb{file}
-      \verb Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:C\:\\Users\\Asus\\Zotero\\storage\\569QY4FA\\Rahman e Zhang - 2021 - On Data-centric Forwarding in Mobile Ad-hoc Networ.pdf:application/pdf
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\7U6BFQXU\\Moll et al. - 2022 - SoK The evolution of distributed dataset synchron.pdf:application/pdf
       \endverb
       \verb{urlraw}
-      \verb https://ieeexplore.ieee.org/document/9522163/
+      \verb https://dl.acm.org/doi/10.1145/3517212.3558092
       \endverb
       \verb{url}
-      \verb https://ieeexplore.ieee.org/document/9522163/
+      \verb https://dl.acm.org/doi/10.1145/3517212.3558092
+      \endverb
+    \endentry
+    \entry{ahlgren_survey_2012}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=3a00abad1f7af7b1afe1818271e759be}{%
+           family={Ahlgren},
+           familyi={A\bibinitperiod},
+           given={Bengt},
+           giveni={B\bibinitperiod}}}%
+        {{hash=35a38baf2c461282d8f81f92206aaae0}{%
+           family={Dannewitz},
+           familyi={D\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=fd601affbd4acf10a903ad65eaf3e62c}{%
+           family={Imbrenda},
+           familyi={I\bibinitperiod},
+           given={Claudio},
+           giveni={C\bibinitperiod}}}%
+        {{hash=7522c241c2c174062285d54b7a981268}{%
+           family={Kutscher},
+           familyi={K\bibinitperiod},
+           given={Dirk},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6311e387adf80252b5f613f2acd70d35}{%
+           family={Ohlman},
+           familyi={O\bibinitperiod},
+           given={Borje},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5b276bbd95a9259e23c5eed07a71d31c}
+      \strng{fullhash}{fb1c18548a87d7a09d6aabb25bf7815b}
+      \strng{fullhashraw}{fb1c18548a87d7a09d6aabb25bf7815b}
+      \strng{bibnamehash}{5b276bbd95a9259e23c5eed07a71d31c}
+      \strng{authorbibnamehash}{5b276bbd95a9259e23c5eed07a71d31c}
+      \strng{authornamehash}{5b276bbd95a9259e23c5eed07a71d31c}
+      \strng{authorfullhash}{fb1c18548a87d7a09d6aabb25bf7815b}
+      \strng{authorfullhashraw}{fb1c18548a87d7a09d6aabb25bf7815b}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The information-centric networking (ICN) concept is a significant common approach of several future Internet research activities. The approach leverages in-network caching, multiparty communication through replication, and interaction models decoupling senders and receivers. The goal is to provide a network infrastructure service that is better suited to today¿s use (in particular. content distribution and mobility) and more resilient to disruptions and failures. The ICN approach is being explored by a number of research projects. We compare and discuss design choices and features of proposed ICN architectures, focusing on the following main components: named data objects, naming and security, API, routing and transport, and caching. We also discuss the advantages of the ICN approach in general.}
+      \field{issn}{1558-1896}
+      \field{journaltitle}{IEEE Communications Magazine}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{A survey of information-centric networking}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{50}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \field{pages}{26\bibrangedash 36}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/MCOM.2012.6231276
+      \endverb
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\JDHZWC4T\\6231276.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://ieeexplore.ieee.org/document/6231276
+      \endverb
+      \verb{url}
+      \verb https://ieeexplore.ieee.org/document/6231276
+      \endverb
+      \keyw{Internet,Routing protocols,Information management,Network security,Peer to peer computing,Receivers,Videos}
+    \endentry
+    \entry{noauthor_vehicle_2017}{inproceedings}{}{}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The Vehicle to Infrastructure interaction, similarly to V2V, is based on wireless communication technologies. The V2I communication (commonly called V2X) is also an extensively researched topic in the United States. The main traffic safety goals of such systems are well summarized by USDOT's (U.S. Department of Transportation) Connected Vehicles Program [117]. V2I is the wireless exchange of critical safety and operational data between vehicles and highway infrastructure, intended primarily to avoid or mitigate motor vehicle accidents but also to enable a wide range of other safety, mobility, and environmental benefits. V2I communications apply to all vehicle types and all roads, and transform infrastructure equipment into “smart infrastructure”. They incorporate algorithms that use data exchanged between vehicles and infrastructure elements to perform calculations that recognize highrisk situations in advance, resulting in driver alerts and warnings through specific actions. One particularly important advantage is the ability for traffic signal systems to communicate the signal phase and timing (SPAT) information to the vehicle in support of delivering active safety advisories and warnings to drivers.}
+      \field{annotation}{[TLDR] The Vehicle to Infrastructure interaction, similarly to V2V, is based on wireless communication technologies and incorporates algorithms that use data exchanged between vehicles and infrastructure elements to perform calculations that recognize highrisk situations in advance, resulting in driver alerts and warnings through specific actions.}
+      \field{title}{Vehicle to {Infrastructure} interaction ( {V} 2 {I} )}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2017}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb Full Text PDF:C\:\\Users\\Asus\\Zotero\\storage\\CFFITEJB\\2017 - Vehicle to Infrastructure interaction ( V 2 I ).pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.semanticscholar.org/paper/Vehicle-to-Infrastructure-interaction-(-V-2-I-)/075487e6e92e61a8b65bf71e6c771b8c206303ca
+      \endverb
+      \verb{url}
+      \verb https://www.semanticscholar.org/paper/Vehicle-to-Infrastructure-interaction-(-V-2-I-)/075487e6e92e61a8b65bf71e6c771b8c206303ca
+      \endverb
+    \endentry
+    \entry{pereira_vehicular-ndn_2026}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=5ad9dc8f4b769f1ddc482b9b7c753643}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={J.\bibnamedelimi F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=161979f82316a6d980ad3b6792d1b44f}{%
+           family={Hapanchak},
+           familyi={H\bibinitperiod},
+           given={V.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=cf2d77d034b0c55330d148eca6a15edd}{%
+           family={Nicolau},
+           familyi={N\bibinitperiod},
+           given={M.\bibnamedelimi J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=017699d07d79fedc08c9f6c25207ebb5}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={A.\bibnamedelimi D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{1213581bd2d11fa981f931c4a6deffbe}
+      \strng{fullhash}{5ba213fe639ad11829b28ebeda46b873}
+      \strng{fullhashraw}{5ba213fe639ad11829b28ebeda46b873}
+      \strng{bibnamehash}{1213581bd2d11fa981f931c4a6deffbe}
+      \strng{authorbibnamehash}{1213581bd2d11fa981f931c4a6deffbe}
+      \strng{authornamehash}{1213581bd2d11fa981f931c4a6deffbe}
+      \strng{authorfullhash}{5ba213fe639ad11829b28ebeda46b873}
+      \strng{authorfullhashraw}{5ba213fe639ad11829b28ebeda46b873}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{In this paper, we introduce the concept of Geo-Anchored Datasets (GADs) – named datasets constructed from geographical areas where vehicles tend to aggregate due to traffic rules and density, leveraging Named Data Networking (NDN) applied to Vehicular Ad-Hoc Networks (VANETs). These datasets include information from vehicles that pass through the defined area, remain valid for a controlled period, and, within that brief time, require at least one vehicle to be present in the area at any given moment to retain the information. The focus of this work is to present a mechanism for fast and collision-efficient information synchronization under geographical and temporal restrictions. The proposed State Vector Push Protocol (SVPP) creates Geo-Anchored Datasets using an epidemic push-based model and the state vector technique. We also propose two scheduling mechanisms to mitigate the effects of the resulting broadcast storm by dynamically adjusting transmission delays based on vehicle density, reducing collision occurrences. In our most demanding scenario – 112 vehicles in a 4 lane 140m static segment – SVPP achieves under 10 \% packet loss, sub-second convergence, and 1 Mbit/s throughput, showing high efficiency even under extreme conditions.}
+      \field{issn}{0167-739X}
+      \field{journaltitle}{Future Generation Computer Systems}
+      \field{month}{3}
+      \field{shorttitle}{Vehicular-{NDN}}
+      \field{title}{Vehicular-{NDN}: {Geo}-{Anchored} {Datasets}}
+      \field{urlday}{30}
+      \field{urlmonth}{9}
+      \field{urlyear}{2025}
+      \field{volume}{176}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \field{pages}{108124}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.future.2025.108124
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\NTUMJPRF\\S0167739X25004182.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167739X25004182
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167739X25004182
+      \endverb
+      \keyw{Data collection,Dataset synchronization,Geographical datasets,Named data networking,VANETs}
+    \endentry
+    \entry{noauthor_geocast_2025}{article}{}{}
+      \list{language}{1}{%
+        {en}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Request PDF {|} Geocast Routing Protocols for Vehicular Ad-hoc Networks: A Survey {|} Geocast routing is considered to be advantageous in VANETs, as most of the safety applications are location-based and are relevant to a particular... {|} Find, read and cite all the research you need on ResearchGate}
+      \field{journaltitle}{ResearchGate}
+      \field{month}{8}
+      \field{shorttitle}{Geocast {Routing} {Protocols} for {Vehicular} {Ad}-hoc {Networks}}
+      \field{title}{Geocast {Routing} {Protocols} for {Vehicular} {Ad}-hoc {Networks}: {A} {Survey} {|} {Request} {PDF}}
+      \field{urlday}{24}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.5121/ijwmn.2022.14601
+      \endverb
+      \verb{file}
+      \verb Snapshot:C\:\\Users\\Asus\\Zotero\\storage\\AV8L8W4R\\366931180_Geocast_Routing_Protocols_for_Vehicular_Ad-hoc_Networks_A_Survey.html:text/html;Texto Completo:C\:\\Users\\Asus\\Zotero\\storage\\8BMPPKKV\\2025 - Geocast Routing Protocols for Vehicular Ad-hoc Net.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.researchgate.net/publication/366931180_Geocast_Routing_Protocols_for_Vehicular_Ad-hoc_Networks_A_Survey
+      \endverb
+      \verb{url}
+      \verb https://www.researchgate.net/publication/366931180_Geocast_Routing_Protocols_for_Vehicular_Ad-hoc_Networks_A_Survey
+      \endverb
+    \endentry
+    \entry{noauthor_named-datandn-svs_2025}{misc}{}{}
+      \list{publisher}{1}{%
+        {Named Data Networking}%
+      }
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labeltitlesource}{title}
+      \field{abstract}{State Vector Sync library for distributed realtime applications for NDN}
+      \field{month}{6}
+      \field{note}{original-date: 2021-01-05T20:23:06Z}
+      \field{title}{named-data/ndn-svs}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/named-data/ndn-svs
+      \endverb
+      \verb{url}
+      \verb https://github.com/named-data/ndn-svs
+      \endverb
+      \keyw{cpp,library,ndn,pubsub,sync}
+    \endentry
+    \entry{shsssc_shssscscenario-svs_2023}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=99f3b579400394fdadb31eb36b7eb5fc}{%
+           family={shsssc},
+           familyi={s\bibinitperiod}}}%
+      }
+      \strng{namehash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{fullhash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{fullhashraw}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{bibnamehash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{authorbibnamehash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{authornamehash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{authorfullhash}{99f3b579400394fdadb31eb36b7eb5fc}
+      \strng{authorfullhashraw}{99f3b579400394fdadb31eb36b7eb5fc}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{NDN Sim scenario for state vector sync}
+      \field{month}{2}
+      \field{note}{original-date: 2022-04-14T01:29:40Z}
+      \field{title}{shsssc/scenario-svs}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/shsssc/scenario-svs
+      \endverb
+      \verb{url}
+      \verb https://github.com/shsssc/scenario-svs
+      \endverb
+    \endentry
+    \entry{maharshi_dayanand_university_rohtak_haryana_india_lightweight_2019}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=881d65618c11722445495653d2df7713}{%
+           family={{Maharshi Dayanand University, Rohtak, Haryana (India)}},
+           familyi={M\bibinitperiod}}}%
+        {{hash=c21fa32ec1cea9fd246d3b5917bd3328}{%
+           family={Rani},
+           familyi={R\bibinitperiod},
+           given={Deepti},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2572272a547552925329872917f66220}
+      \strng{fullhash}{2572272a547552925329872917f66220}
+      \strng{fullhashraw}{2572272a547552925329872917f66220}
+      \strng{bibnamehash}{2572272a547552925329872917f66220}
+      \strng{authorbibnamehash}{2572272a547552925329872917f66220}
+      \strng{authornamehash}{2572272a547552925329872917f66220}
+      \strng{authorfullhash}{2572272a547552925329872917f66220}
+      \strng{authorfullhashraw}{2572272a547552925329872917f66220}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Smart devices and IoT applications have been widely used in many fields of social living, social production, home and industrial automation which have made people’s life efficient and convenient. But in recent years, ubiquitous deployment of some tools and technologies has raised several concerns related to the privacy and security in IoT enabled smart environment. The present paper presents a range of various existing as well as proposed lightweight security protocols. Security protocols are designed to make secure communication within IoT enabled environment with less computation and storage cost. Lightweight protocols are characterized by relatively small overhead. The paper also presents a comparative study of various lightweight security protocols for IoT, proposed by many researchers in recent years. Lightweight cryptography algorithms used for designing lightweight security protocols have also been explored in present paper.}
+      \field{annotation}{[TLDR] A range of various existing as well as proposed lightweight security protocols for IoT designed to make secure communication within IoT enabled environment with less computation and storage cost are presented.}
+      \field{issn}{22783091}
+      \field{journaltitle}{International Journal of Advanced Trends in Computer Science and Engineering}
+      \field{month}{6}
+      \field{number}{3}
+      \field{shorttitle}{Lightweight {Security} {Protocols} for {Internet} of {Things}}
+      \field{title}{Lightweight {Security} {Protocols} for {Internet} of {Things}: {A} {Review}}
+      \field{urlday}{27}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{8}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{707\bibrangedash 719}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.30534/ijatcse/2019/58832019
+      \endverb
+      \verb{file}
+      \verb Texto Completo:C\:\\Users\\Asus\\Zotero\\storage\\JQTRUR7M\\Maharshi Dayanand University, Rohtak, Haryana (India) e Rani - 2019 - Lightweight Security Protocols for Internet of Thi.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.warse.org/IJATCSE/static/pdf/file/ijatcse58832019.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.warse.org/IJATCSE/static/pdf/file/ijatcse58832019.pdf
       \endverb
     \endentry
   \enddatalist
 \endrefsection
 
 \refsection{1}
-  \datalist[entry]{nty/global//global/global/global}
+  \datalist[entry]{none/global//global/global/global}
     \entry{novathesis-manual}{manual}{}{}
       \name{author}{1}{}{%
         {{hash=419e7851ce9e726652864635d63207af}{%
@@ -458,8 +1766,8 @@
       \strng{authornamehash}{419e7851ce9e726652864635d63207af}
       \strng{authorfullhash}{419e7851ce9e726652864635d63207af}
       \strng{authorfullhashraw}{419e7851ce9e726652864635d63207af}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{The NOVAthesis \LaTeX{} Template User's Manual}}
